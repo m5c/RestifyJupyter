@@ -1,3 +1,6 @@
+"""Everything related to the participant class."""
+
+
 class Participant:
     """Participant class. Represents all information regarding a participant, that is not yet stored
     in the encompassing partition (group assignment / group characteristics)."""
@@ -9,7 +12,7 @@ class Participant:
     @property
     def skills(self) -> list[int]:
         """Getter for skills. Returns an array of int valued, where each position represents a
-        self declared skill."""
+        self-declared skill."""
         return self.__skills
 
     @property
