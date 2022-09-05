@@ -1,6 +1,6 @@
 import numpy
 import numpy as np
-from restifymining.Participant import Participant
+from restify_mining.Participant import Participant
 
 
 # compute the actual average of participant skills
