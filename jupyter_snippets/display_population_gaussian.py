@@ -1,12 +1,13 @@
 """
 This module reads participant skills from the participantskills.csv file, computes the gaussian
-distributions per skill and creates a plot.
+distributions per skill and creates a plot. The output file is stores in:
+"generated-plots/gaussion.png"
 """
 import csv
 
+from restify_mining import participant_stat_tools
 from restify_mining import skills
 from restify_mining.participant import Participant
-from restify_mining import participant_stat_tools
 from restify_mining.plotter import plot_gaussian
 
 # Load all participant skill objects from csv file

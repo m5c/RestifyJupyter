@@ -4,6 +4,7 @@ import numpy as np
 
 from restify_mining.participant import Participant
 
+
 def build_mean_skills(participants: list[Participant]):
     """Computes the actual average of participant skills"""
     return [number / len(participants) for number in build_summed_skills(participants)]
@@ -45,5 +46,5 @@ def build_summed_skills(participants):
     # sum of all participant skills
     summed_skills = [0, 0, 0, 0, 0, 0, 0, 0]
     for participant in participants:
-        summed_skills = np.add(summed_skills, participant.get_skills())
+        summed_skills = np.add(summed_skills, participant.skills)
     return summed_skills
