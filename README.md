@@ -6,6 +6,8 @@ Data and visualization of the RESTify experiment results.
 
 This repository hosts the sources and input data for the RESTify experiment analysis, in form of a Jupyter Notebook instance.
 
+ > Set PYTHON workdir in pycharm to the repo basedir (won't find CSV files otherwise)
+
 ## Contents
 
 ### Data

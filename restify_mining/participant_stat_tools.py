@@ -2,8 +2,7 @@
 
 import numpy as np
 
-from participant import Participant
-
+from restify_mining.participant import Participant
 
 def build_mean_skills(participants: list[Participant]):
     """Computes the actual average of participant skills"""
@@ -27,7 +26,7 @@ def build_standard_deviation_skills(participants):
     """Computes an array of standard deviations. Every position in the result array corresponds
     to the skills of all participants at the given position."""
     standard_deviations = []
-    s
+
     amount_skills = len(participants[0].skills)
     for skill_index in range(amount_skills):
         skill_values = extract_skill_values_by_index(skill_index, participants)
