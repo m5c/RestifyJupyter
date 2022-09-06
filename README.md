@@ -4,39 +4,56 @@ Data and visualization of the RESTify experiment results.
 
 ## About
 
-This repository hosts the sources and input data for the RESTify experiment analysis, in form of a Jupyter Notebook instance.
-
- > Set PYTHON workdir in pycharm to the repo basedir (won't find CSV files otherwise)
+This repository hosts the sources and input data for the RESTify experiment analysis, in form of a Jupyter Notebook
+instance.
 
 ## Contents
 
-### Data
+* The Jupyter files are sprinked at top level, the main one being: ```restify.ipynb```
+    * The snippets listed in the notebook are too complex to be developed in jupyter. They are thus copies of the files
+      in ```jupyter_snippets```. Those can be conveniently launched with PyCharm.
+    * Additional python files used for the actual mining are in ```restify_mining```.
+* Raw input data collected in the experiment is in ```source-csv-files```.
+* Plots are stores to ```generated-plots```.
 
- * Task order defintiion CSV
- * Unit test statistics CSV
- * Skill vectors CSV
- * Post completion ratings CSV
- * Manually extracted data CSV
+### Raw CSV Data
 
-### Sources
+The contents of ```source-csv-files``` are as follows:
 
- * CSV merger
- * Jupyter files
+* Task order definition: ```source-csv-files/tasks.csv```
+* Unit test statistics CSV: ```source-csv-files/teststats.csv```
+* Skill vectors per codename (colours define partition) CSV: ```source-csv-files/patitionskills.csv```
+* Post completion ratings CSV: ```TBA```
+* Manually extracted time data CSV: ```TBA```
 
 ## Usage
 
- * Make sure the unmnerged input CSV files are fully up to date
- * Run the CSV merger / Run the Jupyter notebook (not sure if auto merge should be invoked. I think so , since it makes sense to first display the individual data? Figure out.
-    * Running the merger: ```./fusecsv.py``` (currently only fuses stats and task order)
-    * Running the notebook: ```jupyter notebook```
+For data analysis, use Jupyter. For development of new snippets, use pycharm and place your new snipped in
+the ```jupyter_snippets``` directory. Copy the content of your snipped into a new jupyter cell when done.
+
+ * Starting the Notebook: ```jupyter notebook```
+ * Visit: [http://localhost:8888/notebooks/Restify.ipynb](http://localhost:8888/notebooks/Restify.ipynb)
+
+### Pycharm Setup
+
+ * Install [PyLint]
+ * Configure PyLint to use the root ```.pylintrc``` config file, so it correclty resolves imports.  
+(See [this discussion](https://github.com/dense-analysis/ale/issues/208#issuecomment-265590465))
 
 ## Author / References
 
- * PI: Maximilian Schiedermeier
- * Supervisors: Bettina Kemme, Jörg Kienzle
- * Raw Data: ...csv bundle...
- * Implementation: Maximilian Schiedermeier
-    * Study Instructions: Red / Green / Blue / Yellow
-    * Legacy Source Code: ...
-    * Unit Test Evaluation Script: ...
- * Research Ethics Board Advisor: Lynda McNeil
+* PI: Maximilian Schiedermeier
+* Supervisors: Bettina Kemme, Jörg Kienzle
+* Raw Data: ...csv bundle...
+* Implementation: Maximilian Schiedermeier
+    * Study Instructions, by control group: 
+       * [Red](https://www.cs.mcgill.ca/~mschie3/red/restify-study/)
+       * [Green](https://www.cs.mcgill.ca/~mschie3/green/restify-study/)
+       * [Blue](https://www.cs.mcgill.ca/~mschie3/blue/restify-study/)
+       * [Yellow](https://www.cs.mcgill.ca/~mschie3/yellow/restify-study/)
+    * Legacy Application Source Code:
+       * [BookStore](https://github.com/kartoffelquadrat/BookStoreInternals)
+       * [Zoo](https://github.com/kartoffelquadrat/Zoo)
+       * [Xox](https://github.com/kartoffelquadrat/XoxInternals)
+    * Unit Test Evaluation Script: [RestifyAnalyzer](https://github.com/kartoffelquadrat/RestifyAnalyzer)
+* Research Ethics Board Advisor: Lynda McNeil
