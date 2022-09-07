@@ -5,4 +5,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PyNamespacePackagesService">
+    <option name="namespacePackageFolders">
+      <list>
+        <option value="$MODULE_DIR$/restify_mining" />
+        <option value="$MODULE_DIR$/jupyter_snippets" />
+      </list>
+    </option>
+  </component>
 </module>

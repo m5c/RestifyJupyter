@@ -1,12 +1,16 @@
-"""Everything related to the participant class."""
+"""Represents an individual participant. Also encodes the corresponding control group and
+codename. None of the metrics actually measured throughout the study are associated to any instance
+of this class, those values are taken care of by subclasses."""
 
 
 class Participant:
     """Participant class. Represents all information regarding a participant, that is not yet stored
     in the encompassing partition (group assignment / group characteristics)."""
 
-    def __init__(self, name: str, skills: list[int]):
-        self.__name: str = name
+    def __init__(self, codename: str, skills: list[int]):
+        # received codename covers control group and animal name, e.g. something like purple-tiger
+        self.__animal_name: str = codename.split('-')[0]
+        self.__group_name: str = codename.split('-')[1]
         self.__skills: list[int] = skills
 
     @property
@@ -28,9 +32,14 @@ class Participant:
         return len(self.__skills)
 
     @property
-    def name(self):
-        """Getter to look up the participant name."""
-        return self.__name
+    def animal_name(self):
+        """Getter to look up the participant animal name."""
+        return self.__animal_name
+
+    @property
+    def group_name(self):
+        """Getter to look up the participant control group name."""
+        return self.__group_name
 
     def __str__(self):
         participant_str = self.__name + ": ["
