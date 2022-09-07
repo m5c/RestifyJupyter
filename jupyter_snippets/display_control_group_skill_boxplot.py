@@ -36,4 +36,4 @@ for skill_index in range(len(skill_tags)):
                                                                skill_index))
 
 # Finally feed the long list of all skill values in the order, required by the box plotter
-plot_box(plotter_skill_values, palette, len(control_groups), "/tmp/fused-stats.png")
+plot_box(plotter_skill_values, palette, len(control_groups), "generated-plots/fused-stats.png")

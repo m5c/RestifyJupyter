@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/jupyternotebooks,pycharm,vim,macos,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=jupyternotebooks,pycharm,vim,macos,python
 
+### Exclude intermediate / generated files
+generated-plots/*
+
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
