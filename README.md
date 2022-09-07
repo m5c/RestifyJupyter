@@ -39,6 +39,7 @@ the ```jupyter_snippets``` directory. Copy the content of your snipped into a ne
  * Install [PyLint]
  * Configure PyLint to use the root ```.pylintrc``` config file, so it correclty resolves imports.  
 (See [this discussion](https://github.com/dense-analysis/ale/issues/208#issuecomment-265590465))
+ * Use provided Run configurations to dry run Jupyter cells (working directory preconfigured, so there are no IO issued on CSV import / graph export)
 
 ## Author / References
 
