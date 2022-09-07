@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_tools/file_load_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/file_load_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated-plots/gaussians.png" beforeDir="false" afterPath="$PROJECT_DIR$/generated-plots/gaussians.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_conrol_group_skill_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/participant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/participant_filter_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/participant_filter_tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1662565383036</updated>
       <workItem from="1662565386687" duration="160000" />
-      <workItem from="1662565763244" duration="3045000" />
+      <workItem from="1662565763244" duration="3095000" />
+      <workItem from="1662573378047" duration="479000" />
     </task>
     <servers />
   </component>
@@ -119,26 +116,11 @@
           <line>38</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restify_mining/participant_filter_tools.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restify_mining/participant_filter_tools.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayPopulationGaussian.coverage" NAME="DisplayPopulationGaussian Coverage Results" MODIFIED="1662565794349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayControlGroupSkillBoxPlot.coverage" NAME="DisplayControlGroupSkillBoxPlot Coverage Results" MODIFIED="1662568750398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayControlGroupSkillBoxPlot.coverage" NAME="DisplayControlGroupSkillBoxPlot Coverage Results" MODIFIED="1662573825874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

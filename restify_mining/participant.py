@@ -9,8 +9,8 @@ class Participant:
 
     def __init__(self, codename: str, skills: list[int]):
         # received codename covers control group and animal name, e.g. something like purple-tiger
-        self.__animal_name: str = codename.split('-')[0]
-        self.__group_name: str = codename.split('-')[1]
+        self.__animal_name: str = codename.split('-')[1]
+        self.__group_name: str = codename.split('-')[0]
         self.__skills: list[int] = skills
 
     @property
