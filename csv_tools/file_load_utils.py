@@ -6,7 +6,7 @@ import csv
 
 from restify_mining.participant import Participant
 
-# TODO: Type safety
+
 def load_all_participants() -> list[Participant]:
     participants = []
     with open('source-csv-files/partitionskills.csv', 'r', encoding="utf-8") as f:
