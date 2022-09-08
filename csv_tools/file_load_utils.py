@@ -9,7 +9,7 @@ from restify_mining.participant import Participant
 
 def load_all_participants() -> list[Participant]:
     participants = []
-    with open('source-csv-files/partitionskills.csv', 'r', encoding="utf-8") as f:
+    with open('source-csv-files/skills.csv', 'r', encoding="utf-8") as f:
         reader = csv.reader(f)
         # Flag to skip first line which is only the CSV column markers
         FIRST = True

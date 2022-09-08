@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/jupyternotebooks,pycharm,vim,macos,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=jupyternotebooks,pycharm,vim,macos,python
 
+# Exlude pythong cache files
+__pycache__/
+
 ### Exclude intermediate / generated files
 generated-plots/*
 

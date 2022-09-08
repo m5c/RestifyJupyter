@@ -12,6 +12,11 @@ from restify_mining import participant_filter_tools as pft
 from restify_mining.skills import full_skill_tags, skill_tags, get_formated_skill_tag
 from csv_tools import file_load_utils
 
+# Print disclaimer
+print(
+    "Control group comparability analysis. Listing of greatest differences (average skill values) "
+    "between any pairs of control groups:")
+
 # Load all participant objects (specifies skills, codename, control group) from csv file
 population: list[Participant] = file_load_utils.load_all_participants()
 
