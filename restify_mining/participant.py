@@ -3,7 +3,7 @@ codename. None of the metrics actually measured throughout the study are associa
 of this class, those values are taken care of by subclasses."""
 
 
-class Participant:
+class Participant(object):
     """Participant class. Represents all information regarding a participant, that is not yet stored
     in the encompassing partition (group assignment / group characteristics)."""
 
