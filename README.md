@@ -53,8 +53,8 @@ the ```jupyter_snippets``` directory. Copy the content of your snipped into a ne
        * [Blue](https://www.cs.mcgill.ca/~mschie3/blue/restify-study/)
        * [Yellow](https://www.cs.mcgill.ca/~mschie3/yellow/restify-study/)
     * Legacy Application Source Code:
-       * [BookStore](https://github.com/kartoffelquadrat/BookStoreInternals)
-       * [Zoo](https://github.com/kartoffelquadrat/Zoo)
-       * [Xox](https://github.com/kartoffelquadrat/XoxInternals)
+       * [BookStore](https://github.com/kartoffelquadrat/BookStoreInternals/tree/RESTifyStudy)
+       * [Zoo](https://github.com/kartoffelquadrat/Zoo/tree/RESTifyStudy)
+       * [Xox](https://github.com/kartoffelquadrat/XoxInternals/tree/RESTifyStudy)
     * Unit Test Evaluation Script: [RestifyAnalyzer](https://github.com/kartoffelquadrat/RestifyAnalyzer)
 * Research Ethics Board Advisor: Lynda McNeil
