@@ -8,6 +8,16 @@ from restify_mining.assessed_participant import AssessedParticipant
 from restify_mining.participant import Participant
 
 
+def str2bool(textual_boolean: str):
+    """
+    Helper function to convert strings to boolean values. See: https://stackoverflow.com/a/715468
+    :param textual_boolean: as string, either "PASS" or any upper lover case variation (
+    interpreted as false) or anything else (true).
+    :return: a boolean value, either TRUE or FALSE.
+    """
+    return textual_boolean.lower() in 'pass'
+
+
 def load_all_participants() -> list[Participant]:
     """
     Loads all participants but restricts information to pre-study data, that is to say control
@@ -24,6 +34,8 @@ def load_all_participants() -> list[Participant]:
             if first_line:
                 first_line = False
             else:
+                # first argument is name (likewise first column in csv), then come as many
+                # numbers as remaining columns, starting at csv column 1, fused to a list.
                 participants.append(Participant(row[0], [int(x) for x in row[1:]]))
     return participants
 
@@ -44,5 +56,11 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
             if first_line:
                 first_line = False
             else:
-                assessed_participants.append(AssessedParticipant(row[0], [int(x) for x in row[1:]]))
+                # first argument is name (likewise first column in csv), then come as many
+                # numbers as remaining columns, starting at csv column 1, fused to a list.
+                # Next the test results for xox, followed by test results for bookstore
+                assessed_participants.append(
+                    AssessedParticipant(row[0], [int(x) for x in row[29:36]],
+                                        [str2bool(x) for x in row[5:12]],
+                                        [str2bool(x) for x in row[13:24]]))
     return assessed_participants

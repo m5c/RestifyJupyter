@@ -42,7 +42,7 @@ class Participant:
         return self.__group_name
 
     def __str__(self):
-        participant_str = self.__group_name + "-" + self.__animal_name + ": ["
+        participant_str = self.group_name + "-" + self.animal_name + ": \t["
         for skill in self.skills:
             participant_str += str(skill) + ","
         participant_str += "]"
