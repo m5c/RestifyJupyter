@@ -3,7 +3,7 @@ codename. None of the metrics actually measured throughout the study are associa
 of this class, those values are taken care of by subclasses."""
 
 
-class Participant(object):
+class Participant:
     """Participant class. Represents all information regarding a participant, that is not yet stored
     in the encompassing partition (group assignment / group characteristics)."""
 
@@ -42,7 +42,7 @@ class Participant(object):
         return self.__group_name
 
     def __str__(self):
-        participant_str = self.__name + ": ["
+        participant_str = self.__group_name + "-" + self.__animal_name + ": ["
         for skill in self.skills:
             participant_str += str(skill) + ","
         participant_str += "]"
