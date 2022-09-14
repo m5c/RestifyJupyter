@@ -29,7 +29,6 @@ class AssessedParticipant(Participant):
             test_results_bs) * 100.0
         self.__test_percentage_xox: float = test_results_xox.count(True) / len(
             test_results_xox) * 100.0
-        print("yolo")
 
     @property
     def test_results_bs(self) -> list[bool]:
@@ -68,8 +67,6 @@ class AssessedParticipant(Participant):
         Overloaded default to string method. Prints all information stored about this participant.
         :return: string representation of current objects.
         """
-        # TODO Figure out why percentage wrong and not all test results printed.
-
         # print name + control group
         participant_str = self.group_name + "-" + self.animal_name + ": \t["
         for skill in self.skills:

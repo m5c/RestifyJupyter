@@ -5,9 +5,8 @@ distributions per skill and creates a plot. The output file is stored in:
 """
 
 from restify_mining import participant_stat_tools
-from restify_mining import skills_markers
 from restify_mining.participant import Participant
-from restify_mining.plotter import plot_gaussian
+from restify_mining.plotters.skill_plotter import plot_gaussian
 from csv_tools import file_load_utils
 
 # Load all participant objects (specifies skills, codename, controlgroup) from csv file
