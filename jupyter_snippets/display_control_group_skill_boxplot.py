@@ -8,7 +8,7 @@ file. The output file is stored in:
 from restify_mining.participant import Participant
 from restify_mining import participant_filter_tools
 from csv_tools import file_load_utils
-from restify_mining.skills import skill_tags, palette
+from restify_mining.skills_markers import skill_tags, palette
 from restify_mining.plotter import plot_box
 
 # Load all participant objects (specifies skills, codename, controlgroup) from csv file

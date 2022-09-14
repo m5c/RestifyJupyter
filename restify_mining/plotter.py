@@ -7,7 +7,7 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
-from restify_mining import skills
+from restify_mining import skills_markers
 
 def plot_gaussian(mean, stddev, colour):
     """Plots the gaussian curves, based on provided skill mena and standard-deviation values for a

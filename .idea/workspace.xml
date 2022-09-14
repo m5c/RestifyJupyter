@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_tools/file_load_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/file_load_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/assessed_participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/assessed_participant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/skills.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/skills_markers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/unit_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_tests_markers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +190,7 @@
       <workItem from="1662651075107" duration="6535000" />
       <workItem from="1662736978074" duration="2544000" />
       <workItem from="1663086499297" duration="7461000" />
-      <workItem from="1663161328045" duration="3146000" />
+      <workItem from="1663161328045" duration="3215000" />
     </task>
     <servers />
   </component>
