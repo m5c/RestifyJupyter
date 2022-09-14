@@ -60,7 +60,7 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                 # Next the test results for bookstore, followed by test results for xox.
                 # The last argument is the skill vector (self-declared by participant)
                 assessed_participants.append(
-                    AssessedParticipant(row[0], [int(x) for x in row[29:36]],
-                                        [str2bool(x) for x in row[13:24]],
-                                        [str2bool(x) for x in row[5:12]]))
+                    AssessedParticipant(row[0], [int(x) for x in row[29:37]],
+                                        [str2bool(x) for x in row[13:25]],
+                                        [str2bool(x) for x in row[5:13]]))
     return assessed_participants

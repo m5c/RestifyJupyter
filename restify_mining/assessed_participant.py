@@ -28,7 +28,8 @@ class AssessedParticipant(Participant):
         self.__test_percentage_bs: float = test_results_bs.count(True) / len(
             test_results_bs) * 100.0
         self.__test_percentage_xox: float = test_results_xox.count(True) / len(
-            test_results_bs) * 100.0
+            test_results_xox) * 100.0
+        print("yolo")
 
     @property
     def test_results_bs(self) -> list[bool]:
