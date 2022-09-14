@@ -15,21 +15,17 @@ from restify_mining.markers import unit_tests_markers
 
 def plot_random(assessed_population: list[AssessedParticipant]):
     # Extract covered control groups
-    control_groups: list[str] = participant_filter_tools.extract_group_names(assessed_population)
-    print(control_groups)
+    # control_groups: list[str] = participant_filter_tools.extract_group_names(assessed_population)
 
     # Create 2D array, consisting of all participants (already ordered by control group) and test
     # results for all individual unit tests (both apps, sequential. First all BookStore unit
     # tests, then all Xox unit tests.
-    grid_values: list[list[float]]
-    unit_tests_markers.all_unit_tests()
-    # for assessed_participant in assessed_population:
-    #
-    #     # Inner loop, iterate over all test cases (bookstore + xox)
-    #     plot_values.append(assessed_participant.all_test_values)
+    grid_values: list[list[bool]] = []
+    for assessed_participant in assessed_population:
+        grid_values.append(assessed_participant.all_test_results())
 
     # make values from -5 to 5, for this example
-    zvals: list[list[float]] = np.random.rand(100, 100) * 10 - 5
+    # zvals: list[list[float]] = np.random.rand(100, 100) * 10 - 5
 
     # make a color map of fixed colors
     cmap = mpl.colors.ListedColormap(['blue', 'black', 'red'])
@@ -37,7 +33,7 @@ def plot_random(assessed_population: list[AssessedParticipant]):
     norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
 
     # tell imshow about color map so that only set colors are used
-    img = pyplot.imshow(zvals, interpolation='nearest',
+    img = pyplot.imshow(grid_values, interpolation='nearest',
                         cmap=cmap, norm=norm)
 
     # make a color bar
