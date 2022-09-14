@@ -39,7 +39,7 @@ def get_skill_values_by_index(population: list[Participant], skill_index: int) -
     the population received as argument.
     :param population: as the set of participants to analyze
     :param skill_index: as the index position of the skill to extract
-    :return: a list of integere values, representing the values extracted for each participant.
+    :return: a list of integer values, representing the values extracted for each participant.
     """
     return list(map(lambda participant: participant.skills[skill_index], population))
 

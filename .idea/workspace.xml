@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/restify_mining/markers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restify_mining/markers/group_tint_markers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_test_results_by_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_test_results_by_method.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/assessed_participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/assessed_participant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/participant_filter_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/participant_filter_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/skills_markers.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/markers/skills_markers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/unit_tests_markers.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/markers/unit_tests_markers.py" afterDir="false" />
-    </list>
+    <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,7 +187,7 @@
       <workItem from="1662651075107" duration="6535000" />
       <workItem from="1662736978074" duration="2544000" />
       <workItem from="1663086499297" duration="7461000" />
-      <workItem from="1663161328045" duration="5012000" />
+      <workItem from="1663161328045" duration="5050000" />
     </task>
     <servers />
   </component>
