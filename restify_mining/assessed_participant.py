@@ -46,6 +46,16 @@ class AssessedParticipant(Participant):
         """
         return self.__test_results_xox
 
+    def all_test_results(self) -> list[bool]:
+        """
+        Helper function to create a single list with all unit tests results (both applications).
+        :return: list with all unit test results. First come all BookStore test results,
+        then come all Xox test results.
+        """
+        all_test_results: list[bool] = self.__test_results_bs.copy()
+        all_test_results.append(self.__test_results_xox)
+        return all_test_results
+
     @property
     def test_percentage_bs(self) -> float:
         """
