@@ -56,11 +56,11 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
             if first_line:
                 first_line = False
             else:
-                # first argument is name (likewise first column in csv), then come as many
-                # numbers as remaining columns, starting at csv column 1, fused to a list.
-                # Next the test results for xox, followed by test results for bookstore
+                # first argument is name (likewise first column in csv), then the skill vector.
+                # Next the test results for bookstore, followed by test results for xox.
+                # The last argument is the skill vector (self-declared by participant)
                 assessed_participants.append(
                     AssessedParticipant(row[0], [int(x) for x in row[29:36]],
-                                        [str2bool(x) for x in row[5:12]],
-                                        [str2bool(x) for x in row[13:24]]))
+                                        [str2bool(x) for x in row[13:24]],
+                                        [str2bool(x) for x in row[5:12]]))
     return assessed_participants
