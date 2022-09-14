@@ -1,8 +1,10 @@
 from csv_tools import file_load_utils
 from restify_mining.assessed_participant import AssessedParticipant
+from restify_mining.plotters import unit_test_plotter
 
-# Load all participant objects (specifies skills, codename, controlgroup) from csv file
-population: list[AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+# Load all participant objects (specifies skills, codename, control-group) from csv file
+assessed_population: list[AssessedParticipant] = file_load_utils.load_all_assessed_participants()
 
 # Visualize test results in 2D plot
+unit_test_plotter.plot_random(assessed_population)
 

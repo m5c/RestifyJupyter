@@ -8,7 +8,7 @@ file. The output file is stored in:
 from restify_mining.participant import Participant
 from restify_mining import participant_filter_tools
 from csv_tools import file_load_utils
-from restify_mining.skills_markers import skill_tags, palette
+from restify_mining.markers.skills_markers import skill_tags, palette
 from restify_mining.plotters.skill_plotter import plot_box
 
 # Load all participant objects (specifies skills, codename, control-group) from csv file
@@ -20,7 +20,7 @@ population: list[Participant] = file_load_utils.load_all_participants()
 # for skill 1 of participants of group 2, ... all values for skill 2 of participants of group 1,
 # and so on...
 plotter_skill_values = []
-control_groups: list[str] = participant_filter_tools.get_group_names(population)
+control_groups: list[str] = participant_filter_tools.extract_group_names(population)
 
 # To fill the plotter_skill_value list, first iterate over all skills in outer loop
 for skill_index in range(len(skill_tags)):
