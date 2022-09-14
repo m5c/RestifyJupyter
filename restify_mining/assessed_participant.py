@@ -75,13 +75,13 @@ class AssessedParticipant(Participant):
         # Print test results and percentage for Xox
         participant_str += "], \tXox Tests: ["
         for index, result in enumerate(self.test_results_xox):
-            participant_str += unit_tests.xox_unit_tests[index] + ": " + str(result) + ", "
+            participant_str += unit_tests_markers.xox_unit_tests[index] + ": " + str(result) + ", "
         participant_str += "] => " + str(round(self.__test_percentage_xox, 2)) + "% "
 
         # Print test results and percentage for BookStore
         participant_str += ", \tBookStore Tests: ["
         for index, result in enumerate(self.test_results_bs):
-            participant_str += unit_tests.bs_unit_tests[index] + ": " + str(result) + ", "
+            participant_str += unit_tests_markers.bs_unit_tests[index] + ": " + str(result) + ", "
         participant_str += "] => " + str(round(self.__test_percentage_bs, 2)) + "% "
 
         # Return fully concatenated string representing all data of this participant

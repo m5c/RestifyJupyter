@@ -1,4 +1,6 @@
-"""Helper module to define the default order of tests for individual test applications.
+"""Helper module to define the default order of tests for individual test applications. The tags
+defined here mainly serve as markers on axis of produced
+plots.
 """
 
 xox_unit_tests = ["XoxGet",

@@ -1,5 +1,6 @@
 """Helper module to define the default order of skills as strings and the corresponding
-hexadecimal colour codes."""
+hexadecimal colour codes. The tags defined here mainly serve as markers on axis of produced
+plots."""
 
 full_skill_tags = ['Java', 'Spring', 'Maven', 'TouchCORE', 'UNIX', 'REST', 'Singleton',
                    'Reflection']
