@@ -19,13 +19,20 @@ class AssessedParticipant(Participant):
         super().__init__(codename, skills)
 
         # store additional info in private variables
+        # Individual test results for both apps
         self.__test_results_bs: list[bool] = test_results_bs
         self.__test_results_xox: list[bool] = test_results_xox
+
+        # Percentage test rate for both apps (is calculated, not extracted from CSV)
+        self.__test_percentage_bs: float = test_results_bs.count(True) / len(
+            test_results_bs) * 100.0
+        self.__test_percentage_xox: float = test_results_bs.count(True) / len(
+            test_results_bs) * 100.0
 
     @property
     def test_results_bs(self) -> list[bool]:
         """
-        Property / Getter for manual task unit test results.
+        Property / Getter for bookstore task unit test results.
         :return: a boolean array where every position indicates whether a test was successful or not
         """
         return self.__test_results_bs
@@ -33,21 +40,49 @@ class AssessedParticipant(Participant):
     @property
     def test_results_xox(self) -> list[bool]:
         """
-        Property / Getter for manual task unit test results.
+        Property / Getter for xox task unit test results.
         :return: a boolean array where every position indicates whether a test was successful or not
         """
         return self.__test_results_xox
 
+    @property
+    def test_percentage_bs(self) -> float:
+        """
+        Property / Getter for bookstore task unit test results as overall percentage.
+        :return: a float value representing bookstore test success rate.
+        """
+        return self.__test_percentage_bs
+
+    @property
+    def test_percentage_xox(self) -> float:
+        """
+        Property / Getter for xox task unit test results as overall percentage.
+        :return: a float value representing xox test success rate.
+        """
+        return self.__test_percentage_xox
+
     def __str__(self):
+        """
+        Overloaded default to string method. Prints all information stored about this participant.
+        :return: string representation of current objects.
+        """
+
+        # print name + control group
         participant_str = self.group_name + "-" + self.animal_name + ": \t["
         for skill in self.skills:
             participant_str += str(skill) + ","
+
+        # Print test results and percentage for Xox
         participant_str += "], \tXox Tests: ["
         for result in self.test_results_xox:
             participant_str += str(result) + ","
-        participant_str += "], \tBookStore Tests: ["
+        participant_str += "] => " + str(round(self.__test_percentage_xox, 2)) + "% "
+
+        # Print test results and percentage for BookStore
+        participant_str += ", \tBookStore Tests: ["
         for result in self.test_results_bs:
             participant_str += str(result) + ","
-        participant_str += "]"
+        participant_str += "] => " + str(round(self.__test_percentage_bs, 2)) + "% "
 
+        # Return fully concatenated string representing all data of this participant
         return participant_str
