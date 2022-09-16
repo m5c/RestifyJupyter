@@ -53,7 +53,7 @@ class AssessedParticipant(Participant):
         then come all Xox test results.
         """
         all_test_results: list[bool] = self.__test_results_bs.copy()
-        all_test_results.append(self.__test_results_xox)
+        all_test_results.extend(self.__test_results_xox)
         return all_test_results
 
     @property

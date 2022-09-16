@@ -19,5 +19,4 @@ def get_formated_skill_tag(skill_index: int) -> str:
     unbuffered_string = skill_tags[skill_index]
     if len(unbuffered_string) > 6:
         return unbuffered_string
-    else:
-        return unbuffered_string + "\t"
+    return unbuffered_string + "\t"

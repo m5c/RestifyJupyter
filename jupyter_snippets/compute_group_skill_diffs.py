@@ -9,7 +9,8 @@ being replaced).
 
 from restify_mining.participant import Participant
 from restify_mining import participant_filter_tools as pft
-from restify_mining.markers.skills_markers import full_skill_tags, skill_tags, get_formated_skill_tag
+from restify_mining.markers.skills_markers import full_skill_tags, skill_tags, \
+    get_formated_skill_tag
 from csv_tools import file_load_utils
 
 # Print disclaimer

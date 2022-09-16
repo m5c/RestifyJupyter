@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
+from restify_mining.markers import skills_markers
+
 
 def plot_gaussian(mean, stddev, colour):
     """Plots the gaussian curves, based on provided skill mena and standard-deviation values for a
@@ -44,7 +46,7 @@ def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],
     plt.rcParams["figure.figsize"] = (14, 4)
 
     # plot the boxes
-    for index in range(len(all_skill_values_by_skill_by_group)):
+    for index in enumerate(all_skill_values_by_skill_by_group):
         plotter_colour = palette[int(index / amount_partitions)]
         plt.boxplot(all_skill_values_by_skill_by_group[index], positions=[index + 1], notch=False,
                     patch_artist=True,
@@ -60,5 +62,5 @@ def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],
         [1 * amount_partitions, 2 * amount_partitions, 3 * amount_partitions, 4 * amount_partitions,
          5 * amount_partitions,
          6 * amount_partitions, 7 * amount_partitions, 8 * amount_partitions],
-        skills.skill_tags)
+        skills_markers.skill_tags)
     plt.savefig(filename)

@@ -1,4 +1,9 @@
+"""
+Utils module to merge several csv files with common key column.
+"""
+
 import pandas as pd
+
 
 def build_merged_csv():
     """

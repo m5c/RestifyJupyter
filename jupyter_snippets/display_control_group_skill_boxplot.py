@@ -5,11 +5,11 @@ file. The output file is stored in:
 "generated-plots/boxplot.png"
 """
 
-from restify_mining.participant import Participant
 from restify_mining import participant_filter_tools
-from csv_tools import file_load_utils
+from restify_mining.participant import Participant
 from restify_mining.markers.skills_markers import skill_tags, palette
 from restify_mining.plotters.skill_plotter import plot_box
+from csv_tools import file_load_utils
 
 # Load all participant objects (specifies skills, codename, control-group) from csv file
 population: list[Participant] = file_load_utils.load_all_participants()

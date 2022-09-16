@@ -8,5 +8,5 @@ from csv_tools import csv_merger
 csv_merger.build_merged_csv()
 
 # Print the result
-restify_csv = open("generated-csv-files/restify.csv", "r").read()
-print(restify_csv)
+with open('source-csv-files/skills.csv', 'r', encoding="utf-8") as restify_csv:
+    print(restify_csv)
