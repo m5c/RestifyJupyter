@@ -22,7 +22,7 @@ def plot_all_test_results(assessed_population: list[AssessedParticipant]):
     histogram = convert_to_histogram(grid_values)
 
     # show histogram, 20 unit tests on x-axis, 28 participants on y-axis
-    plot_histogram_grid(histogram[0], histogram[0], 20, 28)
+    plot_histogram_grid(histogram[0], histogram[1], 20, 28)
 
 
 def convert_to_histogram(cellOccurrences: list[list[bool]]) -> list[list[int]]:
@@ -54,10 +54,8 @@ def plot_histogram_grid(histogram_x, histogram_y, x_range, y_range) -> None:
 
     # Define the actual values. Should be two arrays of same size. Every pair resulting form
     # values at same index positions counts for an occurrence in the final plot.
-    # x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 16, 17, 18, 19]
-    # y = [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-    x: list[int] = histogram[0]
-    y: list[int] = histogram[1]
+    x: list[int] = histogram_x
+    y: list[int] = histogram_y
 
     # Select  2D cells (grid) as plot type
     fig, ax = plt.subplots()

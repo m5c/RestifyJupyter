@@ -2,6 +2,10 @@
 
 Data and visualization of the RESTify experiment results.
 
+![pycharm](https://img.shields.io/badge/PyCharm-22.2.1-blue)
+![pylint](https://img.shields.io/badge/PyLint-2.15.2-blue)
+![jupyter](https://img.shields.io/badge/Jupyter%20Notebook-6.4.12-blue)
+
 ## About
 
 This repository hosts the sources and input data for the RESTify experiment analysis, in form of a Jupyter Notebook

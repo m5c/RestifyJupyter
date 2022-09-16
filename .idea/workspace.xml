@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/restify_mining/plotters/histogram.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_tools/csv_merger.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/csv_merger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_merged_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_merged_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_test_results_by_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_test_results_by_method.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/assessed_participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/assessed_participant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/markers/skills_markers.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/markers/skills_markers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/participant_stat_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/participant_stat_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/histogram.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +194,8 @@
       <workItem from="1663086499297" duration="7461000" />
       <workItem from="1663161328045" duration="6892000" />
       <workItem from="1663263864208" duration="372000" />
-      <workItem from="1663333825248" duration="5080000" />
+      <workItem from="1663333825248" duration="5135000" />
+      <workItem from="1663345297080" duration="366000" />
     </task>
     <servers />
   </component>
@@ -231,7 +223,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>68</line>
+          <line>66</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
