@@ -3,6 +3,7 @@
 import numpy as np
 
 from restify_mining.participant import Participant
+from restify_mining.participant_filter_tools import extract_group_names, filter_population_by_group
 
 
 def build_mean_skills(participants: list[Participant]):
@@ -48,3 +49,25 @@ def build_summed_skills(participants):
     for participant in participants:
         summed_skills = np.add(summed_skills, participant.skills)
     return summed_skills
+
+
+def extract_control_group_size(population: list[Participant]) -> int:
+    """
+    Analyzes a provided population and returns the amount of participants of the first control
+    group found. Throws an error if not all detected control groups make up the same amount of
+    participants.
+    :param population: as the list of participants (all control groups) to analyze
+    :return: amount of participants per control group
+    """
+    # compute amount of participants by control group
+    control_group_names: list[str] = extract_group_names(population)
+    control_group_sizes: list[int] = []
+    for group_name in control_group_names:
+        control_group_sizes.append(len(filter_population_by_group(population, group_name)))
+    # Verify only a single value is contained, by converting to dictionary and back
+    unique_group_sizes = list(dict.fromkeys(control_group_sizes))
+    if len(unique_group_sizes) != 1:
+        raise Exception(
+            "Cannot determine unique control group size. There are multiple groups with different "
+            "amount of participants.")
+    return unique_group_sizes[0]

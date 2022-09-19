@@ -7,7 +7,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
-from restify_mining import participant_filter_tools
+from restify_mining import participant_filter_tools, participant_stat_tools
 from restify_mining.assessed_participant import AssessedParticipant
 
 
@@ -22,18 +22,13 @@ def plot_all_test_results(assessed_population: list[AssessedParticipant]):
     for assessed_participant in assessed_population:
         grid_values.append(assessed_participant.all_test_results())
 
-    # compute amount of participants by control group
-    control_group_names: list[str] = participant_filter_tools.extract_group_names(
-        assessed_population)
-    control_group_size: int = len(
-        participant_filter_tools.filter_population_by_group(assessed_population,
-                                                            control_group_names[0]))
+    group_size: int = participant_stat_tools.extract_control_group_size(assessed_population)
 
     # use amount per control group to create a "colorized" value grid
     # (colour map has zones, we add an offset to every participant, depending on their control
     # group, so they end up in the right colour map zone).r
     colorized_grid_values: list[list[int]] = patch_colours_for_control_groups(grid_values,
-                                                                              control_group_size)
+                                                                              group_size)
 
     # We use  acustom heatmap that indicates group colours:
     # make a color map of fixed colors
