@@ -32,13 +32,13 @@ def plot_all_test_results(assessed_population: list[AssessedParticipant]):
     # use amount per control group to create a "colorized" value grid
     # (colour map has zones, we add an offset to every participant, depending on their control
     # group, so they end up in the right colour map zone).r
-    colorized_grid_values: list[list[float]] = patch_colours_for_control_groups(grid_values,
-                                                                                control_group_size)
+    colorized_grid_values: list[list[int]] = patch_colours_for_control_groups(grid_values,
+                                                                              control_group_size)
 
     # We use  acustom heatmap that indicates group colours:
     # make a color map of fixed colors
     colour_map: ListedColormap = matplotlib.colors.ListedColormap(
-        ['black', 'blue', 'green', 'red', 'yellow'])
+        ['black', 'blue', 'black', 'green', 'black', 'red', 'black', 'yellow'])
     plot_unit_test_heatmap(colorized_grid_values, colour_map)
 
 
@@ -69,15 +69,20 @@ def patch_colours_for_control_groups(grid_values: list[list[bool]], control_grou
     """
     Adds an integer multiplication (*1, *2, *3, ...) to every value in received grid, to colorize
     values based on control group.
-    :param grid_values:
-    :return:
+    :param grid_values: 2D bool array. Tells for every participant which tests passed / failed.
+    :param control_group_size: tells how many participants exist per control group (needed so
+    this method knows the size of each colour zone).
+    :return: 2D int array, indicating for every participant if failed (color zone offset+0) or
+    passed (colour zone offset +1)
     """
     colourized_grid_values: list[list[int]] = []
     for participant_index, participant_results in enumerate(grid_values):
         colourized_participant_results: list[int] = []
-        colour_boost: int = participant_index / control_group_size + 1
+        colour_zone_offset: int = (participant_index // control_group_size) * 2
         for test_index, test_result in enumerate(participant_results):
+
+            # Parse bool test result to 0 (failed) or 1 (passed)
             integer_result = bool_to_int(test_result)
-            colourized_participant_results.append(integer_result * colour_boost)
+            colourized_participant_results.append(integer_result + colour_zone_offset)
         colourized_grid_values.append(colourized_participant_results)
     return colourized_grid_values
