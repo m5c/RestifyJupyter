@@ -11,9 +11,13 @@ from restify_mining import participant_filter_tools, participant_stat_tools
 from restify_mining.assessed_participant import AssessedParticipant
 
 
-def plot_all_test_results(assessed_population: list[AssessedParticipant]):
-    # Extract covered control groups
-    # control_groups: list[str] = participant_filter_tools.extract_group_names(assessed_population)
+def plot_all_test_results(assessed_population: list[AssessedParticipant]) -> None:
+    """
+    Creates a 2D plot of all individual participant test results. On Y axis (vertical) all
+    participants, on X axis (horizontal) all unit tests. Created image shows a black square for
+    failed tests, coloured square (matching control group colour) for passed tests.
+    :param assessed_population: as the lsit of testes participants.
+    """
 
     # Create 2D array, consisting of all participants (already ordered by control group) and test
     # results for all individual unit tests (both apps, sequential. First all BookStore unit
@@ -22,13 +26,13 @@ def plot_all_test_results(assessed_population: list[AssessedParticipant]):
     for assessed_participant in assessed_population:
         grid_values.append(assessed_participant.all_test_results())
 
+    # Look up amount of participants per control group, so we can tint the map.
     group_size: int = participant_stat_tools.extract_control_group_size(assessed_population)
 
     # use amount per control group to create a "colorized" value grid
     # (colour map has zones, we add an offset to every participant, depending on their control
     # group, so they end up in the right colour map zone).r
-    colorized_grid_values: list[list[int]] = patch_colours_for_control_groups(grid_values,
-                                                                              group_size)
+    colorized_grid_values: list[list[int]] = patch_control_group_colours(grid_values, group_size)
 
     # We use  acustom heatmap that indicates group colours:
     # make a color map of fixed colors
@@ -59,7 +63,7 @@ def bool_to_int(test_result):
     return 0
 
 
-def patch_colours_for_control_groups(grid_values: list[list[bool]], control_group_size: int) -> \
+def patch_control_group_colours(grid_values: list[list[bool]], control_group_size: int) -> \
         list[list[int]]:
     """
     Adds an integer multiplication (*1, *2, *3, ...) to every value in received grid, to colorize
@@ -75,7 +79,6 @@ def patch_colours_for_control_groups(grid_values: list[list[bool]], control_grou
         colourized_participant_results: list[int] = []
         colour_zone_offset: int = (participant_index // control_group_size) * 2
         for test_index, test_result in enumerate(participant_results):
-
             # Parse bool test result to 0 (failed) or 1 (passed)
             integer_result = bool_to_int(test_result)
             colourized_participant_results.append(integer_result + colour_zone_offset)
