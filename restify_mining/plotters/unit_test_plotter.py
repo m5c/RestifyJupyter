@@ -10,39 +10,60 @@ from matplotlib.colors import ListedColormap
 from restify_mining import participant_stat_tools
 from restify_mining.assessed_participant import AssessedParticipant
 from restify_mining.miners.all_participants_all_tests_miner \
-    import AllParticipantsAllTestsAbstractMiner
+    import AllParticipantsAllTestsMiner
 from restify_mining.miners.abstract_miner import AbstractMiner
 
 
-def plot_all_test_results(assessed_population: list[AssessedParticipant]) -> None:
+def plot_all_test_results(population: list[AssessedParticipant]) -> None:
     """
     Creates a 2D plot of all individual participant test results. On Y axis (vertical) all
     participants, on X axis (horizontal) all unit tests. Created image shows a black square for
     failed tests, coloured square (matching control group colour) for passed tests.
-    :param assessed_population: as the lsit of testes participants.
+    :param population: as the list of assessed participants.
     """
+    mine_and_plot(AllParticipantsAllTestsMiner(), True, population)
 
+
+def plot_all_test_results_greyscale(population: list[AssessedParticipant]) -> None:
+    """
+    Same as previous method, but without control group specific colour zones.
+    :param population: as the list of assessed participants.
+    """
+    mine_and_plot(AllParticipantsAllTestsMiner(), False, population)
+
+
+def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[AssessedParticipant]):
     # Create 2D array, consisting of all participants (already ordered by control group) and test
     # results for all individual unit tests (both apps, sequential. First all BookStore unit
     # tests, then all Xox unit tests.
-    miner: AbstractMiner = AllParticipantsAllTestsAbstractMiner()
-    grid_values: list[list[float]] = miner.mine(assessed_population)
+    grid_values: list[list[float]] = miner.mine(population)
 
-    # TODO: miner should tell associated size of colour groups. Add an abstract method!
-    # Look up amount of participants per control group, so we can tint the map by zones.
-    group_zone_size: int = participant_stat_tools.extract_control_group_size(assessed_population)
+    # Enable group colour space if requested
+    group_zone_size: int = 0
+    colour_map: ListedColormap
+    if with_colours:
+        # Look up amount of participants per control group, so we can tint the map by zones.
+        group_zone_size: int = miner.colour_zone_size(population)
 
-    # use amount per control group to create a "colorized" value grid
-    # (colour map has zones, we add an offset to every participant, depending on their control
-    # group, so they end up in the right colour map zone).
-    colorized_grid_values: list[list[int]] = patch_control_group_colours(grid_values,
-                                                                         group_zone_size)
+        # We use  acustom heatmap that indicates group colours:
+        # make a color map of fixed colors
+        colour_map: ListedColormap = matplotlib.colors.ListedColormap(
+            ['black', 'blue', 'black', 'green', 'black', 'red', 'black', 'yellow'])
 
-    # We use  acustom heatmap that indicates group colours:
-    # make a color map of fixed colors
-    colour_map: ListedColormap = matplotlib.colors.ListedColormap(
-        ['black', 'blue', 'black', 'green', 'black', 'red', 'black', 'yellow'])
-    plot_unit_test_heatmap(colorized_grid_values, colour_map)
+        # use amount per control group to create a "colorized" value grid
+        # (colour map has zones, we add an offset to every participant, depending on their control
+        # group, so they end up in the right colour map zone).
+        grid_values: list[list[int]] = patch_control_group_colours(grid_values, group_zone_size)
+    else:
+        # If no colours are required, there is only one colour zone that is applied on all
+        # participants
+        group_zone_size = len(population)
+
+        # Also if groups need not be indicates, the heatmap is greyscale only
+        colour_map: ListedColormap = matplotlib.colors.ListedColormap(['black', 'white'])
+
+    # Actually plot the values
+    plot_unit_test_heatmap(grid_values, colour_map)
 
 
 def plot_unit_test_heatmap(grid_values: list[list[int]], colour_map: ListedColormap) -> None:
@@ -87,7 +108,7 @@ def patch_control_group_colours(grid_values: list[list[bool]], group_zone_size: 
     for participant_index, participant_results in enumerate(grid_values):
         colourized_participant_results: list[int] = []
         colour_zone_offset: int = (participant_index // group_zone_size) * 2
-        for test_index, test_result in enumerate(participant_results):
+        for test_result in participant_results:
             # Parse bool test result to 0 (failed) or 1 (passed)
             integer_result = bool_to_int(test_result)
             colourized_participant_results.append(integer_result + colour_zone_offset)

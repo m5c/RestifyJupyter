@@ -23,3 +23,13 @@ class AbstractMiner(ABC):
         :param participants: as the list of participants to analyze
         :return: 2D array of float values, representing the data to be plotted.
         """
+
+    @abstractmethod
+    def colour_zone_size(self, participants: list[AssessedParticipant]) -> int:
+        """
+        Abstract method that every implementing class has to override. Returns the size of each
+        colour zone grids produced by this miner.
+        :param:
+        :return: amount of rows designated to one colour zone (control group) for girds produced
+        by this plotter.
+        """
