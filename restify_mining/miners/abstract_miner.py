@@ -10,14 +10,16 @@ from abc import ABC, abstractmethod
 from restify_mining.assessed_participant import AssessedParticipant
 
 
-class Miner(ABC):
+class AbstractMiner(ABC):
+    """
+    Abstract miner class serves as interface for all miner implementations.
+    """
+
     @abstractmethod
-    def mine(self, assessed_participants: list[AssessedParticipant]) -> list[
-        list[float]]:
+    def mine(self, participants: list[AssessedParticipant]) -> list[list[float]]:
         """
-        Abstract method for data analysis of provided participants. Behaviour depends on 
+        Abstract method for data analysis of provided participants. Behaviour depends on
         implementation class.
-        :param assessed_participants: as the list of participants to analyze
+        :param participants: as the list of participants to analyze
         :return: 2D array of float values, representing the data to be plotted.
         """
-        pass

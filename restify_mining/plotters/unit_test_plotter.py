@@ -9,8 +9,9 @@ from matplotlib.colors import ListedColormap
 
 from restify_mining import participant_stat_tools
 from restify_mining.assessed_participant import AssessedParticipant
-from restify_mining.miners.AllParticipantsAllTestsMiner import AllParticipantsAllTestsMiner
-from restify_mining.miners.Miner import Miner
+from restify_mining.miners.all_participants_all_tests_miner \
+    import AllParticipantsAllTestsAbstractMiner
+from restify_mining.miners.abstract_miner import AbstractMiner
 
 
 def plot_all_test_results(assessed_population: list[AssessedParticipant]) -> None:
@@ -24,9 +25,10 @@ def plot_all_test_results(assessed_population: list[AssessedParticipant]) -> Non
     # Create 2D array, consisting of all participants (already ordered by control group) and test
     # results for all individual unit tests (both apps, sequential. First all BookStore unit
     # tests, then all Xox unit tests.
-    miner: Miner = AllParticipantsAllTestsMiner()
+    miner: AbstractMiner = AllParticipantsAllTestsAbstractMiner()
     grid_values: list[list[float]] = miner.mine(assessed_population)
 
+    # TODO: miner should tell associated size of colour groups. Add an abstract method!
     # Look up amount of participants per control group, so we can tint the map by zones.
     group_zone_size: int = participant_stat_tools.extract_control_group_size(assessed_population)
 
@@ -60,6 +62,11 @@ def plot_unit_test_heatmap(grid_values: list[list[int]], colour_map: ListedColor
 
 
 def bool_to_int(test_result):
+    """
+    Primitive bool-to-int converter. Converts true to 1 and false to 0.
+    :param test_result as a boolean test result
+    :return: a corresponding int value, either 0 or 1.
+    """
     if test_result:
         return 1
     return 0

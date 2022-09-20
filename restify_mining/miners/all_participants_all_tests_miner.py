@@ -3,13 +3,16 @@ Most simple miner implementation. Analyzes all provided participants and mines t
 restuls. Stores outcome in 2D array where passed tests are represented by1, failed tests by 0.
 """
 from restify_mining.assessed_participant import AssessedParticipant
-from restify_mining.miners.Miner import Miner
+from restify_mining.miners.abstract_miner import AbstractMiner
 
 
-class AllParticipantsAllTestsMiner(Miner):
+class AllParticipantsAllTestsAbstractMiner(AbstractMiner):
+    """
+    Extension of abstract miner, produces result values for all participants and all tests.
+    """
 
-    def mine(self, assessed_population: list[AssessedParticipant]) -> list[list[float]]:
+    def mine(self, participants: list[AssessedParticipant]) -> list[list[float]]:
         grid_values: list[list[float]] = []
-        for assessed_participant in assessed_population:
+        for assessed_participant in participants:
             grid_values.append(assessed_participant.all_test_results())
         return grid_values
