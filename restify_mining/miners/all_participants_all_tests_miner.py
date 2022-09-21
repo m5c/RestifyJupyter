@@ -7,6 +7,23 @@ from restify_mining.assessed_participant import AssessedParticipant
 from restify_mining.miners.abstract_miner import AbstractMiner
 
 
+def all_bool_to_float(bool_test_results: list[bool]) -> list[float]:
+    """
+    Helper function to convert all test results, stored as boolean list to float list. Although
+    python seems not to have whatsoever type safety and just converts back and forth between
+    anything with unpredictable outcome.
+    :param
+    :return:
+    """
+    float_test_results: list[float] = []
+    for test_result in bool_test_results:
+        if test_result:
+            float_test_results.append(1.0)
+        else:
+            float_test_results.append(0.0)
+    return float_test_results
+
+
 class AllParticipantsAllTestsMiner(AbstractMiner):
     """
     Extension of abstract miner, produces result values for all participants and all tests.
@@ -15,8 +32,16 @@ class AllParticipantsAllTestsMiner(AbstractMiner):
     def mine(self, participants: list[AssessedParticipant]) -> list[list[float]]:
         grid_values: list[list[float]] = []
         for assessed_participant in participants:
-            grid_values.append(assessed_participant.all_test_results())
+            numeric_test_results: list[float] = all_bool_to_float(
+                assessed_participant.all_test_results())
+            grid_values.append(numeric_test_results)
         return grid_values
 
     def colour_zone_size(self, participants: list[AssessedParticipant]) -> int:
         return participant_stat_tools.extract_control_group_size(participants)
+
+    def y_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
+        pass
+
+    def x_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
+        pass

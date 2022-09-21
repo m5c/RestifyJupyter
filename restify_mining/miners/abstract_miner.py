@@ -29,7 +29,25 @@ class AbstractMiner(ABC):
         """
         Abstract method that every implementing class has to override. Returns the size of each
         colour zone grids produced by this miner.
-        :param:
+        :param: the population for which colour zones must be extracted
         :return: amount of rows designated to one colour zone (control group) for girds produced
         by this plotter.
+        """
+
+    @abstractmethod
+    def y_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
+        """
+        Abstract method that every implementing class has to override. Returns the labels for
+        every entry on y-axis.
+        :param: the population for which labels must be extracted.
+        :return: label for every row in miner output grid.
+        """
+
+    @abstractmethod
+    def x_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
+        """
+        Abstract method that every implementing class has to override. Returns the labels for
+        every entry on x-axis.
+        :param: the population for which labels must be extracted.
+        :return: label for every column in miner output grid.
         """

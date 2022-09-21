@@ -11,4 +11,3 @@ assessed_population: list[AssessedParticipant] = file_load_utils.load_all_assess
 
 # Visualize test results in 2D plot
 unit_test_plotter.plot_all_test_results(assessed_population)
-# unit_test_plotter.plot_grid()
