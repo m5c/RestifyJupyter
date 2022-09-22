@@ -43,25 +43,22 @@ def plot_all_average_group_results(population: list[AssessedParticipant]) -> Non
     failed tests, coloured square (matching control group colour) for passed tests.
     :param population: as the list of assessed participants.
     """
-    mine_and_plot(AllGroupsAllTestsMiner(), False, population)
+    mine_and_plot(AllGroupsAllTestsMiner(), True, population)
 
 
-
-def buildLinearColourMap() -> LinearSegmentedColormap:
+def buildLinearColourMap(with_control_groups: bool) -> LinearSegmentedColormap:
     """
-    https://stackoverflow.com/a/53754137
-    :return:
+    https://matplotlib.org/stable/tutorials/colors/colormap-manipulation.html
+    Search for: "Directly creating a segmented colormap from a list"
+    :return: The only kind of colormap that is actually useful. Produces gradients based on
+    sample points.
     """
-
-    # TODO: figure out what this does and how to create a "normal" black to white gradient.
-    cmap = plt.get_cmap('jet')
-    minval = 0.0
-    maxval = 1.0
-    n=100
-    new_cmap = colors.LinearSegmentedColormap.from_list(
-        'trunc({n},{a:.2f},{b:.2f})'.format(n=cmap.name, a=minval, b=maxval),
-        cmap(np.linspace(minval, maxval, n)))
-    return new_cmap
+    if with_control_groups:
+        list_colours: list[str] = ["black", "blue", "black", "green", "black", "red", "black",
+                                   "yellow"]
+    else:
+        list_colours: list[str] = ["black", "white"]
+    return LinearSegmentedColormap.from_list("mycmap", list_colours)
 
 
 def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[AssessedParticipant]):
@@ -87,7 +84,7 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
         # make a color map of fixed colors
         # colour_map: ListedColormap = matplotlib.colors.ListedColormap(
         #     ['black', 'blue', 'black', 'green', 'black', 'red', 'black', 'yellow'])
-        colour_map : LinearSegmentedColormap = buildLinearColourMap()
+        colour_map: LinearSegmentedColormap = buildLinearColourMap(with_colours)
 
         # use amount per control group to create a "colorized" value grid
         # (colour map has zones, we add an offset to every participant, depending on their control
@@ -100,7 +97,7 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
 
         # Also if groups need not be indicates, the heatmap is greyscale only
         # colour_map: ListedColormap = matplotlib.colors.ListedColormap(['black', 'white'])
-        colour_map: LinearSegmentedColormap = buildLinearColourMap()
+        colour_map: LinearSegmentedColormap = buildLinearColourMap(with_colours)
 
     # Actually plot the values
     plot_unit_test_heatmap(grid_values, colour_map)
@@ -115,9 +112,9 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     array should only contain the values 0 and 1.
     See: https://stackoverflow.com/a/33282548
     """
-    # TODO: figure out why this does not correclty interpolate float values.
+    # TODO: figure out why this does not correctly interpolate float values.
     # Add the 2D heatmap
-    plt.imshow(grid_values, cmap=colour_map, interpolation='none')
+    plt.imshow(grid_values, cmap=colour_map, interpolation='nearest')
 
     # Actually show the figure
     plt.show()
