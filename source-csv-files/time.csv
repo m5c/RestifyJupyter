@@ -1,0 +1,29 @@
+codename, tcinstructions, ideinstructions, xoxtime, bookstoretime, xoxverified, bsverified, xoxcomments, bsxomments
+Blue-Fox, 931, 2167, 3602, 5835, True, True, Frogets to refresh pom.xml. Copies any snippets of code of instructions anywhere trial and error. Ignores zoo restlauncher in pom xml for a long time. Does not remove tests for long time. Did not ever refresh pom xml in IDE, watches excerpts of screencast again rather than following textual instructions.
+Blue-Koala, 992, 1925, 3043, 5445, True, True, TC crash. watched parts of screencast again during task, forgot pom launcher config until almost end
+Blue-Raccoon, 924, 1698, 2757, 5227, True, True, none, watched parts of video instructions again durig task solving. Stopped with autowire exception and noted: no time to figure it out on screen. Recommenced task later, actually figured it out. Had issue with running app twice and port being blocked, figured it out with netstat.
+Blue-Squid, 1002, 2980, 1810, ?, True, ?, TC crash. watched parts of intruction video again. Read xox javadoc to figure out ambigous mapping instructions later described as ambiguous, ?
+Blue-Turtle,
+Blue-Unicorn,
+Blue-Zebra,
+Green-Fox,
+Green-Koala,
+Green-Raccoon,
+Green-Squid,
+Green-Turtle,
+Green-Unicorn,
+Green-Zebra,
+Red-Fox,
+Red-Koala,
+Red-Raccoon,
+Red-Squid,
+Red-Turtle,
+Red-Unicorn,
+Red-Zebra,
+Yellow-Fox,
+Yellow-Koala,
+Yellow-Raccoon,
+Yellow-Squid,
+Yellow-Turtle,
+Yellow-Unicore,
+Yellow-Zebra,
