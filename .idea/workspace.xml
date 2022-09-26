@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/restify_mining/plotters/correlation_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_participants_by_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_participants_by_method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/abstract_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/miners/abstract_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/all_groups_all_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/miners/all_groups_all_tests_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/all_participants_all_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/miners/all_participants_all_tests_miner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source-csv-files/time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/source-csv-files/time.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +195,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="correlation_plotter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/restify_mining/plotters" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/restify_mining/plotters/correlation_plotter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.DisplayPopulationGaussian" />
       <item itemvalue="Python.DisplayControlGroupSkillBoxPlot" />
@@ -198,7 +224,13 @@
       <item itemvalue="Python.DisplayFusedData" />
       <item itemvalue="Python.DisplayParticipantTestResultsByMethod" />
       <item itemvalue="Python.DisplayGroupTestResultsByMethod" />
+      <item itemvalue="Python.correlation_plotter" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.correlation_plotter" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -223,7 +255,8 @@
       <workItem from="1663696567064" duration="3508000" />
       <workItem from="1663768292281" duration="3211000" />
       <workItem from="1663786591937" duration="62000" />
-      <workItem from="1663803884438" duration="972000" />
+      <workItem from="1663803884438" duration="1131000" />
+      <workItem from="1664203266395" duration="2288000" />
     </task>
     <servers />
   </component>
@@ -251,17 +284,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>144</line>
+          <line>146</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>116</line>
+          <line>118</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>151</line>
+          <line>153</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -286,7 +319,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>119</line>
+          <line>121</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
@@ -294,7 +327,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayTestResultsByMethod.coverage" NAME="DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1663770332715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayParticipantTestResultsByMethod.coverage" NAME="DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1663804948007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayGroupTestResultsByMethod.coverage" NAME="DisplayGroupTestResultsByMethod Coverage Results" MODIFIED="1663804828120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$correlation_plotter.coverage" NAME="correlation_plotter Coverage Results" MODIFIED="1664205212316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/restify_mining/plotters" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayParticipantTestResultsByMethod.coverage" NAME="DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1664205645110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayGroupTestResultsByMethod.coverage" NAME="DisplayGroupTestResultsByMethod Coverage Results" MODIFIED="1664205628625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>

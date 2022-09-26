@@ -1,0 +1,23 @@
+"""
+Correlation plotter prints sample points in a 2D plane, to allow a visual detection of
+concentrated clusters. Internally uses the pyplot scatter module. Useful e.g. for time to
+error-rate ratio. Skill to error rate ratio, etc.
+"""
+import matplotlib.pyplot as plt
+
+
+def plot_correlation(x_values: list[int], y_values: list[int], x_label: str, y_label: str) -> None:
+    x_max = max(x_values) * 1.05
+    y_max = max(y_values) * 1.05
+
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.axis([0, x_max, 0, y_max])
+    plt.scatter(x_values, y_values)
+    plt.show()
+
+
+# Sample, call like this:
+x = [931, 992, 924, 1002]
+y = [3602, 3043, 2757, 2892]
+plot_correlation(x, y, "Time prep (s)", "Time task (s)")

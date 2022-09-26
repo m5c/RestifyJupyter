@@ -100,10 +100,11 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
         colour_map: LinearSegmentedColormap = buildLinearColourMap(with_colours)
 
     # Actually plot the values
-    plot_unit_test_heatmap(grid_values, colour_map)
+    plot_unit_test_heatmap(grid_values, colour_map, miner.x_axis_label(), miner.y_axis_label())
 
 
-def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedColormap) -> None:
+def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedColormap, x_label: str,
+                           y_label: str) -> None:
     """
     Plots a heatmap representation of the unit test success results. Can be used either for
     control groups (average test result) or for individual participants. :param grid_values: 2D
@@ -112,8 +113,9 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     array should only contain the values 0 and 1.
     See: https://stackoverflow.com/a/33282548
     """
-    # TODO: figure out why this does not correctly interpolate float values.
     # Add the 2D heatmap
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
     plt.imshow(grid_values, cmap=colour_map, interpolation='nearest')
 
     # Actually show the figure

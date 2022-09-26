@@ -40,8 +40,8 @@ class AllParticipantsAllTestsMiner(AbstractMiner):
     def colour_zone_size(self, participants: list[AssessedParticipant]) -> int:
         return participant_stat_tools.extract_control_group_size(participants)
 
-    def y_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
-        pass
+    def y_axis_label(self) -> list[str]:
+        return "Participants"
 
-    def x_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
-        pass
+    def x_axis_label(self) -> list[str]:
+        return "Unit Tests"

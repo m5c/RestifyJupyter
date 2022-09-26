@@ -50,8 +50,8 @@ class AllGroupsAllTestsMiner(AbstractMiner):
         """
         return 1
 
-    def y_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
-        pass
+    def y_axis_label(self) -> list[str]:
+        return "Control Groups"
 
-    def x_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
-        pass
+    def x_axis_label(self) -> list[str]:
+        return "Unit Tests"

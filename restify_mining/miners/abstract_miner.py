@@ -35,19 +35,17 @@ class AbstractMiner(ABC):
         """
 
     @abstractmethod
-    def y_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
+    def y_axis_label(self) -> list[str]:
         """
-        Abstract method that every implementing class has to override. Returns the labels for
-        every entry on y-axis.
-        :param: the population for which labels must be extracted.
-        :return: label for every row in miner output grid.
+        Abstract method that every implementing class has to override. Returns the label that
+        describes entries on y axes.
+        :return: label for rows in miner output grid.
         """
 
     @abstractmethod
-    def x_axis_labels(self, participants: list[AssessedParticipant]) -> list[str]:
+    def x_axis_label(self) -> list[str]:
         """
-        Abstract method that every implementing class has to override. Returns the labels for
-        every entry on x-axis.
-        :param: the population for which labels must be extracted.
-        :return: label for every column in miner output grid.
+        Abstract method that every implementing class has to override. Returns the label that
+        describes entries on x axes.
+        :return: label for columns in miner output grid.
         """
