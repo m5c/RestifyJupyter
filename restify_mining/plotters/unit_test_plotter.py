@@ -11,29 +11,7 @@ from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 from restify_mining.assessed_participant import AssessedParticipant
 from restify_mining.miners.all_groups_all_tests_miner import AllGroupsAllTestsMiner
-from restify_mining.miners.all_participants_all_tests_miner import AllParticipantsAllTestsMiner
 from restify_mining.miners.abstract_miner import AbstractMiner
-
-
-# TODO: remove obsolete proxy methods, invoke methods directly. Refactor generic parts to extra
-#  module, if not only generic parts remain. If only generic parts remain, rename this module.
-
-def plot_all_test_results(population: list[AssessedParticipant]) -> None:
-    """
-    Creates a 2D plot of all individual participant test results. On Y axis (vertical) all
-    participants, on X axis (horizontal) all unit tests. Created image shows a black square for
-    failed tests, coloured square (matching control group colour) for passed tests.
-    :param population: as the list of assessed participants.
-    """
-    mine_and_plot(AllParticipantsAllTestsMiner(), True, population)
-
-
-def plot_all_test_results_greyscale(population: list[AssessedParticipant]) -> None:
-    """
-    Same as previous method, but without control group specific colour zones.
-    :param population: as the list of assessed participants.
-    """
-    mine_and_plot(AllParticipantsAllTestsMiner(), False, population)
 
 
 def plot_all_average_group_results(population: list[AssessedParticipant]) -> None:
@@ -46,7 +24,7 @@ def plot_all_average_group_results(population: list[AssessedParticipant]) -> Non
     mine_and_plot(AllGroupsAllTestsMiner(), True, population)
 
 
-def buildLinearColourMap(with_control_groups: bool) -> LinearSegmentedColormap:
+def build_linear_colour_map(with_control_groups: bool) -> LinearSegmentedColormap:
     """
     https://matplotlib.org/stable/tutorials/colors/colormap-manipulation.html
     Search for: "Directly creating a segmented colormap from a list"
@@ -84,7 +62,7 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
         # make a color map of fixed colors
         # colour_map: ListedColormap = matplotlib.colors.ListedColormap(
         #     ['black', 'blue', 'black', 'green', 'black', 'red', 'black', 'yellow'])
-        colour_map: LinearSegmentedColormap = buildLinearColourMap(with_colours)
+        colour_map: LinearSegmentedColormap = build_linear_colour_map(with_colours)
 
         # use amount per control group to create a "colorized" value grid
         # (colour map has zones, we add an offset to every participant, depending on their control
@@ -97,7 +75,7 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
 
         # Also if groups need not be indicates, the heatmap is greyscale only
         # colour_map: ListedColormap = matplotlib.colors.ListedColormap(['black', 'white'])
-        colour_map: LinearSegmentedColormap = buildLinearColourMap(with_colours)
+        colour_map: LinearSegmentedColormap = build_linear_colour_map(with_colours)
 
     # Actually plot the values
     plot_unit_test_heatmap(grid_values, colour_map, miner.x_axis_label(), miner.y_axis_label())
