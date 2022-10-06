@@ -13,17 +13,17 @@ Green-Squid,462,3101,3260,7397,True,False,"Starts TouchCORE before reading any i
 Green-Turtle,892,2282,2332,4010,True,True,All good.,Opens all three code directories as bundles projects in intellij before having finished video instructions. Changes IDE settings that were meant for troubleshoot although no need.
 Green-Unicorn,1145,1966,1955,7931,False,False,Opens TouchCORE only seconds after start of screencast and tries to imitate steps while watching video. Then gives up and jumps back and forth between imitation of zoo restification - which was not the task - and video instructions. Generates code but it is not runnablke because manual restified app is still running on same port.,"Works on Zoo while watching video, then jumps to Bookstore and refactores is parallel to watching video. Hectic jumpick back and fiirth between task and instructions. Struggles with autowiring, never finishes video instructions and instead adds generic catch blocks to suppress in attempt to suppress spring bean creation exception."
 Green-Zebra,1384,2924,2357,8615,True,True,Tries parts of screencast while watching on zoo models. inspects Xox source code while mapping on parameters. Possibly because parameter names are not displayed in splitview.,Tries some maven for zoo while watching screencast. Opens Zoo in intelliJ while watching screencast but does not actually refactor it yet. Follows screencast to end until starting manual refactoring of bookstore.
-Red-Fox,2615,2745,,2488,True,False,Struggles with setting of JVM version for touchcore before starting task. Should have been checked in preliminaries. Replicates full zoo example with touchcore before starting own task. Video stops before any resource verified. Types wrong root url and then gives up.,Does not finish screencast or zoo replications before starting to work on xox task. Interleaved. Aggressively jumps back and forth for mini parts of task. Watches only some seconds then replicates them. Forgets plugins tag for a long time and ignores IDE warnings. Creates a textual version of ResTL in text editor before translating it to annotations for methods. Uses camel case notation for resources and needs several tries to test them.
-Red-Koala,
-Red-Raccoon,
-Red-Squid,
-Red-Turtle,
-Red-Unicorn,
-Red-Zebra,
-Yellow-Fox,
-Yellow-Koala,
-Yellow-Raccoon,
-Yellow-Squid,
-Yellow-Turtle,
-Yellow-Unicore,
-Yellow-Zebra,
+Red-Fox,2615,2745,3682,2488,True,False,Struggles with setting of JVM version for touchcore before starting task. Should have been checked in preliminaries. Replicates full zoo example with touchcore before starting own task. Video stops before any resource verified. Types wrong root url and then gives up.,Does not finish screencast or zoo replications before starting to work on xox task. Interleaved. Aggressively jumps back and forth for mini parts of task. Watches only some seconds then replicates them. Forgets plugins tag for a long time and ignores IDE warnings. Creates a textual version of ResTL in text editor before translating it to annotations for methods. Uses camel case notation for resources and needs several tries to test them.
+Red-Koala,0,0,0,0,False,False,N/A,N/A
+Red-Raccoon,0,0,0,0,False,False,N/A,N/A
+Red-Squid,0,0,0,0,False,False,N/A,N/A
+Red-Turtle,0,0,0,0,False,False,N/A,N/A
+Red-Unicorn,0,0,0,0,False,False,N/A,N/A
+Red-Zebra,0,0,0,0,False,False,N/A,N/A
+Yellow-Fox,0,0,0,0,False,False,N/A,N/A
+Yellow-Koala,0,0,0,0,False,False,N/A,N/A
+Yellow-Raccoon,0,0,0,0,False,False,N/A,N/A
+Yellow-Squid,0,0,0,0,False,False,N/A,N/A
+Yellow-Turtle,0,0,0,0,False,False,N/A,N/A
+Yellow-Unicore,0,0,0,0,False,False,N/A,N/A
+Yellow-Zebra,0,0,0,0,False,False,N/A,N/A
