@@ -1,29 +1,29 @@
-codename,controlgroup,javaskill,springskill,mavenskill,touchcoreskill,unixskill,restskill,singletonskill,reflectionskill
-Yellow-Squid,yellow,2,1,1,1,3,4,5,4
-Yellow-Raccoon,yellow, 4,1,2,3,5,3,2,3
-Yellow-Zebra,yellow, 3,1,2,4,4,4,4,1
-Yellow-Fox,yellow, 4,4,3,1,4,2,5,4
-Yellow-Unicorn,yellow, 3,3,3,4,4,4,5,3
-Yellow-Turtle,yellow, 4,2,3,5,4,4,5,3
-Yellow-Koala,yellow, 2,1,2,1,4,3,5,4
-Blue-Squid,blue, 4,2,3,1,3,3,5,2
-Blue-Raccoon,blue, 3,1,2,2,4,3,5,1
-Blue-Zebra,blue, 3,1,2,3,2,4,5,4
-Blue-Fox,blue, 2,1,2,4,5,3,5,4
-Blue-Unicorn,blue, 4,3,3,2,4,4,5,2
-Blue-Turtle,blue, 4,3,4,4,5,4,5,4
-Blue-Koala,blue, 4,1,3,1,3,2,5,3
-Red-Squid,red, 3,1,2,1,4,2,5,1
-Red-Raccoon,red, 3,3,3,1,4,4,1,1
-Red-Zebra,red, 3,1,2,1,4,2,3,3
-Red-Fox,red, 3,2,3,1,4,2,5,4
-Red-Unicorn,red, 4,4,2,3,4,5,1,3
-Red-Turtle,red, 2,4,3,4,4,5,5,2
-Red-Koala,red, 4,2,1,5,4,5,5,4
-Green-Squid,green, 3,2,2,3,3,3,2,1
-Green-Raccoon,green, 2,2,1,1,2,5,5,4
-Green-Zebra,green, 2,1,2,1,5,3,4,3
-Green-Fox,green, 3,3,2,2,4,4,3,4
-Green-Unicorn,green, 3,2,5,1,4,3,5,4
-Green-Turtle,green, 3,3,3,4,4,4,3,3
-Green-Koala,green, 4,2,3,5,5,4,5,4
+codename,controlgroup,animal,javaskill,springskill,mavenskill,touchcoreskill,unixskill,restskill,singletonskill,reflectionskill
+Yellow-Squid,yellow,squid,2,1,1,1,3,4,5,4
+Yellow-Raccoon,yellow,raccoon,4,1,2,3,5,3,2,3
+Yellow-Zebra,yellow,zebra,3,1,2,4,4,4,4,1
+Yellow-Fox,yellow,fox,4,4,3,1,4,2,5,4
+Yellow-Unicorn,yellow,unicorn,3,3,3,4,4,4,5,3
+Yellow-Turtle,yellow,turtle,4,2,3,5,4,4,5,3
+Yellow-Koala,yellow,koala,2,1,2,1,4,3,5,4
+Blue-Squid,blue,squid,4,2,3,1,3,3,5,2
+Blue-Raccoon,blue,raccoon,3,1,2,2,4,3,5,1
+Blue-Zebra,blue,zebra,3,1,2,3,2,4,5,4
+Blue-Fox,blue,fox,2,1,2,4,5,3,5,4
+Blue-Unicorn,blue,unicorn,4,3,3,2,4,4,5,2
+Blue-Turtle,blue,turtle,4,3,4,4,5,4,5,4
+Blue-Koala,blue,koala,4,1,3,1,3,2,5,3
+Red-Squid,red,squid,3,1,2,1,4,2,5,1
+Red-Raccoon,red,raccoon,3,3,3,1,4,4,1,1
+Red-Zebra,red,zebra,3,1,2,1,4,2,3,3
+Red-Fox,red,fox,3,2,3,1,4,2,5,4
+Red-Unicorn,red,unicorn,4,4,2,3,4,5,1,3
+Red-Turtle,red,turtle,2,4,3,4,4,5,5,2
+Red-Koala,red,koala,4,2,1,5,4,5,5,4
+Green-Squid,green,squid,3,2,2,3,3,3,2,1
+Green-Raccoon,green,raccoon,2,2,1,1,2,5,5,4
+Green-Zebra,green,zebra,2,1,2,1,5,3,4,3
+Green-Fox,green,fox,3,3,2,2,4,4,3,4
+Green-Unicorn,green,unicorn,3,2,5,1,4,3,5,4
+Green-Turtle,green,turtle,3,3,3,4,4,4,3,3
+Green-Koala,green,koala,4,2,3,5,5,4,5,4
