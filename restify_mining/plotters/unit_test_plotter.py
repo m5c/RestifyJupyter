@@ -3,10 +3,7 @@
 subsets and for one or two selected applications.
 Inspired by: https://stackoverflow.com/a/7230921
 """
-import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib import colors
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 from restify_mining.assessed_participant import AssessedParticipant

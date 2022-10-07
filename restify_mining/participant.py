@@ -1,6 +1,7 @@
 """Represents an individual participant. Also encodes the corresponding control group and
 codename. None of the metrics actually measured throughout the study are associated to any instance
 of this class, those values are taken care of by subclasses."""
+from restify_mining import task_methodology
 
 
 class Participant:
@@ -12,6 +13,8 @@ class Participant:
         self.__animal_name: str = codename.split('-')[1]
         self.__group_name: str = codename.split('-')[0]
         self.__skills: list[int] = skills
+        self.__methodology_order: list[task_methodology] =
+        self.__application_order: list[task_application]
 
     @property
     def skills(self) -> list[int]:
