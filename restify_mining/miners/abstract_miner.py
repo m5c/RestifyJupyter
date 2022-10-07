@@ -7,7 +7,7 @@ See: https://blog.teclado.com/python-abc-abstract-base-classes/
 
 from abc import ABC, abstractmethod
 
-from restify_mining.assessed_participant import AssessedParticipant
+from restify_mining.data_objects.assessed_participant import AssessedParticipant
 
 
 class AbstractMiner(ABC):

@@ -3,7 +3,7 @@ Extended participant class (inherits form participant.py), representing a partic
 all additional quantifiable data extracted from fused csv file.
 """
 from restify_mining.markers import unit_tests_markers
-from restify_mining.participant import Participant
+from restify_mining.data_objects.participant import Participant
 
 
 class AssessedParticipant(Participant):

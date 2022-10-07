@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source-csv-files/controlgroups.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restify_mining/data_objects/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/participant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_tools/file_load_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/file_load_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/compute_group_skill_diffs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_control_group_skill_boxplot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_groups_by_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_groups_by_method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_participants_by_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_participants_by_method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/assessed_participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/assessed_participant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/abstract_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/miners/abstract_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/all_groups_all_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/miners/all_groups_all_tests_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/all_participants_all_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/miners/all_participants_all_tests_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/participant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/participant_filter_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/participant_filter_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/participant_stat_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/participant_stat_tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/time_bundle.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/time_bundle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/task_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/task_application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/task_methodology.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/task_methodology.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/time_bundle.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/time_bundle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source-csv-files/skills.csv" beforeDir="false" afterPath="$PROJECT_DIR$/source-csv-files/skills.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +71,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/restify_mining/data_objects" />
       <recent name="$PROJECT_DIR$/restify_mining/markers" />
       <recent name="$PROJECT_DIR$/restify_mining/plotters" />
     </key>
@@ -265,7 +281,7 @@
       <workItem from="1664920824063" duration="2254000" />
       <workItem from="1664986241262" duration="1774000" />
       <workItem from="1665070053088" duration="3060000" />
-      <workItem from="1665151662143" duration="982000" />
+      <workItem from="1665151662143" duration="2927000" />
     </task>
     <servers />
   </component>
@@ -287,7 +303,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restify_mining/assessed_participant.py</url>
+          <url>file://$PROJECT_DIR$/restify_mining/data_objects/assessed_participant.py</url>
           <line>87</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>

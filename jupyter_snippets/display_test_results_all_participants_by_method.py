@@ -3,7 +3,7 @@ Jupyter pseudo module to plot a 2D grid with all unit test results of all partic
 """
 
 from csv_tools import file_load_utils
-from restify_mining.assessed_participant import AssessedParticipant
+from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.miners.all_participants_all_tests_miner import AllParticipantsAllTestsMiner
 from restify_mining.plotters.unit_test_plotter import mine_and_plot
 

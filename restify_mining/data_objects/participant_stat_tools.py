@@ -2,8 +2,8 @@
 
 import numpy as np
 
-from restify_mining.participant import Participant
-from restify_mining.participant_filter_tools import extract_group_names, filter_population_by_group
+from restify_mining.data_objects.participant import Participant
+from restify_mining.data_objects.participant_filter_tools import extract_group_names, filter_population_by_group
 
 
 def build_mean_skills(participants: list[Participant]):

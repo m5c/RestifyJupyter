@@ -2,7 +2,7 @@
 Helper module to gain convenient access on a subset of the entire population (all participants),
 notably access by control group name.
 """
-from restify_mining.participant import Participant
+from restify_mining.data_objects.participant import Participant
 
 
 def extract_group_names(population: list[Participant]) -> list[str]:

@@ -6,7 +6,7 @@ Inspired by: https://stackoverflow.com/a/7230921
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
-from restify_mining.assessed_participant import AssessedParticipant
+from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.miners.all_groups_all_tests_miner import AllGroupsAllTestsMiner
 from restify_mining.miners.abstract_miner import AbstractMiner
 

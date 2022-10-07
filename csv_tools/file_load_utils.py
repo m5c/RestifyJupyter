@@ -4,8 +4,8 @@ restify_mining package.
 """
 import csv
 
-from restify_mining.assessed_participant import AssessedParticipant
-from restify_mining.participant import Participant
+from restify_mining.data_objects.assessed_participant import AssessedParticipant
+from restify_mining.data_objects.participant import Participant
 
 
 def str2bool(textual_boolean: str):
