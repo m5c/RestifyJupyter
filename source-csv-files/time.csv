@@ -1,4 +1,4 @@
-codename, tcinstructions, ideinstructions, xoxtime, bookstoretime, xoxverified, bsverified,tccomments,idecomments
+codename,tcinstructions,ideinstructions,xoxtime,bookstoretime,xoxverified,bsverified,tccomments,idecomments
 Blue-Fox, 931, 2167, 3602, 5835,True,True,Watches excerpts of screencast again rather than following textual instructions.,Forgets to refresh pom.xml. Copies any snippets of code of instructions anywhere trial and error. Ignores zoo restlauncher in pom xml for a long time. Does not remove tests for long time. Did not ever refresh pom xml in IDE
 Blue-Koala, 992, 1925, 3043, 5445,True,True,TC crash. watched parts of screencast again during task,Forgot pom launcher config until almost end
 Blue-Raccoon, 924, 1698, 2757, 5227,True,True,All good.,Watches parts of video instructions again durig task solving. Stopped with autowire exception and noted: no time to figure it out on screen. Recommenced task later. Actually figured it out. Had issue with running app twice and port being blocked. Figured it out with netstat.
