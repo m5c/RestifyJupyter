@@ -28,8 +28,11 @@ def build_merged_csv():
     result = intermediate2.merge(tests_csv, on="codename")
 
     # Sort by control groups, so we have the order "Red, Green, Blue, Yellow"
+    # Prioritize group order, then sort participants per group alphabetically
     # Do this by converting control group to something ordered first.
     # See: https://stackoverflow.com/a/39223389
-    result.controlgroup = pd.Categorical(result.controlgroup, categories=["red", "green", "blue", "yellow"], ordered=True)
-    result.sort_values(["controlgroup"], axis=0, ascending=[True], inplace=True)
+    result.controlgroup = pd.Categorical(result.controlgroup,
+                                         categories=["red", "green", "blue", "yellow"],
+                                         ordered=True)
+    result.sort_values(["controlgroup", "codename"], axis=0, ascending=True, inplace=True)
     result.to_csv("generated-csv-files/restify.csv", index=None)
