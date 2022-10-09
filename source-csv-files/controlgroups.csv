@@ -1,5 +1,5 @@
-controlgroup,firstapp,secondapp,firstmethodology, secondmethodology
-red,bookstore,xox,touchcore,manual
-green,bookstore,xox,manual,touchcore
-blue,xox,bookstore,touchcore,manual
-yellow,xox,bookstore,manual,touchcore
+controlgroup,groupindex,firstapp,secondapp,firstmethodology,secondmethodology
+red,0,bookstore,xox,touchcore,manual
+green,1,bookstore,xox,manual,touchcore
+blue,2,xox,bookstore,touchcore,manual
+yellow,3,xox,bookstore,manual,touchcore

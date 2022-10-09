@@ -1,5 +1,6 @@
 """
 Jupyter pseudo module to plot a2D grid with all unit test results of all participants.
+Author: Maximilian Schiedermeier
 """
 
 from csv_tools import file_load_utils

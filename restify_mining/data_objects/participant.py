@@ -1,6 +1,7 @@
 """Represents an individual participant. Also encodes the corresponding control group and
 codename. None of the metrics actually measured throughout the study are associated to any instance
 of this class, those values are taken care of by subclasses."""
+from restify_mining.data_objects.control_group import ControlGroup
 
 
 class Participant:
@@ -41,7 +42,7 @@ class Participant:
     @property
     def group_name(self):
         """Getter to look up the participant control group name."""
-        return self.__group_name
+        return self.__control_group.name
 
     def __str__(self):
         participant_str = self.group_name + "-" + self.animal_name + ": \t["

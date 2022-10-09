@@ -1,6 +1,7 @@
 """
 This module updates the fused csv based on the current partial csv files found in
 "source-csv-files", persists the outcome to disk and displays the content.
+Author: Maximilian Schiedermeier
 """
 from csv_tools import csv_merger
 

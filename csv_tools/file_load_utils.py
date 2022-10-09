@@ -1,10 +1,13 @@
 """
 Helper module for loading of CSV file content into lists of objectes defined in the
 restify_mining package.
+Author: Maximilian Schiedermeier
 """
 import csv
-
+import pandas as pd
+from pandas import DataFrame
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
+from restify_mining.data_objects.control_group import ControlGroup
 from restify_mining.data_objects.participant import Participant
 
 
@@ -18,6 +21,26 @@ def str2bool(textual_boolean: str):
     return textual_boolean.lower() in 'pass'
 
 
+def load_all_control_groups() -> dict[str, ControlGroup]:
+    """
+    Loads all control groups, including information on task and methodology order from external
+    CSV file.
+    :return: list of control group objects, ordered by index.
+    """
+    # load csv from disk
+    control_group_csv: DataFrame = pd.read_csv("source-csv-files/controlgroups.csv")
+    # sort by index field, to get expected group order
+    control_group_csv.sort_values("groupindex", ascending=True, inplace=True)
+    # iterate over entries and convert to control group objects.
+    # see: https://stackoverflow.com/a/55616777
+    control_groups: dict[str, ControlGroup] = {}
+    for index, row in control_group_csv.iterrows():
+        control_groups[row.controlgroup] =\
+                               ControlGroup(row.controlgroup, row.firstapp, row.secondapp,
+                                            row.firstmethodology, row.secondmethodology)
+    return control_groups
+
+
 def load_all_participants() -> list[Participant]:
     """
     Loads all participants but restricts information to pre-study data, that is to say control
@@ -25,6 +48,9 @@ def load_all_participants() -> list[Participant]:
     :return: Participant object that stores all participant information gathered before the
     actual study run.
     """
+    # first retrieve all control groups:
+    control_groups: dict[str, ControlGroup] = load_all_control_groups()
+
     participants = []
     with open('source-csv-files/skills.csv', 'r', encoding="utf-8") as opened_file:
         reader = csv.reader(opened_file)
@@ -34,9 +60,11 @@ def load_all_participants() -> list[Participant]:
             if first_line:
                 first_line = False
             else:
+                # control_group : ControlGroup =
                 # first argument is name (likewise first column in csv), then come as many
                 # numbers as remaining columns, starting at csv column 1, fused to a list.
-                participants.append(Participant(row[0], [int(x) for x in row[1:]]))
+                participants.append(
+                    Participant(row[0], control_groups["red"], [int(x) for x in row[3:]]))
     return participants
 
 

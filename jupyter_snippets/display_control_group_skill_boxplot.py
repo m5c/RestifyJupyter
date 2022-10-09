@@ -3,6 +3,7 @@ This module reads participant skills from the participantskills.csv file, comput
 distribution representation per skill and group and fuses all resulting representation into a png
 file. The output file is stored in:
 "generated-plots/boxplot.png"
+Author: Maximilian Schiedermeier
 """
 
 from restify_mining.data_objects import participant_filter_tools

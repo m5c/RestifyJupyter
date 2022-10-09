@@ -5,6 +5,7 @@ for the given control group distribution. A preliminary goal in search for a mea
 was the minimization of this value (Search for MiniMax). The current value is worse is not the best
 possible solution, since the population evolved over time (enrolled participants dropping out and
 being replaced).
+Author: Maximilian Schiedermeier
 """
 
 from restify_mining.data_objects.participant import Participant

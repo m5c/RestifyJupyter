@@ -5,6 +5,10 @@ values and has no notion for task or methodology order.
 
 
 class TimeBundle:
+    """
+    Bundle class for time measured for a given participant. The time bundle only stores brute
+    seconds values and has no notion for task or methodology order.
+    """
 
     def __init__(self, seconds_tc_instructions: int, seconds_ide_instructions: int,
                  seconds_xox: int, seconds_bookstore: int, ):
