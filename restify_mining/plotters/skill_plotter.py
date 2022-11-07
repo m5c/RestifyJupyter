@@ -46,9 +46,9 @@ def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],
     plt.rcParams["figure.figsize"] = (14, 4)
 
     # plot the boxes
-    for index in enumerate(all_skill_values_by_skill_by_group):
-        plotter_colour = palette[int(index / amount_partitions)]
-        plt.boxplot(all_skill_values_by_skill_by_group[index], positions=[index + 1], notch=False,
+    for skill_index, skill_values in enumerate(all_skill_values_by_skill_by_group):
+        plotter_colour = palette[int(skill_index / amount_partitions)]
+        plt.boxplot(all_skill_values_by_skill_by_group[skill_index], positions=[skill_index + 1], notch=False,
                     patch_artist=True,
                     showfliers=True,
                     boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
