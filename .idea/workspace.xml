@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source-csv-files/time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/source-csv-files/time.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -319,7 +317,10 @@
       <workItem from="1665684085519" duration="1829000" />
       <workItem from="1666205581526" duration="254000" />
       <workItem from="1666205961875" duration="34000" />
-      <workItem from="1667838191926" duration="1784000" />
+      <workItem from="1667838191926" duration="1928000" />
+      <workItem from="1668102325424" duration="823000" />
+      <workItem from="1668107554117" duration="1530000" />
+      <workItem from="1668175797994" duration="5546000" />
     </task>
     <servers />
   </component>
