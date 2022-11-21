@@ -15,14 +15,19 @@ instance.
 
 ## Contents
 
-The Plot-Generating Cells (PGCs) are to complex for development in Jupyter. Therefore, they were developed in PyCharm and afterwards transferred to Jupyter cells.
-Every PGC matches exactly the content and launch configuration of one file in ```jupyter_snippets```:
+TODO: Rather than copying complex cells to jupyter, create proxy cells that call actual code (too complex for jupyter)
 
-| Cell | File | PyCharm Launch Config | Output |
+The Data Mining Cells (DMCs) are to complex Jupyter. Therefore, they were developed in PyCharm and afterwards transferred to Jupyter cells.
+Every DMC matches exactly the content and launch configuration of one file in ```jupyter_snippets```:
+
+| DMC | File | PyCharm Launch Config | Output |
 |--|---|---|---|
-| ```In1``` | display_population_gaussian.py| | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
-| ```In2``` | display_control_group_skill_boxplot.py | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
-| ```In3``` | compute_group_skill_diffs.py | ComputeGroupSkillDiffs | ```generated-plots/fused-stats.png``` |
+| ```1``` | display_population_gaussian.py| | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
+| ```2``` | display_control_group_skill_boxplot.py | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
+| ```3``` | compute_group_skill_diffs.py | ComputeGroupSkillDiffs | ```--printed--``` |
+| ```4``` | merge_csv.py | MergeCsv | ```generated-csv-files/restify.csv``` |
+
+
 
 * The Jupyter files are sprinkled at top level, the main one being: ```restify.ipynb```
     * The snippets listed in the notebook are too complex to be developed in jupyter. They are thus copies of the files
