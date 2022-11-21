@@ -60,11 +60,12 @@ def load_all_participants() -> list[Participant]:
             if first_line:
                 first_line = False
             else:
+                control_group_name = row[1]
                 # control_group : ControlGroup =
                 # first argument is name (likewise first column in csv), then come as many
                 # numbers as remaining columns, starting at csv column 1, fused to a list.
                 participants.append(
-                    Participant(row[0], control_groups["red"], [int(x) for x in row[3:]]))
+                    Participant(row[0], control_groups[control_group_name], [int(x) for x in row[3:]]))
     return participants
 
 

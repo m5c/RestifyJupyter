@@ -1,5 +1,5 @@
 """
-This module reads participant skills from the participantskills.csv file, computes the gaussian
+This module reads participant skills from the participant/skills.csv file, computes the gaussian
 distributions per skill and creates a plot. The output file is stored in:
 "generated-plots/gaussian.png"
 Author: Maximilian Schiedermeier

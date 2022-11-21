@@ -1,6 +1,8 @@
 # RESTify Jupyter
 
-Data and visualization of the RESTify experiment results.
+Data, Data-Mining and visualization of correlations for the RESTify experiment.
+
+TODO: Add Webpage for experiment description.
 
 ![pycharm](https://img.shields.io/badge/PyCharm-22.2.1-blue)
 ![pylint](https://img.shields.io/badge/PyLint-2.15.2-blue)
@@ -13,12 +15,21 @@ instance.
 
 ## Contents
 
-* The Jupyter files are sprinked at top level, the main one being: ```restify.ipynb```
+The Plot-Generating Cells (PGCs) are to complex for development in Jupyter. Therefore, they were developed in PyCharm and afterwards transferred to Jupyter cells.
+Every PGC matches exactly the content and launch configuration of one file in ```jupyter_snippets```:
+
+| Cell | File | PyCharm Launch Config | Output |
+|--|---|---|---|
+| ```In1``` | display_population_gaussian.py| | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
+| ```In2``` | display_control_group_skill_boxplot.py | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
+| ```In3``` | compute_group_skill_diffs.py | ComputeGroupSkillDiffs | ```generated-plots/fused-stats.png``` |
+
+* The Jupyter files are sprinkled at top level, the main one being: ```restify.ipynb```
     * The snippets listed in the notebook are too complex to be developed in jupyter. They are thus copies of the files
       in ```jupyter_snippets```. Those can be conveniently launched with PyCharm.
     * Additional python files used for the actual mining are in ```restify_mining```.
 * Raw input data collected in the experiment is in ```source-csv-files```.
-* Plots are stores to ```generated-plots```.
+* Plots are stored to ```generated-plots```.
 
 ### Raw CSV Data
 
