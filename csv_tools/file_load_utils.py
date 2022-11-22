@@ -35,9 +35,9 @@ def load_all_control_groups() -> dict[str, ControlGroup]:
     # see: https://stackoverflow.com/a/55616777
     control_groups: dict[str, ControlGroup] = {}
     for row in control_group_csv.iterrows():
-        control_groups[row.controlgroup] = \
-            ControlGroup(row.controlgroup, row.firstapp, row.secondapp,
-                         row.firstmethodology, row.secondmethodology)
+        control_groups[row[1].controlgroup] = \
+            ControlGroup(row[1].controlgroup, row[1].firstapp, row[1].secondapp,
+                         row[1].firstmethodology, row[1].secondmethodology)
     return control_groups
 
 
@@ -90,12 +90,12 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                 first_line = False
             else:
                 control_group_name = row[1]
-                # first argument is name (likewise first column in csv), then the skill vector.
+                # first argument is name (likewise first column in csv), then the control group details, then the skill vector.
                 # Next the test results for bookstore, followed by test results for xox.
                 # The last argument is the skill vector (self-declared by participant)
                 assessed_participants.append(
                     AssessedParticipant(row[0], control_groups[control_group_name],
-                                        [int(x) for x in row[29:37]],
-                                        [str2bool(x) for x in row[13:25]],
-                                        [str2bool(x) for x in row[5:13]]))
+                                        [int(x) for x in row[4:12]],
+                                        [str2bool(x) for x in row[37:48]],
+                                        [str2bool(x) for x in row[29:36]]))
     return assessed_participants
