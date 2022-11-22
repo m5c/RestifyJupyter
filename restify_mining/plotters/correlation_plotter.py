@@ -7,6 +7,9 @@ import matplotlib.pyplot as plt
 
 
 def plot_correlation(x_values: list[int], y_values: list[int], x_label: str, y_label: str) -> None:
+    """Meta plotter method to just print my data with labels, but without any contrived parameters
+    that nobody actually every needs.
+    """
     x_max = max(x_values) * 1.05
     y_max = max(y_values) * 1.05
 

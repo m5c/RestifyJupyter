@@ -5,7 +5,6 @@ Author: Maximilian Schiedermeier
 
 import pandas as pd
 from pandas import DataFrame
-from pandas.api.types import CategoricalDtype
 
 
 def build_merged_csv():

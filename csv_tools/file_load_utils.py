@@ -34,10 +34,10 @@ def load_all_control_groups() -> dict[str, ControlGroup]:
     # iterate over entries and convert to control group objects.
     # see: https://stackoverflow.com/a/55616777
     control_groups: dict[str, ControlGroup] = {}
-    for index, row in control_group_csv.iterrows():
-        control_groups[row.controlgroup] =\
-                               ControlGroup(row.controlgroup, row.firstapp, row.secondapp,
-                                            row.firstmethodology, row.secondmethodology)
+    for row in control_group_csv.iterrows():
+        control_groups[row.controlgroup] = \
+            ControlGroup(row.controlgroup, row.firstapp, row.secondapp,
+                         row.firstmethodology, row.secondmethodology)
     return control_groups
 
 
@@ -65,7 +65,8 @@ def load_all_participants() -> list[Participant]:
                 # first argument is name (likewise first column in csv), then come as many
                 # numbers as remaining columns, starting at csv column 1, fused to a list.
                 participants.append(
-                    Participant(row[0], control_groups[control_group_name], [int(x) for x in row[3:]]))
+                    Participant(row[0], control_groups[control_group_name],
+                                [int(x) for x in row[3:]]))
     return participants
 
 
@@ -76,6 +77,9 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
     the preferred method, etc...
     :return: Assessed Participant object that stores everything we measured about every participant.
     """
+    # first retrieve all control groups:
+    control_groups: dict[str, ControlGroup] = load_all_control_groups()
+
     assessed_participants = []
     with open('generated-csv-files/restify.csv', 'r', encoding="utf-8") as opened_file:
         reader = csv.reader(opened_file)
@@ -85,11 +89,13 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
             if first_line:
                 first_line = False
             else:
+                control_group_name = row[1]
                 # first argument is name (likewise first column in csv), then the skill vector.
                 # Next the test results for bookstore, followed by test results for xox.
                 # The last argument is the skill vector (self-declared by participant)
                 assessed_participants.append(
-                    AssessedParticipant(row[0], [int(x) for x in row[29:37]],
+                    AssessedParticipant(row[0], control_groups[control_group_name],
+                                        [int(x) for x in row[29:37]],
                                         [str2bool(x) for x in row[13:25]],
                                         [str2bool(x) for x in row[5:13]]))
     return assessed_participants

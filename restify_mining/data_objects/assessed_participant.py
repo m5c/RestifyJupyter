@@ -2,6 +2,7 @@
 Extended participant class (inherits form participant.py), representing a participant along with
 all additional quantifiable data extracted from fused csv file.
 """
+from restify_mining.data_objects.control_group import ControlGroup
 from restify_mining.markers import unit_tests_markers
 from restify_mining.data_objects.participant import Participant
 
@@ -10,14 +11,15 @@ class AssessedParticipant(Participant):
     """Assessed Participant class. Represents all quantifiable information regarding a
     participant obtained at any point in time throughout the study. This is a one-to-one
     representation of the lines in the generated-csv-files/restify.csv file."""
+    # pylint: disable=too-many-arguments
 
-    def __init__(self, codename: str, skills: list[int], test_results_bs: list[bool],
-                 test_results_xox: list[bool]):
+    def __init__(self, codename: str, control_group: ControlGroup, skills: list[int],
+                 test_results_bs: list[bool], test_results_xox: list[bool]):
         """
         :type self: object
         """
         # invoke super with base attributes
-        super().__init__(codename, skills)
+        super().__init__(codename, control_group, skills)
 
         # store additional info in private variables
         # Individual test results for both apps
