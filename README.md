@@ -22,10 +22,12 @@ Every DMC matches exactly the content and launch configuration of one file in ``
 
 | DMC | File | PyCharm Launch Config | Output |
 |--|---|---|---|
-| ```1``` | display_population_gaussian.py| | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
-| ```2``` | display_control_group_skill_boxplot.py | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
-| ```3``` | compute_group_skill_diffs.py | ComputeGroupSkillDiffs | ```--printed--``` |
-| ```4``` | merge_csv.py | MergeCsv | ```generated-csv-files/restify.csv``` |
+| 1 | [```display_population_gaussian.py```](jupyter_snippets/display_population_gaussian.py) | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
+| 2 | [```display_control_group_skill_boxplot.py```](jupyter_snippets/display_control_group_skill_boxplot.py) | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
+| 3 | [```compute_group_skill_diffs.py```](jupyter_snippets/compute_group_skill_diffs.py) | ComputeGroupSkillDiffs | ```--printed--``` |
+| 4 | [```merge_csv.py```](jupyter_snippets/merge_csv.py) | MergeCsv | ```generated-csv-files/restify.csv``` |
+| 5 | [```display_test_results_all_participants_by_method.py```](jupyter_snippets/display_test_results_all_participants_by_method.py) | DisplayParticipantTestResultsByMethod | ```??``` |
+| 6 | [```display_test_results_all_groups_by_method.py```](jupyter_snippets/display_test_results_all_groups_by_method.py) | DisplayGroupTestResultsByMethod | ```??``` |
 
 
 
