@@ -94,6 +94,7 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     plt.imshow(grid_values, cmap=colour_map, interpolation='nearest')
 
     # Actually show the figure
+    plt.savefig("generated-plots/06-heatmap.png")
     plt.show()
 
 
