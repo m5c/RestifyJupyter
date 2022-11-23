@@ -29,7 +29,7 @@ def plot_gaussian(mean, stddev, colour):
     plt.ylabel("Probability Density")
 
     # Store on disk
-    plt.savefig("generated-plots/gaussians.png")
+    plt.savefig("generated-plots/04-population_skills_gaussian.png")
 
 
 def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],

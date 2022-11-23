@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/restify_mining/skill_extractors/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_groups_by_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_all_tests_all_groups.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/skill_extractors/extract_population_gaussian.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_participants_by_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_all_tests_all_groups.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/abstract_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/abstract_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/all_groups_all_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/all_groups_all_tests_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/miners/all_participants_all_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,12 +64,35 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/restify_mining/skill_extractors" />
       <recent name="$PROJECT_DIR$/restify_mining/data_objects" />
       <recent name="$PROJECT_DIR$/restify_mining/markers" />
       <recent name="$PROJECT_DIR$/restify_mining/plotters" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.06-AllTestsAllGroups">
+  <component name="RunManager" selected="Python.00-AllCells">
+    <configuration name="00-AllCells" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="01-DisplayPopulationGaussian" type="PythonConfigurationType" factoryName="Python">
       <module name="RestifyJupyter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,7 +106,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/display_population_gaussian.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/restify_mining/skill_extractors/extract_population_gaussian.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,7 +194,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/display_test_results_all_participants_by_method.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,7 +216,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_all_tests_all_groups.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -216,6 +248,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.00-AllCells" />
       <item itemvalue="Python.01-DisplayPopulationGaussian" />
       <item itemvalue="Python.02-DisplayControlGroupSkillBoxPlot" />
       <item itemvalue="Python.03-ComputeGroupSkillDiffs" />
@@ -284,7 +317,7 @@
       <workItem from="1668785825816" duration="3004000" />
       <workItem from="1669041090740" duration="3450000" />
       <workItem from="1669134695361" duration="3262000" />
-      <workItem from="1669213955412" duration="538000" />
+      <workItem from="1669213955412" duration="2694000" />
     </task>
     <servers />
   </component>
@@ -312,41 +345,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>122</line>
+          <line>125</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>129</line>
+          <line>132</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>66</line>
+          <line>67</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>74</line>
+          <line>75</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>77</line>
+          <line>78</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py</url>
-          <line>97</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/display_test_results_all_participants_by_method.py</url>
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py</url>
           <line>13</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -376,7 +399,7 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_all_tests_all_groups.py</url>
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py</url>
           <line>4</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
@@ -384,17 +407,20 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayFusedData.coverage" NAME="DisplayFusedData Coverage Results" MODIFIED="1664471472598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayMergedCsv.coverage" NAME="DisplayMergedCsv Coverage Results" MODIFIED="1669042529403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$01_DisplayPopulationGaussian.coverage" NAME="01-DisplayPopulationGaussian Coverage Results" MODIFIED="1669216369799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$csv_merger.coverage" NAME="csv_merger Coverage Results" MODIFIED="1665313307783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/csv_tools" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$06_DisplayGroupTestResultsByMethod.coverage" NAME="06-DisplayGroupTestResultsByMethod Coverage Results" MODIFIED="1669137835704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayTestResultsByMethod.coverage" NAME="DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1663770332715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayPopulationGaussian.coverage" NAME="DisplayPopulationGaussian Coverage Results" MODIFIED="1669042281626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$06_AllTestsAllGroups.coverage" NAME="06-AllTestsAllGroups Coverage Results" MODIFIED="1669214345118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$06_AllTestsAllGroups.coverage" NAME="06-AllTestsAllGroups Coverage Results" MODIFIED="1669215049211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayControlGroupSkillBoxPlot.coverage" NAME="DisplayControlGroupSkillBoxPlot Coverage Results" MODIFIED="1669042363356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$correlation_plotter.coverage" NAME="correlation_plotter Coverage Results" MODIFIED="1664903260380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/restify_mining/plotters" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$ComputeGroupSkillDiffs.coverage" NAME="ComputeGroupSkillDiffs Coverage Results" MODIFIED="1669043635498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayParticipantTestResultsByMethod.coverage" NAME="05-DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1669137810106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$05_DisplayParticipantTestResultsByMethod.coverage" NAME="05-DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1669215113575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayFusedData.coverage" NAME="DisplayFusedData Coverage Results" MODIFIED="1664471472598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayMergedCsv.coverage" NAME="DisplayMergedCsv Coverage Results" MODIFIED="1669042529403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayPopulationGaussian.coverage" NAME="DisplayPopulationGaussian Coverage Results" MODIFIED="1669042281626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_AllCells.coverage" NAME="00-AllCells Coverage Results" MODIFIED="1669216711192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$ComputeGroupSkillDiffs.coverage" NAME="ComputeGroupSkillDiffs Coverage Results" MODIFIED="1669043635498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayGroupTestResultsByMethod.coverage" NAME="DisplayGroupTestResultsByMethod Coverage Results" MODIFIED="1664464735398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>

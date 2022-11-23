@@ -1,5 +1,5 @@
 """
-Abstract base class for all miners. Consumes a list of assessed participants, produces a list of
+Abstract base class for all unit_test_miners. Consumes a list of assessed participants, produces a list of
 float values, ready for subsequent colourizing / passing to plotter. The algorithm used to
 produce the output values depends on the specific miner implementation.
 See: https://blog.teclado.com/python-abc-abstract-base-classes/
@@ -48,4 +48,12 @@ class AbstractMiner(ABC):
         Abstract method that every implementing class has to override. Returns the label that
         describes entries on x axes.
         :return: label for columns in miner output grid.
+        """
+
+    @abstractmethod
+    def file_label(self) -> str:
+        """
+        Abstract method that every implementing class has to override. Returns the label that
+        describes file base name if persisted to disk.
+        :return: label for file name.
         """

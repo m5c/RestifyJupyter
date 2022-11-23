@@ -4,7 +4,7 @@ restuls. Stores outcome in 2D array where passed tests are represented by1, fail
 """
 from restify_mining.data_objects import participant_stat_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.miners.abstract_miner import AbstractMiner
+from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
 
 
 class AllGroupsAllTestsMiner(AbstractMiner):
@@ -55,3 +55,6 @@ class AllGroupsAllTestsMiner(AbstractMiner):
 
     def x_axis_label(self) -> list[str]:
         return "Unit Tests"
+
+    def file_label(self) -> str:
+        return "06-test-heatmap"

@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.miners.all_groups_all_tests_miner import AllGroupsAllTestsMiner
-from restify_mining.miners.abstract_miner import AbstractMiner
+from restify_mining.unit_test_miners.all_groups_all_tests_miner import AllGroupsAllTestsMiner
+from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
 
 
 def plot_all_average_group_results(population: list[AssessedParticipant]) -> None:
@@ -50,6 +50,7 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
 
     # Enable group colour space if requested
     group_zone_size: int = 0
+    label: str = ""
     colour_map: ListedColormap
     if with_colours:
         # Look up amount of participants per control group, so we can tint the map by zones.
@@ -75,15 +76,17 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
         colour_map: LinearSegmentedColormap = build_linear_colour_map(with_colours)
 
     # Actually plot the values
-    plot_unit_test_heatmap(grid_values, colour_map, miner.x_axis_label(), miner.y_axis_label())
+    plot_unit_test_heatmap(grid_values, colour_map, miner.x_axis_label(), miner.y_axis_label(),
+                           miner.file_label())
 
 
 def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedColormap, x_label: str,
-                           y_label: str) -> None:
+                           y_label: str, file_label: str) -> None:
     """
     Plots a heatmap representation of the unit test success results. Can be used either for
-    control groups (average test result) or for individual participants. :param grid_values: 2D
-    int array of results. Each cell has value between [0-1], indicating the success rate,
+    control groups (average test result) or for individual participants.
+    :param grid_values: 2D int array of results. Each cell has value between [0-1], indicating
+    the success rate,
     where 0 is all fail and 1 is all pass. For individual tests and participants the provided
     array should only contain the values 0 and 1.
     See: https://stackoverflow.com/a/33282548
@@ -94,7 +97,7 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     plt.imshow(grid_values, cmap=colour_map, interpolation='nearest')
 
     # Actually show the figure
-    plt.savefig("generated-plots/06-heatmap.png")
+    plt.savefig("generated-plots/" + file_label + ".png")
     plt.show()
 
 

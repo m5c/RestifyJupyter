@@ -20,14 +20,14 @@ TODO: Rather than copying complex cells to jupyter, create proxy cells that call
 The Data Mining Cells (DMCs) are to complex Jupyter. Therefore, they were developed in PyCharm and afterwards transferred to Jupyter cells.
 Every DMC matches exactly the content and launch configuration of one file in ```jupyter_snippets```:
 
-| DMC | File | PyCharm Launch Config | Output |
+| DMC | File | PyCharm Launch Config | Output in ```generated-plots```|
 |--|---|---|---|
-| 1 | [```display_population_gaussian.py```](jupyter_snippets/display_population_gaussian.py) | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
+| 1 | [```display_population_gaussian.py```](restify_mining/skill_extractors/extract_population_gaussian.py) | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
 | 2 | [```display_control_group_skill_boxplot.py```](jupyter_snippets/display_control_group_skill_boxplot.py) | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
 | 3 | [```compute_group_skill_diffs.py```](jupyter_snippets/compute_group_skill_diffs.py) | ComputeGroupSkillDiffs | ```--printed--``` |
 | 4 | [```merge_csv.py```](jupyter_snippets/merge_csv.py) | MergeCsv | ```generated-csv-files/restify.csv``` |
-| 5 | [```display_test_results_all_participants_by_method.py```](jupyter_snippets/display_test_results_all_participants_by_method.py) | DisplayParticipantTestResultsByMethod | ```TODO: Store to file``` |
-| 6 | [```display_test_results_all_groups_by_method.py```](jupyter_snippets/pseudo_cell_all_tests_all_groups.py) | DisplayGroupTestResultsByMethod | ```TODO: Store to file``` |
+| 5 | [```display_test_results_all_participants_by_method.py```](jupyter_snippets/pseudo_cell_05_all_results_all_participants.py) | DisplayParticipantTestResultsByMethod | ```05-test-individual.png``` |
+| 6 | [```display_test_results_all_groups_by_method.py```](jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py) | DisplayGroupTestResultsByMethod | ```06-test-heatmap.png``` |
 
 
 
