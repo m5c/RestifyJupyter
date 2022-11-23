@@ -1,5 +1,4 @@
 """
-Jupyter pseudo module to plot a 2D grid with all unit test results of all participants.
 Author: Maximilian Schiedermeier
 """
 

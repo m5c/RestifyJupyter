@@ -12,7 +12,7 @@ from restify_mining.markers import skills_markers
 
 
 def plot_gaussian(mean, stddev, colour):
-    """Plots the gaussian curves, based on provided skill mena and standard-deviation values for a
+    """Plots the gaussian curves, based on provided skill mean and standard-deviation values for a
     given skill. Call this function repeatedly to create an overlay figure with all skill
     curves."""
 
@@ -29,7 +29,7 @@ def plot_gaussian(mean, stddev, colour):
     plt.ylabel("Probability Density")
 
     # Store on disk
-    plt.savefig("generated-plots/04-population_skills_gaussian.png")
+    plt.savefig("generated-plots/01-population_skills_gaussian.png")
 
 
 def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],

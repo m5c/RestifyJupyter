@@ -1,5 +1,4 @@
 """
-Jupyter pseudo module to plot a 2D grid with all unit test results of all participants.
 Author: Maximilian Schiedermeier
 """
 from csv_tools import file_load_utils
@@ -9,9 +8,9 @@ from restify_mining.unit_test_miners.all_participants_all_tests_miner import All
 from restify_mining.plotters.unit_test_plotter import mine_and_plot
 
 
-def cell_04() -> None:
+def cell_01() -> None:
     """
-    Jupyter cell 05. See markdown description.
+    Jupyter cell 01. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

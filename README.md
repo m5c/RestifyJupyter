@@ -23,9 +23,9 @@ Every DMC matches exactly the content and launch configuration of one file in ``
 | DMC | File | PyCharm Launch Config | Output in ```generated-plots```|
 |--|---|---|---|
 | 1 | [```display_population_gaussian.py```](restify_mining/skill_extractors/extract_population_gaussian.py) | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
-| 2 | [```display_control_group_skill_boxplot.py```](jupyter_snippets/display_control_group_skill_boxplot.py) | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
-| 3 | [```compute_group_skill_diffs.py```](jupyter_snippets/compute_group_skill_diffs.py) | ComputeGroupSkillDiffs | ```--printed--``` |
-| 4 | [```merge_csv.py```](jupyter_snippets/merge_csv.py) | MergeCsv | ```generated-csv-files/restify.csv``` |
+| 2 | [```display_control_group_skill_boxplot.py```](restify_mining/skill_extractors/extract_control_group_boxplot.py) | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
+| 3 | [```compute_group_skill_diffs.py```](restify_mining/skill_extractors/compute_cgroup_skill_diffs.py) | ComputeGroupSkillDiffs | ```--printed--``` |
+| 4 | [```merge_csv.py```](restify_mining/skill_extractors/merge_csv.py) | MergeCsv | ```generated-csv-files/restify.csv``` |
 | 5 | [```display_test_results_all_participants_by_method.py```](jupyter_snippets/pseudo_cell_05_all_results_all_participants.py) | DisplayParticipantTestResultsByMethod | ```05-test-individual.png``` |
 | 6 | [```display_test_results_all_groups_by_method.py```](jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py) | DisplayGroupTestResultsByMethod | ```06-test-heatmap.png``` |
 
