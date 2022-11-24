@@ -18,4 +18,4 @@ def cell_04() -> None:
 
     # Compute and print skill diffs stats to assess comparability of individual control groups.
     compute_cgroup_skill_diffs(assessed_population)
-    #TODO: also store in text file.
+    #TODO: also store in text file. Rename csv files folder to ascii folder.
