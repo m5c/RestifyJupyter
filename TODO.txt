@@ -1,3 +1,0 @@
- * Update launch instructions in README
- * Update Jupyter cells
- * Add docker instructinos for jupyter + dependencies

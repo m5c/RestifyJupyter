@@ -2,16 +2,20 @@
 
 Data, Data-Mining and visualization of correlations for the RESTify experiment.
 
-TODO: Add Webpage for experiment description.
-
 ![pycharm](https://img.shields.io/badge/PyCharm-22.2.1-blue)
 ![pylint](https://img.shields.io/badge/PyLint-2.15.2-blue)
 ![jupyter](https://img.shields.io/badge/Jupyter%20Notebook-6.4.12-blue)
+![docker](https://img.shields.io/badge/Docker%20Docker-20.10.17-blue)
 
 ## About
 
 This repository hosts the sources and input data for the RESTify experiment analysis, in form of a Jupyter Notebook
 instance.
+
+### Docker Quickstart
+
+Run the docker-autostart for an interactive Jupyter Notebook Container with experiment description and data analysis:  
+```./docker-autostart.sh```
 
 ## Contents
 
