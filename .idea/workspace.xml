@@ -7,11 +7,6 @@
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAKEFILE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dssh" beforeDir="false" afterPath="$PROJECT_DIR$/dssh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +331,7 @@
       <workItem from="1669134695361" duration="3262000" />
       <workItem from="1669213955412" duration="4367000" />
       <workItem from="1669309860270" duration="1112000" />
-      <workItem from="1669824723536" duration="2500000" />
+      <workItem from="1669824723536" duration="3926000" />
     </task>
     <servers />
   </component>
