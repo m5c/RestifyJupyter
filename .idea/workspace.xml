@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jupyter_snippets/manual_clear_cache.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restify_mining/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restify_mining/utils/cache_clearer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated-csv-files/restify.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_04_compute_cgroup_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_04_compute_cgroup_skill_diffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,7 +452,7 @@
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayFusedData.coverage" NAME="DisplayFusedData Coverage Results" MODIFIED="1664471472598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayMergedCsv.coverage" NAME="DisplayMergedCsv Coverage Results" MODIFIED="1669042529403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayPopulationGaussian.coverage" NAME="DisplayPopulationGaussian Coverage Results" MODIFIED="1669042281626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_AllCells.coverage" NAME="00-RunAllPseydoCells Coverage Results" MODIFIED="1669310723288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_AllCells.coverage" NAME="00-RunAllPseydoCells Coverage Results" MODIFIED="1669310980402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$ComputeGroupSkillDiffs.coverage" NAME="ComputeGroupSkillDiffs Coverage Results" MODIFIED="1669043635498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayGroupTestResultsByMethod.coverage" NAME="DisplayGroupTestResultsByMethod Coverage Results" MODIFIED="1664464735398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>

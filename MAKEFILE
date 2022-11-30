@@ -1,0 +1,4 @@
+#docker system prune -a
+docker build --no-cache -t schiedermax/restify .
+ docker run -p 8888:8888 schiedermax/restify 
+
