@@ -8,7 +8,7 @@ from restify_mining.plotters import unit_test_plotter
 
 def cell_06() -> None:
     """
-    Jupyter cell 05. See markdown description.
+    Jupyter cell 06. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

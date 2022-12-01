@@ -21,15 +21,13 @@ def build_merged_csv():
     time_csv: DataFrame = pd.read_csv("source-csv-files/time.csv")
 
     # Join control groups and participants.
-    # intermediate1: DataFrame = skill_csv.merge(control_group_csv, on="controlgroup")
-    #
-    # # Add additional columns for measured time.
-    # intermediate2: DataFrame = intermediate1.merge(time_csv, on="codename")
-    #
-    # # Add additional columns for test results.
-    # result: DataFrame = intermediate2.merge(tests_csv, on="codename")
-    result: DataFrame = skill_csv.merge(tests_csv, on="codename")
+    intermediate1: DataFrame = skill_csv.merge(control_group_csv, on="controlgroup")
 
+    # Add additional columns for measured time.
+    intermediate2: DataFrame = intermediate1.merge(time_csv, on="codename")
+
+    # Add additional columns for test results.
+    result: DataFrame = intermediate2.merge(tests_csv, on="codename")
 
     # Sort by control groups, so we have the order "Red, Green, Blue, Yellow"
     # Sort participants by animal names "Squid, Raccoon, Zebra, Fox, Unicorn, Turtle, Koala"
