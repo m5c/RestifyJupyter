@@ -29,7 +29,7 @@ def build_linear_colour_map(with_control_groups: bool) -> LinearSegmentedColorma
     sample points.
     """
     if with_control_groups:
-        list_colours: list[str] = ["black", "blue", "black", "green", "black", "red", "black",
+        list_colours: list[str] = ["black", "red", "black", "green", "black", "blue", "black",
                                    "yellow"]
     else:
         list_colours: list[str] = ["black", "white"]
@@ -56,7 +56,7 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
         # Look up amount of participants per control group, so we can tint the map by zones.
         group_zone_size: int = miner.colour_zone_size(population)
 
-        # We use  acustom heatmap that indicates group colours:
+        # We use a custom heatmap that indicates group colours:
         # make a color map of fixed colors
         # colour_map: ListedColormap = matplotlib.colors.ListedColormap(
         #     ['black', 'blue', 'black', 'green', 'black', 'red', 'black', 'yellow'])

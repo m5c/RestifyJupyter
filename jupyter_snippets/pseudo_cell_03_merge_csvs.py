@@ -3,6 +3,7 @@ Author: Maximilian Schiedermeier
 """
 from csv_tools import csv_merger
 
+
 def cell_03() -> None:
     """
     Jupyter cell 05. See markdown description.
@@ -14,6 +15,7 @@ def cell_03() -> None:
 
     # Call the CSV merger, fuses all individual files based on participant group/codename as
     # key.
+    # TODO: figure out why the produced CSV is not the correct fusion!
     csv_merger.build_merged_csv()
 
     # Print the result

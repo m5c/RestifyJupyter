@@ -15,7 +15,11 @@ instance.
 ### Docker Quickstart
 
 Run the docker-autostart for an interactive Jupyter Notebook Container with experiment description and data analysis:  
-```./docker-autostart.sh```
+
+ * [Install Docker](https://docs.docker.com/get-docker/)
+ * Clone this repository: ```git clone https://github.com/kartoffelquadrat/RestifyJupyter.git```
+ * Build and Run the Jupyter Notebook Container: ```./RestifyJupyter/docker-autostart.sh```
+ * Access the Notebook and replicate the results: [http://127.0.0.1:8888/notebooks/Restify.ipynb](http://127.0.0.1:8888/notebooks/Restify.ipynb)
 
 ## Contents
 

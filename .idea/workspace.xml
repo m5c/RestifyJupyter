@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv_tools/csv_merger.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/csv_merger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated-csv-files/restify.csv" beforeDir="false" afterPath="$PROJECT_DIR$/generated-csv-files/restify.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_03_merge_csvs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_03_merge_csvs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source-csv-files/tests.csv" beforeDir="false" afterPath="$PROJECT_DIR$/source-csv-files/tests.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +65,7 @@
       <recent name="$PROJECT_DIR$/restify_mining/plotters" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.00-ClearAllCaches">
+  <component name="RunManager" selected="Python.00-RunAllPseydoCells">
     <configuration name="00-ClearAllCaches" type="PythonConfigurationType" factoryName="Python">
       <module name="RestifyJupyter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +118,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jupyter_snippets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -134,7 +140,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jupyter_snippets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -148,7 +154,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="03-ComputeGroupSkillDiffs" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="03-MergeCsvs" type="PythonConfigurationType" factoryName="Python">
       <module name="RestifyJupyter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,7 +162,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jupyter_snippets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -170,7 +176,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="04-MergeCsv" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="04-ComputeGroupSkillDiffs" type="PythonConfigurationType" factoryName="Python">
       <module name="RestifyJupyter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -178,7 +184,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jupyter_snippets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -200,7 +206,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jupyter_snippets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -222,7 +228,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jupyter_snippets" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -263,8 +269,8 @@
       <item itemvalue="Python.00-ClearAllCaches" />
       <item itemvalue="Python.01-DisplayPopulationGaussian" />
       <item itemvalue="Python.02-DisplayControlGroupSkillBoxPlot" />
-      <item itemvalue="Python.03-ComputeGroupSkillDiffs" />
-      <item itemvalue="Python.04-MergeCsv" />
+      <item itemvalue="Python.03-MergeCsvs" />
+      <item itemvalue="Python.04-ComputeGroupSkillDiffs" />
       <item itemvalue="Python.05-DisplayParticipantTestResultsByMethod" />
       <item itemvalue="Python.06-AllTestsAllGroups" />
       <item itemvalue="Python.correlation_plotter" />
@@ -331,7 +337,9 @@
       <workItem from="1669134695361" duration="3262000" />
       <workItem from="1669213955412" duration="4367000" />
       <workItem from="1669309860270" duration="1112000" />
-      <workItem from="1669824723536" duration="3926000" />
+      <workItem from="1669824723536" duration="4033000" />
+      <workItem from="1669835912198" duration="5110000" />
+      <workItem from="1669909943745" duration="2560000" />
     </task>
     <servers />
   </component>
@@ -383,11 +391,6 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/restify_mining/plotters/skill_plotter.py</url>
           <line>49</line>
           <option name="timeStamp" value="21" />
@@ -398,34 +401,9 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/csv_tools/file_load_utils.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/csv_tools/file_load_utils.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/csv_tools/file_load_utils.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/jupyter_snippets/manual_clear_cache.py</url>
           <line>3</line>
           <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/jupyter_snippets/manual_clear_cache.py</url>
@@ -435,6 +413,61 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/jupyter_snippets/manual_clear_cache.py</url>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/data_objects/assessed_participant.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/csv_tools/file_load_utils.py</url>
+          <line>100</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/csv_tools/file_load_utils.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/csv_tools/csv_merger.py</url>
+          <line>29</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/csv_tools/csv_merger.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -446,13 +479,16 @@
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayTestResultsByMethod.coverage" NAME="DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1663770332715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$06_AllTestsAllGroups.coverage" NAME="06-AllTestsAllGroups Coverage Results" MODIFIED="1669310306971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jupyter_snippets" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayControlGroupSkillBoxPlot.coverage" NAME="DisplayControlGroupSkillBoxPlot Coverage Results" MODIFIED="1669042363356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_ClearAllCaches.coverage" NAME="00-ClearAllCaches Coverage Results" MODIFIED="1669310969848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseydoCells.coverage" NAME="00-RunAllPseydoCells Coverage Results" MODIFIED="1669912063015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_ClearAllCaches.coverage" NAME="00-ClearAllCaches Coverage Results" MODIFIED="1669836517153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$correlation_plotter.coverage" NAME="correlation_plotter Coverage Results" MODIFIED="1664903260380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/restify_mining/plotters" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$03_ComputeGroupSkillDiffs.coverage" NAME="03-ComputeGroupSkillDiffs Coverage Results" MODIFIED="1669218215865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$04_MergeCsv.coverage" NAME="04-MergeCsv Coverage Results" MODIFIED="1669840486410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jupyter_snippets" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayParticipantTestResultsByMethod.coverage" NAME="05-DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1669137810106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$05_DisplayParticipantTestResultsByMethod.coverage" NAME="05-DisplayParticipantTestResultsByMethod Coverage Results" MODIFIED="1669215113575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayFusedData.coverage" NAME="DisplayFusedData Coverage Results" MODIFIED="1664471472598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayMergedCsv.coverage" NAME="DisplayMergedCsv Coverage Results" MODIFIED="1669042529403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$03_MergeCsvs.coverage" NAME="03-MergeCsvs Coverage Results" MODIFIED="1669840668984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$DisplayPopulationGaussian.coverage" NAME="DisplayPopulationGaussian Coverage Results" MODIFIED="1669042281626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$00_AllCells.coverage" NAME="00-RunAllPseydoCells Coverage Results" MODIFIED="1669310980402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$ComputeGroupSkillDiffs.coverage" NAME="ComputeGroupSkillDiffs Coverage Results" MODIFIED="1669043635498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
