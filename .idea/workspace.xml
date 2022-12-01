@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_tools/csv_merger.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/csv_merger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated-csv-files/restify.csv" beforeDir="false" afterPath="$PROJECT_DIR$/generated-csv-files/restify.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_03_merge_csvs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_03_merge_csvs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/unit_test_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source-csv-files/tests.csv" beforeDir="false" afterPath="$PROJECT_DIR$/source-csv-files/tests.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +332,7 @@
       <workItem from="1669309860270" duration="1112000" />
       <workItem from="1669824723536" duration="4033000" />
       <workItem from="1669835912198" duration="5110000" />
-      <workItem from="1669909943745" duration="2560000" />
+      <workItem from="1669909943745" duration="2619000" />
     </task>
     <servers />
   </component>
