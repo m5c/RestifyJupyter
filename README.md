@@ -14,32 +14,56 @@ instance.
 
 ### Docker Quickstart
 
-Run the docker-autostart for an interactive Jupyter Notebook Container with experiment description and data analysis:  
+The simplest way to replicate all data that we mined in the context of the RESTify Study is to run the interactive Jupyter Notebook in a preconfigured Docker Container.
+You will there see a detailed explanation of our methodology, combined with a local integrated replication of our data mining and visualizations.
 
- * [Install Docker](https://docs.docker.com/get-docker/)
- * Clone this repository:  
-```git clone https://github.com/kartoffelquadrat/RestifyJupyter.git```
- * Build and Run the Jupyter Notebook Container:  
+Steps for replication:
+
+1. [Install Docker](https://docs.docker.com/get-docker/)
+2. Clone this repository:  
+```git clone https://github.com/m5c/RestifyJupyter.git```
+3. Build and Run the Jupyter Notebook Container:  
 ```cd RestifyJupyter; ./docker-autostart.sh```
- * Access the Notebook and replicate the results: [http://127.0.0.1:8888/notebooks/Restify.ipynb](http://127.0.0.1:8888/notebooks/Restify.ipynb)
+4. Access the Notebook, inspect our methodology and replicate our findings.  
+With the container running, visit [http://127.0.0.1:8888/notebooks/Restify.ipynb](http://127.0.0.1:8888/notebooks/Restify.ipynb)
 
-## Contents
+## Code inspection for Developers and Data Scientists
 
-TODO: Rather than copying complex cells to jupyter, create proxy cells that call actual code (too complex for jupyter)
+In addition to the easily accessible Jupyter Notebook, this project is preconfigured to allow in depth code inspection of all data mining performed, using [PyCharm](https://www.jetbrains.com/pycharm/download/). The free community edition is sufficient and results can also be replicated with any other correctly configured python environment. However the further instructions have been written and tested for PyCharm.
 
-The Data Mining Cells (DMCs) are to complex Jupyter. Therefore, they were developed in PyCharm and afterwards transferred to Jupyter cells.
+In adition you will need Python 3 installed on your system and set up as standard SDK.  
+You can do this directly from the ```PyCharm -> Settings``` menu:  
+
+![interpreter](markdown/interpreter.png)
+
+
+
+### Relation to Jupyter
+
+The Data Mining used for the purpose of this project is too complex for Jupyter Notebook cells. The Notebook is still useful to explain the individual and detailed analysis performed and replicate the extracted data on your system. Yet the python cells are merely proxy calls to the actual data analysis performed in this python repository. In the following we also refer to the code cells that showcase in the Jupyter Notebook as *Data Mining Cells*, short DMC.
+
+### Run Configurations
+
+When opened with PyCharm, this project is preconfigured to offer all DMCs as convenient run configurations
+
 Every DMC matches exactly the content and launch configuration of one file in ```jupyter_snippets```:
 
 | DMC | File | PyCharm Launch Config | Output in ```generated-plots```|
-|--|---|---|---|
-| 1 | [```display_population_gaussian.py```](restify_mining/skill_extractors/extract_population_gaussian.py) | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
-| 2 | [```display_control_group_skill_boxplot.py```](restify_mining/skill_extractors/extract_control_group_boxplot.py) | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
-| 3 | [```compute_group_skill_diffs.py```](restify_mining/skill_extractors/compute_cgroup_skill_diffs.py) | ComputeGroupSkillDiffs | ```--printed--``` |
-| 4 | [```merge_csv.py```](restify_mining/skill_extractors/merge_csv.py) | MergeCsv | ```generated-csv-files/restify.csv``` |
-| 5 | [```display_test_results_all_participants_by_method.py```](jupyter_snippets/pseudo_cell_05_all_results_all_participants.py) | DisplayParticipantTestResultsByMethod | ```05-test-individual.png``` |
-| 6 | [```display_test_results_all_groups_by_method.py```](jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py) | DisplayGroupTestResultsByMethod | ```06-test-heatmap.png``` |
+|-----|---|---|---|
+| 00  | ... | ... | ... |
+| 01  | [```display_population_gaussian.py```](restify_mining/skill_extractors/extract_population_gaussian.py) | DisplayPopulationGaussian | ```generated-plots/gaussians.png``` |
+| 02  | [```display_control_group_skill_boxplot.py```](restify_mining/skill_extractors/extract_control_group_boxplot.py) | DisplayControlGroupSkillBoxPlot | ```generated-plots/fused-stats.png``` |
+| 03  | [```compute_group_skill_diffs.py```](restify_mining/skill_extractors/compute_cgroup_skill_diffs.py) | ComputeGroupSkillDiffs | ```--printed--``` |
+| 04  | [```merge_csv.py```](restify_mining/skill_extractors/merge_csv.py) | MergeCsv | ```generated-csv-files/restify.csv``` |
+| 05  | [```display_test_results_all_participants_by_method.py```](jupyter_snippets/pseudo_cell_05_all_results_all_participants.py) | DisplayParticipantTestResultsByMethod | ```05-test-individual.png``` |
+| 06  | [```display_test_results_all_groups_by_method.py```](jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py) | DisplayGroupTestResultsByMethod | ```06-test-heatmap.png``` |
 
 
+### Launch Configurations
+
+The repo is preconfigure
+
+## Contents
 
 * The Jupyter files are sprinkled at top level, the main one being: ```restify.ipynb```
     * The snippets listed in the notebook are too complex to be developed in jupyter. They are thus copies of the files
