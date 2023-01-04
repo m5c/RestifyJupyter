@@ -35,39 +35,42 @@ Instructions for Docker:
 ```git clone https://github.com/m5c/RestifyJupyter.git```
 3. Build and Run the Jupyter Notebook Container:  
 ```cd RestifyJupyter; ./docker-autostart.sh```
-4. Access the Notebook at [http://127.0.0.1:8888/notebooks/Restify.ipynb](http://127.0.0.1:8888/notebooks/Restify.ipynb)
+4. Access the Notebook: [http://127.0.0.1:8888/notebooks/Restify.ipynb](http://127.0.0.1:8888/notebooks/Restify.ipynb)
 
 ## Manual Notebook
 
-It is possible to run the Jupyter Notebook instance natively. For this all runtime dependencies must be manually installed.  
+This section explains how to run the Jupyter Notebook instance natively. For this to work, all runtime dependencies must be first installed manually.  
 
-* Install ```Python 3.7``` or newer.
-* List of runtime dependencies, install command for ```pip``` package name:  
+ 1. Install ```Python 3.7``` or newer.
+ 2. Install all required python libraries, e.g. using the ```pip3``` package manager:  
 ```pip3 install pandas numpy matplotlib plotly scipy jupyter```
-
-Instructions for startup, after all dependencies are installed:
-
- * Access the project root directory: ```cd RestifyJupyter```
- * Start the Notebook with: ```jupyter notebook```
- * Access the Notebook at: [http://localhost:8888/notebooks/Restify.ipynb](http://localhost:8888/notebooks/Restify.ipynb)
+ 3. Start up the Notebook:
+    * Go to the project base directory: ```cd RestifyJupyter```
+    * Start the Notebook: ```jupyter notebook```
+    * Access the Notebook: [http://localhost:8888/notebooks/Restify.ipynb](http://localhost:8888/notebooks/Restify.ipynb)
 
 ## PyCharm IDE
 
-In addition to the easily accessible Jupyter Notebook, this project is preconfigured to allow in depth code inspection of all data mining performed, using [PyCharm](https://www.jetbrains.com/pycharm/download/). The free community edition is sufficient and results can also be replicated with any other correctly configured python environment. However the further instructions have been written and tested for PyCharm.
+Complementary to the replication of our results with a Jupyter Notebook, you can also directly execute the python code used for data mining.
+This option provides an in depth access to implementation details and is intended for data scientist who want to either:
 
-In adition you will need Python 3 installed on your system and set up as standard SDK.  
-You can do this directly from the ```PyCharm -> Settings``` menu:  
+ * Validate the correctness of our extracted data at coding level.
+ * Enrich our the data analysis we implemented by additional insights.
 
+All runtime dependencies, including python itself, can be directly installed from PyCharm, however it is important that the IDE is configured to use the correct interpreter.
+
+ 1. Install PyCharm. The [free *Community Edition*]() is sufficient.
+ 2. Install python3 from the ```PyCharm -> Settings``` menu:  
 ![interpreter](markdown/interpreter.png)
-
-
-
-### Linkage to Jupyter
-
-The Data Mining used for the purpose of this project is too complex for Jupyter Notebook cells. The Notebook is still useful to explain the individual and detailed analysis performed and replicate the extracted data on your system. Yet the python cells are merely proxy calls to the actual data analysis performed in this python repository. In the following we also refer to the code cells that showcase in the Jupyter Notebook as *Data Mining Cells*, short DMC.
+ 3. Install [PyLint]
+    * Configure PyLint to use the root ```.pylintrc``` config file, so it correctly resolves imports.  
+(See [this discussion](https://github.com/dense-analysis/ale/issues/208#issuecomment-265590465))
+4. Select the desired run configuration, to replicate any of our results.  
+For every code cell of the Notebook, there is a corresponding preconfigured run configuration.
 
 ### Run Configurations
 
+The Data Mining used for the purpose of this project is too complex for Jupyter Notebook cells. The Notebook is still useful to explain the individual and detailed analysis performed and replicate the extracted data on your system. Yet the python cells are merely proxy calls to the actual data analysis performed in this python repository. In the following we also refer to the code cells that showcase in the Jupyter Notebook as *Data Mining Cells*, short DMC.
 When opened with PyCharm, this project is preconfigured to offer all DMCs as convenient run configurations
 
 Every DMC matches exactly the content and launch configuration of one file in ```jupyter_snippets```:
@@ -83,11 +86,9 @@ Every DMC matches exactly the content and launch configuration of one file in ``
 | 06  | [```display_test_results_all_groups_by_method.py```](jupyter_snippets/pseudo_cell_06_all_tests_all_groups.py) | DisplayGroupTestResultsByMethod | ```06-test-heatmap.png``` |
 
 
-### Launch Configurations
+## Repository Layout
 
-The repo is preconfigure
-
-## Contents
+... description of this section ...
 
 * The Jupyter files are sprinkled at top level, the main one being: ```restify.ipynb```
     * The snippets listed in the notebook are too complex to be developed in jupyter. They are thus copies of the files
@@ -106,20 +107,6 @@ The contents of ```source-csv-files``` are as follows:
 * Post completion ratings CSV: ```TBA```
 * Manually extracted time data CSV: ```TBA```
 
-## Usage
-
-For data analysis, use Jupyter. For development of new snippets, use pycharm and place your new snipped in
-the ```jupyter_snippets``` directory. Copy the content of your snipped into a new jupyter cell when done.
-
- * Starting the Notebook: ```jupyter notebook```
- * Visit: [http://localhost:8888/notebooks/Restify.ipynb](http://localhost:8888/notebooks/Restify.ipynb)
-
-### Pycharm Setup
-
- * Install [PyLint]
- * Configure PyLint to use the root ```.pylintrc``` config file, so it correclty resolves imports.  
-(See [this discussion](https://github.com/dense-analysis/ale/issues/208#issuecomment-265590465))
- * Use provided Run configurations to dry run Jupyter cells (working directory preconfigured, so there are no IO issued on CSV import / graph export)
 
 ## Author / References
 
