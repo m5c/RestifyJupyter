@@ -1,6 +1,6 @@
 # RESTify Data Analysis
 
-Data, Data-Mining and Visualization of RESTify experiment findings.
+Data, Data-Mining and Visualization for the RESTify experiment.
 
 ![pycharm](https://img.shields.io/badge/PyCharm-22.2.1-blue)
 ![pylint](https://img.shields.io/badge/PyLint-2.15.2-blue)
@@ -9,19 +9,19 @@ Data, Data-Mining and Visualization of RESTify experiment findings.
 
 ## About
 
-This repository hosts the sources and input data for the RESTify experiment analysis, in form of a Jupyter Notebook
-instance and preconfigured PyCharm project.
+This repository hosts sources and raw input data that allows replication of empiric findings around the RESTify experiment.
+The data can be reproduced and inspected with a Jupyter Notebook instance, or for more experienced users and collaborators with a preconfigured PyCharm project.
 
-To replicate our data analysis, you can either:
+To replicate our data analysis, you have three options:
 
  * [Deploy a local Jupyter Notebook as preconfigured Docker container.](#dockerized-notebook)  
-=> *The fastest and simples way to inpect our data analysis.*
+=> *The fastest and simples way to inspect our work and findings.*
  * [Manually set up a local Jupyter Notebook.](#manual-notebook)  
-=> *The preferred option for experienced python users.*
- * [Manually run individual parts of the data analysis with PyCharm](#pycharm-ide):  
-=> *The preferred option for software developers and data scientists who want to take the analysis further*
+=> *Similar to the previous option. The manual setup requires proficiency with python installations.*
+ * [Manually run individual parts of the data analysis with the PyCharm IDE](#pycharm-ide):  
+=> *Full access to all implementation details. The preferred option for software developers and data scientists who want to deep investigate our work, or take things further.*
 
-For a description of this repositories contents, see [Contents](#contents) section.
+ > For an overlook of the repository structure, see the [Contents](#contents) section.
 
 ## Dockerized Notebook
 
@@ -59,14 +59,17 @@ This option provides an in depth access to implementation details and is intende
 
 All runtime dependencies, including python itself, can be directly installed from PyCharm, however it is important that the IDE is configured to use the correct interpreter.
 
- 1. Install PyCharm. The [free *Community Edition*]() is sufficient.
- 2. Install python3 from the ```PyCharm -> Settings``` menu:  
+ 1. Install PyCharm. The [free *Community Edition*](https://www.jetbrains.com/pycharm/download/) is sufficient.
+ 2. Install the ```python3``` interpreter. You find a corresponding option in the ```PyCharm -> Settings``` menu:  
 ![interpreter](markdown/interpreter.png)
- 3. Install [PyLint]
-    * Configure PyLint to use the root ```.pylintrc``` config file, so it correctly resolves imports.  
-(See [this discussion](https://github.com/dense-analysis/ale/issues/208#issuecomment-265590465))
-4. Select the desired run configuration, to replicate any of our results.  
-For every code cell of the Notebook, there is a corresponding preconfigured run configuration.
+ 3. Install all required libraries. Open the ```PyCharm -> Settings -> Project -> Interpreter``` menu:
+![libraries](markdown/libraries.png)
+    * Click the ```+``` sign, then install all the following: ```pandas numpy matplot plotly scipy```
+ 4. Install PyLint. Open the plugins menu: ```PyCharm -> Settings -> Plugins```:  
+![pylint](markdown/pylint.png)
+    * Configure PyLint to use the root ```.pylintrc``` config file, so it [correctly resolves imports](https://github.com/dense-analysis/ale/issues/208#issuecomment-265590465).
+ 5. Select the desired run configuration, to replicate any of our results:
+    * For every code cell of the Notebook, there is a corresponding preconfigured run configuration.
 
 ### Run Configurations
 
