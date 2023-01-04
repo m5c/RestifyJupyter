@@ -1,6 +1,6 @@
-# RESTify Jupyter
+# RESTify Data Analysis
 
-Data, Data-Mining and visualization of correlations for the RESTify experiment.
+Data, Data-Mining and Visualization of RESTify experiment findings.
 
 ![pycharm](https://img.shields.io/badge/PyCharm-22.2.1-blue)
 ![pylint](https://img.shields.io/badge/PyLint-2.15.2-blue)
@@ -10,24 +10,48 @@ Data, Data-Mining and visualization of correlations for the RESTify experiment.
 ## About
 
 This repository hosts the sources and input data for the RESTify experiment analysis, in form of a Jupyter Notebook
-instance.
+instance and preconfigured PyCharm project.
 
-### Docker Quickstart
+To replicate our data analysis, you can either:
 
-The simplest way to replicate all data that we mined in the context of the RESTify Study is to run the interactive Jupyter Notebook in a preconfigured Docker Container.
-You will there see a detailed explanation of our methodology, combined with a local integrated replication of our data mining and visualizations.
+ * [Deploy a local Jupyter Notebook as preconfigured Docker container.](#dockerized-notebook)  
+=> *The fastest and simples way to inpect our data analysis.*
+ * [Manually set up a local Jupyter Notebook.](#manual-notebook)  
+=> *The preferred option for experienced python users.*
+ * [Manually run individual parts of the data analysis with PyCharm](#pycharm-ide):  
+=> *The preferred option for software developers and data scientists who want to take the analysis further*
 
-Steps for replication:
+For a description of this repositories contents, see [Contents](#contents) section.
+
+## Dockerized Notebook
+
+This repository hosts a Docker configuration that creates a container Jupyter Notebook instance with all runtime dependencies.    
+The notebook allows you to locally replicate our methodology and all findings, together with in-depth explanations.
+
+Instructions for Docker:
 
 1. [Install Docker](https://docs.docker.com/get-docker/)
 2. Clone this repository:  
 ```git clone https://github.com/m5c/RestifyJupyter.git```
 3. Build and Run the Jupyter Notebook Container:  
 ```cd RestifyJupyter; ./docker-autostart.sh```
-4. Access the Notebook, inspect our methodology and replicate our findings.  
-With the container running, visit [http://127.0.0.1:8888/notebooks/Restify.ipynb](http://127.0.0.1:8888/notebooks/Restify.ipynb)
+4. Access the Notebook at [http://127.0.0.1:8888/notebooks/Restify.ipynb](http://127.0.0.1:8888/notebooks/Restify.ipynb)
 
-## Code inspection for Developers and Data Scientists
+## Manual Notebook
+
+It is possible to run the Jupyter Notebook instance natively. For this all runtime dependencies must be manually installed.  
+
+* Install ```Python 3.7``` or newer.
+* List of runtime dependencies, install command for ```pip``` package name:  
+```pip3 install pandas numpy matplotlib plotly scipy jupyter```
+
+Instructions for startup, after all dependencies are installed:
+
+ * Access the project root directory: ```cd RestifyJupyter```
+ * Start the Notebook with: ```jupyter notebook```
+ * Access the Notebook at: [http://localhost:8888/notebooks/Restify.ipynb](http://localhost:8888/notebooks/Restify.ipynb)
+
+## PyCharm IDE
 
 In addition to the easily accessible Jupyter Notebook, this project is preconfigured to allow in depth code inspection of all data mining performed, using [PyCharm](https://www.jetbrains.com/pycharm/download/). The free community edition is sufficient and results can also be replicated with any other correctly configured python environment. However the further instructions have been written and tested for PyCharm.
 
@@ -38,7 +62,7 @@ You can do this directly from the ```PyCharm -> Settings``` menu:
 
 
 
-### Relation to Jupyter
+### Linkage to Jupyter
 
 The Data Mining used for the purpose of this project is too complex for Jupyter Notebook cells. The Notebook is still useful to explain the individual and detailed analysis performed and replicate the extracted data on your system. Yet the python cells are merely proxy calls to the actual data analysis performed in this python repository. In the following we also refer to the code cells that showcase in the Jupyter Notebook as *Data Mining Cells*, short DMC.
 
@@ -99,18 +123,17 @@ the ```jupyter_snippets``` directory. Copy the content of your snipped into a ne
 
 ## Author / References
 
-* PI: Maximilian Schiedermeier
-* Supervisors: Bettina Kemme, Jörg Kienzle
-* Raw Data: ...csv bundle...
-* Implementation: Maximilian Schiedermeier
+* Principal Investigator: [Maximilian Schiedermeier](https://www.cs.mcgill.ca/~mschie3/)
+* Academic Supervisors: [Bettina Kemme](https://www.cs.mcgill.ca/~kemme/), [Jörg Kienzle](https://www.cs.mcgill.ca/~joerg/Home/Jorgs_Home.html)
+* Implementation: [Maximilian Schiedermeier](https://github.com/m5c)
     * Study Instructions, by control group: 
        * [Red](https://www.cs.mcgill.ca/~mschie3/red/restify-study/)
        * [Green](https://www.cs.mcgill.ca/~mschie3/green/restify-study/)
        * [Blue](https://www.cs.mcgill.ca/~mschie3/blue/restify-study/)
        * [Yellow](https://www.cs.mcgill.ca/~mschie3/yellow/restify-study/)
     * Legacy Application Source Code:
-       * [BookStore](https://github.com/kartoffelquadrat/BookStoreInternals/tree/RESTifyStudy)
-       * [Zoo](https://github.com/kartoffelquadrat/Zoo/tree/RESTifyStudy)
-       * [Xox](https://github.com/kartoffelquadrat/XoxInternals/tree/RESTifyStudy)
-    * Unit Test Evaluation Script: [RestifyAnalyzer](https://github.com/kartoffelquadrat/RestifyAnalyzer)
+       * [BookStore](https://github.com/m5c/BookStoreInternals/tree/RESTifyStudy)
+       * [Zoo](https://github.com/m5c/Zoo/tree/RESTifyStudy)
+       * [Xox](https://github.com/m5c/XoxInternals/tree/RESTifyStudy)
+    * Participant Submission Analyzer: [RestifyAnalyzer](https://github.com/m5c/RestifyAnalyzer)
 * Research Ethics Board Advisor: Lynda McNeil
