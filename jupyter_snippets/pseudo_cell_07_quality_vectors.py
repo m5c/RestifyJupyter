@@ -1,0 +1,19 @@
+"""
+Author: Maximilian Schiedermeier
+"""
+from csv_tools import file_load_utils
+from restify_mining.data_objects.assessed_participant import AssessedParticipant
+
+
+def cell_07() -> None:
+    """
+    Jupyter cell 07. See markdown description.
+    :return: None
+    """
+    # Load all participant objects (specifies skills, codename, control-group) from csv file
+    assessed_population: list[
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+
+    # Use correctness rate and time required per app and participant to draw a plot / tendency
+    # vector.
+    print("Yayyy")

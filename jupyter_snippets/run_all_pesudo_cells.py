@@ -43,6 +43,11 @@ print("Imitating Jupyter Pseudo Cell 06...")
 cell_06()
 print("Cell 06 complete.\n")
 
+
+print("Imitating Jupyter Pseudo Cell 07...")
+cell_06()
+print("Cell 07 complete.\n")
+
 print("Success!")
 print("All Jupyter Cells imitated.")
 print("Your data is in\n - generated-csv-files/*\n - generated-plots/*")

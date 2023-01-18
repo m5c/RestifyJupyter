@@ -1,7 +1,7 @@
 """
-Abstract base class for all unit_test_miners. Consumes a list of assessed participants, produces a list of
-float values, ready for subsequent colourizing / passing to plotter. The algorithm used to
-produce the output values depends on the specific miner implementation.
+Abstract base class for all unit_test_miners. Consumes a list of assessed participants, produces
+a list of float values, ready for subsequent colourizing / passing to plotter. The algorithm used
+to produce the output values depends on the specific miner implementation.
 See: https://blog.teclado.com/python-abc-abstract-base-classes/
 """
 

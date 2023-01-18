@@ -11,10 +11,12 @@ class AssessedParticipant(Participant):
     """Assessed Participant class. Represents all quantifiable information regarding a
     participant obtained at any point in time throughout the study. This is a one-to-one
     representation of the lines in the generated-csv-files/restify.csv file."""
+
     # pylint: disable=too-many-arguments
 
     def __init__(self, codename: str, control_group: ControlGroup, skills: list[int],
-                 test_results_bs: list[bool], test_results_xox: list[bool]):
+                 test_results_bs: list[bool], test_results_xox: list[bool], time_bs: int,
+                 time_xox: int):
         """
         :type self: object
         """
@@ -31,6 +33,25 @@ class AssessedParticipant(Participant):
             test_results_bs) * 100.0
         self.__test_percentage_xox: float = test_results_xox.count(True) / len(
             test_results_xox) * 100.0
+
+        self.__time_bs: int = time_bs
+        self.__time_xox: int = time_xox
+
+    @property
+    def time_bs(self) -> int:
+        """
+        Property / Getter for time in seconds required for bookstore refactoring.
+        :return: amount of seconds this participant needed for the bookstore task.
+        """
+        return self.__time_bs
+
+    @property
+    def time_xox(self) -> int:
+        """
+        Property / Getter for time in seconds required for bookstore refactoring.
+        :return: amount of seconds this participant needed for the bookstore task.
+        """
+        return self.__time_xox
 
     @property
     def test_results_bs(self) -> list[bool]:
