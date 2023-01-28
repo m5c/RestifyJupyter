@@ -19,8 +19,3 @@ def plot_correlation(x_values: list[int], y_values: list[int], x_label: str, y_l
     plt.scatter(x_values, y_values)
     plt.show()
 
-
-# Sample, call like this:
-x = [931, 992, 924, 1002]
-y = [3602, 3043, 2757, 2892]
-plot_correlation(x, y, "Time prep (s)", "Time task (s)")

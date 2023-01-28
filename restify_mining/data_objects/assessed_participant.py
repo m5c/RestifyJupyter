@@ -34,8 +34,8 @@ class AssessedParticipant(Participant):
         self.__test_percentage_xox: float = test_results_xox.count(True) / len(
             test_results_xox) * 100.0
 
-        self.__time_bs: int = time_bs
-        self.__time_xox: int = time_xox
+        self.__time_bs: int = int(time_bs)
+        self.__time_xox: int = int(time_xox)
 
     @property
     def time_bs(self) -> int:
