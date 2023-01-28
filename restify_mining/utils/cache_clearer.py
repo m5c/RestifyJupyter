@@ -11,6 +11,10 @@ def clear_cache(folder: str):
     Taken from StackOverflow: https://stackoverflow.com/a/185941
     :return:
     """
+    if not os.path.exists(folder):
+        os.mkdir(folder)
+        return
+
     for filename in os.listdir(folder):
         file_path = os.path.join(folder, filename)
 

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/csv_tools/file_load_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/file_load_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated-csv-files/restify.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/manual_clear_cache.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/manual_clear_cache.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_04_compute_cgroup_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_04_compute_cgroup_skill_diffs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pesudo_cells.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/skill_extractors/compute_cgroup_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/skill_extractors/compute_cgroup_skill_diffs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/utils/cache_clearer.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/utils/cache_clearer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +378,7 @@
       <workItem from="1674032778909" duration="4901000" />
       <workItem from="1674569227240" duration="437000" />
       <workItem from="1674922812648" duration="284000" />
-      <workItem from="1674923147130" duration="3402000" />
+      <workItem from="1674923147130" duration="4261000" />
     </task>
     <servers />
   </component>
@@ -440,7 +445,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$01_DisplayPopulationGaussian.coverage" NAME="01-DisplayPopulationGaussian Coverage Results" MODIFIED="1674049564429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$07_TendencyVectors.coverage" NAME="07-QualityVectors Coverage Results" MODIFIED="1674049701651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseydoCells.coverage" NAME="00-RunAllPseydoCells Coverage Results" MODIFIED="1674926484322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseydoCells.coverage" NAME="00-RunAllPseydoCells Coverage Results" MODIFIED="1674927400160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$00_ClearAllCaches.coverage" NAME="00-ClearAllCaches Coverage Results" MODIFIED="1674049576749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>

@@ -18,6 +18,7 @@ from restify_mining.utils.cache_clearer import clear_cache
 print("Clearing cached output files...")
 clear_cache("generated-csv-files")
 clear_cache("generated-plots")
+clear_cache("generated-text-files")
 print("Clear cache complete.")
 
 print("Imitating Jupyter Pseudo Cell 01...")

@@ -23,7 +23,7 @@ def compute_cgroup_skill_diffs(population: list[Participant]) -> None:
     """
 
     # Print disclaimer
-    result: str = "Control group comparability analysis. Listing of greatest differences " \
+    result: str = "Control group comparability analysis. Listing of the greatest differences " \
                   "(average skill values) between any pairs of control groups:\n"
 
     # Prepare variables to remember worst average difference and corresponding index
@@ -65,4 +65,15 @@ def compute_cgroup_skill_diffs(population: list[Participant]) -> None:
     result += "\t\"" + full_skill_tags[worst_min_max_diff_index] + "\", with a difference of "
     result += str(round(worst_min_max_diff, 1))
     print(result)
-    #TODO: store result string on disk.
+    persist_stats(result)
+
+
+def persist_stats(stats: str) -> None:
+    """
+    Helper function to persist the stats string on disk.
+    :param stats: as the prepared string to write to disk.
+    :return:
+    """
+    with open("generated-text-files/group-comparability-stats.txt", "w",
+              encoding="utf-8") as text_file:
+        text_file.write(stats)
