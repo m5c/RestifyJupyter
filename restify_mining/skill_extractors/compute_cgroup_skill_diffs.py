@@ -12,9 +12,16 @@ from restify_mining.data_objects.participant import Participant
 from restify_mining.data_objects import participant_filter_tools as pft
 from restify_mining.markers.skills_markers import full_skill_tags, skill_tags, \
     get_formated_skill_tag
-from csv_tools import file_load_utils
+
 
 def compute_cgroup_skill_diffs(population: list[Participant]) -> None:
+    """
+    Helper method to produce a metric that allows for comparison of the skill distributions in
+    the individual control groups.
+    :param population: as the full test population to analyze.
+    :return: None.
+    """
+
     # Print disclaimer
     print(
         "Control group comparability analysis. Listing of greatest differences (average skill "
@@ -28,7 +35,7 @@ def compute_cgroup_skill_diffs(population: list[Participant]) -> None:
     # Iterate over skills and for each compute the average score difference for any pair of control
     # groups. Print the highest (worst) value found.
     control_groups: list[str] = pft.extract_group_names(population)
-    for skill_index, skill in enumerate(skill_tags):
+    for skill_index in range(len(skill_tags)):
 
         # Compute average skill value for each control group
         average_skill_values = []
