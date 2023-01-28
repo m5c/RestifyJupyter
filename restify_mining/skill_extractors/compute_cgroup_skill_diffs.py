@@ -17,16 +17,14 @@ from restify_mining.markers.skills_markers import full_skill_tags, skill_tags, \
 def compute_cgroup_skill_diffs(population: list[Participant]) -> None:
     """
     Helper method to produce a metric that allows for comparison of the skill distributions in
-    the individual control groups.
+    the individual control groups
     :param population: as the full test population to analyze.
     :return: None.
     """
 
     # Print disclaimer
-    print(
-        "Control group comparability analysis. Listing of greatest differences (average skill "
-        "values) "
-        "between any pairs of control groups:")
+    result: str = "Control group comparability analysis. Listing of greatest differences " \
+                  "(average skill values) between any pairs of control groups:\n"
 
     # Prepare variables to remember worst average difference and corresponding index
     worst_min_max_diff: float = 0.0
@@ -55,14 +53,16 @@ def compute_cgroup_skill_diffs(population: list[Participant]) -> None:
             worst_min_max_diff_index = skill_index
 
         # Print the stats for the current skill
-        print(get_formated_skill_tag(skill_index) + ": \tAVG_MIN=" + str(round(avg_min, 1))
-              + ",\tAVG_MAX=, " + str(round(avg_max, 1)) +
-              ",\tMAX_AVG_DIFF=" + str(round(avg_max - avg_min, 1)))
+        result += get_formated_skill_tag(skill_index) + ": \tAVG_MIN=" + str(round(avg_min, 1))
+        result += ",\tAVG_MAX=, " + str(round(avg_max, 1))
+        result += ",\tMAX_AVG_DIFF=" + str(round(avg_max - avg_min, 1)) + "\n"
 
     # Print the name of the skill that serves as metric for this partition.
-    print("--------------")
-    print(
-        "The worst difference in average skill values between two control groups in the given "
-        "partition appears for:")
-    print("\t\"" + full_skill_tags[worst_min_max_diff_index] + "\", with a difference of " + str(
-        round(worst_min_max_diff, 1)))
+    result += "--------------\n"
+    result += "The worst difference in average skill values between two control groups in the " \
+              "given partition appears for:\n"
+
+    result += "\t\"" + full_skill_tags[worst_min_max_diff_index] + "\", with a difference of "
+    result += str(round(worst_min_max_diff, 1))
+    print(result)
+    #TODO: store result string on disk.

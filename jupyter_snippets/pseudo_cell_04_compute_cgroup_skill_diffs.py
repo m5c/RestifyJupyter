@@ -18,3 +18,4 @@ def cell_04() -> None:
 
     # Compute and print skill diffs stats to assess comparability of individual control groups.
     compute_cgroup_skill_diffs(assessed_population)
+    # TODO: also persist results in CSV.

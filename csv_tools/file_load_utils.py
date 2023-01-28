@@ -94,9 +94,10 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                 # details, then the skill vector. Next the test results for bookstore, followed
                 # by test results for xox.
                 # The last argument is the skill vector (self-declared by participant)
+                # TODO: figure out why skills are not correctly extracted. (3rd args)
                 assessed_participants.append(
                     AssessedParticipant(row[0], control_groups[control_group_name],
-                                        [int(x) for x in row[4:12]],
+                                        [int(x) for x in row[3:11]],
                                         [str2bool(x) for x in row[37:48]],
                                         [str2bool(x) for x in row[29:36]],
                                         row[19], row[18]))
