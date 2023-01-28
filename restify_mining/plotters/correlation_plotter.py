@@ -18,4 +18,3 @@ def plot_correlation(x_values: list[int], y_values: list[int], x_label: str, y_l
     plt.axis([0, x_max, 0, y_max])
     plt.scatter(x_values, y_values)
     plt.show()
-

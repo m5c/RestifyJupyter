@@ -90,8 +90,9 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                 first_line = False
             else:
                 control_group_name = row[1]
-                # first argument is name (likewise first column in csv), then the control group details, then the skill vector.
-                # Next the test results for bookstore, followed by test results for xox.
+                # first argument is name (likewise first column in csv), then the control group
+                # details, then the skill vector. Next the test results for bookstore, followed
+                # by test results for xox.
                 # The last argument is the skill vector (self-declared by participant)
                 assessed_participants.append(
                     AssessedParticipant(row[0], control_groups[control_group_name],

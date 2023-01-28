@@ -66,4 +66,3 @@ def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],
         skills_markers.skill_tags)
     plt.savefig(filename)
     plt.show()
-

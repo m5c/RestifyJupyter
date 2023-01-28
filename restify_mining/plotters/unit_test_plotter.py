@@ -49,8 +49,6 @@ def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[Ass
     grid_values: list[list[float]] = miner.mine(population)
 
     # Enable group colour space if requested
-    group_zone_size: int = 0
-    label: str = ""
     colour_map: ListedColormap
     if with_colours:
         # Look up amount of participants per control group, so we can tint the map by zones.

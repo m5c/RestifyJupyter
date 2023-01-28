@@ -9,12 +9,15 @@ from restify_mining.data_objects import participant_stat_tools
 from restify_mining.markers import skills_markers
 from restify_mining.data_objects.participant import Participant
 from restify_mining.plotters.skill_plotter import plot_gaussian
-from csv_tools import file_load_utils
 
 
 def extract_population_gaussian(population: list[Participant]) -> None:
-    # Compute a gaussian distribution (defined by mean and standard dev) for every skill and produce
-    # plot
+    """
+    Helper method to compute a gaussian distribution (defined by mean and standard dev) for every
+    skill and produce plot
+    :param population: as the subset of the study participants to analyze.
+    :return: None.
+    """
     mean_scores = participant_stat_tools.build_mean_skills(population)
     stddev_scores = participant_stat_tools.build_standard_deviation_skills(population)
 

@@ -13,11 +13,15 @@ from restify_mining.plotters.skill_plotter import plot_box
 
 
 def extract_control_groups_boxplot(population: list[Participant]) -> None:
-    # Creating the boxplot comes down to ordering all raw skill values of all participants into the
-    # order required by the plotter. The statistical markers are then extracted automatically.
-    # Namely, the required order is: all values for skill 1 of participants of group 1, all values
-    # for skill 1 of participants of group 2, ... all values for skill 2 of participants of group 1,
-    # and so on...
+    """
+    Creating the boxplot comes down to ordering all raw skill values of all participants into the
+    order required by the plotter. The statistical markers are then extracted automatically.
+    Namely, the required order is: all values for skill 1 of participants of group 1, all values
+    for skill 1 of participants of group 2, ... all values for skill 2 of participants of group 1,
+    and so on...
+    :param population: as a subset of participants to analyze (should match a control group).
+    :return: None.
+    """
     plotter_skill_values = []
     control_groups: list[str] = participant_filter_tools.extract_group_names(population)
 

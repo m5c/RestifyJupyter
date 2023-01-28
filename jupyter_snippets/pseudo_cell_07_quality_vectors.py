@@ -24,8 +24,6 @@ def cell_07() -> None:
     # Sample, call like this:
 
     # Get all time values for manual refactoring task from participants
-    x = extract_unit_pass_rates_bs(assessed_population)
-    y = extract_refactor_times_bs(assessed_population)
-    plot_correlation(x, y, "Tests passed (%)", "Refactoring time (s)")
-
-
+    x_axis_values = extract_unit_pass_rates_bs(assessed_population)
+    y_axis_values = extract_refactor_times_bs(assessed_population)
+    plot_correlation(x_axis_values, y_axis_values, "Tests passed (%)", "Refactoring time (s)")

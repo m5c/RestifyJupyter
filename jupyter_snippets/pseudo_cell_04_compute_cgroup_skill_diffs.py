@@ -9,7 +9,7 @@ from restify_mining.skill_extractors.compute_cgroup_skill_diffs import compute_c
 
 def cell_04() -> None:
     """
-    Jupyter cell 03. See markdown description.
+    Jupyter cell 04. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
@@ -18,4 +18,3 @@ def cell_04() -> None:
 
     # Compute and print skill diffs stats to assess comparability of individual control groups.
     compute_cgroup_skill_diffs(assessed_population)
-    #TODO: also store in text file. Rename csv files folder to ascii folder.
