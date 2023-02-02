@@ -7,7 +7,7 @@ Author Maximilian Schiedermeier
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
 from restify_mining.plotters.extractors.extractor import Extractor
-from restify_mining.plotters.group_sample_points import GroupSamples
+from restify_mining.plotters.group_samples import GroupSamples
 
 
 class Correlation:
@@ -19,6 +19,13 @@ class Correlation:
 
     def __init__(self, full_population: list[AssessedParticipant], x_extractor: Extractor,
                  y_extractor: Extractor, indicate_groups: bool):
+        """
+        Constructor for a plotable correlation
+        :param full_population: as the population to analyze (should be full, assessed population).
+        :param x_extractor: as the extractor to apply for x-ordinate of samples
+        :param y_extractor: as the extractor to apply for y-ordinate of samples
+        :param indicate_groups: boolean flag to indicate if group colours should be highlighted.
+        """
         # Store axis labels
         self.__x_axis_label: str = x_extractor.axis_label()
         self.__y_axis_label: str = y_extractor.axis_label()

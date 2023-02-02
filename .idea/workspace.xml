@@ -8,9 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_quality_vectors.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_quality_vectors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/plotters/correlation.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/correlation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/extractors/bs_passrate_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/extractors/bs_passrate_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/extractors/bs_time_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/extractors/bs_time_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/group_sample_points.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/group_sample_points.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/correlation_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/correlation_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/plotters/group_sample_points.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/plotters/group_samples.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,7 +377,7 @@
       <workItem from="1674923147130" duration="4320000" />
       <workItem from="1675267189049" duration="1952000" />
       <workItem from="1675347997425" duration="2160000" />
-      <workItem from="1675354982438" duration="5707000" />
+      <workItem from="1675354982438" duration="6250000" />
     </task>
     <servers />
   </component>
@@ -429,8 +428,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$01_DisplayPopulationGaussian.coverage" NAME="01-DisplayPopulationGaussian Coverage Results" MODIFIED="1674049564429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$07_QualityVectors.coverage" NAME="07-QualityVectors Coverage Results" MODIFIED="1675363460749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$07_TendencyVectors.coverage" NAME="07-QualityVectors Coverage Results" MODIFIED="1674049701651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1675362620648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1675363672604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseydoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1675267282338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/RestifyJupyter$00_ClearAllCaches.coverage" NAME="00-ClearAllCaches Coverage Results" MODIFIED="1674049576749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
