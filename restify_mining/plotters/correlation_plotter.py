@@ -5,16 +5,25 @@ error-rate ratio. Skill to error rate ratio, etc.
 """
 import matplotlib.pyplot as plt
 
+from restify_mining.plotters.correlation import Correlation
 
-def plot_correlation(x_values: list[int], y_values: list[int], x_label: str, y_label: str) -> None:
+def plot_correlation(correlation: Correlation) -> None:
     """Meta plotter method to just print my data with labels, but without any contrived parameters
     that nobody actually every needs.
     """
-    x_max = max(x_values) * 1.05
-    y_max = max(y_values) * 1.05
 
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
-    plt.axis([0, x_max, 0, y_max])
-    plt.scatter(x_values, y_values)
+    # Compute plot axis dimensions including a buffer margin.
+    x_max_with_buffer: float = correlation.x_axis_max * 1.05
+    y_max_with_buffer: float = correlation.y_axis_max * 1.05
+    plt.axis([0, x_max_with_buffer, 0, y_max_with_buffer])
+
+    # Add the axis labels
+    plt.xlabel(correlation.x_axis_label)
+    plt.ylabel(correlation.y_axis_label)
+
+    # For all groups in the bundle, add the sample points in the correct colour
+    plt.scatter(correlation.red_bundle.x_axis_values, correlation.red_bundle.y_axis_values)
+    plt.scatter(correlation.green_bundle.x_axis_values, correlation.green_bundle.y_axis_values)
+    plt.scatter(correlation.blue_bundle.x_axis_values, correlation.blue_bundle.y_axis_values)
+    plt.scatter(correlation.yellow_bundle.x_axis_values, correlation.yellow_bundle.y_axis_values)
     plt.show()
