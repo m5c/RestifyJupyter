@@ -1,5 +1,5 @@
 """
-Helper module that combines two provided extractors and applies them on a given population. 
+Helper module that combines two provided extractors and applies them on a given population.
 Produces all parameters needed for printing by correlation plotter.
 Author Maximilian Schiedermeier
 """
@@ -12,6 +12,10 @@ from restify_mining.plotters.group_sample_points import GroupSamples
 
 class Correlation:
     """Helper class for convenient extraction of data for colourized plots."""
+
+    # pylint: disable=too-many-arguments
+    # pylint: disable=too-many-instance-attributes
+    # pylint: disable=too-many-locals
 
     def __init__(self, full_population: list[AssessedParticipant], x_extractor: Extractor,
                  y_extractor: Extractor, indicate_groups: bool):
@@ -30,16 +34,16 @@ class Correlation:
             full_population, "yellow")
 
         # Generate x-sample points for all participants, using x_extractor
-        red_samples_x: list[float] = x_extractor.extract(red_assessed_popultation);
-        green_samples_x: list[float] = x_extractor.extract(green_assessed_popultation);
-        blue_samples_x: list[float] = x_extractor.extract(blue_assessed_popultation);
-        yellow_samples_x: list[float] = x_extractor.extract(yellow_assessed_popultation);
+        red_samples_x: list[float] = x_extractor.extract(red_assessed_popultation)
+        green_samples_x: list[float] = x_extractor.extract(green_assessed_popultation)
+        blue_samples_x: list[float] = x_extractor.extract(blue_assessed_popultation)
+        yellow_samples_x: list[float] = x_extractor.extract(yellow_assessed_popultation)
 
         # Generate y-sample points for all participants, using y_extractor
-        red_samples_y: list[float] = y_extractor.extract(red_assessed_popultation);
-        green_samples_y: list[float] = y_extractor.extract(green_assessed_popultation);
-        blue_samples_y: list[float] = y_extractor.extract(blue_assessed_popultation);
-        yellow_samples_y: list[float] = y_extractor.extract(yellow_assessed_popultation);
+        red_samples_y: list[float] = y_extractor.extract(red_assessed_popultation)
+        green_samples_y: list[float] = y_extractor.extract(green_assessed_popultation)
+        blue_samples_y: list[float] = y_extractor.extract(blue_assessed_popultation)
+        yellow_samples_y: list[float] = y_extractor.extract(yellow_assessed_popultation)
 
         # Store extracted x / y sample points in printable bundles.
         self.__red_bundle: GroupSamples = GroupSamples("red", red_samples_x, red_samples_y,

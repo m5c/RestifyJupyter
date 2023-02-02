@@ -9,7 +9,8 @@ from restify_mining.markers.group_tint_markers import group_to_tint
 class GroupSamples:
     """Bundle class to group sample points and group name."""
 
-    def __init__(self, group_name: str, x_axis_values: list[float], y_axis_values: list[float], with_tint: bool):
+    def __init__(self, group_name: str, x_axis_values: list[float], y_axis_values: list[float],
+                 with_tint: bool):
         self.__group_name: str = group_name
         self.__group_tint: str = group_to_tint(group_name) if with_tint else "#000000"
         self.__x_axis_values: list[float] = x_axis_values
