@@ -30,6 +30,13 @@ class Extractor(ABC):
     @abstractmethod
     def axis_label(self) -> str:
         """
-        Abstract method that produces an axis label consumable by plotter..
+        Abstract method that produces an axis label consumable by plotter.
         :return: label for plot axis.
+        """
+
+    @abstractmethod
+    def filename_segment(self) -> str:
+        """
+        Abstract method that produces an filename segment describing the executor.
+        :return: executor name.
         """

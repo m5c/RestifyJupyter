@@ -99,5 +99,7 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                                         [int(x) for x in row[3:11]],
                                         [str2bool(x) for x in row[37:48]],
                                         [str2bool(x) for x in row[29:36]],
-                                        row[19], row[18]))
+                                        row[19], row[18],
+                                        row[16], row[17]
+                                        ))
     return assessed_participants

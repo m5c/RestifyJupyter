@@ -68,6 +68,9 @@ class Correlation:
         self.__y_axis_max: float = max(max(red_samples_y), max(green_samples_y),
                                        max(blue_samples_y), max(yellow_samples_y))
 
+        self.__filename: str = "x" + x_extractor.filename_segment() + "-y" + \
+                               y_extractor.filename_segment()
+
     @property
     def x_axis_label(self) -> str:
         """
@@ -131,3 +134,11 @@ class Correlation:
         :return: group sample points of yellow control group for applied extractor.
         """
         return self.__yellow_bundle
+
+    @property
+    def filename(self) -> str:
+        """
+        Getter for the file name resulting of the applied extractors.
+        :return: filename describing the applied extractors.
+        """
+        return self.__filename

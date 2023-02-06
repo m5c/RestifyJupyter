@@ -16,7 +16,7 @@ class AssessedParticipant(Participant):
 
     def __init__(self, codename: str, control_group: ControlGroup, skills: list[int],
                  test_results_bs: list[bool], test_results_xox: list[bool], time_bs: int,
-                 time_xox: int):
+                 time_xox: int, pre_time_tc: int, pre_time_ide: int):
         """
         :type self: object
         """
@@ -37,6 +37,9 @@ class AssessedParticipant(Participant):
         self.__time_bs: int = int(time_bs)
         self.__time_xox: int = int(time_xox)
 
+        self.__pre_time_tc: int = int(pre_time_tc)
+        self.__pre_time_ide: int = int(pre_time_ide)
+
     @property
     def time_bs(self) -> int:
         """
@@ -52,6 +55,39 @@ class AssessedParticipant(Participant):
         :return: amount of seconds this participant needed for the bookstore task.
         """
         return self.__time_xox
+
+    @property
+    def pre_time_tc(self) -> int:
+        """
+        Property / Getter for time in seconds spend on task familiarization with touchcore task.
+        """
+        return self.__pre_time_tc
+
+    @property
+    def pre_time_ide(self) -> int:
+        """
+        Property / Getter for time in seconds spend on task familiarization with ide task.
+        """
+        return self.__pre_time_ide
+
+
+    @property
+    def time_tc(self) -> int:
+        """
+        Property / Getter for time in seconds required for touchcore based refactoring, whatever the application.
+        """
+        if self._Participant.__group_name == "red":
+            return 42
+        #TODO figure out how to resolve to the right application.
+        return self.__pre_time_tc
+
+    @property
+    def time_ide(self) -> int:
+        """
+        Property / Getter for time in seconds required for ide based refactoring, whatever the application.
+        """
+        return self.__pre_time_ide
+
 
     @property
     def test_results_bs(self) -> list[bool]:
