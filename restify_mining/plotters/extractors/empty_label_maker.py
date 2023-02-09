@@ -12,7 +12,7 @@ class EmptyLabelMaker(LabelMaker):
     Implementation of LabelMaker that produces empty labels.
     """
 
-    def make_labels(self, participants: list[AssessedParticipant], reduce_to_outliers: bool) -> \
+    def make_labels(self, participants: list[AssessedParticipant], reduce_to_overrides: bool) -> \
             list[str]:
         """
         Dummy method to create empty labels (no labels at all).

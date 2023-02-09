@@ -12,7 +12,7 @@ class FullLabelMaker(LabelMaker):
     Implementation of LabelMaker that produces full labels with colour and animal names.
     """
 
-    def make_labels(self, participants: list[AssessedParticipant], reduce_to_outliers: bool) -> \
+    def make_labels(self, participants: list[AssessedParticipant], reduce_to_override: bool) -> \
             list[str]:
         """
         Returns the full participant name as [colour]_[animal]
@@ -24,5 +24,11 @@ class FullLabelMaker(LabelMaker):
 
         result: list[str] = []
         for assessed_participant in participants:
-            result.append(assessed_participant.animal_name)
+            # if reduction is requested and participant is not in override list, strip to empty
+            # string.
+            if self.is_in_override(assessed_participant) or not reduce_to_override:
+                result.append(
+                    assessed_participant.group_name + "-" + assessed_participant.animal_name)
+            else:
+                result.append("")
         return result

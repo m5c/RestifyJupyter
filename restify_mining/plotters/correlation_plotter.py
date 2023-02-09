@@ -27,12 +27,15 @@ def plot_correlation(correlation: Correlation, file_name_marker: str) -> None:
     # 10000
     plt.axis([0, y_max_with_buffer, 0, x_max_with_buffer])
 
+
+    # For all groups in the bundle, add the sample points in the correct colour
+    # also label the scatter points: https: // stackoverflow.com / a / 14434334
+    fix, ax = plt.subplots()
+
     # Add the axis labels
     plt.xlabel(correlation.y_axis_label)
     plt.ylabel(correlation.x_axis_label)
 
-    # For all groups in the bundle, add the sample points in the correct colour
-    fix, ax = plt.subplots()
     red_bundle: GroupSamples = correlation.red_bundle
     plt.scatter(red_bundle.y_axis_values, red_bundle.x_axis_values, color=red_bundle.group_tint)
     for i, red_label in enumerate(correlation.red_labels):
@@ -55,10 +58,6 @@ def plot_correlation(correlation: Correlation, file_name_marker: str) -> None:
     for i, yellow_label in enumerate(correlation.yellow_labels):
         ax.annotate(yellow_label, (yellow_bundle.y_axis_values[i], yellow_bundle.x_axis_values[i]))
 
-    # Retrieve the labels and lable all points (can be a null-action, depending on the label
-    # maker provided.
-    # See: https: // stackoverflow.com / a / 14434334
-    # for red_label in enumerate(correlation.red_labels):
 
 
     plt.savefig("generated-plots/" + file_name_marker + correlation.filename)

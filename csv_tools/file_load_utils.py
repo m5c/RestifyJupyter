@@ -103,3 +103,16 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                                         row[16], row[17]
                                         ))
     return assessed_participants
+
+
+def load_label_overrides() -> list[str]:
+    """
+    Parses the source-csv-files/labeloverride.csv for further use. PArticipants marked in
+    this file will be the only ones labeles, if such filtering is configured in the
+    correlation plotter.
+    :return: list of all override participant names.
+    """
+    # read csv to file, transform lines to comma separated values
+    with open('source-csv-files/labeloverride.csv', 'r') as file:
+        override_csv_content = file.read().replace('\n', ', ')
+    return override_csv_content.split(', ')
