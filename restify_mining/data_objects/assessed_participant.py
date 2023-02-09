@@ -71,23 +71,29 @@ class AssessedParticipant(Participant):
         return self.__pre_time_ide
 
 
+# TODO: define similar methods for get first / get second -- get time / get passrate.
+
     @property
     def time_tc(self) -> int:
         """
         Property / Getter for time in seconds required for touchcore based refactoring, whatever the application.
         """
-        if self._Participant.__group_name == "red":
-            return 42
-        #TODO figure out how to resolve to the right application.
-        return self.__pre_time_tc
+        if self.group_name == "green" or self.group_name == "blue":
+            return self.__time_bs
+        if self.group_name == "red" or self.group_name == "yellow":
+            return self.__time_xox
+        raise Exception("Participant group is detached.")
 
     @property
     def time_ide(self) -> int:
         """
         Property / Getter for time in seconds required for ide based refactoring, whatever the application.
         """
-        return self.__pre_time_ide
-
+        if self.group_name == "blue" or self.group_name == "green":
+            return self.__time_bs
+        if self.group_name == "red" or self.group_name == "yellow":
+            return self.__time_xox
+        raise Exception("Participant group is detached.")
 
     @property
     def test_results_bs(self) -> list[bool]:
@@ -130,6 +136,28 @@ class AssessedParticipant(Participant):
         :return: a float value representing xox test success rate.
         """
         return self.__test_percentage_xox
+
+    @property
+    def test_percentage_tc(self) -> int:
+        """
+        Property / Getter for pass rate percentage for touchcore based refactoring, whatever the application.
+        """
+        if self.group_name == "green" or self.group_name == "blue":
+            return self.__test_percentage_xox
+        if self.group_name == "red" or self.group_name == "yellow":
+            return self.__test_percentage_bs
+        raise Exception("Participant group is detached.")
+
+    @property
+    def test_percentage_ide(self) -> int:
+        """
+        Property / Getter for pass rate percentage for ide based refactoring, whatever the application.
+        """
+        if self.group_name == "blue" or self.group_name == "green":
+            return self.__test_percentage_bs
+        if self.group_name == "red" or self.group_name == "yellow":
+            return self.__test_percentage_xox
+        raise Exception("Participant group is detached.")
 
     def __str__(self):
         """
