@@ -12,25 +12,23 @@ from restify_mining.plotters.group_samples import GroupSamples
 
 # TODO: add axis override option to sync related graphs.
 
-def plot_correlation(correlation: Correlation, file_name_marker: str) -> None:
+def plot_correlation(correlation: Correlation, file_name_marker: str) -> int:
     """
     Meta plotter method to just print my data with labels, but without any contrived parameters
     that nobody actually every needs.
 
-    :param correlation: as the correlation data to visualize
-    :return: None
+    :param correlation: as the correlation data to visualize.
+    :param file_name_marker: as string to use for persisted plot on disk.
+    :return: effective dimensions used in y.
     """
+
+    # Prepare subplots (needed for labeling, see: https: // stackoverflow.com/a/14434334 )
+    fix, ax = plt.subplots()
 
     # Compute plot axis dimensions including a buffer margin.
     x_max_with_buffer: float = correlation.x_axis_max * 1.05
     y_max_with_buffer: float = correlation.y_axis_max * 1.05
-    # 10000
     plt.axis([0, y_max_with_buffer, 0, x_max_with_buffer])
-
-
-    # For all groups in the bundle, add the sample points in the correct colour
-    # also label the scatter points: https: // stackoverflow.com / a / 14434334
-    fix, ax = plt.subplots()
 
     # Add the axis labels
     plt.xlabel(correlation.y_axis_label)

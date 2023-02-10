@@ -28,7 +28,7 @@ class FullLabelMaker(LabelMaker):
             # string.
             if self.is_in_override(assessed_participant) or not reduce_to_override:
                 result.append(
-                    assessed_participant.group_name + "-" + assessed_participant.animal_name)
+                    assessed_participant.group_name.capitalize() + "-\n" + assessed_participant.animal_name)
             else:
                 result.append("")
         return result

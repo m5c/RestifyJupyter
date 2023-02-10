@@ -79,9 +79,9 @@ class AssessedParticipant(Participant):
         Property / Getter for time in seconds required for touchcore based refactoring, whatever the application.
         """
         if self.group_name == "green" or self.group_name == "blue":
-            return self.__time_bs
-        if self.group_name == "red" or self.group_name == "yellow":
             return self.__time_xox
+        if self.group_name == "red" or self.group_name == "yellow":
+            return self.__time_bs
         raise Exception("Participant group is detached.")
 
     @property

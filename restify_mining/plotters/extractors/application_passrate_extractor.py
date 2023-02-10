@@ -7,7 +7,7 @@ from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.plotters.extractors.extractor import Extractor
 
 
-class ApplicationPassRateExtractor(Extractor):
+class ApplicationPassrateExtractor(Extractor):
     """
     This extractor retrieves the percentage of passed unit tests for the bookstore/xox
     implementation.
