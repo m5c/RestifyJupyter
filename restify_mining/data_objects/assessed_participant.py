@@ -71,7 +71,37 @@ class AssessedParticipant(Participant):
         """
         return self.__pre_time_ide
 
-    # TODO: define similar methods for get first / get second -- get time / get passrate.
+    @property
+    def time_first(self) -> int:
+        if self.group_name in {"red", "green"}:
+            return self.__time_bs
+        if self.group_name in {"blue", "yellow"}:
+            return self.__time_xox
+        raise Exception("Participant group is detached.")
+
+    @property
+    def time_second(self) -> int:
+        if self.group_name in {"blue", "yellow"}:
+            return self.__time_bs
+        if self.group_name in {"red", "green"}:
+            return self.__time_xox
+        raise Exception("Participant group is detached.")
+
+    @property
+    def test_percentage_first(self) -> float:
+        if self.group_name in {"red", "green"}:
+            return self.__test_percentage_bs
+        if self.group_name in {"blue", "yellow"}:
+            return self.__test_percentage_xox
+        raise Exception("Participant group is detached.")
+
+    @property
+    def test_percentage_second(self) -> float:
+        if self.group_name in {"blue", "yellow"}:
+            return self.__test_percentage_bs
+        if self.group_name in {"red", "green"}:
+            return self.__test_percentage_xox
+        raise Exception("Participant group is detached.")
 
     @property
     def time_tc(self) -> int:
