@@ -4,25 +4,14 @@ methodology.
 Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.plotters.extractors.extractor import Extractor
+from restify_mining.plotters.extractors.methodology_extractor import MethodologyExtractor
 
 
-class MethodologyTimeExtractor(Extractor):
+class MethodologyTimeExtractor(MethodologyExtractor):
     """
     This extractor retrieves the percentage of passed unit tests for the bookstore/xox
     implementation.
     """
-
-    def __init__(self, methodology: str) -> Extractor:
-        """
-        :param methodology: as string to indicate which methodology we are interested in (tc/ide)
-        Implementation of the extract method that provides refactoring quality in passed unit test
-        percentage.
-        """
-        if methodology == "tc" or methodology == "ide":
-            self.__methodology = methodology
-        else:
-            raise Exception("Invalid methodology: " + methodology)
 
     def extract(self, participants: list[AssessedParticipant]) -> list[float]:
         """
@@ -32,9 +21,9 @@ class MethodologyTimeExtractor(Extractor):
 
         result: list[float] = []
         for assessed_participant in participants:
-            if self.__methodology == "tc":
+            if self.methodology == "tc":
                 result.append(assessed_participant.time_tc)
-            if self.__methodology == "ide":
+            if self.methodology == "ide":
                 result.append(assessed_participant.time_ide)
         return result
 
@@ -43,7 +32,7 @@ class MethodologyTimeExtractor(Extractor):
         Implementation of the axis label method that provides a string usable for plotting the
         extracted values in a 2D correlation plotter.
         """
-        return self.__methodology.capitalize() + " task [sec]"
+        return self.methodology.capitalize() + " task [sec]"
 
     def filename_segment(self) -> str:
-        return self.__methodology.capitalize() + "TaskTime"
+        return self.methodology.capitalize() + "TaskTime"

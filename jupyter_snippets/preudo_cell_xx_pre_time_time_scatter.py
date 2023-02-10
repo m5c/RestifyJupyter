@@ -8,6 +8,7 @@ from csv_tools import file_load_utils
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.plotters.correlation import Correlation
 from restify_mining.plotters.correlation_plotter import plot_correlation
+from restify_mining.plotters.dimension import Dimension
 from restify_mining.plotters.extractors.animal_label_maker import AnimalLabelMaker
 from restify_mining.plotters.extractors.label_maker import LabelMaker
 from restify_mining.plotters.extractors.methodology_pretime_extractor import \
@@ -15,7 +16,7 @@ from restify_mining.plotters.extractors.methodology_pretime_extractor import \
 from restify_mining.plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
 
 
-def cell_0X() -> None:
+def cell_0x() -> None:
     """
     Jupyter cell 0X. See markdown description.
     :return: None
@@ -45,6 +46,9 @@ def cell_0X() -> None:
                                                                   label_maker,
                                                                   outliers)
 
+    dimension: Dimension = tc_pre_meth_time_to_refactor_time.dimension.fuse(
+        ide_pre_meth_time_to_refactor_time.dimension)
+
     # Plot both correlations
-    plot_correlation(tc_pre_meth_time_to_refactor_time, file_name_marker)
-    plot_correlation(ide_pre_meth_time_to_refactor_time, file_name_marker)
+    plot_correlation(tc_pre_meth_time_to_refactor_time, file_name_marker, dimension)
+    plot_correlation(ide_pre_meth_time_to_refactor_time, file_name_marker, dimension)

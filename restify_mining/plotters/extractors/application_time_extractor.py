@@ -17,7 +17,7 @@ class ApplicationTimeExtractor(Extractor):
         :param application: as string to indicate which application we are interested in (bs/xox)
         Implementation of the extract method that provides refactoring time in milliseconds used by
         """
-        if application == "bookstore" or application == "xox":
+        if application in {"bookstore", "xox"}:
             self.__application = application
         else:
             raise Exception("Invalid application: " + application)

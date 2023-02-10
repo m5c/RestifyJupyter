@@ -113,6 +113,6 @@ def load_label_overrides() -> list[str]:
     :return: list of all override participant names.
     """
     # read csv to file, transform lines to comma separated values
-    with open('source-csv-files/labeloverride.csv', 'r') as file:
+    with open('source-csv-files/labeloverride.csv', 'r', encoding="utf-8") as file:
         override_csv_content = file.read().replace('\n', ', ')
     return override_csv_content.split(', ')

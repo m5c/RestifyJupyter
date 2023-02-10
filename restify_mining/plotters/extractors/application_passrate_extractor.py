@@ -19,7 +19,7 @@ class ApplicationPassrateExtractor(Extractor):
         Implementation of the extract method that provides refactoring quality in passed unit test
         percentage.
         """
-        if application == "bookstore" or application == "xox":
+        if application in {"bookstore", "xox"}:
             self.__application = application
         else:
             raise Exception("Invalid application: " + application)

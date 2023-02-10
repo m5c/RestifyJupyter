@@ -32,7 +32,6 @@ class Correlation:
         # Store axis labels and Scatter dot label maker
         self.__x_axis_label: str = x_extractor.axis_label()
         self.__y_axis_label: str = y_extractor.axis_label()
-        self.__label_maker: LabelMaker = label_maker
 
         # Extract sub-populations (groups)
         red_assessed_popultation: list[AssessedParticipant] = filter_population_by_group(

@@ -5,6 +5,7 @@ Author: Maximilian Schiedermeier
 """
 
 from abc import ABC, abstractmethod
+from operator import contains
 
 from csv_tools.file_load_utils import load_label_overrides
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
@@ -12,6 +13,9 @@ from restify_mining.data_objects.participant import Participant
 
 
 class LabelMaker(ABC):
+    """
+    Generic labelmaker superclass.
+    """
 
     def __init__(self):
         """
@@ -20,13 +24,13 @@ class LabelMaker(ABC):
         self.__label_overrides: list[str] = load_label_overrides()
 
     @abstractmethod
-    def make_labels(self, participants: list[AssessedParticipant], reduce_to_overrides: bool) -> \
+    def make_labels(self, participants: list[AssessedParticipant], reduce_to_override: bool) -> \
             list[str]:
         """
         Abstract label maker method. All label makers must implement this method with their own
         strategy.
         :param participants: as the set of participants to create labels for.
-        :param reduce_to_overrides: set to true to apply a filter that stripes all non-outliers to
+        :param reduce_to_override: set to true to apply a filter that stripes all non-outliers to
         the empty string.
         :return: list of participant labels.
         """
@@ -46,5 +50,5 @@ class LabelMaker(ABC):
         :param participant: as the participant to check
         :return: boolean telling if participant object has match in override list.
         """
-        return self.__label_overrides.__contains__(
+        return contains(self.__label_overrides,
             participant.group_name.lower() + "-" + participant.animal_name.lower())

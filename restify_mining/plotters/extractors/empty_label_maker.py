@@ -12,12 +12,12 @@ class EmptyLabelMaker(LabelMaker):
     Implementation of LabelMaker that produces empty labels.
     """
 
-    def make_labels(self, participants: list[AssessedParticipant], reduce_to_overrides: bool) -> \
+    def make_labels(self, participants: list[AssessedParticipant], reduce_to_override: bool) -> \
             list[str]:
         """
         Dummy method to create empty labels (no labels at all).
         :param participants: as the list of requested participants.
-        :param reduce_to_outliers: set to true to apply a filter that stripes all non-outliers to
+        :param reduce_to_override: set to true to apply a filter that stripes all non-outliers to
         the empty string.
         :return: empty labels.
         """

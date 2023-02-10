@@ -13,6 +13,7 @@ class AssessedParticipant(Participant):
     representation of the lines in the generated-csv-files/restify.csv file."""
 
     # pylint: disable=too-many-arguments
+    # pylint: disable=too-many-instance-attributes
 
     def __init__(self, codename: str, control_group: ControlGroup, skills: list[int],
                  test_results_bs: list[bool], test_results_xox: list[bool], time_bs: int,
@@ -70,28 +71,29 @@ class AssessedParticipant(Participant):
         """
         return self.__pre_time_ide
 
-
-# TODO: define similar methods for get first / get second -- get time / get passrate.
+    # TODO: define similar methods for get first / get second -- get time / get passrate.
 
     @property
     def time_tc(self) -> int:
         """
-        Property / Getter for time in seconds required for touchcore based refactoring, whatever the application.
+        Property / Getter for time in seconds required for touchcore based refactoring, whatever
+        the application.
         """
-        if self.group_name == "green" or self.group_name == "blue":
+        if self.group_name in {"green", "blue"}:
             return self.__time_xox
-        if self.group_name == "red" or self.group_name == "yellow":
+        if self.group_name in {"red", "yellow"}:
             return self.__time_bs
         raise Exception("Participant group is detached.")
 
     @property
     def time_ide(self) -> int:
         """
-        Property / Getter for time in seconds required for ide based refactoring, whatever the application.
+        Property / Getter for time in seconds required for ide based refactoring, whatever the
+        application.
         """
-        if self.group_name == "blue" or self.group_name == "green":
+        if self.group_name in {"blue", "green"}:
             return self.__time_bs
-        if self.group_name == "red" or self.group_name == "yellow":
+        if self.group_name in {"red", "yellow"}:
             return self.__time_xox
         raise Exception("Participant group is detached.")
 
@@ -140,22 +142,24 @@ class AssessedParticipant(Participant):
     @property
     def test_percentage_tc(self) -> int:
         """
-        Property / Getter for pass rate percentage for touchcore based refactoring, whatever the application.
+        Property / Getter for pass rate percentage for touchcore based refactoring, whatever the
+        application.
         """
-        if self.group_name == "green" or self.group_name == "blue":
+        if self.group_name in {"green", "blue"}:
             return self.__test_percentage_xox
-        if self.group_name == "red" or self.group_name == "yellow":
+        if self.group_name in {"red", "yellow"}:
             return self.__test_percentage_bs
         raise Exception("Participant group is detached.")
 
     @property
     def test_percentage_ide(self) -> int:
         """
-        Property / Getter for pass rate percentage for ide based refactoring, whatever the application.
+        Property / Getter for pass rate percentage for ide based refactoring, whatever the
+        application.
         """
-        if self.group_name == "blue" or self.group_name == "green":
+        if self.group_name in {"blue", "green"}:
             return self.__test_percentage_bs
-        if self.group_name == "red" or self.group_name == "yellow":
+        if self.group_name in {"red", "yellow"}:
             return self.__test_percentage_xox
         raise Exception("Participant group is detached.")
 
