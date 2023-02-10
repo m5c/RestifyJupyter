@@ -43,6 +43,9 @@ def cell_07() -> None:
                                                 label_maker,
                                                 outliers)
 
+    # Compute the perfect plot dimensions
+    plot_dimensions = bs_time_quality.dimension.fuse(xox_time_quality.dimension)
+
     # Plot both correlations
-    plot_correlation(bs_time_quality, file_name_marker)
-    plot_correlation(xox_time_quality, file_name_marker)
+    plot_correlation(bs_time_quality, file_name_marker, plot_dimensions)
+    plot_correlation(xox_time_quality, file_name_marker, plot_dimensions)

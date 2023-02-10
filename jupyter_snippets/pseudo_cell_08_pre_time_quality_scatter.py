@@ -4,7 +4,8 @@ Author: Maximilian Schiedermeier
 from csv_tools import file_load_utils
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.plotters.correlation import Correlation
-from restify_mining.plotters.correlation_plotter import plot_correlation
+from restify_mining.plotters.correlation_plotter import plot_correlation, \
+    plot_correlation_with_auto_dimensions
 from restify_mining.plotters.extractors.animal_label_maker import AnimalLabelMaker
 from restify_mining.plotters.extractors.label_maker import LabelMaker
 from restify_mining.plotters.extractors.methodology_passrate_extractor import \
@@ -43,8 +44,12 @@ def cell_08() -> None:
                                                               label_maker,
                                                               outliers)
 
+    # Compute the perfect plot dimensions
+    plot_dimensions = tc_pass_rate_to_pre_meth_time.dimension.fuse(
+        ide_pass_rate_to_pre_meth_time.dimension)
+
     # Plot both correlations
-    plot_correlation(tc_pass_rate_to_pre_meth_time, file_name_marker)
-    plot_correlation(ide_pass_rate_to_pre_meth_time, file_name_marker)
+    plot_correlation(tc_pass_rate_to_pre_meth_time, file_name_marker, plot_dimensions)
+    plot_correlation(ide_pass_rate_to_pre_meth_time, file_name_marker, plot_dimensions)
 
     # D: Impact of specific skills on time / quality (better app or better methodology based?)

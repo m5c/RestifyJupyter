@@ -6,6 +6,7 @@ Author Maximilian Schiedermeier
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
+from restify_mining.plotters.dimension import Dimension
 from restify_mining.plotters.extractors.extractor import Extractor
 from restify_mining.plotters.extractors.label_maker import LabelMaker
 from restify_mining.plotters.group_samples import GroupSamples
@@ -83,6 +84,15 @@ class Correlation:
 
         self.__filename: str = "x" + x_extractor.filename_segment() + "-y" + \
                                y_extractor.filename_segment()
+
+    @property
+    def dimension(self):
+        """
+        Computes a dimension object that equivalents the size required for all sample points in
+        the correlation object.
+        :return: The required space as dimension object.
+        """
+        return Dimension(self.__x_axis_max, self.__y_axis_max)
 
     @property
     def x_axis_label(self) -> str:

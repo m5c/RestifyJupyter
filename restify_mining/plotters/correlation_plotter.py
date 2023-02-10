@@ -7,28 +7,35 @@ Author: Maximilian Schiedermeier
 import matplotlib.pyplot as plt
 
 from restify_mining.plotters.correlation import Correlation
+from restify_mining.plotters.dimension import Dimension
 from restify_mining.plotters.group_samples import GroupSamples
 
 
-# TODO: add axis override option to sync related graphs.
+def plot_correlation_with_auto_dimensions(correlation: Correlation, file_name_marker: str) -> None:
+    """
+    Reduces version of subsequent method. Uses the correlation size itself to retrieve required
+    plot space.
+    :param correlation: as the correlation data to visualize.
+    :param file_name_marker: as string to use for persisted plot on disk.
+    """
+    plot_correlation(correlation, file_name_marker, correlation.dimension)
 
-def plot_correlation(correlation: Correlation, file_name_marker: str) -> int:
+
+def plot_correlation(correlation: Correlation, file_name_marker: str, dimension: Dimension) -> None:
     """
     Meta plotter method to just print my data with labels, but without any contrived parameters
     that nobody actually every needs.
 
     :param correlation: as the correlation data to visualize.
     :param file_name_marker: as string to use for persisted plot on disk.
-    :return: effective dimensions used in y.
+    :param dimension: as the space to use for both axes.
     """
 
     # Prepare subplots (needed for labeling, see: https: // stackoverflow.com/a/14434334 )
     fix, ax = plt.subplots()
 
-    # Compute plot axis dimensions including a buffer margin.
-    x_max_with_buffer: float = correlation.x_axis_max * 1.05
-    y_max_with_buffer: float = correlation.y_axis_max * 1.05
-    plt.axis([0, y_max_with_buffer, 0, x_max_with_buffer])
+    # Set axis dimensions (add a little buffer)
+    plt.axis([0, dimension.y * 1.05, 0, dimension.x * 1.05])
 
     # Add the axis labels
     plt.xlabel(correlation.y_axis_label)
@@ -55,8 +62,6 @@ def plot_correlation(correlation: Correlation, file_name_marker: str) -> int:
                 color=yellow_bundle.group_tint)
     for i, yellow_label in enumerate(correlation.yellow_labels):
         ax.annotate(yellow_label, (yellow_bundle.y_axis_values[i], yellow_bundle.x_axis_values[i]))
-
-
 
     plt.savefig("generated-plots/" + file_name_marker + correlation.filename)
     plt.show()
