@@ -22,6 +22,14 @@ class Participant:
         self-declared skill."""
         return self.__skills
 
+    def get_skill_value(self, skill_index: int) -> int:
+        """
+        Getter for a specific skill value, based on the provided skill index
+        :param skill_index: index of the skill following the default order
+        :return: the self-declared skill value for the participant.
+        """
+        return self.skills[skill_index]
+
     @property
     def total_score(self):
         """Computes the total score of all skills, summed up. Useful to create a participant

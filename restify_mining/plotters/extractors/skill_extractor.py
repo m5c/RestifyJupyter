@@ -23,8 +23,15 @@ class SkillExtractor(Extractor):
             raise Exception("Invalid skill: " + skill_tag)
 
     def extract(self, participants: list[AssessedParticipant]) -> list[float]:
-        ## TODO: actually look up participant skills here.
-        return [1] * len(participants)
+
+        # look up index of target skill
+        skill_index: int = full_skill_tags.index(self.__skill_tag)
+
+        # create target list
+        skill_value_across_participants: list[float] = []
+        for participant in participants:
+            skill_value_across_participants.append(float(participant.get_skill_value(skill_index)))
+        return skill_value_across_participants
 
     def axis_label(self) -> str:
         """

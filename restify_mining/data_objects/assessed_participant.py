@@ -41,6 +41,15 @@ class AssessedParticipant(Participant):
         self.__pre_time_tc: int = int(pre_time_tc)
         self.__pre_time_ide: int = int(pre_time_ide)
 
+    # @property
+    # def skill(self, skill_index: int) -> int:
+    #     """
+    #     Getter for a specific skill value, based on the provided skill index
+    #     :param skill_index: index of the skill following the default order
+    #     :return: the self-declared skill value for the participant
+    #     """
+    #     return self.skills[skill_index]
+
     @property
     def time_bs(self) -> int:
         """
