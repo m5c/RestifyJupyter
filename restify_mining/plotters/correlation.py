@@ -34,35 +34,35 @@ class Correlation:
         self.__y_axis_label: str = y_extractor.axis_label()
 
         # Extract sub-populations (groups)
-        red_assessed_popultation: list[AssessedParticipant] = filter_population_by_group(
+        red_assessed_population: list[AssessedParticipant] = filter_population_by_group(
             full_population, "red")
-        green_assessed_popultation: list[AssessedParticipant] = filter_population_by_group(
+        green_assessed_population: list[AssessedParticipant] = filter_population_by_group(
             full_population, "green")
-        blue_assessed_popultation: list[AssessedParticipant] = filter_population_by_group(
+        blue_assessed_population: list[AssessedParticipant] = filter_population_by_group(
             full_population, "blue")
-        yellow_assessed_popultation: list[AssessedParticipant] = filter_population_by_group(
+        yellow_assessed_population: list[AssessedParticipant] = filter_population_by_group(
             full_population, "yellow")
 
         # Generate x-sample points for all participants, using x_extractor
-        red_samples_x: list[float] = x_extractor.extract(red_assessed_popultation)
-        green_samples_x: list[float] = x_extractor.extract(green_assessed_popultation)
-        blue_samples_x: list[float] = x_extractor.extract(blue_assessed_popultation)
-        yellow_samples_x: list[float] = x_extractor.extract(yellow_assessed_popultation)
+        red_samples_x: list[float] = x_extractor.extract(red_assessed_population)
+        green_samples_x: list[float] = x_extractor.extract(green_assessed_population)
+        blue_samples_x: list[float] = x_extractor.extract(blue_assessed_population)
+        yellow_samples_x: list[float] = x_extractor.extract(yellow_assessed_population)
 
         # Generate y-sample points for all participants, using y_extractor
-        red_samples_y: list[float] = y_extractor.extract(red_assessed_popultation)
-        green_samples_y: list[float] = y_extractor.extract(green_assessed_popultation)
-        blue_samples_y: list[float] = y_extractor.extract(blue_assessed_popultation)
-        yellow_samples_y: list[float] = y_extractor.extract(yellow_assessed_popultation)
+        red_samples_y: list[float] = y_extractor.extract(red_assessed_population)
+        green_samples_y: list[float] = y_extractor.extract(green_assessed_population)
+        blue_samples_y: list[float] = y_extractor.extract(blue_assessed_population)
+        yellow_samples_y: list[float] = y_extractor.extract(yellow_assessed_population)
 
         # Generate sample point labels for all participants
-        self.__red_labels: list[str] = label_maker.make_labels(red_assessed_popultation,
+        self.__red_labels: list[str] = label_maker.make_labels(red_assessed_population,
                                                                filter_outliers)
-        self.__green_labels: list[str] = label_maker.make_labels(green_assessed_popultation,
+        self.__green_labels: list[str] = label_maker.make_labels(green_assessed_population,
                                                                  filter_outliers)
-        self.__blue_labels: list[str] = label_maker.make_labels(blue_assessed_popultation,
+        self.__blue_labels: list[str] = label_maker.make_labels(blue_assessed_population,
                                                                 filter_outliers)
-        self.__yellow_labels: list[str] = label_maker.make_labels(yellow_assessed_popultation,
+        self.__yellow_labels: list[str] = label_maker.make_labels(yellow_assessed_population,
                                                                   filter_outliers)
 
         # Store extracted x / y sample points in printable bundles.

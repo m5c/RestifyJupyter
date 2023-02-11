@@ -74,6 +74,6 @@ def persist_stats(stats: str) -> None:
     :param stats: as the prepared string to write to disk.
     :return:
     """
-    with open("generated-text-files/group-comparability-stats.txt", "w",
+    with open("generated-text-files/04-group-comparability-stats.txt", "w",
               encoding="utf-8") as text_file:
         text_file.write(stats)
