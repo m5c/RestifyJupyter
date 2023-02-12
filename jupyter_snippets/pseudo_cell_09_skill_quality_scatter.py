@@ -16,6 +16,6 @@ def cell_09() -> None:
     """
     scatter_series: ScatterSeries = ScatterSeries(
         SkillExtractor, MethodologyPassrateExtractor, FullLabelMaker(),
-        False, "09-")
+        True, "09-")
     scatter_series.plot_uncoupled_series(
         {"ide", "tc"}, full_skill_tags)

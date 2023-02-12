@@ -1,1 +1,2 @@
+verify if plotly is really used / delete from deps if not.
 ntermediate time extractor for time and methodology, setting attribute
