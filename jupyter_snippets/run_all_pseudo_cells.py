@@ -12,10 +12,6 @@ from jupyter_snippets.pseudo_cell_03_merge_csvs import cell_03
 from jupyter_snippets.pseudo_cell_04_compute_cgroup_skill_diffs import cell_04
 from jupyter_snippets.pseudo_cell_05_all_results_all_participants import cell_05
 from jupyter_snippets.pseudo_cell_05b_all_results_all_groups_radar import cell_05b
-from jupyter_snippets.pseudo_cell_06_all_tests_all_groups import cell_06
-from jupyter_snippets.pseudo_cell_07_time_quality_scatter import cell_07
-from jupyter_snippets.pseudo_cell_08_pre_time_quality_scatter import cell_08
-from jupyter_snippets.pseudo_cell_09_skill_quality_scatter import cell_09
 from restify_mining.utils.cache_clearer import clear_cache
 
 print("Clearing cached output files...")

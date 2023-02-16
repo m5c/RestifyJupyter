@@ -5,7 +5,7 @@ Author: Maximilian Schiedermeier
 from csv_tools import file_load_utils
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.radar_plotters.radar_plotter import RadarPlotter
-from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
+from restify_mining.unit_test_miners.all_groups_tests_miner import AllGroupsTestsMiner
 from restify_mining.unit_test_miners.all_participants_all_tests_miner import \
     AllParticipantsAllTestsMiner
 
@@ -21,8 +21,8 @@ def cell_05b() -> None:
 
     # Create a radar plot, where the spokes represent individual tests and the distance from the
     # center the average group success rate.
-    RadarPlotter().radar_plot(AllParticipantsAllTestsMiner(), assessed_population)
-
+    for app in {"xox", "bs"}:
+        RadarPlotter().radar_plot(AllGroupsTestsMiner(app), app, assessed_population)
 
 
 

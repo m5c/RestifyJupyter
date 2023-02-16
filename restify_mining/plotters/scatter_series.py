@@ -9,12 +9,7 @@ from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.plotters.correlation import Correlation
 from restify_mining.plotters.correlation_plotter import plot_correlation
 from restify_mining.plotters.dimension import Dimension
-from restify_mining.plotters.extractors.extractor import Extractor
-from restify_mining.plotters.extractors.full_label_maker import FullLabelMaker
 from restify_mining.plotters.extractors.label_maker import LabelMaker
-from restify_mining.plotters.extractors.methodology_passrate_extractor import \
-    MethodologyPassrateExtractor
-from restify_mining.plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
 
 
 class ScatterSeries:
@@ -37,7 +32,8 @@ class ScatterSeries:
         self.__label_maker: LabelMaker = label_maker
         self.__outliers: bool = outliers
 
-    def plot_uncoupled_series(self, series_extractor_1: list[str], series_extractor_2: list[str]) -> None:
+    def plot_uncoupled_series(self, series_extractor_1: list[str],
+                              series_extractor_2: list[str]) -> None:
         """
         Call to actually produce the series of plots and persist them on disk.
         The first argument is the list of parameters to alter for the first extractor. The second
@@ -49,7 +45,7 @@ class ScatterSeries:
         """
         # Create actual cross product of both received lists
         # create symmetric pairs for each entry in input list
-        tuples: list[(int, int)] = list()
+        tuples: list[(int, int)] = []
         for parameter_1 in series_extractor_1:
             for parameter_2 in series_extractor_2:
                 tuples.append((parameter_1, parameter_2))
@@ -67,7 +63,7 @@ class ScatterSeries:
         :return: None
         """
         # create symmetric pairs for each entry in input list
-        tuples: list[(int, int)] = list()
+        tuples: list[(int, int)] = []
         for parameter in series:
             tuples.append((parameter, parameter))
 

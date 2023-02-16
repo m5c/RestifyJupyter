@@ -44,25 +44,28 @@ def plot_correlation(correlation: Correlation, file_name_marker: str, dimension:
     red_bundle: GroupSamples = correlation.red_bundle
     plt.scatter(red_bundle.y_axis_values, red_bundle.x_axis_values, color=red_bundle.group_tint)
     for i, red_label in enumerate(correlation.red_labels):
-        label_overlay.annotate(red_label, (red_bundle.y_axis_values[i], red_bundle.x_axis_values[i]))
+        label_overlay.annotate(red_label,
+                               (red_bundle.y_axis_values[i], red_bundle.x_axis_values[i]))
 
     green_bundle: GroupSamples = correlation.green_bundle
     plt.scatter(green_bundle.y_axis_values, green_bundle.x_axis_values,
                 color=green_bundle.group_tint)
     for i, green_label in enumerate(correlation.green_labels):
-        label_overlay.annotate(green_label, (green_bundle.y_axis_values[i], green_bundle.x_axis_values[i]))
+        label_overlay.annotate(green_label,
+                               (green_bundle.y_axis_values[i], green_bundle.x_axis_values[i]))
 
     blue_bundle: GroupSamples = correlation.blue_bundle
     plt.scatter(blue_bundle.y_axis_values, blue_bundle.x_axis_values, color=blue_bundle.group_tint)
     for i, blue_label in enumerate(correlation.blue_labels):
-        label_overlay.annotate(blue_label, (blue_bundle.y_axis_values[i], blue_bundle.x_axis_values[i]))
+        label_overlay.annotate(blue_label,
+                               (blue_bundle.y_axis_values[i], blue_bundle.x_axis_values[i]))
 
     yellow_bundle: GroupSamples = correlation.yellow_bundle
     plt.scatter(yellow_bundle.y_axis_values, yellow_bundle.x_axis_values,
                 color=yellow_bundle.group_tint)
     for i, yellow_label in enumerate(correlation.yellow_labels):
         label_overlay.annotate(yellow_label,
-                      (yellow_bundle.y_axis_values[i], yellow_bundle.x_axis_values[i]))
+                               (yellow_bundle.y_axis_values[i], yellow_bundle.x_axis_values[i]))
 
     plt.savefig("generated-plots/" + file_name_marker + correlation.filename)
     plt.show()

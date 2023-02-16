@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.unit_test_miners.all_groups_all_tests_miner import AllGroupsAllTestsMiner
+from restify_mining.unit_test_miners.all_groups_tests_miner import AllGroupsTestsMiner
 from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
 
 
@@ -18,7 +18,7 @@ def plot_all_average_group_results(population: list[AssessedParticipant]) -> Non
     failed tests, coloured square (matching control group colour) for passed tests.
     :param population: as the list of assessed participants.
     """
-    mine_and_plot(AllGroupsAllTestsMiner(), True, population)
+    mine_and_plot(AllGroupsTestsMiner("all"), True, population)
 
 
 def build_linear_colour_map(with_control_groups: bool) -> LinearSegmentedColormap:

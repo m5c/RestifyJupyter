@@ -89,19 +89,38 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
             if first_line:
                 first_line = False
             else:
+                # Note: extracting ranger in python is extremely counter-intuitive. The first
+                # value in range is excluded, while the second is included (based pycharms C-Index)
+                # If the index is the array index, starting at 0, the first value in range is
+                # included and the second excluded.
+                codename: str = row[0]
                 control_group_name = row[1]
+                control_group: ControlGroup = control_groups[control_group_name]
+                skills: list[int] = [int(x) for x in row[3:11]]
+                test_results_bs: list[bool] = [str2bool(x) for x in row[36:48]]
+                test_results_xox: list[bool] = [str2bool(x) for x in row[28:36]]
+                # [19] = C20
+                time_bs: int = row[19]
+                # [18] = C19
+                time_xox: int = row[18]
+                # [16] = C 17
+                pre_time_tc: int = row[16]
+                # [17] = C 18z
+                pre_time_ide: int = row[17]
+
                 # first argument is name (likewise first column in csv), then the control group
                 # details, then the skill vector. Next the test results for bookstore, followed
                 # by test results for xox.
                 # The last argument is the skill vector (self-declared by participant)
+
                 assessed_participants.append(
-                    AssessedParticipant(row[0], control_groups[control_group_name],
-                                        [int(x) for x in row[3:11]],
-                                        [str2bool(x) for x in row[37:48]],
-                                        [str2bool(x) for x in row[29:36]],
-                                        row[19], row[18],
-                                        row[16], row[17]
-                                        ))
+                    AssessedParticipant(codename, control_group,
+                                        skills,
+                                        test_results_bs,
+                                        test_results_xox,
+                                        time_bs, time_xox,
+                                        pre_time_tc,
+                                        pre_time_ide))
     return assessed_participants
 
 
