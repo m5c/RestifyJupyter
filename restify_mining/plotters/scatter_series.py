@@ -19,6 +19,8 @@ class ScatterSeries:
     use a common dimensions.
     """
 
+    # pylint: disable=too-many-arguments
+
     def __init__(self, x_extractor_type: type, y_extractor_type: type, label_maker: LabelMaker,
                  outliers: bool, prefix: str) -> 'ScatterSeries':
         """

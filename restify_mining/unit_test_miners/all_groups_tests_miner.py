@@ -103,7 +103,6 @@ class AllGroupsTestsMiner(AbstractMiner):
         """
         if self.__scope == "bs":
             return participant.test_results_bs[test_index]
-        elif self.__scope == "xox":
+        if self.__scope == "xox":
             return participant.test_results_xox[test_index]
-        else:
-            return participant.all_test_results()[test_index]
+        return participant.all_test_results()[test_index]

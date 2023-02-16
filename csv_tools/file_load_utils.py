@@ -69,6 +69,8 @@ def load_all_participants() -> list[Participant]:
                                 [int(x) for x in row[3:]]))
     return participants
 
+    # pylint: disable=too-many-locals
+
 
 def load_all_assessed_participants() -> list[AssessedParticipant]:
     """

@@ -1,3 +1,8 @@
+"""
+Helper module to turn test success rates per group into radar plots. Based on an online tutorial:
+https://tinyurl.com/2s4dnnek
+Author: Maximilian Schiedermeier
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -38,7 +43,7 @@ class RadarPlotter:
         plt.plot(label_loc, restaurant_2, label='Restaurant 2')
         plt.plot(label_loc, restaurant_3, label='Restaurant 3')
         plt.title('Restaurant comparison', size=20, y=1.05)
-        lines, labels = plt.thetagrids(np.degrees(label_loc), labels=categories)
+        plt.thetagrids(np.degrees(label_loc), labels=categories)
         plt.legend()
         plt.show()
 
@@ -94,7 +99,5 @@ class RadarPlotter:
         plt.title('Xox Average Test Scores per Group', size=20, y=1.05)
         plt.thetagrids(np.degrees(label_loc), labels=test_markers)
         plt.legend()
-        plt.savefig("generated-plots/" + "05b-"+ app+"-all-tests-radar.png")
+        plt.savefig("generated-plots/" + "05b-" + app + "-all-tests-radar.png")
         plt.show()
-
-

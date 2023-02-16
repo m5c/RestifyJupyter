@@ -41,15 +41,6 @@ class AssessedParticipant(Participant):
         self.__pre_time_tc: int = int(pre_time_tc)
         self.__pre_time_ide: int = int(pre_time_ide)
 
-    # @property
-    # def skill(self, skill_index: int) -> int:
-    #     """
-    #     Getter for a specific skill value, based on the provided skill index
-    #     :param skill_index: index of the skill following the default order
-    #     :return: the self-declared skill value for the participant
-    #     """
-    #     return self.skills[skill_index]
-
     @property
     def time_bs(self) -> int:
         """
@@ -82,6 +73,11 @@ class AssessedParticipant(Participant):
 
     @property
     def time_first(self) -> int:
+        """
+        Getter to retrieve the time it took for the first refactoring task, whatever the
+        methodology or application concerned.
+        :return: integer value expressing the time in seconds for the first refactoring task
+        """
         if self.group_name in {"red", "green"}:
             return self.__time_bs
         if self.group_name in {"blue", "yellow"}:
@@ -90,6 +86,11 @@ class AssessedParticipant(Participant):
 
     @property
     def time_second(self) -> int:
+        """
+        Getter to retrieve the time it took for the second refactoring task, whatever the
+        methodology or application concerned.
+        :return: integer value expressing the time in seconds for the second refactoring task
+        """
         if self.group_name in {"blue", "yellow"}:
             return self.__time_bs
         if self.group_name in {"red", "green"}:
@@ -98,6 +99,11 @@ class AssessedParticipant(Participant):
 
     @property
     def test_percentage_first(self) -> float:
+        """
+        Getter to retrieve the test success rate for the first refactoring task, whatever the
+        methodology or application concerned.
+        :return: float value expressing the test success rate for the first refactoring task
+        """
         if self.group_name in {"red", "green"}:
             return self.__test_percentage_bs
         if self.group_name in {"blue", "yellow"}:
@@ -106,6 +112,11 @@ class AssessedParticipant(Participant):
 
     @property
     def test_percentage_second(self) -> float:
+        """
+        Getter to retrieve the test success rate for the second refactoring task, whatever the
+        methodology or application concerned.
+        :return: float value expressing the test success rate for the second refactoring task
+        """
         if self.group_name in {"blue", "yellow"}:
             return self.__test_percentage_bs
         if self.group_name in {"red", "green"}:
