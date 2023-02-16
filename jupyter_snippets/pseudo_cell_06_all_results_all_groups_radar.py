@@ -10,7 +10,7 @@ from restify_mining.unit_test_miners.all_participants_all_tests_miner import \
     AllParticipantsAllTestsMiner
 
 
-def cell_05b() -> None:
+def cell_06() -> None:
     """
     Jupyter cell 05b. See markdown description.
     :return: None

@@ -9,7 +9,7 @@ from restify_mining.plotters.scatter_series import ScatterSeries
 from restify_mining.markers.skills_markers import full_skill_tags
 
 
-def cell_09() -> None:
+def cell_10() -> None:
     """
     Jupyter cell 07. See markdown description.
     :return: None

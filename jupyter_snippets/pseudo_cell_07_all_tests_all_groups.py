@@ -6,7 +6,7 @@ from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.plotters import unit_test_plotter
 
 
-def cell_06() -> None:
+def cell_08() -> None:
     """
     Jupyter cell 06. See markdown description.
     :return: None

@@ -11,11 +11,11 @@ from jupyter_snippets.pseudo_cell_02_display_cgroups_skill_boxplot import cell_0
 from jupyter_snippets.pseudo_cell_03_merge_csvs import cell_03
 from jupyter_snippets.pseudo_cell_04_compute_cgroup_skill_diffs import cell_04
 from jupyter_snippets.pseudo_cell_05_all_results_all_participants import cell_05
-from jupyter_snippets.pseudo_cell_05b_all_results_all_groups_radar import cell_05b
-from jupyter_snippets.pseudo_cell_06_all_tests_all_groups import cell_06
-from jupyter_snippets.pseudo_cell_07_time_quality_scatter import cell_07
-from jupyter_snippets.pseudo_cell_08_pre_time_quality_scatter import cell_08
-from jupyter_snippets.pseudo_cell_09_skill_quality_scatter import cell_09
+from jupyter_snippets.pseudo_cell_06_all_results_all_groups_radar import cell_06
+from jupyter_snippets.pseudo_cell_07_all_tests_all_groups import cell_08
+from jupyter_snippets.pseudo_cell_08_time_quality_scatter import cell_07
+from jupyter_snippets.pseudo_cell_09_pre_time_quality_scatter import cell_09
+from jupyter_snippets.pseudo_cell_10_skill_quality_scatter import cell_10
 from restify_mining.utils.cache_clearer import clear_cache
 
 print("Clearing cached output files...")
@@ -44,10 +44,6 @@ print("Imitating Jupyter Pseudo Cell 05...")
 cell_05()
 print("Cell 05 complete.\n")
 
-print("Imitating Jupyter Pseudo Cell 05b...")
-cell_05b()
-print("Cell 05b complete.\n")
-
 print("Imitating Jupyter Pseudo Cell 06...")
 cell_06()
 print("Cell 06 complete.\n")
@@ -63,6 +59,10 @@ print("Cell 08 complete.\n")
 print("Imitating Jupyter Pseudo Cell 09...")
 cell_09()
 print("Cell 09 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 10...")
+cell_10()
+print("Cell 10 complete.\n")
 
 print("Success!")
 print("All Jupyter Cells imitated.")
