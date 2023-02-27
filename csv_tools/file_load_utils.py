@@ -128,8 +128,8 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
 
 def load_label_overrides() -> list[str]:
     """
-    Parses the source-csv-files/labeloverride.csv for further use. PArticipants marked in
-    this file will be the only ones labeles, if such filtering is configured in the
+    Parses the source-csv-files/labeloverride.csv for further use. Participants marked in
+    this file will be the only ones labels, if such filtering is configured in the
     correlation plotter.
     :return: list of all override participant names.
     """

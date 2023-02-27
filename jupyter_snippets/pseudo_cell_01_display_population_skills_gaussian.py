@@ -16,8 +16,5 @@ def cell_01() -> None:
     # Load all participant objects (specifies skills, codename, control-group) from csv file
     population: list[Participant] = file_load_utils.load_all_participants()
 
-    # Compute, print and save gaussian skill distribution for entire test population to disk.
-    extract_population_gaussian(population)
-
     # Provide evidence that skill data is approximately normal distributed.
     compute_shapiro_will_standarddev_pvalue(population)

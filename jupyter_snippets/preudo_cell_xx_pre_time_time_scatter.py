@@ -1,11 +1,11 @@
 """
-This plot was prepared but not used for publication, for we could not identify any noteworthy
-correlation in the plot.
-Apart from one participant who was a scammer, we did not note any significant impact of the
-preparation time on task solving time and quality of the outcome.
+This module contains pseudo jupyter cells that were created, but ultimately not used for publication. Where applicable
+the reason is provided as comment in the function description.
+Author: Maximilian Schiedermeier
 """
 from csv_tools import file_load_utils
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
+from restify_mining.data_objects.participant import Participant
 from restify_mining.plotters.correlation import Correlation
 from restify_mining.plotters.correlation_plotter import plot_correlation
 from restify_mining.plotters.dimension import Dimension
@@ -14,11 +14,14 @@ from restify_mining.plotters.extractors.label_maker import LabelMaker
 from restify_mining.plotters.extractors.methodology_pretime_extractor import \
     MethodologyPretimeExtractor
 from restify_mining.plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
+from restify_mining.skill_extractors.extract_population_gaussian import extract_population_gaussian
 
 
-def cell_0x() -> None:
+def cell_0x1() -> None:
     """
-    Jupyter cell 0X. See markdown description.
+    This plot crates x/y correlations between the time participants spent for task preparation (familiarization by
+    watching video instructions) and quality of the outcome.
+    We excluded the plot from the notebook and publication, for there is no noteworthy correlation.
     :return: None
     """
     # the kind of labels we want:
@@ -52,3 +55,17 @@ def cell_0x() -> None:
     # Plot both correlations
     plot_correlation(tc_pre_meth_time_to_refactor_time, file_name_marker, dimension)
     plot_correlation(ide_pre_meth_time_to_refactor_time, file_name_marker, dimension)
+
+
+def cell_0x2() -> None:
+    """
+    This cell produces normal distributions for the skills submitted by participants. We excluded it from publication,
+     for the shapiro test ran in cell 01 indicates the samples do not follow a normal distribution. Representing them
+     with normal distributions would be misleading.
+    :return:n None
+    """
+    # Load all participant objects (specifies skills, codename, control-group) from csv file
+    population: list[Participant] = file_load_utils.load_all_participants()
+
+    # Compute, print and save gaussian skill distribution for entire test population to disk.
+    extract_population_gaussian(population)
