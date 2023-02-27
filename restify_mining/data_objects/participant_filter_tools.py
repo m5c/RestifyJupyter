@@ -23,7 +23,8 @@ def filter_population_by_group(population: list[Participant], target_group: str)
     corresponding field.
     :param population: the set of participants to filter down to the match criteria, a control
     group name.
-    :param target_group: the match criteria, only participants matching this group will remain.
+    :param target_group: the match criteria, only participants matching this group will remain. is a lower case string,
+    one of "red", "green", "blue", "yellow".
     :return: a subset of the provided input population, containing only those participants that
     fall into the provided control group.
     """

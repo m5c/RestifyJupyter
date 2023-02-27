@@ -8,7 +8,7 @@ from restify_mining.plotters.extractors.methodology_time_extractor import Method
 from restify_mining.plotters.scatter_series import ScatterSeries
 
 
-def cell_07() -> None:
+def cell_08() -> None:
     """
     Jupyter cell 07. See markdown description.
     :return: None

@@ -12,8 +12,9 @@ from jupyter_snippets.pseudo_cell_03_merge_csvs import cell_03
 from jupyter_snippets.pseudo_cell_04_compute_cgroup_skill_diffs import cell_04
 from jupyter_snippets.pseudo_cell_05_all_results_all_participants import cell_05
 from jupyter_snippets.pseudo_cell_06_all_results_all_groups_radar import cell_06
-from jupyter_snippets.pseudo_cell_07_all_tests_all_groups import cell_08
-from jupyter_snippets.pseudo_cell_08_time_quality_scatter import cell_07
+from jupyter_snippets.pseudo_cell_07_all_tests_all_groups import cell_07
+from jupyter_snippets.pseudo_cell_08_time_quality_scatter import cell_08
+from jupyter_snippets.pseudo_cell_08b_time_quality_normal_test import cell_08b
 from jupyter_snippets.pseudo_cell_09_pre_time_quality_scatter import cell_09
 from jupyter_snippets.pseudo_cell_10_skill_quality_scatter import cell_10
 from restify_mining.utils.cache_clearer import clear_cache
@@ -55,6 +56,10 @@ print("Cell 07 complete.\n")
 print("Imitating Jupyter Pseudo Cell 08...")
 cell_08()
 print("Cell 08 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 08b...")
+cell_08b()
+print("Cell 08b complete.\n")
 
 print("Imitating Jupyter Pseudo Cell 09...")
 cell_09()

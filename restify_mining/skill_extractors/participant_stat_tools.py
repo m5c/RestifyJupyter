@@ -75,7 +75,7 @@ def extract_control_group_size(population: list[Participant]) -> int:
     return unique_group_sizes[0]
 
 
-def compute_shapiro_will_standarddev_pvalue(population: list[Participant]) -> list[float]:
+def compute_shapiro_will_skills_standarddev_pvalue(population: list[Participant]) -> list[float]:
     """
     Analyzes all the self assessed skill declarations of provided list of participants and tests
     for the null hypothesis (whether the samples can be approximated by a normal distribution).
