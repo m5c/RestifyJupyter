@@ -99,5 +99,5 @@ class RadarPlotter:
         plt.title('Xox Average Test Scores per Group', size=20, y=1.05)
         plt.thetagrids(np.degrees(label_loc), labels=test_markers)
         plt.legend()
-        plt.savefig("generated-plots/" + "05b-" + app + "-all-tests-radar.png")
+        plt.savefig("generated-plots/" + "06-" + app + "-all-tests-radar.png")
         plt.show()

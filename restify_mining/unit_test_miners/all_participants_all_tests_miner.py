@@ -2,7 +2,7 @@
 Most simple miner implementation. Analyzes all provided participants and mines their test
 restuls. Stores outcome in 2D array where passed tests are represented by1, failed tests by 0.
 """
-from restify_mining.data_objects import participant_stat_tools
+from restify_mining.skill_extractors import participant_stat_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
 

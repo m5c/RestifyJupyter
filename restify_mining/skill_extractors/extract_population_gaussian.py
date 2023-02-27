@@ -5,7 +5,7 @@ distributions per skill and creates a plot. The output file is stored in:
 Author: Maximilian Schiedermeier
 """
 
-from restify_mining.data_objects import participant_stat_tools
+from restify_mining.skill_extractors import participant_stat_tools
 from restify_mining.markers import skills_markers
 from restify_mining.data_objects.participant import Participant
 from restify_mining.plotters.skill_plotter import plot_gaussian

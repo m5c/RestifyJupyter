@@ -1,10 +1,11 @@
 """Module for everything related to participant statistics."""
 
 import numpy as np
-
+from scipy import stats
 from restify_mining.data_objects.participant import Participant
 from restify_mining.data_objects.participant_filter_tools import extract_group_names, \
     filter_population_by_group
+from restify_mining.markers.skills_markers import full_skill_tags
 
 
 def build_mean_skills(participants: list[Participant]):
@@ -72,3 +73,29 @@ def extract_control_group_size(population: list[Participant]) -> int:
             "Cannot determine unique control group size. There are multiple groups with different "
             "amount of participants.")
     return unique_group_sizes[0]
+
+
+def compute_shapiro_will_standarddev_pvalue(population: list[Participant]) -> list[float]:
+    """
+    Analyzes all the self assessed skill declarations of provided list of participants and tests
+    for the null hypothesis (whether the samples can be approximated by a normal distribution).
+    Internally uses the scipy shapiro package:
+    https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html
+    :param population: as a list of participants, providing self-declared skill vectors
+    :return: list of p-values. Greater 0.5 is interpreted as safe-to-model as normal
+    distribution
+    """
+
+    for idx, skill in enumerate(full_skill_tags):
+        skill_values: list[float] = extract_skill_values_by_index(idx, population)
+        # print(skill_values)
+        shapiro_test = stats.shapiro(skill_values)
+        print(skill + ": P-Value = " + str(shapiro_test.pvalue))
+
+    # Null Hypothesis: The data comes from a normal distribution
+    # Threshold: 0.05
+    # P = 0.0001315
+    # Interpretation: p is lower than threshold. That means...
+    # https://developer.ibm.com/articles/statistical-si
+    # The test result is significant: The hypothesis should be rejected.
+    # The samples can be assumed not to stem from a normal distribution.
