@@ -22,7 +22,7 @@ class ScatterSeries:
     # pylint: disable=too-many-arguments
 
     def __init__(self, x_extractor_type: type, y_extractor_type: type, label_maker: LabelMaker,
-                 outliers: bool, prefix: str) -> 'ScatterSeries':
+                 outliers: bool, prefix: str, tinted: bool) -> 'ScatterSeries':
         """
         Constructor, defines the characteristics to apply for the full series.
         @param: x_extractor as variable to apply for x-axis.
@@ -33,6 +33,7 @@ class ScatterSeries:
         self.__prefix: str = prefix
         self.__label_maker: LabelMaker = label_maker
         self.__outliers: bool = outliers
+        self.__tinted: bool = tinted
 
     def plot_uncoupled_series(self, series_extractor_1: list[str],
                               series_extractor_2: list[str]) -> None:
@@ -95,7 +96,8 @@ class ScatterSeries:
                                                         self.__x_extractor_type(series_tuple[0]),
                                                         self.__y_extractor_type(series_tuple[1]),
                                                         self.__label_maker,
-                                                        self.__outliers)
+                                                        self.__outliers,
+                                                        self.__tinted)
             dimension.fuse(item_correlation.dimension)
             correlation_series.append(item_correlation)
 

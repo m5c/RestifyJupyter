@@ -20,7 +20,7 @@ class Correlation:
     # pylint: disable=too-many-locals
 
     def __init__(self, full_population: list[AssessedParticipant], x_extractor: Extractor,
-                 y_extractor: Extractor, label_maker: LabelMaker, filter_outliers: bool):
+                 y_extractor: Extractor, label_maker: LabelMaker, filter_outliers: bool, tinted: bool):
         """
         Constructor for a plotable correlation.
         :param full_population: as the population to analyze (should be full, assessed population).
@@ -67,13 +67,13 @@ class Correlation:
 
         # Store extracted x / y sample points in printable bundles.
         self.__red_bundle: GroupSamples = GroupSamples("red", red_samples_x, red_samples_y,
-                                                       True)
+                                                       tinted)
         self.__green_bundle: GroupSamples = GroupSamples("green", green_samples_x, green_samples_y,
-                                                         True)
+                                                         tinted)
         self.__blue_bundle: GroupSamples = GroupSamples("blue", blue_samples_x, blue_samples_y,
-                                                        True)
+                                                        tinted)
         self.__yellow_bundle: GroupSamples = GroupSamples("yellow", yellow_samples_x,
-                                                          yellow_samples_y, True)
+                                                          yellow_samples_y, tinted)
 
         # Figure out the maximum values in sample points
         self.__x_axis_max: float = max(max(red_samples_x), max(green_samples_x),

@@ -40,14 +40,14 @@ def cell_0x1() -> None:
                                                                  MethodologyPretimeExtractor("tc"),
                                                                  MethodologyTimeExtractor("tc"),
                                                                  label_maker,
-                                                                 outliers)
+                                                                 outliers, true)
 
     ide_pre_meth_time_to_refactor_time: Correlation = Correlation(assessed_population,
                                                                   MethodologyPretimeExtractor(
                                                                       "ide"),
                                                                   MethodologyTimeExtractor("ide"),
                                                                   label_maker,
-                                                                  outliers)
+                                                                  outliers, true)
 
     dimension: Dimension = tc_pre_meth_time_to_refactor_time.dimension.fuse(
         ide_pre_meth_time_to_refactor_time.dimension)
