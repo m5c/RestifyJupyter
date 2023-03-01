@@ -39,10 +39,11 @@ class ScatterSeries:
         """
         Call to actually produce the series of plots and persist them on disk.
         The first argument is the list of parameters to alter for the first extractor. The second
-        list provides the series values for the second iterator.
+        list provides the series values for the second iterator. Those series are uncoupled,
+        that is to say all combinations must be considered.
         The amount of produced plots equals the product of both list sizes.
         :param: series_extractor_1 as the series parameter to apply for first extractor.
-        :param: series_extractor_1 as the series parameter to apply for second extractor.
+        :param: series_extractor_2 as the series parameter to apply for second extractor.
         :return: None
         """
         # Create actual cross product of both received lists

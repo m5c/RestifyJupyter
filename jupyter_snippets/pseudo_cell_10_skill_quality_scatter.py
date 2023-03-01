@@ -11,11 +11,12 @@ from restify_mining.markers.skills_markers import full_skill_tags
 
 def cell_10() -> None:
     """
-    Jupyter cell 07. See markdown description.
+    Jupyter cell 10. See markdown description.
     :return: None
     """
-    scatter_series: ScatterSeries = ScatterSeries(
+    # Plot correlations for all individual skills
+    scatter_series_all_skills: ScatterSeries = ScatterSeries(
         SkillExtractor, MethodologyPassrateExtractor, FullLabelMaker(),
         True, "10-")
-    scatter_series.plot_uncoupled_series(
+    scatter_series_all_skills.plot_uncoupled_series(
         {"ide", "tc"}, full_skill_tags)

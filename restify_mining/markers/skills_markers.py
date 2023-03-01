@@ -14,7 +14,7 @@ def get_formated_skill_tag(skill_index: int) -> str:
     Ensures the skill is printed with
     consistent string width, compared to all other skills.
     :param skill_index: as the skill for which a format buffer is required
-    :return: the buffer string, ensuring this skill is formated with the required amount of tabs.
+    :return: the buffer string, ensuring this skill is formatted with the required amount of tabs.
     """
     unbuffered_string = skill_tags[skill_index]
     if len(unbuffered_string) > 6:

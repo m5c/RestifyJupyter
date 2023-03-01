@@ -18,6 +18,7 @@ def cell_08b() -> None:
     """
     Jupyter cell 07. See markdown description.
     :return: None
+    TODO: should actually be executed before cell 08, to maintain consistency for the scattercells.
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
     assessed_population: list[
