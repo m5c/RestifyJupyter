@@ -18,7 +18,7 @@ class ApplicationTimeToPassRateTradeoffExtractor(ApplicationExtractor):
         """
         Implementation of the extract method that provides refactoring time in milliseconds used by
         participants.
-        TODO: figure out a way to normalize time.
+        TODO: figure out a way to normalize time. => Nope, use the additional values!
         """
         result: list[int] = []
         for assessed_participant in participants:
