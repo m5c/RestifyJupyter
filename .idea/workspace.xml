@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/restify_mining/data_objects/participant_normalize_tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_tradeoff_by_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_tradeoff_by_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/data_objects/normalized_participant.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/normalized_participant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/data_objects/participant_normalize_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/participant_normalize_tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
