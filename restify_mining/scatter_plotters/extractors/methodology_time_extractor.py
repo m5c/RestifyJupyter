@@ -4,10 +4,10 @@ methodology.
 Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.plotters.extractors.methodology_extractor import MethodologyExtractor
+from restify_mining.scatter_plotters.extractors.methodology_extractor import MethodologyExtractor
 
 
-class MethodologyPretimeExtractor(MethodologyExtractor):
+class MethodologyTimeExtractor(MethodologyExtractor):
     """
     This extractor retrieves the percentage of passed unit tests for the bookstore/xox
     implementation.
@@ -22,9 +22,9 @@ class MethodologyPretimeExtractor(MethodologyExtractor):
         result: list[float] = []
         for assessed_participant in participants:
             if self.methodology == "tc":
-                result.append(assessed_participant.pre_time_tc)
+                result.append(assessed_participant.time_tc)
             if self.methodology == "ide":
-                result.append(assessed_participant.pre_time_ide)
+                result.append(assessed_participant.time_ide)
         return result
 
     def axis_label(self) -> str:
@@ -32,7 +32,7 @@ class MethodologyPretimeExtractor(MethodologyExtractor):
         Implementation of the axis label method that provides a string usable for plotting the
         extracted values in a 2D correlation plotter.
         """
-        return self.methodology.capitalize() + " task familiarization [sec]"
+        return self.methodology.capitalize() + " task [sec]"
 
     def filename_segment(self) -> str:
-        return self.methodology.capitalize() + "PreTaskTime"
+        return self.methodology.capitalize() + "TaskTime"

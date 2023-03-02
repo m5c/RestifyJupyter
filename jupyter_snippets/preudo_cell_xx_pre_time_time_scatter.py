@@ -6,14 +6,14 @@ Author: Maximilian Schiedermeier
 from csv_tools import file_load_utils
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant import Participant
-from restify_mining.plotters.correlation import Correlation
-from restify_mining.plotters.correlation_plotter import plot_correlation
-from restify_mining.plotters.dimension import Dimension
-from restify_mining.plotters.extractors.animal_label_maker import AnimalLabelMaker
-from restify_mining.plotters.extractors.label_maker import LabelMaker
-from restify_mining.plotters.extractors.methodology_pretime_extractor import \
+from restify_mining.scatter_plotters.correlation import Correlation
+from restify_mining.scatter_plotters.correlation_plotter import plot_correlation
+from restify_mining.scatter_plotters.dimension import Dimension
+from restify_mining.scatter_plotters.extractors.animal_label_maker import AnimalLabelMaker
+from restify_mining.scatter_plotters.extractors.label_maker import LabelMaker
+from restify_mining.scatter_plotters.extractors.methodology_pretime_extractor import \
     MethodologyPretimeExtractor
-from restify_mining.plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
+from restify_mining.scatter_plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
 from restify_mining.skill_extractors.extract_population_gaussian import extract_population_gaussian
 
 

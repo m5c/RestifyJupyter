@@ -8,7 +8,7 @@ Author: Maximilian Schiedermeier
 from restify_mining.skill_extractors import participant_stat_tools
 from restify_mining.markers import skills_markers
 from restify_mining.data_objects.participant import Participant
-from restify_mining.plotters.skill_plotter import plot_gaussian
+from restify_mining.scatter_plotters.skill_plotter import plot_gaussian
 
 
 def extract_population_gaussian(population: list[Participant]) -> None:

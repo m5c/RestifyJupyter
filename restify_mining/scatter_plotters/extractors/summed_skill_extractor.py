@@ -4,7 +4,7 @@ Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.markers.skills_markers import full_skill_tags
-from restify_mining.plotters.extractors.extractor import Extractor
+from restify_mining.scatter_plotters.extractors.extractor import Extractor
 
 
 class SummedSkillExtractor(Extractor):

@@ -6,9 +6,9 @@ Author: Maximilian Schiedermeier
 """
 import matplotlib.pyplot as plt
 
-from restify_mining.plotters.correlation import Correlation
-from restify_mining.plotters.dimension import Dimension
-from restify_mining.plotters.group_samples import GroupSamples
+from restify_mining.scatter_plotters.correlation import Correlation
+from restify_mining.scatter_plotters.dimension import Dimension
+from restify_mining.scatter_plotters.group_samples import GroupSamples
 
 
 def plot_correlation_with_auto_dimensions(correlation: Correlation, file_name_marker: str) -> None:

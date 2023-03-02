@@ -4,7 +4,7 @@ Author Maximilian Schiedermeier
 """
 from abc import ABC
 
-from restify_mining.plotters.extractors.extractor import Extractor
+from restify_mining.scatter_plotters.extractors.extractor import Extractor
 
 
 class MethodologyExtractor(Extractor, ABC):
@@ -26,6 +26,6 @@ class MethodologyExtractor(Extractor, ABC):
     def methodology(self) -> str:
         """
         Just some boilerplate code that would be completely needless in any proper OO language
-        to emulate polymorphism and class secrets. #pythonisnotpretty
+        to emulate polymorphism and class secrets.
         """
         return self.__methodology

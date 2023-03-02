@@ -3,7 +3,7 @@ Extractor implementation that extracts the time needed for conversion using a gi
 Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.plotters.extractors.methodology_extractor import MethodologyExtractor
+from restify_mining.scatter_plotters.extractors.methodology_extractor import MethodologyExtractor
 
 
 class MethodologyPassrateExtractor(MethodologyExtractor):

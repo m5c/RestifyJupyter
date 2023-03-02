@@ -1,15 +1,15 @@
 """
 Helper module that combines two provided extractors and applies them on a given population.
-Produces all parameters needed for printing by correlation plotter.
+Produces all parameters needed for printing by correlation scatter plotter.
 Author Maximilian Schiedermeier
 """
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
-from restify_mining.plotters.dimension import Dimension
-from restify_mining.plotters.extractors.extractor import Extractor
-from restify_mining.plotters.extractors.label_maker import LabelMaker
-from restify_mining.plotters.group_samples import GroupSamples
+from restify_mining.scatter_plotters.dimension import Dimension
+from restify_mining.scatter_plotters.extractors.extractor import Extractor
+from restify_mining.scatter_plotters.extractors.label_maker import LabelMaker
+from restify_mining.scatter_plotters.group_samples import GroupSamples
 
 
 class Correlation:

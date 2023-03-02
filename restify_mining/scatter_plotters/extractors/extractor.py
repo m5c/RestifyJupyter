@@ -1,9 +1,13 @@
 """
-Abstract base class for all extractors. Implementing classes must provide two things: an extraction
+Abstract base class for all extractors. Extractors produce metrics when provided with a list
+of participants. Implementing classes must provide two things: an extraction
 method to extract the exact values out of a provided participant list and a string that can be
 used as axis label. Extractors are different from miners in so far as that they only generate a
-single list of values. Extractors are meant to be combined with another extractor by a
-Correlator, to produce a sample based plot.
+single list of values. Extractors are typically combined with another extractor, e.g. by a
+Correlator, to conveniently produce a sample based plot.
+Important: Extractors are not filters. They do not reduce the participant set. The purpose is only
+to map each participant in a given list to a numeric metric. For filtering,
+use ParticipantFilterTools.
 Author: Maximilian Schiedermeier
 """
 

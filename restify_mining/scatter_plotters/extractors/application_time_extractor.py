@@ -4,23 +4,14 @@ application to a RESTful service.
 Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.plotters.extractors.extractor import Extractor
+from restify_mining.scatter_plotters.extractors.application_extractor import ApplicationExtractor
+from restify_mining.scatter_plotters.extractors.extractor import Extractor
 
 
-class ApplicationTimeExtractor(Extractor):
+class ApplicationTimeExtractor(ApplicationExtractor):
     """
     This extractor retrieves the time needed for refactoring the bookstore/xox implementation.
     """
-
-    def __init__(self, application: str) -> Extractor:
-        """
-        :param application: as string to indicate which application we are interested in (bs/xox)
-        Implementation of the extract method that provides refactoring time in milliseconds used by
-        """
-        if application in {"bookstore", "xox"}:
-            self.__application = application
-        else:
-            raise Exception("Invalid application: " + application)
 
     def extract(self, participants: list[AssessedParticipant]) -> list[float]:
         """
@@ -40,7 +31,7 @@ class ApplicationTimeExtractor(Extractor):
         Implementation of the axis label method that provides a string usable for plotting the
         extracted values in a 2D correlation plotter.
         """
-        return "Refactoring time "+self.__application.capitalize()+" [sec]"
+        return "Refactoring time " + self.__application.capitalize() + " [sec]"
 
     def filename_segment(self) -> str:
         return self.__application.capitalize() + "RefactorTime"

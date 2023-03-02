@@ -4,7 +4,7 @@ Implementation of LabelMaker that produces empty labels.
 """
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.plotters.extractors.label_maker import LabelMaker
+from restify_mining.scatter_plotters.extractors.label_maker import LabelMaker
 
 
 class EmptyLabelMaker(LabelMaker):

@@ -3,7 +3,7 @@ Author: Maximilian Schiedermeier
 """
 from csv_tools import file_load_utils
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.plotters import unit_test_plotter
+from restify_mining.scatter_plotters import unit_test_plotter
 
 
 def cell_07() -> None:

@@ -6,11 +6,11 @@ import scipy.stats
 from csv_tools import file_load_utils
 from restify_mining.data_objects import participant_filter_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.plotters.extractors.full_label_maker import FullLabelMaker
-from restify_mining.plotters.extractors.methodology_passrate_extractor import \
+from restify_mining.scatter_plotters.extractors.full_label_maker import FullLabelMaker
+from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor import \
     MethodologyPassrateExtractor
-from restify_mining.plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
-from restify_mining.plotters.scatter_series import ScatterSeries
+from restify_mining.scatter_plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
+from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 from restify_mining.skill_extractors import participant_stat_tools
 
 

@@ -1,11 +1,11 @@
 """
 Author: Maximilian Schiedermeier
 """
-from restify_mining.plotters.extractors.full_label_maker import FullLabelMaker
-from restify_mining.plotters.extractors.methodology_passrate_extractor import \
+from restify_mining.scatter_plotters.extractors.full_label_maker import FullLabelMaker
+from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor import \
     MethodologyPassrateExtractor
-from restify_mining.plotters.extractors.summed_skill_extractor import SummedSkillExtractor
-from restify_mining.plotters.scatter_series import ScatterSeries
+from restify_mining.scatter_plotters.extractors.summed_skill_extractor import SummedSkillExtractor
+from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 
 def cell_11() -> None:
