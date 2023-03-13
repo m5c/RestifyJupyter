@@ -12,6 +12,7 @@ from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor i
 from restify_mining.scatter_plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
 from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 from restify_mining.skill_extractors import participant_stat_tools
+from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpretation
 
 
 def cell_08b() -> None:
@@ -70,44 +71,29 @@ def cell_08b() -> None:
     tc_bs_time_stats = scipy.stats.shapiro(tc_bs_times)
     tc_bs_rates_stats = scipy.stats.shapiro(tc_bs_rates)
     print_normal_dist_interpretation(
-        "TC BookStore duration", tc_bs_time_stats.pvalue)
+        "TC BookStore duration", tc_bs_time_stats)
     print_normal_dist_interpretation(
-        "TC BookStore quality", tc_bs_rates_stats.pvalue)
+        "TC BookStore quality", tc_bs_rates_stats)
 
     ide_xox_time_stats = scipy.stats.shapiro(ide_xox_times)
     ide_xox_rates_stats = scipy.stats.shapiro(ide_xox_rates)
     print_normal_dist_interpretation(
-        "IDE Xox duration", ide_xox_time_stats.pvalue)
+        "IDE Xox duration", ide_xox_time_stats)
     print_normal_dist_interpretation(
-        "IDE Xox quality", ide_xox_rates_stats.pvalue)
+        "IDE Xox quality", ide_xox_rates_stats)
 
     ide_bs_time_stats = scipy.stats.shapiro(tc_xox_times)
     ide_bs_rates_stats = scipy.stats.shapiro(tc_xox_rates)
     print_normal_dist_interpretation(
-        "IDE BookStore duration", ide_bs_time_stats.pvalue)
+        "IDE BookStore duration", ide_bs_time_stats)
     print_normal_dist_interpretation(
-        "IDE BookStore quality", ide_bs_rates_stats.pvalue)
+        "IDE BookStore quality", ide_bs_rates_stats)
 
     tc_xox_time_stats = scipy.stats.shapiro(ide_bs_times)
     tc_xox_rates_stats = scipy.stats.shapiro(ide_bs_rates)
     print_normal_dist_interpretation(
-        "TC Xox duration", tc_xox_time_stats.pvalue)
+        "TC Xox duration", tc_xox_time_stats)
     print_normal_dist_interpretation(
-        "TC Xox duration", tc_xox_rates_stats.pvalue)
+        "TC Xox duration", tc_xox_rates_stats)
 
 
-def print_normal_dist_interpretation(context: str, pvalue: float) -> None:
-    """
-    Herper function to print p value and interpretation for a given context.
-    :param context: as descriptive string to use when printing message.
-    :param pvalue: as the p-value for null hypothesis that samples come from normal
-    distribution.
-    :return: None.
-    """
-    if pvalue >= 0.05:
-        interpretation: str = "\nCannot reject Null-Hypothesis. Found no evidence to assume " \
-                              "the samples could not come from a normal distribution."
-    else:
-        interpretation: str = "\nNull-Hypothesis rejected. Data suggests the samples do not " \
-                              "come from a normal distribution."
-    print("------\np-value for " + context + ": " + str(pvalue) + interpretation)

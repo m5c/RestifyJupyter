@@ -1,9 +1,14 @@
 """
 Extractor implementation that extracts the time-to-passrate tradeoff for of a provided vanilla
 application to a RESTful service, regardless the methodology used.
+Note: This extractor makes most sense if the provided population is homogenous, is to say
+followed the same app-methodology combinations. This is e.g. the case for red+yellow and
+blue+green. A filter should be applied to reduce the input population, before calling this
+extractor.
 Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
+from restify_mining.data_objects.normalized_participant import NormalizedParticipant
 from restify_mining.scatter_plotters.extractors.application_extractor import ApplicationExtractor
 from restify_mining.scatter_plotters.extractors.extractor import Extractor
 
@@ -14,18 +19,24 @@ class ApplicationTimeToPassRateTradeoffExtractor(ApplicationExtractor):
     given application.
     """
 
-    def extract(self, participants: list[AssessedParticipant]) -> list[float]:
+    def extract(self, participants: list[NormalizedParticipant]) -> list[float]:
         """
-        Implementation of the extract method that provides refactoring time in milliseconds used by
-        participants.
-        TODO: figure out a way to normalize time. => Nope, use the additional values!
+        Implementation of the extract method that provides ratio of normalized refactoring time
+        to passrate of the outcome. The exact formula is:
+        (1- "normalized time*) * passrate.
+        Reason for inverting time is that be need higher valued to represent desirable results.
         """
-        result: list[int] = []
+        result: list[float] = []
         for assessed_participant in participants:
-            if self.__application == "bookstore":
-                result.append(assessed_participant.time_bs)
-            if self.__application == "xox":
-                result.append(assessed_participant.time_xox)
+            if self.application == "bookstore":
+                ratio: float = \
+                    (1 - assessed_participant.norm_time_bs) * \
+                    assessed_participant.test_percentage_bs
+            if self.application == "xox":
+                ratio: float = \
+                    (1 - assessed_participant.norm_time_xox) * \
+                    assessed_participant.test_percentage_xox
+            result.append(ratio)
         return result
 
     def axis_label(self) -> str:

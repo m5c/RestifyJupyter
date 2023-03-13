@@ -21,7 +21,8 @@ class NormalizedParticipant(AssessedParticipant):
         :type self: object
         """
         # invoke super with base attributes
-        super().__init__(participant.animal_name, participant.group_name, participant.skills,
+        super().__init__(participant.group_name + "-" + participant.animal_name,
+                         participant.control_group, participant.skills,
                          participant.test_results_bs, participant.test_results_xox,
                          participant.time_bs,
                          participant.time_xox, participant.pre_time_tc, participant.pre_time_ide)

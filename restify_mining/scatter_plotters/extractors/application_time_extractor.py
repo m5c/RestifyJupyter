@@ -20,9 +20,9 @@ class ApplicationTimeExtractor(ApplicationExtractor):
         """
         result: list[int] = []
         for assessed_participant in participants:
-            if self.__application == "bookstore":
+            if self.application == "bookstore":
                 result.append(assessed_participant.time_bs)
-            if self.__application == "xox":
+            if self.application == "xox":
                 result.append(assessed_participant.time_xox)
         return result
 

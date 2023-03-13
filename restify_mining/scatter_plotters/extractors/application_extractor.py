@@ -24,9 +24,9 @@ class ApplicationExtractor(Extractor, ABC):
             raise Exception("Invalid application: " + application)
 
     @property
-    def methodology(self) -> str:
+    def application(self) -> str:
         """
         Just some boilerplate code that would be completely needless in any proper OO language
         to emulate polymorphism and class secrets.
         """
-        return self.__methodology
+        return self.__application

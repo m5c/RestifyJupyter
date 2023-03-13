@@ -22,7 +22,7 @@ def normalize(population: list[AssessedParticipant]) -> list[NormalizedParticipa
     """
     # First step: extract min and max times per methodology and per app.
     # Use extractors for this
-    bs_times: list[int] = ApplicationTimeExtractor("bs").extract(population)
+    bs_times: list[int] = ApplicationTimeExtractor("bookstore").extract(population)
     min_bs_time: int = min(bs_times)
     max_bs_time: int = max(bs_times)
     bs_time_range: int = max_bs_time - min_bs_time

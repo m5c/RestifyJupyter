@@ -22,9 +22,9 @@ class ApplicationPassrateExtractor(ApplicationExtractor):
 
         result: list[float] = []
         for assessed_participant in participants:
-            if self.__application == "bookstore":
+            if self.application == "bookstore":
                 result.append(assessed_participant.test_percentage_bs)
-            if self.__application == "xox":
+            if self.application == "xox":
                 result.append(assessed_participant.test_percentage_xox)
         return result
 

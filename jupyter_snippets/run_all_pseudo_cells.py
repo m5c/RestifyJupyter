@@ -18,6 +18,7 @@ from jupyter_snippets.pseudo_cell_08b_time_quality_normal_test import cell_08b
 from jupyter_snippets.pseudo_cell_09_pre_time_quality_scatter import cell_09
 from jupyter_snippets.pseudo_cell_10_skill_quality_scatter import cell_10
 from jupyter_snippets.pseudo_cell_11_skillsum_quality_scatter import cell_11
+from jupyter_snippets.pseudo_cell_12_tradeoff_by_app import cell_12
 from restify_mining.utils.cache_clearer import clear_cache
 
 print("Clearing cached output files...")
@@ -73,6 +74,10 @@ print("Cell 10 complete.\n")
 print("Imitating Jupyter Pseudo Cell 11...")
 cell_11()
 print("Cell 11 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 12...")
+cell_12()
+print("Cell 12 complete.\n")
 
 print("Success!")
 print("All Jupyter Cells imitated.")

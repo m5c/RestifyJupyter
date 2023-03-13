@@ -13,8 +13,6 @@ class Participant:
         self.__animal_name: str = codename.split('-')[1]
         self.__control_group: ControlGroup = control_group
         self.__skills: list[int] = skills
-        # self.__methodology_order: list[task_methodology] =
-        # self.__application_order: list[task_application]
 
     @property
     def skills(self) -> list[int]:
@@ -31,28 +29,37 @@ class Participant:
         return self.skills[skill_index]
 
     @property
-    def total_score(self):
+    def total_score(self) -> int:
         """Computes the total score of all skills, summed up. Useful to create a participant
         ranking."""
         return sum(self.__skills)
 
     @property
-    def skill_amount(self):
+    def skill_amount(self) -> int:
         """Helper method to look up how many skills were decrated for this pariticpant. TODO:
         make obsolete by declaring an enum class with with fixed strings / criteria."""
         return len(self.__skills)
 
     @property
-    def animal_name(self):
+    def animal_name(self) -> str:
         """Getter to look up the participant animal name."""
         return self.__animal_name
 
     @property
-    def group_name(self):
+    def group_name(self) -> str:
         """Getter to look up the participant control group name."""
         return self.__control_group.name
 
+    @property
+    def control_group(self) -> ControlGroup:
+        """Getter for the actual control group object."""
+        return self.__control_group
+
     def __str__(self):
+        """
+        tostring method for nice pretty formatted printing of object details.
+        :return:
+        """
         participant_str = self.group_name + "-" + self.animal_name + ": \t["
         for skill in self.skills:
             participant_str += str(skill) + ","
