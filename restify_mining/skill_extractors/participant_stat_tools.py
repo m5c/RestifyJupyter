@@ -2,10 +2,13 @@
 
 import numpy as np
 from scipy import stats
+from scipy.stats._morestats import ShapiroResult
+
 from restify_mining.data_objects.participant import Participant
 from restify_mining.data_objects.participant_filter_tools import extract_group_names, \
     filter_population_by_group
 from restify_mining.markers.skills_markers import full_skill_tags
+from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpretation
 
 
 def build_mean_skills(participants: list[Participant]):
@@ -13,12 +16,24 @@ def build_mean_skills(participants: list[Participant]):
     return [number / len(participants) for number in build_summed_skills(participants)]
 
 
-def extract_skill_values_by_index(index: int, participants: list[Participant]):
+def extract_skill_values_by_index(index: int, participants: list[Participant]) -> list[int]:
     """Returns a vector of all a given skill over all participants"""
     skill_values = []
     for participant in participants:
         skill_values.append(participant.skills[index])
     return skill_values
+
+
+def extract_skill_sum_values(participants: list[Participant]) -> list[int]:
+    """
+    Computes sum of all skills per participant and returns a list with all results.
+    :param participants: as the population to analyze
+    :return: list of all total skill values.
+    """
+    total_values = []
+    for participant in participants:
+        total_values.append(sum(participant.skills))
+    return total_values
 
 
 def compute_single_skill_deviation(skill_values):
@@ -89,13 +104,13 @@ def compute_shapiro_will_skills_standarddev_pvalue(population: list[Participant]
     for idx, skill in enumerate(full_skill_tags):
         skill_values: list[float] = extract_skill_values_by_index(idx, population)
         # print(skill_values)
-        shapiro_test = stats.shapiro(skill_values)
-        print(skill + ": P-Value = " + str(shapiro_test.pvalue))
+        shapiro_result: ShapiroResult = stats.shapiro(skill_values)
+        print_normal_dist_interpretation(skill, shapiro_result)
 
-    # Null Hypothesis: The data comes from a normal distribution
-    # Threshold: 0.05
-    # P = 0.0001315
-    # Interpretation: p is lower than threshold. That means...
-    # https://developer.ibm.com/articles/statistical-si
-    # The test result is significant: The hypothesis should be rejected.
-    # The samples can be assumed not to stem from a normal distribution.
+# Null Hypothesis: The data comes from a normal distribution
+# Threshold: 0.05
+# P = 0.0001315
+# Interpretation: p is lower than threshold. That means...
+# https://developer.ibm.com/articles/statistical-si
+# The test result is significant: The hypothesis should be rejected.
+# The samples can be assumed not to stem from a normal distribution.

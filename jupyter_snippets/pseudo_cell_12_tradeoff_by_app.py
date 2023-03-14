@@ -15,13 +15,9 @@ from restify_mining.data_objects import participant_normalize_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
-from restify_mining.scatter_plotters.extractors.application_passrate_extractor import \
-    ApplicationPassrateExtractor
 from restify_mining.scatter_plotters.extractors.application_time_passrate_tradeoff_extractor \
     import \
     ApplicationTimeToPassRateTradeoffExtractor
-from restify_mining.scatter_plotters.extractors.full_label_maker import FullLabelMaker
-from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpretation
 
 
@@ -51,32 +47,37 @@ def cell_12() -> None:
     # PASS 1:
     # Use xox branded application time passrate tradeoff extractor for red/yellow, then for
     # green/blue
-    app: str = "xox"
-    # compute effective quality to duration tradeoff for both subpopulations. green blue was
-    # using touchcore (to refactor xox), if we extract for xox we get the touchcore results.
-    green_blue_xox_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(app).extract(
-        green_blue_norm_population)
-    # red yellow was using ide for xox, if we extract for xox we get the ide results
-    red_yellow_xox_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(app).extract(
-        red_yellow_norm_population)
+    app: str = ""
+    for app in ["xox", "bookstore"]:
 
-    # Run Shapiro Wilk test on resulting tradeoffs (each group individually), to see if
-    # distributions are normal
-    # If they are, draw normalized curves for the four control groups. Also print mean /
-    # deviation per group.
-    green_blue_xox_tradeoff_stats: ShapiroResult = scipy.stats.shapiro(green_blue_xox_tradeoff)
-    print_normal_dist_interpretation("Green Blue Normalized Xox Quality Tradeoff", green_blue_xox_tradeoff_stats)
-    red_yellow_xox_tradeoff: ShapiroResult = scipy.stats.shapiro(red_yellow_xox_tradeoff)
-    print_normal_dist_interpretation("Green Blue Normalized Xox Quality Tradeoff", red_yellow_xox_tradeoff)
+        # compute effective quality to duration tradeoff for both subpopulations. green blue was
+        # using touchcore (to refactor xox), if we extract for xox we get the touchcore results.
+        green_blue_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(app).extract(
+            green_blue_norm_population)
+        # red yellow was using ide for xox, if we extract for xox we get the ide results
+        red_yellow_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(app).extract(
+            red_yellow_norm_population)
 
-    # Actually scatter plot the outcome
-    # # TODO: Change constructor of scatterseries, so I can pass normalized participants? Or should I just specify the input is a list of participants?
-    # scatter_series: ScatterSeries = ScatterSeries(ApplicationTimeToPassRateTradeoffExtractor,
-    #                                               ApplicationPassrateExtractor, FullLabelMaker(),
-    #                                               True, "12-")
-    # scatter_series.plot_coupled_series({"xox", "bookstore"})
+        # Run Shapiro-Wilk test on resulting tradeoffs (each group individually), to see if
+        # distributions are normal
+        # If they are, draw normalized curves for the four control groups. Also print mean /
+        # deviation per group.
+        green_blue_app_tradeoff_stats: ShapiroResult = scipy.stats.shapiro(green_blue_app_tradeoff)
+        print_normal_dist_interpretation("Green Blue Normalized "+app+" Quality Tradeoff",
+                                         green_blue_app_tradeoff_stats)
+        red_yellow_app_tradeoff: ShapiroResult = scipy.stats.shapiro(red_yellow_app_tradeoff)
+        print_normal_dist_interpretation("Green Blue Normalized "+app+" Quality Tradeoff",
+                                         red_yellow_app_tradeoff)
 
-    # ------
+        # Actually scatter plot the outcome
+        # # TODO: Change constructor of scatterseries, so I can pass normalized participants? Or
+        #  should I just specify the input is a list of participants?
+        # scatter_series: ScatterSeries = ScatterSeries(ApplicationTimeToPassRateTradeoffExtractor,
+        #                                               ApplicationPassrateExtractor, FullLabelMaker(),
+        #                                               True, "12-")
+        # scatter_series.plot_coupled_series({"xox", "bookstore"})
 
-    # PASS 2:
-    # Do the same for BookStore
+        # ------
+
+        # PASS 2:
+        # Do the same for BookStore
