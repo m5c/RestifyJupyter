@@ -17,7 +17,7 @@ def build_mean_skills(participants: list[Participant]):
 
 
 def extract_skill_values_by_index(index: int, participants: list[Participant]) -> list[int]:
-    """Returns a vector of all a given skill over all participants"""
+    """Returns a vector of all values for a single given skill over all participants"""
     skill_values = []
     for participant in participants:
         skill_values.append(participant.skills[index])

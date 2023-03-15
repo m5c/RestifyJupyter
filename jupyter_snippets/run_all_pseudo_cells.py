@@ -6,7 +6,7 @@ generated-* directories.
 Author: Maximilian Schiedermeier
 """
 
-from jupyter_snippets.pseudo_cell_01_display_population_skills_gaussian import cell_01
+from jupyter_snippets.pseudo_cell_01_display_population_skill_stats import cell_01
 from jupyter_snippets.pseudo_cell_02_display_cgroups_skill_boxplot import cell_02
 from jupyter_snippets.pseudo_cell_03_merge_csvs import cell_03
 from jupyter_snippets.pseudo_cell_04_compute_cgroup_skill_diffs import cell_04
