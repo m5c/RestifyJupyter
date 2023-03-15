@@ -28,12 +28,13 @@ def cell_01() -> None:
     # In the following we provide bar charts to provide evidence that out population is diverse
 
     # Generate boxplots for skill distribution among participants
-    # total_participant_skills: list[int] = extract_skill_sum_values(population)
-    # distribution: dict[int, int] = collections.Counter(total_participant_skills)
-    # print_bar_distribution(distribution, "Summed Total", min(total_participant_skills),
-    #                        max(total_participant_skills), max(distribution.values()))
+    total_participant_skills: list[int] = extract_skill_sum_values(population)
+    distribution: dict[int, int] = collections.Counter(total_participant_skills)
+    print_bar_distribution(distribution, "Summed Total", min(total_participant_skills),
+                           max(total_participant_skills),  max(distribution.values()))
 
-    # Generate distirbutions and then barcharts for each and every skill distribution (full population)
+    # Generate distirbutions and then barcharts for each and every skill distribution (full
+    # population)
     # Must be in two steps, so we can keep plot dimensions.
     all_skill_distributions: list[dict[int, int]] = []
     for idx, skill in enumerate(full_skill_tags):
@@ -52,7 +53,7 @@ def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x
                            upper_bound_x: int, upper_bound_y: int) -> None:
     """
     A method that simply prints sample frequency for discrete sets
-    :param samples: discrete sample values
+    :param distribution: distribution of sample values
     :param tag: label to use for plot description
     :param lower_bound_x: lowest value to appear on x
     :param upper_bound_x: highest value to appear on x
@@ -63,9 +64,9 @@ def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x
     plt.bar(distribution.keys(), distribution.values())
     plt.title(tag + " Skill Distribution")
     plt.xlabel(tag + " Skill Score")
-    plt.xticks(np.arange(lower_bound_x, upper_bound_x+1, 1.0))
-    # plt.yticks(1)
+    plt.xticks(np.arange(lower_bound_x, upper_bound_x + 1, 1.0))
+    plt.yticks(np.arange(0, upper_bound_y + 1, 1.0))
     plt.xlim(lower_bound_x - 0.5, upper_bound_x + 0.5)
-    plt.ylim(0, upper_bound_y+0.5)
+    plt.ylim(0, upper_bound_y + 0.5)
     plt.ylabel("Participant Amount")
     plt.show()
