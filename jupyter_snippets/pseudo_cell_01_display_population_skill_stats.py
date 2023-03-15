@@ -7,6 +7,7 @@ import numpy as np
 
 from csv_tools import file_load_utils
 from restify_mining.data_objects.participant import Participant
+from restify_mining.markers import skills_markers
 from restify_mining.markers.skills_markers import full_skill_tags
 from restify_mining.skill_extractors.participant_stat_tools import \
     compute_shapiro_will_skills_standarddev_pvalue, extract_skill_sum_values, \
@@ -31,7 +32,7 @@ def cell_01() -> None:
     total_participant_skills: list[int] = extract_skill_sum_values(population)
     distribution: dict[int, int] = collections.Counter(total_participant_skills)
     print_bar_distribution(distribution, "Summed Total", min(total_participant_skills),
-                           max(total_participant_skills),  max(distribution.values()))
+                           max(total_participant_skills),  max(distribution.values()), "#555555")
 
     # Generate distirbutions and then barcharts for each and every skill distribution (full
     # population)
@@ -43,14 +44,15 @@ def cell_01() -> None:
         distribution: dict[int, int] = collections.Counter(one_skill_for_all_participants)
         all_skill_distributions.append(distribution)
 
-    # now determine max frequence on all distributions, as reference point for all plots
+    # now determine max frequency on all distributions, as reference point for all plots
     max_frequency: int = max(max(distr.values()) for distr in all_skill_distributions)
     for idx, skill in enumerate(full_skill_tags):
-        print_bar_distribution(all_skill_distributions[idx], skill, 1, 5, max_frequency)
+        tint = skills_markers.palette[idx]
+        print_bar_distribution(all_skill_distributions[idx], skill, 1, 5, max_frequency, tint)
 
 
 def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x: int,
-                           upper_bound_x: int, upper_bound_y: int) -> None:
+                           upper_bound_x: int, upper_bound_y: int, tint: str) -> None:
     """
     A method that simply prints sample frequency for discrete sets
     :param distribution: distribution of sample values
@@ -58,10 +60,11 @@ def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x
     :param lower_bound_x: lowest value to appear on x
     :param upper_bound_x: highest value to appear on x
     :param upper_bound_y: highest value to appear on y
+    :param tint: as color to use for bars
     :return: None
     """
 
-    plt.bar(distribution.keys(), distribution.values())
+    plt.bar(distribution.keys(), distribution.values(), color=tint)
     plt.title(tag + " Skill Distribution")
     plt.xlabel(tag + " Skill Score")
     plt.xticks(np.arange(lower_bound_x, upper_bound_x + 1, 1.0))
