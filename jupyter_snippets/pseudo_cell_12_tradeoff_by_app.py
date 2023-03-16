@@ -49,13 +49,14 @@ def cell_12() -> None:
     # green/blue
     app: str = ""
     for app in ["xox", "bookstore"]:
-
         # compute effective quality to duration tradeoff for both subpopulations. green blue was
         # using touchcore (to refactor xox), if we extract for xox we get the touchcore results.
-        green_blue_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(app).extract(
+        green_blue_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
+            app).extract(
             green_blue_norm_population)
         # red yellow was using ide for xox, if we extract for xox we get the ide results
-        red_yellow_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(app).extract(
+        red_yellow_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
+            app).extract(
             red_yellow_norm_population)
 
         # Run Shapiro-Wilk test on resulting tradeoffs (each group individually), to see if
@@ -63,21 +64,11 @@ def cell_12() -> None:
         # If they are, draw normalized curves for the four control groups. Also print mean /
         # deviation per group.
         green_blue_app_tradeoff_stats: ShapiroResult = scipy.stats.shapiro(green_blue_app_tradeoff)
-        print_normal_dist_interpretation("Green Blue Normalized "+app+" Quality Tradeoff",
+        print_normal_dist_interpretation("Green Blue Normalized " + app + " Quality Tradeoff",
                                          green_blue_app_tradeoff_stats)
         red_yellow_app_tradeoff: ShapiroResult = scipy.stats.shapiro(red_yellow_app_tradeoff)
-        print_normal_dist_interpretation("Green Blue Normalized "+app+" Quality Tradeoff",
+        print_normal_dist_interpretation("Green Blue Normalized " + app + " Quality Tradeoff",
                                          red_yellow_app_tradeoff)
 
-        # Actually scatter plot the outcome
-        # # TODO: Change constructor of scatterseries, so I can pass normalized participants? Or
-        #  should I just specify the input is a list of participants?
-        # scatter_series: ScatterSeries = ScatterSeries(ApplicationTimeToPassRateTradeoffExtractor,
-        #                                               ApplicationPassrateExtractor, FullLabelMaker(),
-        #                                               True, "12-")
-        # scatter_series.plot_coupled_series({"xox", "bookstore"})
-
-        # ------
-
-        # PASS 2:
-        # Do the same for BookStore
+    # Shapiro wilk test suggests the data is normal distributed. We therefore proceed with plot
+    # of normal distributions for each series.
