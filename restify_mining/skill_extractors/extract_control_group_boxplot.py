@@ -9,7 +9,7 @@ Author: Maximilian Schiedermeier
 from restify_mining.data_objects import participant_filter_tools
 from restify_mining.data_objects.participant import Participant
 from restify_mining.markers.skills_markers import skill_tags, palette
-from restify_mining.scatter_plotters.skill_plotter import plot_box
+from restify_mining.box_plotters.skill_box_plotter import plot_box
 
 
 def extract_control_groups_boxplot(population: list[Participant]) -> None:

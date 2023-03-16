@@ -11,27 +11,6 @@ from scipy import stats
 from restify_mining.markers import skills_markers
 
 
-def plot_gaussian(mean, stddev, colour):
-    """Plots the gaussian curves, based on provided skill mean and standard-deviation values for a
-    given skill. Call this function repeatedly to create an overlay figure with all skill
-    curves."""
-
-    # Set figure dimensions
-    plt.rcParams["figure.figsize"] = (14, 4)
-
-    # actually plot the gaussian distributions
-    sigma = math.sqrt(stddev)
-    distr = np.linspace(mean - 3 * sigma, mean + 3 * sigma, 100)
-    plt.plot(distr, stats.norm.pdf(distr, mean, sigma), colour)
-
-    # Add axis labels
-    plt.xlabel("Skill Score")
-    plt.ylabel("Probability Density")
-
-    # Store on disk
-    plt.savefig("generated-plots/01-population_skills_gaussian.png")
-
-
 def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],
              amount_partitions: int, filename: str):
     """Prints a boxplot, based on a single array with all participant skill values, ordered by

@@ -11,11 +11,6 @@ from restify_mining.markers.skills_markers import full_skill_tags
 from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpretation
 
 
-def build_mean_skills(participants: list[Participant]):
-    """Computes the actual average of participant skills"""
-    return [number / len(participants) for number in build_summed_skills(participants)]
-
-
 def extract_skill_values_by_index(index: int, participants: list[Participant]) -> list[int]:
     """Returns a vector of all values for a single given skill over all participants"""
     skill_values = []
@@ -34,23 +29,6 @@ def extract_skill_sum_values(participants: list[Participant]) -> list[int]:
     for participant in participants:
         total_values.append(sum(participant.skills))
     return total_values
-
-
-def compute_single_skill_deviation(skill_values):
-    """Computes the standard deviation for a given set of skills"""
-    return np.std(skill_values)
-
-
-def build_standard_deviation_skills(participants):
-    """Computes an array of standard deviations. Every position in the result array corresponds
-    to the skills of all participants at the given position."""
-    standard_deviations = []
-
-    amount_skills = len(participants[0].skills)
-    for skill_index in range(amount_skills):
-        skill_values = extract_skill_values_by_index(skill_index, participants)
-        standard_deviations.append(compute_single_skill_deviation(skill_values))
-    return standard_deviations
 
 
 def build_normalized_skills(participants):

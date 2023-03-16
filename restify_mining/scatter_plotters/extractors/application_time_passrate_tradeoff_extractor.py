@@ -19,34 +19,29 @@ class ApplicationTimeToPassRateTradeoffExtractor(ApplicationExtractor):
     given application.
     """
 
-    def __init__(self):
+    def extract(self, participants: list[NormalizedParticipant]) -> list[float]:
         """
-        Default constructor
+        Implementation of the extract method that provides ratio of normalized refactoring time
+        to passrate of the outcome. The exact formula is:
+        (1- "normalized time*) /2 + passrate/2. (note the passrate value is in percentages and
+        needs to be divided by 100).
+        Reason for inverting time is that be need higher valued to represent desirable results.
         """
         # The tradeoff can put more weight on the time or the test passrate factor. By default both
         # are considered equally important.
         # A value of 1.0 means only correctness is considered. A value of 0 means only time is
         # considered.
-        self.__quality_weight: float = 0.5
-
-    def extract(self, participants: list[NormalizedParticipant]) -> list[float]:
-        """
-        Implementation of the extract method that provides ratio of normalized refactoring time
-        to passrate of the outcome. The exact formula is:
-        (1- "normalized time*) * passrate.
-        Reason for inverting time is that be need higher valued to represent desirable results.
-        """
+        quality_weight: float = 0.5
         result: list[float] = []
         for assessed_participant in participants:
             if self.application == "bookstore":
                 ratio: float = \
-                    (1 - self.__quality_weight) * (1 - assessed_participant.norm_time_bs) + \
-                    self.__quality_weight * (0.01 * assessed_participant.test_percentage_bs)
+                    (1 - quality_weight) * (1 - assessed_participant.norm_time_bs) + \
+                    quality_weight * (0.01 * assessed_participant.test_percentage_bs)
             if self.application == "xox":
                 ratio: float = \
-                    (1 - self.__quality_weight) * (1 - assessed_participant.norm_time_xox) + \
-                    self.__quality_weight * (0.01 * assessed_participant.test_percentage_xox)
-            print(str(ratio))
+                    (1 - quality_weight) * (1 - assessed_participant.norm_time_xox) + \
+                    quality_weight * (0.01 * assessed_participant.test_percentage_xox)
             result.append(ratio)
         return result
 

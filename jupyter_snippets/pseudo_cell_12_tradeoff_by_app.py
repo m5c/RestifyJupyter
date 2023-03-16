@@ -15,6 +15,7 @@ from restify_mining.data_objects import participant_normalize_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
+from restify_mining.normal_plotters.normal_plotter import plot_normal
 from restify_mining.scatter_plotters.extractors.application_time_passrate_tradeoff_extractor \
     import \
     ApplicationTimeToPassRateTradeoffExtractor
@@ -67,8 +68,10 @@ def cell_12() -> None:
         print_normal_dist_interpretation("Green Blue Normalized " + app + " Quality Tradeoff",
                                          green_blue_app_tradeoff_stats)
         red_yellow_app_tradeoff: ShapiroResult = scipy.stats.shapiro(red_yellow_app_tradeoff)
-        print_normal_dist_interpretation("Green Blue Normalized " + app + " Quality Tradeoff",
+        print_normal_dist_interpretation("Red Yellow Normalized " + app + " Quality Tradeoff",
                                          red_yellow_app_tradeoff)
 
-    # Shapiro wilk test suggests the data is normal distributed. We therefore proceed with plot
-    # of normal distributions for each series.
+        # Shapiro-Wilk test suggests the data is normal-distributed. We therefore proceed with plot
+        # of normal distributions for each series.
+        plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency", "Green Blue Quality Distribution "+app)
+        plot_normal(green_blue_app_tradeoff, "#ffa500", "quality", "frequency", "Red Yellow Quality Distribution "+app)
