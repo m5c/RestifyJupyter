@@ -13,6 +13,8 @@ from restify_mining.skill_extractors.participant_stat_tools import extract_skill
     extract_skill_values_by_index
 
 
+# pylint: disable=too-many-arguments
+
 def plot_skill_bars(population: list[participant]) -> None:
     """
     Generate boxplots for skill distribution among participants

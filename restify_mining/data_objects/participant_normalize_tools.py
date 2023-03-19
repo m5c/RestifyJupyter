@@ -11,6 +11,9 @@ from restify_mining.scatter_plotters.extractors.methodology_time_extractor impor
     MethodologyTimeExtractor
 
 
+# pylint: disable=too-many-locals
+
+
 def normalize(population: list[AssessedParticipant]) -> list[NormalizedParticipant]:
     """
     Iterates over entire population and searches for outer limits of measured task solving times.

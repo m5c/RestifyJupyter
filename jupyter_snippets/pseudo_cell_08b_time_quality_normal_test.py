@@ -9,9 +9,12 @@ from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpretation
 
 
+# pylint: disable=too-many-locals
+
+
 def cell_08b() -> None:
     """
-    Jupyter cell 07. See markdown description.
+    Jupyter cell 08b. See markdown description.
     :return: None
     TODO: should actually be executed before cell 08, to maintain consistency for the scattercells.
     """
