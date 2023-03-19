@@ -22,7 +22,7 @@ from restify_mining.scatter_plotters.extractors.application_time_passrate_tradeo
 from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpretation
 
 
-def cell_12() -> None:
+def cell_13() -> None:
     """
     Jupyter cell 12. See markdown description.
     :return: None

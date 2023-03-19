@@ -12,11 +12,10 @@ from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpret
 # pylint: disable=too-many-locals
 
 
-def cell_08b() -> None:
+def cell_08() -> None:
     """
     Jupyter cell 08b. See markdown description.
     :return: None
-    TODO: should actually be executed before cell 08, to maintain consistency for the scattercells.
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
     assessed_population: list[
@@ -91,4 +90,4 @@ def cell_08b() -> None:
     print_normal_dist_interpretation(
         "TC Xox duration", tc_xox_time_stats)
     print_normal_dist_interpretation(
-        "TC Xox duration", tc_xox_rates_stats)
+        "TC Xox quality", tc_xox_rates_stats)

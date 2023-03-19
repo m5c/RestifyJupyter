@@ -8,7 +8,7 @@ from restify_mining.scatter_plotters.extractors.summed_skill_extractor import Su
 from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 
-def cell_11() -> None:
+def cell_12() -> None:
     """
     Jupyter cell 11. See markdown description.
     :return: None
