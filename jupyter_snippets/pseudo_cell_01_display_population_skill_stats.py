@@ -1,19 +1,12 @@
 """
 Author: Maximilian Schiedermeier
 """
-import collections
-
-import numpy as np
 
 from csv_tools import file_load_utils
 from restify_mining.bar_plotters.skill_frequency_bars import plot_skill_bars
 from restify_mining.data_objects.participant import Participant
-from restify_mining.markers import skills_markers
-from restify_mining.markers.skills_markers import full_skill_tags
 from restify_mining.skill_extractors.participant_stat_tools import \
-    compute_shapiro_will_skills_standarddev_pvalue, extract_skill_sum_values, \
-    extract_skill_values_by_index
-import matplotlib.pyplot as plt
+    compute_shapiro_will_skills_standarddev_pvalue
 
 
 def cell_01() -> None:
@@ -29,4 +22,3 @@ def cell_01() -> None:
 
     # In the following we provide bar charts to provide evidence that out population is diverse
     plot_skill_bars(population)
-

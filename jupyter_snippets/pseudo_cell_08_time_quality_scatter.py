@@ -4,7 +4,8 @@ Author: Maximilian Schiedermeier
 from restify_mining.scatter_plotters.extractors.full_label_maker import FullLabelMaker
 from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor import \
     MethodologyPassrateExtractor
-from restify_mining.scatter_plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
+from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
+    MethodologyTimeExtractor
 from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 

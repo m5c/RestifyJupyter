@@ -13,8 +13,12 @@ from restify_mining.skill_extractors.participant_stat_tools import extract_skill
     extract_skill_values_by_index
 
 
-# Generate boxplots for skill distribution among participants
 def plot_skill_bars(population: list[participant]) -> None:
+    """
+    Generate boxplots for skill distribution among participants
+    :param population: list of all participants to include in statistics
+    :return: None
+    """
     total_participant_skills: list[int] = extract_skill_sum_values(population)
     distribution: dict[int, int] = collections.Counter(total_participant_skills)
     print_bar_distribution(distribution, "Summed Total", min(total_participant_skills),

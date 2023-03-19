@@ -6,10 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/preudo_cell_xx_obsolete_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/preudo_cell_xx_obsolete_cells.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_time_quality_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_time_quality_scatter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08b_time_quality_normal_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08b_time_quality_normal_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_tradeoff_by_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_tradeoff_by_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/bar_plotters/skill_frequency_bars.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/bar_plotters/skill_frequency_bars.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/box_plotters/skill_box_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/box_plotters/skill_box_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/data_objects/participant_filter_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/data_objects/participant_filter_tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/normal_plotters/normal_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/normal_plotters/normal_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_passrate_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_passrate_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/summed_skill_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/summed_skill_extractor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -429,7 +438,7 @@
       <workItem from="1678918098672" duration="4000" />
       <workItem from="1678973169875" duration="4320000" />
       <workItem from="1678985657387" duration="1990000" />
-      <workItem from="1679233325826" duration="1415000" />
+      <workItem from="1679233325826" duration="1978000" />
     </task>
     <servers />
   </component>
@@ -497,7 +506,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py</url>
-          <line>32</line>
+          <line>24</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>

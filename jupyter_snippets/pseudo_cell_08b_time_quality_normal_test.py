@@ -89,5 +89,3 @@ def cell_08b() -> None:
         "TC Xox duration", tc_xox_time_stats)
     print_normal_dist_interpretation(
         "TC Xox duration", tc_xox_rates_stats)
-
-

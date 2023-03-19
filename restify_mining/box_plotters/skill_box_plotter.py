@@ -3,10 +3,7 @@ Utils module to create nice gaussian (skill distribution in entire population) a
 skill distribution in partitions). Deeply inspired by: https://stackoverflow.com/a/10138308
 """
 
-import math
 import matplotlib.pyplot as plt
-import numpy as np
-from scipy import stats
 
 from restify_mining.markers import skills_markers
 

@@ -3,7 +3,6 @@ Extractor for all summed skills of participant.
 Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.markers.skills_markers import full_skill_tags
 from restify_mining.scatter_plotters.extractors.extractor import Extractor
 
 
@@ -14,11 +13,10 @@ class SummedSkillExtractor(Extractor):
 
     def __init__(self, whatever: str):
         """
-        Overloaded constructor is required, even if we discard the parameter.
+        Overloaded constructor is required, even if we discard the parameter
         :param whatever: something to discard. Usually extractors change comportment based on the
-        initial parameter. This one is the exception.
+        initial parameter. This one is the exception
         """
-        None
 
     def extract(self, participants: list[AssessedParticipant]) -> list[float]:
         # create skill sum

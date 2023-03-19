@@ -1,5 +1,6 @@
 """
-This module contains pseudo jupyter cells that were created, but ultimately not used for publication. Where applicable
+This module contains pseudo jupyter cells that were created, but ultimately not used for
+publication. Where applicable
 the reason is provided as comment in the function description.
 Author: Maximilian Schiedermeier
 """
@@ -12,12 +13,14 @@ from restify_mining.scatter_plotters.extractors.animal_label_maker import Animal
 from restify_mining.scatter_plotters.extractors.label_maker import LabelMaker
 from restify_mining.scatter_plotters.extractors.methodology_pretime_extractor import \
     MethodologyPretimeExtractor
-from restify_mining.scatter_plotters.extractors.methodology_time_extractor import MethodologyTimeExtractor
+from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
+    MethodologyTimeExtractor
 
 
 def cell_0x1() -> None:
     """
-    This plot crates x/y correlations between the time participants spent for task preparation (familiarization by
+    This plot crates x/y correlations between the time participants spent for task preparation (
+    familiarization by
     watching video instructions) and quality of the outcome.
     We excluded the plot from the notebook and publication, for there is no noteworthy correlation.
     :return: None

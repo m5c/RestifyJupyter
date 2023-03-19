@@ -5,7 +5,6 @@ Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.scatter_plotters.extractors.application_extractor import ApplicationExtractor
-from restify_mining.scatter_plotters.extractors.extractor import Extractor
 
 
 class ApplicationPassrateExtractor(ApplicationExtractor):
