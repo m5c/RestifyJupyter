@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/restify_mining/box_plotters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restify_mining/normal_plotters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restify_mining/normal_plotters/normal_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/preudo_cell_xx_obsolete_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/preudo_cell_xx_obsolete_cells.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_tradeoff_by_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_tradeoff_by_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/bar_plotters/skill_frequency_bars.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/bar_plotters/skill_frequency_bars.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/normal_plotters/normal_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/normal_plotters/normal_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/skill_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/box_plotters/skill_box_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/skill_extractors/extract_control_group_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/skill_extractors/extract_control_group_boxplot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/skill_extractors/extract_population_gaussian.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/skill_extractors/participant_stat_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/skill_extractors/participant_stat_tools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -433,7 +429,9 @@
       <workItem from="1678799051353" duration="3864000" />
       <workItem from="1678895354103" duration="3867000" />
       <workItem from="1678918098672" duration="4000" />
-      <workItem from="1678973169875" duration="3912000" />
+      <workItem from="1678973169875" duration="4320000" />
+      <workItem from="1678985657387" duration="1990000" />
+      <workItem from="1679233325826" duration="1063000" />
     </task>
     <servers />
   </component>
@@ -501,13 +499,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py</url>
-          <line>66</line>
+          <line>32</line>
           <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -520,6 +513,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1678985097584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1679234379774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>

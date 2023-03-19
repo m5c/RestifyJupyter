@@ -31,7 +31,7 @@ class ApplicationTimeToPassRateTradeoffExtractor(ApplicationExtractor):
         # are considered equally important.
         # A value of 1.0 means only correctness is considered. A value of 0 means only time is
         # considered.
-        quality_weight: float = 0.5
+        quality_weight: float = 0.8
         result: list[float] = []
         for assessed_participant in participants:
             if self.application == "bookstore":

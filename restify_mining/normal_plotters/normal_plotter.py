@@ -9,8 +9,7 @@ from matplotlib import pyplot as plt
 from scipy import stats
 
 
-def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str,
-                filename: str) -> None:
+def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str) -> None:
     """
     Plots the normal distribution curves, based on provided data samples.
     Note: provided data should be tested for approximately normal distributed first, e.g. using
@@ -32,13 +31,24 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str,
     # actually plot the gaussian distributions
     sigma: float = math.sqrt(stddev)
     distribution = np.linspace(mean - 3 * sigma, mean + 3 * sigma, 100)
+    plt.xlim(0, 1)
     plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour)
 
     # Add axis labels
     plt.xlabel(x_label)  # e.g. Skill Score
     plt.ylabel(y_label)  # e.g. Probability Density
 
-    # Store on disk
+
+def show(filename: str) -> None:
+    """
+    Call to plotter to actually depict the overlay of all previous calls.
+    :param filename: as the name of the graphics to store on disk
+    :return: None
+    """
     plt.savefig("generated-plots/" + filename + ".png")
     plt.show()
+    # Store on disk
+    plt.clf()
+
+
 
