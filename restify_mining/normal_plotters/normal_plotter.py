@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 from scipy import stats
 
 
-def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str) -> None:
+def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, app: str) -> None:
     """
     Plots the normal distribution curves, based on provided data samples.
     Note: provided data should be tested for approximately normal distributed first, e.g. using
@@ -18,7 +18,7 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str) -
     :param colour: as string describing colour of curve
     :param x_label: as text to show on horizontal axis
     :param y_label: as text to show on vertical axis
-    :param filename: as filename to use for persistence (without file extension)
+    :param app: as label for title to indicate the app the graph depicts.
     :return: None
     """
     # Set figure dimensions
@@ -32,6 +32,7 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str) -
     sigma: float = math.sqrt(stddev)
     distribution = np.linspace(mean - 3 * sigma, mean + 3 * sigma, 100)
     plt.xlim(0, 1)
+    plt.title("Quality Distribution, "+app)
     plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour)
 
     # Add axis labels

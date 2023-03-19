@@ -73,6 +73,6 @@ def cell_12() -> None:
 
         # Shapiro-Wilk test suggests the data is normal-distributed. We therefore proceed with plot
         # of normal distributions for each series.
-        plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency")
-        plot_normal(red_yellow_app_tradeoff, "#ffa500", "quality", "frequency")
+        plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency", app)
+        plot_normal(red_yellow_app_tradeoff, "#ffa500", "quality", "frequency", app)
         show("12-GreenBlueQuality-Distribution-"+app)
