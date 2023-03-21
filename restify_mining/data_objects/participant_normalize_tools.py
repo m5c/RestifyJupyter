@@ -29,14 +29,17 @@ def normalize(population: list[AssessedParticipant]) -> list[NormalizedParticipa
     min_bs_time: int = min(bs_times)
     max_bs_time: int = max(bs_times)
     bs_time_range: int = max_bs_time - min_bs_time
+
     xox_times: list[int] = ApplicationTimeExtractor("xox").extract(population)
     min_xox_time: int = min(xox_times)
     max_xox_time: int = max(xox_times)
     xox_time_range: int = max_xox_time - min_xox_time
+
     ide_times: list[int] = MethodologyTimeExtractor("ide").extract(population)
     min_ide_time: int = min(ide_times)
     max_ide_time: int = max(ide_times)
     ide_time_range: int = max_ide_time - min_ide_time
+
     tc_times: list[int] = MethodologyTimeExtractor("tc").extract(population)
     min_tc_time: int = min(tc_times)
     max_tc_time: int = max(tc_times)

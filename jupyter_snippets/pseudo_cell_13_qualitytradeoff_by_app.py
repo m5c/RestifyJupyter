@@ -1,6 +1,6 @@
 """
 This module allows comparison of methodology fitness for a task by comparing the results of half
-the total population to the remainder.
+the total population (using one methodology) to the remainder (using the complementary methodology).
 Example: Compare Xox IDE and Xox TouchCORE. Compare the two groups who solved Xox using IntelliJ
 to the two groups who solved Xox using TouchCORE.
 The metric for fittness is the time to quality ratio. That is to say fast solving with few
@@ -15,7 +15,7 @@ from restify_mining.data_objects import participant_normalize_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
-from restify_mining.normal_plotters.normal_plotter import plot_normal, show
+from restify_mining.normal_plotters.normal_plotter import plot_normal, show, clear
 from restify_mining.scatter_plotters.extractors.application_time_passrate_tradeoff_extractor \
     import \
     ApplicationTimeToPassRateTradeoffExtractor
@@ -50,15 +50,21 @@ def cell_13() -> None:
     # green/blue
     app: str = ""
     for app in ["xox", "bookstore"]:
-        # compute effective quality to duration tradeoff for both subpopulations. green blue was
-        # using touchcore (to refactor xox), if we extract for xox we get the touchcore results.
-        green_blue_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
-            app).extract(
-            green_blue_norm_population)
+
+        # Compute normalized individual group tradeoffs
+        red_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
+            app).extract(filter_population_by_group(norm_population, "red"))
+        green_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
+            app).extract(filter_population_by_group(norm_population, "green"))
+        blue_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
+            app).extract(filter_population_by_group(norm_population, "blue"))
+        yellow_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
+            app).extract(filter_population_by_group(norm_population, "yellow"))
+
+        # Also compute bundles for groups with identical methodology
+        green_blue_app_tradeoff: list[float] = green_tradeoff + blue_tradeoff
         # red yellow was using ide for xox, if we extract for xox we get the ide results
-        red_yellow_app_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
-            app).extract(
-            red_yellow_norm_population)
+        red_yellow_app_tradeoff: list[float] = red_tradeoff + yellow_tradeoff
 
         # Run Shapiro-Wilk test on resulting tradeoffs (each group individually), to see if
         # distributions are normal
@@ -67,12 +73,22 @@ def cell_13() -> None:
         green_blue_app_tradeoff_stats: ShapiroResult = scipy.stats.shapiro(green_blue_app_tradeoff)
         print_normal_dist_interpretation("Green Blue Normalized " + app + " Quality Tradeoff",
                                          green_blue_app_tradeoff_stats)
-        red_yellow_app_tradeoff: ShapiroResult = scipy.stats.shapiro(red_yellow_app_tradeoff)
+        red_yellow_app_tradeoff_stats: ShapiroResult = scipy.stats.shapiro(red_yellow_app_tradeoff)
         print_normal_dist_interpretation("Red Yellow Normalized " + app + " Quality Tradeoff",
-                                         red_yellow_app_tradeoff)
+                                         red_yellow_app_tradeoff_stats)
+
+        clear();
+
+        ## Individual control groups. Marked dashed because not shapiro wilk tested.
+        plot_normal(green_tradeoff, "#00ff00", "quality", "frequency", app, True)
+        plot_normal(blue_tradeoff, "#0000ff", "quality", "frequency", app, True)
+        plot_normal(red_tradeoff, "#ff0000", "quality", "frequency", app, True)
+        plot_normal(yellow_tradeoff, "#dddd00", "quality", "frequency", app, True)
 
         # Shapiro-Wilk test suggests the data is normal-distributed. We therefore proceed with plot
         # of normal distributions for each series.
-        plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency", app)
-        plot_normal(red_yellow_app_tradeoff, "#ffa500", "quality", "frequency", app)
+        plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency", app, False)
+        plot_normal(red_yellow_app_tradeoff, "#ffa500", "quality", "frequency", app, False)
+
+
         show("13-GreenBlueQuality-Distribution-" + app)
