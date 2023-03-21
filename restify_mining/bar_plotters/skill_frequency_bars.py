@@ -31,7 +31,6 @@ def plot_skill_bars(population: list[participant]) -> None:
     # Must be in two steps, so we can keep plot dimensions.
     all_skill_distributions: list[dict[int, int]] = []
     for idx, skill in enumerate(full_skill_tags):
-        print(skill)
         one_skill_for_all_participants: list[int] = extract_skill_values_by_index(idx, population)
         distribution: dict[int, int] = collections.Counter(one_skill_for_all_participants)
         all_skill_distributions.append(distribution)
