@@ -75,4 +75,4 @@ def cell_13() -> None:
         # of normal distributions for each series.
         plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency", app)
         plot_normal(red_yellow_app_tradeoff, "#ffa500", "quality", "frequency", app)
-        show("12-GreenBlueQuality-Distribution-" + app)
+        show("13-GreenBlueQuality-Distribution-" + app)
