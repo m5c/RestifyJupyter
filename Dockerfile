@@ -8,6 +8,7 @@ RUN cd ~/.jupyter; jupyter notebook --generate-config; sed -i "s/.*c.NotebookApp
 
 ## Copy notebook and all data in the container
 COPY Restify.ipynb /home/jovyan/Restify.ipynb
+COPY static-figures /home/jovyan/static-figures
 COPY csv_tools /home/jovyan/csv_tools
 COPY jupyter_snippets /home/jovyan/jupyter_snippets
 COPY restify_mining /home/jovyan/restify_mining
