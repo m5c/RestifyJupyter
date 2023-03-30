@@ -11,7 +11,7 @@ from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 def cell_09() -> None:
     """
-    Jupyter cell 08. See markdown description.
+    Jupyter cell 09. See markdown description.
     :return: None
     """
     scatter_series: ScatterSeries = ScatterSeries(MethodologyTimeExtractor,

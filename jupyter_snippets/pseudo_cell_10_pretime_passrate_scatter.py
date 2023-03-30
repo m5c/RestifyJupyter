@@ -12,7 +12,7 @@ from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 def cell_10() -> None:
     """
-    Jupyter cell 07. See markdown description.
+    Jupyter cell 10. See markdown description.
     :return: None
     """
     scatter_series: ScatterSeries = ScatterSeries(
