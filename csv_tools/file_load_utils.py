@@ -4,6 +4,8 @@ restify_mining package.
 Author: Maximilian Schiedermeier
 """
 import csv
+from collections import Counter
+
 import pandas as pd
 from pandas import DataFrame
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
@@ -137,3 +139,21 @@ def load_label_overrides() -> list[str]:
     with open('source-csv-files/labeloverride.csv', 'r', encoding="utf-8") as file:
         override_csv_content = file.read().replace('\n', ', ')
     return override_csv_content.split(', ')
+
+
+def load_stage_one_error_occurrences() -> dict[str, int]:
+    """
+    loads the "stageonefailcause.csv" file and returns a map representation, where for each kind of
+    error the amount of occurrences is stored in the entries value.
+    :return: dictionarry from type of error to amount of occurrences.
+    """
+    # read csv to file, store every line in list entry
+    with open('source-csv-files/stageonefailcause.csv', 'r', encoding="utf-8") as file:
+        stage_one_errors: list[str] = file.read().split('\n')
+
+    # go over list (strip last empty entry) and reduce to value after first comma (error cause)
+    stage_one_errors.pop()
+    causes: list[str] = [entry.split(',')[1] for entry in stage_one_errors]
+
+    # count amount of occurrences (transform list with duplicates to map/dics that lists amounts)
+    return Counter(causes)
