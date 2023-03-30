@@ -156,4 +156,8 @@ def load_stage_one_error_occurrences() -> dict[str, int]:
     causes: list[str] = [entry.split(',')[1] for entry in stage_one_errors]
 
     # count amount of occurrences (transform list with duplicates to map/dics that lists amounts)
-    return Counter(causes)
+    unsorted_occurrences: dict[str, int] = Counter(causes)
+    sorted_occurrences: dict[str, int] = dict(sorted(unsorted_occurrences.items()))
+
+    return sorted_occurrences
+

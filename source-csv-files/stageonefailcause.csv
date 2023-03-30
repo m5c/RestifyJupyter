@@ -1,28 +1,27 @@
-codename,failcause
 Blue-Fox,OK
 Blue-Koala,OK
 Blue-Raccoon,OK
 Blue-Squid,OK
-Blue-Turtle,reparable_pom-launcher
+Blue-Turtle,repairable_legacy pom launcher
 Blue-Unicorn,OK
 Blue-Zebra,OK
-Green-Fox,irreparable_wiring
+Green-Fox,irreparable_erroneous bean wiring
 Green-Koala,OK
 Green-Raccoon,OK
-Green-Squid,irreparable_wiring
-Green-Turtle,reparable_pom-launcher
-Green-Unicorn,irreparable_wiring
+Green-Squid,irreparable_erroneous bean wiring
+Green-Turtle,repairable_legacy pom launcher
+Green-Unicorn,irreparable_erroneous bean wiring
 Green-Zebra,OK
 Red-Fox,OK
 Red-Koala,OK
-Red-Raccoon,reparable_pom-launcher_and_pending-legacy-tests
-Red-Squid,reparable_pom-launcher
+Red-Raccoon,repairable_legacy pom launcher & tests
+Red-Squid,repairable_legacy pom launcher
 Red-Turtle,OK
 Red-Unicorn,OK
 Red-Zebra,OK
 Yellow-Fox,OK
 Yellow-Koala,OK
-Yellow-Raccoon,reparable_pom-missing
+Yellow-Raccoon,repairable_missing pom file
 Yellow-Squid,OK
 Yellow-Turtle,OK
 Yellow-Unicorn,OK
