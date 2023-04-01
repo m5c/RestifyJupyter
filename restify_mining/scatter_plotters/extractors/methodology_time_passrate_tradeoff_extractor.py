@@ -1,6 +1,6 @@
 """
-Extractor implementation that extracts the time-to-passrate tradeoff for of a provided vanilla
-application to a RESTful service, regardless the methodology used.
+Extractor implementation that extracts the time-to-passrate tradeoff for a specified methodology,
+ regardless the application refactored to a RESTful service.
 Note: This extractor makes most sense if the provided population is homogenous, is to say
 followed the same app-methodology combinations. This is e.g. the case for red+yellow and
 blue+green. A filter should be applied to reduce the input population, before calling this
@@ -8,13 +8,13 @@ extractor.
 Author: Maximilian Schiedermeier
 """
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
-from restify_mining.scatter_plotters.extractors.application_extractor import ApplicationExtractor
+from restify_mining.scatter_plotters.extractors.methodology_extractor import MethodologyExtractor
 
 
-class ApplicationTimeToPassRateTradeoffExtractor(ApplicationExtractor):
+class MethodologyTimeToPassRateTradeoffExtractor(MethodologyExtractor):
     """
-    This extractor retrieves the time to passrate tradeoff resulting from the refactoring of a
-    given application.
+    This extractor retrieves the time to passrate tradeoff resulting from the refactoring using a
+    given methodology.
     """
 
     def extract(self, participants: list[NormalizedParticipant]) -> list[float]:
@@ -32,14 +32,14 @@ class ApplicationTimeToPassRateTradeoffExtractor(ApplicationExtractor):
         quality_weight: float = 0.5
         result: list[float] = []
         for assessed_participant in participants:
-            if self.application == "bookstore":
+            if self.methodology == "tc":
                 ratio: float = \
-                    (1 - quality_weight) * (1 - assessed_participant.norm_time_bs) + \
-                    quality_weight * (0.01 * assessed_participant.test_percentage_bs)
-            if self.application == "xox":
+                    (1 - quality_weight) * (1 - assessed_participant.norm_time_tc) + \
+                    quality_weight * (0.01 * assessed_participant.test_percentage_tc)
+            if self.methodology == "ide":
                 ratio: float = \
-                    (1 - quality_weight) * (1 - assessed_participant.norm_time_xox) + \
-                    quality_weight * (0.01 * assessed_participant.test_percentage_xox)
+                    (1 - quality_weight) * (1 - assessed_participant.norm_time_ide) + \
+                    quality_weight * (0.01 * assessed_participant.test_percentage_ide)
             result.append(ratio)
         return result
 
@@ -48,7 +48,7 @@ class ApplicationTimeToPassRateTradeoffExtractor(ApplicationExtractor):
         Implementation of the axis label method that provides a string usable for plotting the
         extracted values in a 2D correlation plotter.
         """
-        return "Refactoring time " + self.__application.capitalize() + " [sec]"
+        return "Quality Tradeoff " + self.methodology.capitalize() + " [0-1]"
 
     def filename_segment(self) -> str:
-        return self.__application.capitalize() + "RefactorTime"
+        return self.methodology.capitalize() + "Quality Tradeoff "

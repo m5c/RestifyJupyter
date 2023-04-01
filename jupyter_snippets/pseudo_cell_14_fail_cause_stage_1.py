@@ -43,8 +43,9 @@ def cell_14() -> None:
     # -935b7667d77f
     centre_circle = plt.Circle((0, 0), 0.75, fc='white')
     fig = plt.gcf()
+    fig.set_size_inches(9, 5)
     fig.gca().add_artist(centre_circle)
-
+    plt.savefig("generated-plots/14-fail-cause.png")
     plt.show()
 
 

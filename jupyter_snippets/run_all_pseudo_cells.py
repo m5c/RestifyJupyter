@@ -20,6 +20,7 @@ from jupyter_snippets.pseudo_cell_11_skill_passrate_scatter import cell_11
 from jupyter_snippets.pseudo_cell_12_skillsum_passrate_scatter import cell_12
 from jupyter_snippets.pseudo_cell_13_qualitytradeoff_by_app import cell_13
 from jupyter_snippets.pseudo_cell_14_fail_cause_stage_1 import cell_14
+from jupyter_snippets.pseudo_cell_16_skill_quality_by_methodology_scatter import cell_16
 from restify_mining.utils.cache_clearer import clear_cache
 
 print("Clearing cached output files...")
@@ -27,19 +28,19 @@ clear_cache("generated-csv-files")
 clear_cache("generated-plots")
 clear_cache("generated-text-files")
 print("Clear cache complete.")
-#
-# print("Imitating Jupyter Pseudo Cell 01...")
-# cell_01()
-# print("Cell 01 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 02...")
-# cell_02()
-# print("Cell 02 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 03...")
-# cell_03()
-# print("Cell 03 complete.\n")
-#
+
+print("Imitating Jupyter Pseudo Cell 01...")
+cell_01()
+print("Cell 01 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 02...")
+cell_02()
+print("Cell 02 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 03...")
+cell_03()
+print("Cell 03 complete.\n")
+
 # print("Imitating Jupyter Pseudo Cell 04...")
 # cell_04()
 # print("Cell 04 complete.\n")
@@ -79,10 +80,15 @@ print("Clear cache complete.")
 # print("Imitating Jupyter Pseudo Cell 13...")
 # cell_13()
 # print("Cell 13 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 14...")
+# cell_14()
+# print("Cell 14 complete.\n")
 
-print("Imitating Jupyter Pseudo Cell 14...")
-cell_14()
-print("Cell 14 complete.\n")
+print("Imitating Jupyter Pseudo Cell 16...")
+cell_16()
+print("Cell 16 complete.\n")
+
 
 print("Success!")
 print("All Jupyter Cells imitated.")
