@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_16_skill_quality_by_methodology_scatter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/methodology_time_passrate_tradeoff_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_fail_cause_stage_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_fail_cause_stage_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/extractors/application_time_passrate_tradeoff_extractor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -440,6 +435,7 @@
       <workItem from="1680173800606" duration="2834000" />
       <workItem from="1680185706136" duration="6611000" />
       <workItem from="1680269522823" duration="4811000" />
+      <workItem from="1680353367102" duration="4377000" />
     </task>
     <servers />
   </component>
