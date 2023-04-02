@@ -18,7 +18,7 @@ def cell_01() -> None:
     population: list[Participant] = file_load_utils.load_all_participants()
 
     # Optional: Provide evidence that skill values are not normal-distributed.
-    compute_shapiro_will_skills_standarddev_pvalue(population)
+    # compute_shapiro_will_skills_standarddev_pvalue(population)
 
     # Provide bar charts as evidence that out population is diverse
     plot_skill_bars(population)
