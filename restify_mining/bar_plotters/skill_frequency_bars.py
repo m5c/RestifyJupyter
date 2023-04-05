@@ -24,7 +24,8 @@ def plot_skill_bars(population: list[participant]) -> None:
     total_participant_skills: list[int] = extract_skill_sum_values(population)
     distribution: dict[int, int] = collections.Counter(total_participant_skills)
     print_bar_distribution(distribution, "Summed Total", min(total_participant_skills),
-                           max(total_participant_skills), max(distribution.values()), "#555555")
+                           max(total_participant_skills), max(distribution.values()), "#555555",
+                           True)
 
     # Generate distributions and then bar-charts for each and every skill distribution (full
     # population)
@@ -39,11 +40,13 @@ def plot_skill_bars(population: list[participant]) -> None:
     max_frequency: int = max(max(distr.values()) for distr in all_skill_distributions)
     for idx, skill in enumerate(full_skill_tags):
         tint = skills_markers.palette[idx]
-        print_bar_distribution(all_skill_distributions[idx], skill, 1, 5, max_frequency, tint)
+        print_bar_distribution(all_skill_distributions[idx], skill, 1, 5, max_frequency, tint,
+                               False)
 
 
 def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x: int,
-                           upper_bound_x: int, upper_bound_y: int, tint: str) -> None:
+                           upper_bound_x: int, upper_bound_y: int, tint: str,
+                           ruffled: bool) -> None:
     """
     A method that simply prints sample frequency for discrete sets
     :param distribution: distribution of sample values
@@ -52,10 +55,14 @@ def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x
     :param upper_bound_x: highest value to appear on x
     :param upper_bound_y: highest value to appear on y
     :param tint: as color to use for bars
+    :param ruffled: whether to apply texture
     :return: None
     """
 
-    plt.bar(distribution.keys(), distribution.values(), color=tint)
+    if ruffled:
+        plt.bar(distribution.keys(), distribution.values(), color=tint, hatch="x")
+    else:
+        plt.bar(distribution.keys(), distribution.values(), color=tint)
     plt.title(tag + " Skill Distribution")
     plt.xlabel(tag + " Skill Score")
     plt.xticks(np.arange(lower_bound_x, upper_bound_x + 1, 1.0))
