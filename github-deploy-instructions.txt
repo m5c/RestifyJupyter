@@ -1,0 +1,8 @@
+Github does not actuall run the notbeook, but it can pretty format the outcome of the last full execution.
+Do do so...
+
+ * Run the validator. Ensure Jupyter has no corrupted cells.
+ * Stop the notebook in the botton jupyter tab
+ * Re run all cells with the double flash (green triangle), ipnyb file opened in pycharm
+ * Make a new commit
+ * Visit the [notebook page](https://github.com/m5c/RestifyJupyter/blob/master/Restify.ipynb)
