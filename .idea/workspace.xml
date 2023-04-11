@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JupyterValidator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
     </list>
@@ -469,7 +468,9 @@
       <workItem from="1680698818762" duration="3123000" />
       <workItem from="1680788151561" duration="7381000" />
       <workItem from="1680803089500" duration="580000" />
-      <workItem from="1680803681647" duration="1660000" />
+      <workItem from="1680803681647" duration="2050000" />
+      <workItem from="1680881524027" duration="51000" />
+      <workItem from="1681221889064" duration="2878000" />
     </task>
     <servers />
   </component>
