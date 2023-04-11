@@ -11,67 +11,53 @@ from restify_mining.unit_test_miners.all_groups_tests_miner import AllGroupsTest
 from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
 
 
-def plot_all_average_group_results(population: list[AssessedParticipant]) -> None:
+def plot_all_average_group_results(app: str, population: list[AssessedParticipant]) -> None:
     """
     Creates a 2D plot of all individual participant test results. On Y axis (vertical) all
     participants, on X axis (horizontal) all unit tests. Created image shows a black square for
     failed tests, coloured square (matching control group colour) for passed tests.
+    :param app: as description of the app for which the average test results are requested.
     :param population: as the list of assessed participants.
     """
-    mine_and_plot(AllGroupsTestsMiner("all"), True, population)
+    mine_and_plot(AllGroupsTestsMiner(app), population)
 
 
-def build_linear_colour_map(with_control_groups: bool) -> LinearSegmentedColormap:
+def build_linear_colour_map() -> LinearSegmentedColormap:
     """
     https://matplotlib.org/stable/tutorials/colors/colormap-manipulation.html
     Search for: "Directly creating a segmented colormap from a list"
     :return: The only kind of colormap that is actually useful. Produces gradients based on
     sample points.
     """
-    if with_control_groups:
-        list_colours: list[str] = ["black", "red", "black", "green", "black", "blue", "black",
-                                   "yellow"]
-    else:
-        list_colours: list[str] = ["black", "white"]
+    list_colours: list[str] = ["black", "red", "black", "green", "black", "blue", "black",
+                               "yellow"]
+    # Greyscale palette:
+    # list_colours: list[str] = ["black", "white", "black", "white", "black", "white", "black",
+    #                            "white"]
+
     return LinearSegmentedColormap.from_list("mycmap", list_colours)
 
 
-def mine_and_plot(miner: AbstractMiner, with_colours: bool, population: list[AssessedParticipant]):
+def mine_and_plot(miner: AbstractMiner, population: list[AssessedParticipant]):
     """
     Create 2D array, consisting of all participants (already ordered by control group) and test
-    results for all individual unit tests (both apps, sequential. First all BookStore unit
-    tests, then all Xox unit tests.
-    :param miner: as the mining algorithm implementation to apply
-    :param with_colours: true or false flag, indicated whether the output plot should highlight
-    control groups
+    results for app specific unit tests (the received abstract miner is branded to an app)
+    :param miner: as the mining algorithm implementation to apply (parameterized to app)
     :param population: as the population for which the plotter prints results
     """
     grid_values: list[list[float]] = miner.mine(population)
 
-    # Enable group colour space if requested
-    colour_map: ListedColormap
-    if with_colours:
-        # Look up amount of participants per control group, so we can tint the map by zones.
-        group_zone_size: int = miner.colour_zone_size(population)
+    # Look up amount of participant-rows per control group, so we can tint the map by zones.
+    # This is a heatmap, so there is only one coloured row per control group.
+    group_zone_size: int = miner.colour_zone_size(population)
 
-        # We use a custom heatmap that indicates group colours:
-        # make a color map of fixed colors
-        # colour_map: ListedColormap = matplotlib.colors.ListedColormap(
-        #     ['black', 'blue', 'black', 'green', 'black', 'red', 'black', 'yellow'])
-        colour_map: LinearSegmentedColormap = build_linear_colour_map(with_colours)
+    # We use a custom heatmap that indicates group colours:
+    colour_map: LinearSegmentedColormap = build_linear_colour_map()
 
-        # use amount per control group to create a "colorized" value grid
-        # (colour map has zones, we add an offset to every participant, depending on their control
-        # group, so they end up in the right colour map zone).
-        grid_values: list[list[int]] = patch_control_group_colours(grid_values, group_zone_size)
-    else:
-        # If no colours are required, there is only one colour zone that is applied on all
-        # participants
-        group_zone_size = len(population)
-
-        # Also if groups need not be indicates, the heatmap is greyscale only
-        # colour_map: ListedColormap = matplotlib.colors.ListedColormap(['black', 'white'])
-        colour_map: LinearSegmentedColormap = build_linear_colour_map(with_colours)
+    # use amount per control group to create a "colorized" value grid
+    # (colour map has zones, we add an offset to every participant, depending on their control
+    # group, so they end up in the right colour map zone).
+    grid_values: list[list[int]] = patch_control_group_colours(grid_values, group_zone_size)
 
     # Actually plot the values
     plot_unit_test_heatmap(grid_values, colour_map, miner.x_axis_label(), miner.y_axis_label(),
@@ -92,7 +78,7 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     # Add the 2D heatmap
     plt.xlabel(x_label)
     plt.ylabel(y_label)
-    plt.imshow(grid_values, cmap=colour_map, interpolation='nearest')
+    plt.imshow(grid_values, cmap=colour_map, interpolation='nearest', vmin=0.0, vmax=7.0)
 
     # Actually show the figure
     plt.savefig("generated-plots/" + file_label + ".png")

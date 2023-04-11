@@ -22,4 +22,4 @@ def cell_05() -> None:
     # participants, on X axis (horizontal) all unit tests. Created image shows a black square for
     # failed tests, coloured square (matching control group colour) for passed tests.
     with_colours: bool = True
-    mine_and_plot(AllParticipantsAllTestsMiner(), with_colours, assessed_population)
+    mine_and_plot(AllParticipantsAllTestsMiner(), assessed_population)

@@ -16,4 +16,5 @@ def cell_07() -> None:
         AssessedParticipant] = file_load_utils.load_all_assessed_participants()
 
     # Visualize test results in 2D plot and safe to disk
-    unit_test_plotter.plot_all_average_group_results(assessed_population)
+    for app in ["bs", "xox"]:
+        unit_test_plotter.plot_all_average_group_results(app, assessed_population)

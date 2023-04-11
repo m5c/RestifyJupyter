@@ -30,7 +30,7 @@ class AbstractMiner(ABC):
         Abstract method that every implementing class has to override. Returns the size of each
         colour zone grids produced by this miner.
         :param: the population for which colour zones must be extracted
-        :return: amount of rows designated to one colour zone (control group) for girds produced
+        :return: amount of rows designated to one colour zone (control group) for grids produced
         by this plotter.
         """
 

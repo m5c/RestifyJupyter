@@ -18,7 +18,7 @@ class AllGroupsTestsMiner(AbstractMiner):
         :param scope:
         """
         # Validate input param
-        if not scope in {"bs", "xox", "all"}:
+        if scope not in {"bs", "xox", "all"}:
             raise Exception("Invalid scope parameter: " + scope)
         self.__scope = scope
         super()
@@ -90,7 +90,7 @@ class AllGroupsTestsMiner(AbstractMiner):
         return "Unit Tests"
 
     def file_label(self) -> str:
-        return "06-test-heatmap"
+        return "07-test-heatmap-" + self.__scope
 
     def __test_result_for_participant(self, test_index: int,
                                       participant: AssessedParticipant) -> float:
