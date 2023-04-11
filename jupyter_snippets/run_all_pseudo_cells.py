@@ -29,29 +29,29 @@ clear_cache("generated-plots")
 clear_cache("generated-text-files")
 print("Clear cache complete.")
 
-# print("Imitating Jupyter Pseudo Cell 01...")
-# cell_01()
-# print("Cell 01 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 02...")
-# cell_02()
-# print("Cell 02 complete.\n")
-#
+print("Imitating Jupyter Pseudo Cell 01...")
+cell_01()
+print("Cell 01 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 02...")
+cell_02()
+print("Cell 02 complete.\n")
+
 print("Imitating Jupyter Pseudo Cell 03...")
 cell_03()
 print("Cell 03 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 04...")
-# cell_04()
-# print("Cell 04 complete.\n")
 
-# print("Imitating Jupyter Pseudo Cell 05...")
-# cell_05()
-# print("Cell 05 complete.\n")
+print("Imitating Jupyter Pseudo Cell 04...")
+cell_04()
+print("Cell 04 complete.\n")
 
-# print("Imitating Jupyter Pseudo Cell 06...")
-# cell_06()
-# print("Cell 06 complete.\n")
+print("Imitating Jupyter Pseudo Cell 05...")
+cell_05()
+print("Cell 05 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 06...")
+cell_06()
+print("Cell 06 complete.\n")
 
 print("Imitating Jupyter Pseudo Cell 07...")
 cell_07()

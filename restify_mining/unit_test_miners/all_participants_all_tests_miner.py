@@ -29,11 +29,29 @@ class AllParticipantsAllTestsMiner(AbstractMiner):
     Extension of abstract miner, produces result values for all participants and all tests.
     """
 
+    def __init__(self, scope: str) -> AbstractMiner:
+        """
+        Miner specific constructor to store the scope parameter.
+        :param scope:
+        """
+        # Validate input param
+        if scope not in {"bs", "xox", "all"}:
+            raise Exception("Invalid scope parameter: " + scope)
+        self.__scope = scope
+        super()
+
     def mine(self, participants: list[AssessedParticipant]) -> list[list[float]]:
         grid_values: list[list[float]] = []
         for assessed_participant in participants:
-            numeric_test_results: list[float] = all_bool_to_float(
-                assessed_participant.all_test_results())
+            if self.__scope == "bs":
+                numeric_test_results: list[float] = all_bool_to_float(
+                    assessed_participant.test_results_bs)
+            elif self.__scope == "xox":
+                numeric_test_results: list[float] = all_bool_to_float(
+                    assessed_participant.test_results_xox)
+            else:
+                numeric_test_results: list[float] = all_bool_to_float(
+                    assessed_participant.all_test_results)
             grid_values.append(numeric_test_results)
         return grid_values
 
@@ -41,10 +59,10 @@ class AllParticipantsAllTestsMiner(AbstractMiner):
         return participant_stat_tools.extract_control_group_size(participants)
 
     def y_axis_label(self) -> list[str]:
-        return "Participants"
+        return "All Participants"
 
     def x_axis_label(self) -> list[str]:
-        return "Unit Tests"
+        return "Unit Tests "+self.__scope
 
     def file_label(self) -> str:
-        return "05-test-individual"
+        return "05-test-individual-"+self.__scope

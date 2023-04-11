@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_tests_all_groups.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_tests_all_groups.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/unit_test_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/unit_test_miners/abstract_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/abstract_miner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/unit_test_miners/all_groups_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/all_groups_tests_miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/all_participants_all_tests_miner.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -476,7 +472,7 @@
       <workItem from="1680803089500" duration="580000" />
       <workItem from="1680803681647" duration="2050000" />
       <workItem from="1680881524027" duration="51000" />
-      <workItem from="1681221889064" duration="9579000" />
+      <workItem from="1681221889064" duration="10222000" />
     </task>
     <servers />
   </component>
@@ -604,6 +600,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$JupyterValidator.coverage" NAME="JupyterValidator Coverage Results" MODIFIED="1681225978593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1681239309471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1681239962802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>
