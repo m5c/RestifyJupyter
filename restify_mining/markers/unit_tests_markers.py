@@ -11,18 +11,18 @@ xox_unit_tests: list[str] = ["XoxGet",
                              "XoxIdPlayersGet",
                              "XoxIdPlayersIdActionsGet",
                              "XoxIdPlayersIdActionsPost"]
-bs_unit_tests: list[str] = ["BookStoreIsbnsGet",
-                            "BookStoreIsbnsIsbnGet",
-                            "BookStoreIsbnsIsbnPut",
-                            "BookStoreStocklocationsGet",
-                            "BookStoreStocklocationsStocklocationGet",
-                            "BookStoreStocklocationsStocklocationIsbnsGet",
-                            "BookStoreStocklocationsStocklocationIsbnsPost",
-                            "BookStoreIsbnsIsbnCommentsGet",
-                            "BookStoreIsbnsIsbnCommentsPost",
-                            "BookStoreIsbnsIsbnCommentsDelete",
-                            "BookStoreIsbnsIsbnCommentsCommentPost",
-                            "BookStoreIsbnsIsbnCommentsCommentDelete"]
+bs_unit_tests: list[str] = ["Bs.IsbnsGet",
+                            "Bs.IsbnsIsbnGet",
+                            "Bs.IsbnsIsbnPut",
+                            "Bs.StocklocationsGet",
+                            "Bs.Stlocs.Stloc.Get",
+                            "Bs.Stlocs.Stloc.IsbnsGet",
+                            "Bs.Stlocs.Stloc.IsbnsPost",
+                            "Bs.IsbnsIsbnComs.Get",
+                            "Bs.IsbnsIsbnComs.Post",
+                            "Bs.IsbnsIsbnComs.Delete",
+                            "Bs.IsbnsIsbnComs.Comt.Post",
+                            "Bs.IsbnsIsbnComs.Comt.Delete"]
 
 
 def all_unit_tests() -> list[str]:

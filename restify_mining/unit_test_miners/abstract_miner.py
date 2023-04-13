@@ -8,12 +8,23 @@ See: https://blog.teclado.com/python-abc-abstract-base-classes/
 from abc import ABC, abstractmethod
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
+from restify_mining.markers.unit_tests_markers import xox_unit_tests, bs_unit_tests
 
 
-class AbstractMiner(ABC):
+class AbstractTestMiner(ABC):
     """
     Abstract miner class serves as interface for all miner implementations.
     """
+
+    def __init__(self, scope: str):
+        """
+        Common miner constructor to store the scope parameter.
+        :param scope:
+        """
+        # Validate input param
+        if scope not in {"bs", "xox", "all"}:
+            raise Exception("Invalid scope parameter: " + scope)
+        self.__scope = scope
 
     @abstractmethod
     def mine(self, participants: list[AssessedParticipant]) -> list[list[float]]:
@@ -50,6 +61,20 @@ class AbstractMiner(ABC):
         :return: label for columns in miner output grid.
         """
 
+    @property
+    def x_tics(self) -> list[str]:
+        """
+        Abstract method to retrieve the entries for all tecis on x-axis. This is usually the
+        tests in order, associated to the app registered on concrete miner instantiation.
+        :return: list of tests names for given app, for use as tics on plot.
+        """
+        if self.__scope == "xox":
+            return xox_unit_tests
+        elif self.__scope == "bs":
+            return bs_unit_tests
+        else:
+            return xox_unit_tests + bs_unit_tests
+
     @abstractmethod
     def file_label(self) -> str:
         """
@@ -57,3 +82,12 @@ class AbstractMiner(ABC):
         describes file base name if persisted to disk.
         :return: label for file name.
         """
+
+    @property
+    def scope(self):
+        """
+        Python getter equivalent for the application scope variable of this abstract miners
+        superclass.
+        :return: name of app / all apps this miner is branded to.
+        """
+        return self.__scope

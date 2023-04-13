@@ -4,11 +4,12 @@ subsets and for one or two selected applications.
 Inspired by: https://stackoverflow.com/a/7230921
 """
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.unit_test_miners.all_groups_tests_miner import AllGroupsTestsMiner
-from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
+from restify_mining.unit_test_miners.abstract_miner import AbstractTestMiner
 
 
 def plot_all_average_group_results(app: str, population: list[AssessedParticipant]) -> None:
@@ -38,7 +39,7 @@ def build_linear_colour_map() -> LinearSegmentedColormap:
     return LinearSegmentedColormap.from_list("mycmap", list_colours)
 
 
-def mine_and_plot(miner: AbstractMiner, population: list[AssessedParticipant]):
+def mine_and_plot(miner: AbstractTestMiner, population: list[AssessedParticipant]):
     """
     Create 2D array, consisting of all participants (already ordered by control group) and test
     results for app specific unit tests (the received abstract miner is branded to an app)
@@ -59,13 +60,16 @@ def mine_and_plot(miner: AbstractMiner, population: list[AssessedParticipant]):
     # group, so they end up in the right colour map zone).
     grid_values: list[list[int]] = patch_control_group_colours(grid_values, group_zone_size)
 
+    # Get the x-tics from miner (miner is branded to app)
+    x_tics: list[str] = miner.x_tics
+
     # Actually plot the values
     plot_unit_test_heatmap(grid_values, colour_map, miner.x_axis_label(), miner.y_axis_label(),
-                           miner.file_label())
+                           x_tics, miner.file_label())
 
 
 def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedColormap, x_label: str,
-                           y_label: str, file_label: str) -> None:
+                           y_label: str, x_tics: list[str], file_label: str) -> None:
     """
     Plots a heatmap representation of the unit test success results. Can be used either for
     control groups (average test result) or for individual participants.
@@ -73,12 +77,29 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     the success rate,
     where 0 is all fail and 1 is all pass. For individual tests and participants the provided
     array should only contain the values 0 and 1.
-    See: https://stackoverflow.com/a/33282548
+    :param colour_map: as the colour map to use for plotting. This can be either a greyscale or
+    coloured map.
+    :param x_label: as the label to place below the x axis
+    :param y_label: as the label to place left of the y axis
+    :param x_tics: as the markers for the individual tics on x axis. This indicates the tests.
+    :param file_label: as the name to use for persistence on disk.
+    Based on pyplot heatmap examples, see: https://stackoverflow.com/a/33282548
     """
     # Add the 2D heatmap
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.imshow(grid_values, cmap=colour_map, interpolation='nearest', vmin=0.0, vmax=7.0)
+
+    # Override the tics on X axis (individual tests)
+    plt.xticks(range(len(x_tics)), x_tics)
+
+    # rotate the tics a bit, so they take less space
+    plt.xticks(fontsize=8, rotation = -55, ha='left', rotation_mode='anchor')
+
+    # make more space toward bottom for xtics
+    plt.gcf().subplots_adjust(bottom=0.35)
+
+
 
     # Actually show the figure
     plt.savefig("generated-plots/" + file_label + ".png")

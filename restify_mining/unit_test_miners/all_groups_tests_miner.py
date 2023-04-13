@@ -4,24 +4,13 @@ restuls. Stores outcome in 2D array where passed tests are represented by1, fail
 """
 from restify_mining.skill_extractors import participant_stat_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
+from restify_mining.unit_test_miners.abstract_miner import AbstractTestMiner
 
 
-class AllGroupsTestsMiner(AbstractMiner):
+class AllGroupsTestsMiner(AbstractTestMiner):
     """
     Extension of abstract miner, produces result values for all participants and all tests.
     """
-
-    def __init__(self, scope: str) -> AbstractMiner:
-        """
-        Miner specific constructor to store the scope parameter.
-        :param scope:
-        """
-        # Validate input param
-        if scope not in {"bs", "xox", "all"}:
-            raise Exception("Invalid scope parameter: " + scope)
-        self.__scope = scope
-        super()
 
     def mine(self, participants: list[AssessedParticipant]) -> list[list[float]]:
         """
@@ -48,9 +37,9 @@ class AllGroupsTestsMiner(AbstractMiner):
 
             # Iterate over target tests (based on scope), determine average score for each by
             # iterating over participants and computing average.
-            if self.__scope == "bs":
+            if self.scope == "bs":
                 test_amount: int = len(participants[0].test_results_bs)
-            elif self.__scope == "xox":
+            elif self.scope == "xox":
                 test_amount: int = len(participants[0].test_results_xox)
             else:
                 test_amount: int = len(participants[0].all_test_results())
@@ -90,7 +79,7 @@ class AllGroupsTestsMiner(AbstractMiner):
         return "Unit Tests"
 
     def file_label(self) -> str:
-        return "07-test-heatmap-" + self.__scope
+        return "07-test-heatmap-" + self.scope
 
     def __test_result_for_participant(self, test_index: int,
                                       participant: AssessedParticipant) -> float:
@@ -101,8 +90,8 @@ class AllGroupsTestsMiner(AbstractMiner):
         :param participant: as the participant providing the test result
         :return:
         """
-        if self.__scope == "bs":
+        if self.scope == "bs":
             return participant.test_results_bs[test_index]
-        if self.__scope == "xox":
+        if self.scope == "xox":
             return participant.test_results_xox[test_index]
         return participant.all_test_results()[test_index]

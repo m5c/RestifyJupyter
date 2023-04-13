@@ -8,7 +8,7 @@ import numpy as np
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.markers import unit_tests_markers
-from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
+from restify_mining.unit_test_miners.abstract_miner import AbstractTestMiner
 
 
 class RadarPlotter:
@@ -47,7 +47,7 @@ class RadarPlotter:
         plt.legend()
         plt.show()
 
-    def radar_plot(self, miner: AbstractMiner,
+    def radar_plot(self, miner: AbstractTestMiner,
                    app: str, participants: list[AssessedParticipant]) -> None:
         """
         Produces a radar plot for the four control group average test results

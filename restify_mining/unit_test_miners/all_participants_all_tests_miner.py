@@ -4,7 +4,7 @@ restuls. Stores outcome in 2D array where passed tests are represented by1, fail
 """
 from restify_mining.skill_extractors import participant_stat_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
-from restify_mining.unit_test_miners.abstract_miner import AbstractMiner
+from restify_mining.unit_test_miners.abstract_miner import AbstractTestMiner
 
 
 def all_bool_to_float(bool_test_results: list[bool]) -> list[float]:
@@ -24,29 +24,18 @@ def all_bool_to_float(bool_test_results: list[bool]) -> list[float]:
     return float_test_results
 
 
-class AllParticipantsAllTestsMiner(AbstractMiner):
+class AllParticipantsAllTestsMiner(AbstractTestMiner):
     """
     Extension of abstract miner, produces result values for all participants and all tests.
     """
 
-    def __init__(self, scope: str) -> AbstractMiner:
-        """
-        Miner specific constructor to store the scope parameter.
-        :param scope:
-        """
-        # Validate input param
-        if scope not in {"bs", "xox", "all"}:
-            raise Exception("Invalid scope parameter: " + scope)
-        self.__scope = scope
-        super()
-
     def mine(self, participants: list[AssessedParticipant]) -> list[list[float]]:
         grid_values: list[list[float]] = []
         for assessed_participant in participants:
-            if self.__scope == "bs":
+            if self.scope == "bs":
                 numeric_test_results: list[float] = all_bool_to_float(
                     assessed_participant.test_results_bs)
-            elif self.__scope == "xox":
+            elif self.scope == "xox":
                 numeric_test_results: list[float] = all_bool_to_float(
                     assessed_participant.test_results_xox)
             else:
@@ -62,7 +51,7 @@ class AllParticipantsAllTestsMiner(AbstractMiner):
         return "All Participants"
 
     def x_axis_label(self) -> list[str]:
-        return "Unit Tests "+self.__scope
+        return "Unit Tests "+self.scope
 
     def file_label(self) -> str:
-        return "05-test-individual-"+self.__scope
+        return "05-test-individual-"+self.scope
