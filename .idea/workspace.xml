@@ -7,7 +7,6 @@
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +474,8 @@
       <workItem from="1681337972006" duration="611000" />
       <workItem from="1681392857640" duration="4087000" />
       <workItem from="1681397230658" duration="7008000" />
-      <workItem from="1681474321180" duration="3271000" />
+      <workItem from="1681474321180" duration="3786000" />
+      <workItem from="1681483860802" duration="1839000" />
     </task>
     <servers />
   </component>
