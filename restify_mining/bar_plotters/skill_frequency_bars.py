@@ -23,7 +23,7 @@ def plot_skill_bars(population: list[participant]) -> None:
     """
     total_participant_skills: list[int] = extract_skill_sum_values(population)
     distribution: dict[int, int] = collections.Counter(total_participant_skills)
-    print_bar_distribution(distribution, "Summed Total", min(total_participant_skills),
+    print_bar_distribution(distribution, "Summed Total (Max: 40 points)", min(total_participant_skills),
                            max(total_participant_skills), max(distribution.values()), "#555555",
                            True)
 
