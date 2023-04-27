@@ -8,13 +8,15 @@ import matplotlib.pyplot as plt
 from restify_mining.markers import skills_markers
 
 
-# TODO: refactor. Do not pass amount partitions as extra value but provide 2D list for skill values, already separated
-#  by group. See implementation of time box plotter. Ideally refactor to use common code for plotting.
-def skill_plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],
+def skill_plot_box(all_skill_values_by_skill_by_group: list[list[int]], palette: list[str],
                    amount_partitions: int, filename: str):
-    """Prints a boxplot, with packs of four, based on a single array with all participant skill values, ordered by
-    skill index and group index. Illustration: first there come all values of participants for
-    group 1, skill one. Then come all values of participants of group 2, skill 1, and so on.
+    """
+    :param all_skill_values_by_skill_by_group: list of 32 lists. Every inner lists contains 7 values for a specific
+    skill and a specific group. Those are the ones we want to turn into boxplots. The outer list enumerates all skills
+    for all groups. Namely, sequences of four for the groups of a giving skill.
+    :param palette: provides the colour codes (string with hash + hexcode) to use for skills.
+    :param amount_partitions: as the amount of groups.
+    :param filename: as the name to used for persistence on disk.
     """
 
     # reset figure, to have separate drawings
@@ -25,6 +27,9 @@ def skill_plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[
 
     # plot the boxes, iterate over all skills.
     for skill_index, skill_values in enumerate(all_skill_values_by_skill_by_group):
+
+        # skill_values if a series fo seven skill values for a given group and skill, that we want to turn into a
+        # boxplot.
         plotter_colour = palette[int(skill_index / amount_partitions)]
         plt.boxplot(skill_values,
                     positions=[skill_index + 1], notch=False,
