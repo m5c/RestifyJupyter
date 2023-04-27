@@ -29,14 +29,14 @@ clear_cache("generated-csv-files")
 clear_cache("generated-plots")
 clear_cache("generated-text-files")
 print("Clear cache complete.")
-#
-# print("Imitating Jupyter Pseudo Cell 01...")
-# cell_01()
-# print("Cell 01 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 02...")
-# cell_02()
-# print("Cell 02 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 01...")
+cell_01()
+print("Cell 01 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 02...")
+cell_02()
+print("Cell 02 complete.\n")
 #
 print("Imitating Jupyter Pseudo Cell 03...")
 cell_03()

@@ -9,7 +9,7 @@ Author: Maximilian Schiedermeier
 from restify_mining.data_objects import participant_filter_tools
 from restify_mining.data_objects.participant import Participant
 from restify_mining.markers.skills_markers import skill_tags, palette
-from restify_mining.box_plotters.skill_box_plotter import plot_box
+from restify_mining.box_plotters.skill_box_plotter import skill_plot_box
 
 
 def extract_control_groups_boxplot(population: list[Participant]) -> None:
@@ -40,5 +40,5 @@ def extract_control_groups_boxplot(population: list[Participant]) -> None:
                                                                    skill_index))
 
     # Finally feed the long list of all skill values in the order, required by the box plotter
-    plot_box(plotter_skill_values, palette, len(control_groups),
+    skill_plot_box(plotter_skill_values, palette, len(control_groups),
              "generated-plots/02-cgroups_skills_boxplot.png")
