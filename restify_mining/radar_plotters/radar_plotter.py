@@ -9,6 +9,8 @@ import numpy as np
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.markers import unit_tests_markers
 from restify_mining.unit_test_miners.abstract_miner import AbstractTestMiner
+from restify_mining.utils.group_to_methodology_and_order import group_app_to_methodology, \
+    group_app_to_task_number
 
 
 class RadarPlotter:
@@ -18,34 +20,6 @@ class RadarPlotter:
     https://towardsdatascience.com/how-to-make-stunning-radar-charts-with-python-implemented-in
     -matplotlib-and-plotly-91e21801d8ca
     """
-
-    def plot_sample(self) -> None:
-        """
-        Produces a sample plot
-        :return: None
-        """
-        categories = ['Food Quality', 'Food Variety', 'Service Quality', 'Ambiance',
-                      'Affordability']
-        categories = [*categories, categories[0]]
-
-        restaurant_1 = [4, 4, 5, 4, 3]
-        restaurant_2 = [5, 5, 4, 5, 2]
-        restaurant_3 = [3, 4, 5, 3, 5]
-        restaurant_1 = [*restaurant_1, restaurant_1[0]]
-        restaurant_2 = [*restaurant_2, restaurant_2[0]]
-        restaurant_3 = [*restaurant_3, restaurant_3[0]]
-
-        label_loc = np.linspace(start=0, stop=2 * np.pi, num=len(restaurant_1))
-
-        plt.figure(figsize=(8, 8))
-        plt.subplot(polar=True)
-        plt.plot(label_loc, restaurant_1, label='Restaurant 1')
-        plt.plot(label_loc, restaurant_2, label='Restaurant 2')
-        plt.plot(label_loc, restaurant_3, label='Restaurant 3')
-        plt.title('Restaurant comparison', size=20, y=1.05)
-        plt.thetagrids(np.degrees(label_loc), labels=categories)
-        plt.legend()
-        plt.show()
 
     def radar_plot(self, miner: AbstractTestMiner,
                    app: str, participants: list[AssessedParticipant]) -> None:
@@ -61,10 +35,12 @@ class RadarPlotter:
         # reject if input app is not valid. Set test labels according to provided scope
         app_title: str = ""
         if app == "bs":
-            test_markers: list[str] = unit_tests_markers.bs_unit_tests
+            test_markers: list[str] = self.create_radar_test_label(app,
+                len(unit_tests_markers.bs_unit_tests))
             app_title = "BookStore"
         elif app == "xox":
-            test_markers: list[str] = unit_tests_markers.xox_unit_tests
+            test_markers: list[str] = self.create_radar_test_label(app,
+                len(unit_tests_markers.xox_unit_tests))
             app_title = "Xox"
         else:
             raise Exception("Provided app for radar plot is not valid: " + app)
@@ -94,13 +70,31 @@ class RadarPlotter:
         # Set plot to a radar (polar coordinate plot and feed the sample points)
         plt.figure(figsize=(8, 8))
         plt.subplot(polar=True)
-        plt.plot(label_loc, red_average_samples, label='Red', color="red")
-        plt.plot(label_loc, green_average_samples, label='Green', color="green")
-        plt.plot(label_loc, blue_average_samples, label='Blue', color="blue")
-        plt.plot(label_loc, yellow_average_samples, label='Yellow', color="yellow")
+        red_label: str = group_app_to_methodology('red', app)+"/"+group_app_to_task_number('red', app)
+        green_label: str = group_app_to_methodology('green', app)+"/"+group_app_to_task_number('green', app)
+        blue_label: str = group_app_to_methodology('blue', app)+"/"+group_app_to_task_number('blue', app)
+        yellow_label: str = group_app_to_methodology('yellow', app)+"/"+group_app_to_task_number('yellow', app)
+        plt.plot(label_loc, red_average_samples, label=red_label, color="red")
+        plt.plot(label_loc, green_average_samples, label=green_label, color="green")
+        plt.plot(label_loc, blue_average_samples, label=blue_label, color="blue")
+        plt.plot(label_loc, yellow_average_samples, label=yellow_label, color="yellow")
 
-        plt.title(app_title +' Average Test Scores per Group', size=20, y=1.05)
+        plt.title(app_title + ' Average Test Scores per Group', size=20, y=1.05)
         plt.thetagrids(np.degrees(label_loc), labels=test_markers)
-        plt.legend()
+        plt.legend(loc='upper right')
         plt.savefig("generated-plots/" + "06-" + app + "-all-tests-radar.png", dpi=300)
         plt.show()
+
+    @staticmethod
+    def create_radar_test_label(app: str, amount: int) -> list[str]:
+        """
+        helper method to create opaque test labels that just enumerate instead of listing the actual
+        endpoint names. Zero padded and indicating app.
+        :param amount: amount of labels needed
+        :return: string list with generic test labels
+        """
+        labels: list[str] = []
+        for i in range(1, amount+1):
+            padded_numer = str(i).zfill(2)
+            labels.append(app.capitalize()+"Test" + padded_numer)
+        return labels

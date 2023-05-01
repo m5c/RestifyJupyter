@@ -11,7 +11,6 @@ def build_merged_csv():
     """
     Reads in all individual csv files and merges them based on the participant. control group and
     code name entry. Stores the resulting fused csv in the "generated-csv-files" directory.
-    #TODO: FIND OUT WHY THIS DOES NOT MERGE TEST RESULTS CORRECTLY.
     """
 
     # Start by loading the individual key files.
