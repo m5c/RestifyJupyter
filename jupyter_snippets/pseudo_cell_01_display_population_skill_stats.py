@@ -3,7 +3,7 @@ Author: Maximilian Schiedermeier
 """
 
 from csv_tools import file_load_utils
-from restify_mining.bar_plotters.skill_frequency_bars import plot_skill_bars
+from restify_mining.bar_plotters.frequency_bars import plot_skill_bars
 from restify_mining.data_objects.participant import Participant
 from restify_mining.skill_extractors.participant_stat_tools import \
     compute_shapiro_will_skills_standarddev_pvalue

@@ -1,20 +1,21 @@
 """
 Author: Maximilian Schiedermeier
 """
+from scipy.stats import stats
+from scipy.stats._stats_py import PearsonRResult
+
 from csv_tools import file_load_utils
 from restify_mining.data_objects import participant_normalize_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
 from restify_mining.scatter_plotters.correlation import Correlation
-from restify_mining.scatter_plotters.correlation_plotter import plot_correlation, \
+from restify_mining.scatter_plotters.correlation_plotter import \
     plot_correlation_with_auto_dimensions
 from restify_mining.scatter_plotters.extractors.animal_label_maker import AnimalLabelMaker
-from restify_mining.scatter_plotters.extractors.full_label_maker import FullLabelMaker
 from restify_mining.scatter_plotters.extractors.methodology_time_passrate_tradeoff_extractor \
     import \
     MethodologyTimeToPassRateTradeoffExtractor
 from restify_mining.scatter_plotters.extractors.summed_skill_extractor import SummedSkillExtractor
-from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 
 def cell_16() -> None:
@@ -35,15 +36,27 @@ def cell_16() -> None:
     # green/blue
     app: str = ""
     for app in ["tc", "ide"]:
-
-        skill_to_quality: Correlation = Correlation(norm_population, MethodologyTimeToPassRateTradeoffExtractor(app), SummedSkillExtractor(app), AnimalLabelMaker(), False)
+        skill_to_quality: Correlation = Correlation(norm_population,
+                                                    MethodologyTimeToPassRateTradeoffExtractor(app),
+                                                    SummedSkillExtractor(app), AnimalLabelMaker(),
+                                                    False)
         file_name_marker: str = "16-"
         plot_correlation_with_auto_dimensions(skill_to_quality, file_name_marker)
 
-        # # Compute normalized individual group tradeoffs
-        # tradeoffs: list[float] = MethodologyTimeToPassRateTradeoffExtractor(app).extract(norm_population)
-        #
-        # # Create plots that put normalized population in relation to total skill score of population
-        # total_skills: list[int] = SummedSkillExtractor(app).extract(norm_population)
-        #
-        print("all good.")
+        # Run pearson test for liner correlation of values:
+        tradeoffs: list[float] = MethodologyTimeToPassRateTradeoffExtractor(app).extract(
+            norm_population)
+
+        # Create plots that put normalized population in relation to total skill score of population
+        total_skills: list[int] = SummedSkillExtractor(app).extract(norm_population)
+
+        # Computed person correlation between values:
+        # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html
+        print(
+            "Pearson test for linear correlation between submission quality (tradeoff) and "
+            "participant skills, " + app + ":")
+        res: PearsonRResult = stats.pearsonr(tradeoffs, total_skills)
+        print(res)
+        print(
+            "Note: Linear correlation result (\"statistic\") is only significant if \"pvalue\" is "
+            "smaller than 0.05.")

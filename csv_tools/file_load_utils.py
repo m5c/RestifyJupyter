@@ -161,3 +161,14 @@ def load_stage_one_error_occurrences() -> dict[str, int]:
 
     return sorted_occurrences
 
+
+def load_participant_feedback() -> list[str]:
+    """
+    Loads the participant feedback summary file form disk.
+    :return: a list where every line is an entry.
+    """
+    with open('source-csv-files/participant-feedback-summary.csv', 'r', encoding="utf-8") as file:
+        feedback: list[str] = file.read().split('\n')
+
+    return feedback
+

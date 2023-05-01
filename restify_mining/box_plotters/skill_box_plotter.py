@@ -20,6 +20,7 @@ def plot_box(all_skill_values_by_skill_by_group: list[int], palette: list[str],
 
     # define frame size
     plt.rcParams["figure.figsize"] = (14, 4)
+    # plt.figure(figsize=(20, 4))
 
     # plot the boxes
     for skill_index, skill_values in enumerate(all_skill_values_by_skill_by_group):
