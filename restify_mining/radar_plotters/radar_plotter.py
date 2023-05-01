@@ -59,10 +59,13 @@ class RadarPlotter:
         """
 
         # reject if input app is not valid. Set test labels according to provided scope
+        app_title: str = ""
         if app == "bs":
             test_markers: list[str] = unit_tests_markers.bs_unit_tests
+            app_title = "BookStore"
         elif app == "xox":
             test_markers: list[str] = unit_tests_markers.xox_unit_tests
+            app_title = "Xox"
         else:
             raise Exception("Provided app for radar plot is not valid: " + app)
         # duplicate last test marker and place at front, so the labels form closed circuit on
@@ -96,8 +99,8 @@ class RadarPlotter:
         plt.plot(label_loc, blue_average_samples, label='Blue', color="blue")
         plt.plot(label_loc, yellow_average_samples, label='Yellow', color="yellow")
 
-        plt.title('Xox Average Test Scores per Group', size=20, y=1.05)
+        plt.title(app_title +' Average Test Scores per Group', size=20, y=1.05)
         plt.thetagrids(np.degrees(label_loc), labels=test_markers)
         plt.legend()
-        plt.savefig("generated-plots/" + "06-" + app + "-all-tests-radar.png")
+        plt.savefig("generated-plots/" + "06-" + app + "-all-tests-radar.png", dpi=300)
         plt.show()

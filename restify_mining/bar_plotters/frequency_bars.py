@@ -60,6 +60,9 @@ def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x
     :return: None
     """
 
+    # Set less wasteful dimensions
+    plt.rcParams["figure.figsize"] = (10, 4)
+
     if ruffled:
         plt.bar(distribution.keys(), distribution.values(), color=tint, hatch="x")
     else:
@@ -71,7 +74,7 @@ def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x
     plt.xlim(lower_bound_x - 0.5, upper_bound_x + 0.5)
     plt.ylim(0, upper_bound_y + 0.5)
     plt.ylabel("Participant Amount")
-    plt.savefig("generated-plots/01-participant-" + tag + "-bars.png")
+    plt.savefig("generated-plots/01-participant-" + tag + "-bars.png", dpi=300)
     plt.show()
 
 
