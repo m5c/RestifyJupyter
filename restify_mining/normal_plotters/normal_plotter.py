@@ -32,12 +32,11 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, a
     sigma: float = math.sqrt(stddev)
     distribution = np.linspace(mean - 3 * sigma, mean + 3 * sigma, 100)
     plt.xlim(0, 1)
-    plt.title("Quality Distribution, " + app)
+    plt.title("Refactoring Effectiveness Distribution, " + app)
     if dashed:
         plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour, linestyle='dashed', linewidth='1')
     else:
         plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour)
-
 
     # Add axis labels
     plt.xlabel(x_label)  # e.g. Skill Score

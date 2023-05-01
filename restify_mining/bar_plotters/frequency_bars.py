@@ -23,7 +23,8 @@ def plot_skill_bars(population: list[participant]) -> None:
     """
     total_participant_skills: list[int] = extract_skill_sum_values(population)
     distribution: dict[int, int] = collections.Counter(total_participant_skills)
-    print_bar_distribution(distribution, "Summed Total (Max: 40 points)", min(total_participant_skills),
+    print_bar_distribution(distribution, "Summed Total (Max: 40 points)",
+                           min(total_participant_skills),
                            max(total_participant_skills), max(distribution.values()), "#555555",
                            True)
 
@@ -71,4 +72,28 @@ def print_bar_distribution(distribution: dict[int, int], tag: str, lower_bound_x
     plt.ylim(0, upper_bound_y + 0.5)
     plt.ylabel("Participant Amount")
     plt.savefig("generated-plots/01-participant-" + tag + "-bars.png")
+    plt.show()
+
+
+def print_pref_distribution(distribution: dict[int, int], x_tick_override: list[str],
+                        colour_map: dict[str, str]) -> None:
+    """
+    Helper method to create a bar chard for block separated data, e.g. user feedback.
+    :return: None
+    """
+
+    plt.bar(distribution.keys(), distribution.values(), color=colour_map.values())
+    plt.title("Participant Feedback")
+
+    # Override x ticks
+    plt.xticks(range(len(x_tick_override)), x_tick_override)
+
+    # Make a nice box to explain colours
+    labels = list(colour_map.keys())
+    labels.pop()
+    handles = [plt.Rectangle((0, 0), 1, 1, color=colour_map[label]) for label in labels]
+    plt.legend(handles, labels)
+
+    plt.ylabel("Amount Participants")
+    plt.savefig("generated-plots/18-participant-feedback.png")
     plt.show()

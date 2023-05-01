@@ -7,6 +7,7 @@ The metric for fittness is the time to quality ratio. That is to say fast solvin
 mistakes is considered better than slow solving with many mistakes.
 Author: Maximilian Schiedermeier
 """
+import numpy as np
 import scipy
 from scipy.stats._morestats import ShapiroResult
 
@@ -50,7 +51,6 @@ def cell_13() -> None:
     # green/blue
     app: str = ""
     for app in ["xox", "bookstore"]:
-
         # Compute normalized individual group tradeoffs
         red_tradeoff: list[float] = ApplicationTimeToPassRateTradeoffExtractor(
             app).extract(filter_population_by_group(norm_population, "red"))
@@ -77,7 +77,22 @@ def cell_13() -> None:
         print_normal_dist_interpretation("Red Yellow Normalized " + app + " Quality Tradeoff",
                                          red_yellow_app_tradeoff_stats)
 
-        clear();
+        # Print normal distribution values for the green_blue / respective red_yellow combined
+        # samples.
+        print("Normal distribution data for "+app)
+        green_blue_mean = np.mean(green_blue_app_tradeoff)
+        green_blue_standard_deviation = np.std(green_blue_app_tradeoff)
+        red_yellow_mean = np.mean(red_yellow_app_tradeoff)
+        red_yellow_standard_deviation = np.std(red_yellow_app_tradeoff)
+
+        print("Green/Blue Mean "+app+": "+str(green_blue_mean))
+        print("Red/Yellow Mean "+app+": "+str(red_yellow_mean))
+        print("Green/Blue Standard Deviation "+app+": "+str(green_blue_standard_deviation))
+        print("Red/Yellow Standard Deviation "+app+": "+str(red_yellow_standard_deviation))
+
+
+        # Reset plotter.
+        clear()
 
         ## Individual control groups. Marked dashed because not shapiro wilk tested.
         plot_normal(green_tradeoff, "#00ff00", "quality", "frequency", app, True)
@@ -89,6 +104,5 @@ def cell_13() -> None:
         # of normal distributions for each series.
         plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency", app, False)
         plot_normal(red_yellow_app_tradeoff, "#ffa500", "quality", "frequency", app, False)
-
 
         show("13-GreenBlueQuality-Distribution-" + app)
