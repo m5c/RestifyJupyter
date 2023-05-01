@@ -1,4 +1,6 @@
 """
+Pseudo Cell to computes Pearson Coefficient for linear correlation between pre time and
+effectivness of refactoring per methodology.
 Author: Maximilian Schiedermeier
 """
 from scipy.stats import stats
@@ -12,15 +14,17 @@ from restify_mining.scatter_plotters.correlation import Correlation
 from restify_mining.scatter_plotters.correlation_plotter import \
     plot_correlation_with_auto_dimensions
 from restify_mining.scatter_plotters.extractors.animal_label_maker import AnimalLabelMaker
+from restify_mining.scatter_plotters.extractors.methodology_pretime_extractor import \
+    MethodologyPretimeExtractor
 from restify_mining.scatter_plotters.extractors.methodology_time_passrate_tradeoff_extractor \
     import \
     MethodologyTimeToPassRateTradeoffExtractor
 from restify_mining.scatter_plotters.extractors.summed_skill_extractor import SummedSkillExtractor
 
 
-def cell_16() -> None:
+def cell_17() -> None:
     """
-    Jupyter cell 16. See markdown description.
+    Jupyter cell 17. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
@@ -32,31 +36,25 @@ def cell_16() -> None:
         assessed_population)
 
     # PASS 1:
-    # Use xox branded application time passrate tradeoff extractor for red/yellow, then for
+    # Use app branded application time passrate tradeoff extractor for red/yellow, then for
     # green/blue
-    app: str = ""
-    for app in ["tc", "ide"]:
-        skill_to_quality: Correlation = Correlation(norm_population,
-                                                    MethodologyTimeToPassRateTradeoffExtractor(app),
-                                                    SummedSkillExtractor(app), AnimalLabelMaker(),
-                                                    False)
-        file_name_marker: str = "16-"
-        plot_correlation_with_auto_dimensions(skill_to_quality, file_name_marker)
-
+    methodology: str = ""
+    for methodology in ["tc", "ide"]:
         # Run pearson test for liner correlation of values:
-        tradeoffs: list[float] = MethodologyTimeToPassRateTradeoffExtractor(app).extract(
+        tradeoffs: list[float] = MethodologyTimeToPassRateTradeoffExtractor(methodology).extract(
             norm_population)
 
-        # Create plots that put normalized population in relation to total skill score of population
-        total_skills: list[int] = SummedSkillExtractor(app).extract(norm_population)
+        # Create tests that put normalized population effectiveness in relation to pretime of
+        # population
+        pre_times: list[int] = MethodologyPretimeExtractor(methodology).extract(norm_population)
 
         # Computed person correlation between values:
         # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html
         print(
             "Pearson test for linear correlation between submission quality (tradeoff) and "
-            "participant skills, " + app + ":")
-        res: PearsonRResult = stats.pearsonr(tradeoffs, total_skills)
+            "methodology pre-time, " + methodology + ":")
+        res: PearsonRResult = stats.pearsonr(tradeoffs, pre_times)
         print(res)
         print(
             "Note: Linear correlation result (\"statistic\") is only significant if \"pvalue\" is "
-            "smaller than 0.05.")
+            "smaller than 0.05")

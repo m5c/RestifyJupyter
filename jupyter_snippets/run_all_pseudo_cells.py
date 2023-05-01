@@ -21,7 +21,8 @@ from jupyter_snippets.pseudo_cell_11_skill_passrate_scatter import cell_11
 from jupyter_snippets.pseudo_cell_12_skillsum_passrate_scatter import cell_12
 from jupyter_snippets.pseudo_cell_13_qualitytradeoff_by_app import cell_13
 from jupyter_snippets.pseudo_cell_14_fail_cause_stage_1 import cell_14
-from jupyter_snippets.pseudo_cell_16_skill_quality_by_methodology_scatter import cell_16
+from jupyter_snippets.pseudo_cell_16_skill_quality_by_methodology_scatter_pearson import cell_16
+from jupyter_snippets.pseudo_cell_17_pretime_quality_by_methodology_scatter_pearson import cell_17
 from jupyter_snippets.pseudo_cell_18_participant_feedback import cell_18
 from restify_mining.utils.cache_clearer import clear_cache
 
@@ -94,6 +95,10 @@ print("Cell 14 complete.\n")
 print("Imitating Jupyter Pseudo Cell 16...")
 cell_16()
 print("Cell 16 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 17...")
+cell_17()
+print("Cell 17 complete.\n")
 
 print("Imitating Jupyter Pseudo Cell 18...")
 cell_18()
