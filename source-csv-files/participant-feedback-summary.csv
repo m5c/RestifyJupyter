@@ -1,0 +1,18 @@
+Question, Description, Stats
+1, Task methodology perceived easier, TC:26 IDE:1 Neutral:1
+1, Task app perceived easier, BS:13 XOX:14 Neutral:1
+1, Task number perceived easier, First:14 Second:13 Neutral:1
+2, Confidence correct interface methodology, TC:19 IDE:9 Neutral:0
+2, Confidence correct interface app, BS:13 XOX:15 Neutral:0
+2, Confidence correct interface task number, First:15 Second:13 Neutral:0
+3, Methodology preference own legacy refactor, TC:17 IDE:11
+4, Most frequent problems, TC-crash:8 TC-UI:5 Autowiring-and-annotations:7
+5, Main time loss perceived, Video-instructions:5 Using-TouchCORE:3 Pom-File:3
+6, Understood the tasks, Yes:27 No:1
+7, More intuitive methodology, TC:24 IDE:3 Netural:1
+8, Task methodology more confident unit tests pass, TC:15 IDE:13 Neutral:1
+8, Task app more confident unit tests pass, BS:14 XOX:13 Neutral:1
+8, Task number more confident unit tests pass, First:14 Second:13 Neutral:1
+9, Perference own future projects, TC:7 IDE:16 Neutral:5
+10, Main reasons in favour IDE, Perceived-more-control-or-trace:6 Perceived-more-trust-in-code-than-tool:5 Tool-quality:9 Tool-scaling-doubted:3
+10, Main reason in favour TC, Intuitive-DSL-Process:6
