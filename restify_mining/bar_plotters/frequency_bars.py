@@ -82,6 +82,8 @@ def print_pref_distribution(distribution: dict[int, int], x_tick_override: list[
     :return: None
     """
 
+    plt.rcParams["figure.figsize"] = (10, 4)
+
     plt.bar(distribution.keys(), distribution.values(), color=colour_map.values())
     plt.title("Participant Feedback")
 
@@ -95,5 +97,5 @@ def print_pref_distribution(distribution: dict[int, int], x_tick_override: list[
     plt.legend(handles, labels)
 
     plt.ylabel("Amount Participants")
-    plt.savefig("generated-plots/18-participant-feedback.png")
+    plt.savefig("generated-plots/18-participant-feedback.png", dpi=300)
     plt.show()
