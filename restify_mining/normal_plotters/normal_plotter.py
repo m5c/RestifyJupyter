@@ -22,7 +22,7 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, a
     :return: None
     """
     # Set figure dimensions
-    plt.rcParams["figure.figsize"] = (14, 4)
+    plt.rcParams["figure.figsize"] = (8, 3)
 
     # Compute stdev and mean based on provided samples
     mean: float = sum(samples) / len(samples)
@@ -32,7 +32,7 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, a
     sigma: float = math.sqrt(stddev)
     distribution = np.linspace(mean - 3 * sigma, mean + 3 * sigma, 100)
     plt.xlim(0, 1)
-    plt.title("Refactoring Effectiveness Distribution, " + app)
+    plt.title("Conversion Effectiveness Distributions, " + app.capitalize())
     if dashed:
         plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour, linestyle='dashed', linewidth='1')
     else:
@@ -49,7 +49,8 @@ def show(filename: str) -> None:
     :param filename: as the name of the graphics to store on disk
     :return: None
     """
-    plt.savefig("generated-plots/" + filename + ".png")
+    plt.tight_layout()
+    plt.savefig("generated-plots/" + filename + ".png", dpi=300)
     plt.show()
 
 def clear() -> None:

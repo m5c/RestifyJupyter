@@ -35,14 +35,14 @@ print("Clear cache complete.")
 # print("Imitating Jupyter Pseudo Cell 01...")
 # cell_01()
 # print("Cell 01 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 02...")
-cell_02()
-print("Cell 02 complete.\n")
 #
-# print("Imitating Jupyter Pseudo Cell 03...")
-# cell_03()
-# print("Cell 03 complete.\n")
+# print("Imitating Jupyter Pseudo Cell 02...")
+# cell_02()
+# print("Cell 02 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 03...")
+cell_03()
+print("Cell 03 complete.\n")
 #
 # print("Imitating Jupyter Pseudo Cell 04...")
 # cell_04()
@@ -83,10 +83,10 @@ print("Cell 02 complete.\n")
 # print("Imitating Jupyter Pseudo Cell 12...")
 # cell_12()
 # print("Cell 12 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 13...")
-# cell_13()
-# print("Cell 13 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 13...")
+cell_13()
+print("Cell 13 complete.\n")
 #
 # print("Imitating Jupyter Pseudo Cell 14...")
 # cell_14()

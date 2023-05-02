@@ -16,6 +16,7 @@ from restify_mining.data_objects import participant_normalize_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
+from restify_mining.markers.group_tint_markers import group_tints
 from restify_mining.normal_plotters.normal_plotter import plot_normal, show, clear
 from restify_mining.scatter_plotters.extractors.application_time_passrate_tradeoff_extractor \
     import \
@@ -102,15 +103,18 @@ def cell_13() -> None:
         # Reset plotter.
         clear()
 
+        effectiveness_label: str = "Normalized Effectiveness"
+        effectiveness_frequency: str = "Associated Frequency"
+
         ## Individual control groups. Marked dashed because not shapiro wilk tested.
-        plot_normal(green_tradeoff, "#00ff00", "quality", "frequency", app, True)
-        plot_normal(blue_tradeoff, "#0000ff", "quality", "frequency", app, True)
-        plot_normal(red_tradeoff, "#ff0000", "quality", "frequency", app, True)
-        plot_normal(yellow_tradeoff, "#dddd00", "quality", "frequency", app, True)
+        plot_normal(green_tradeoff, group_tints["green"], effectiveness_label, effectiveness_frequency, app, True)
+        plot_normal(blue_tradeoff, group_tints["blue"], effectiveness_label, effectiveness_frequency, app, True)
+        plot_normal(red_tradeoff, group_tints["red"], effectiveness_label, effectiveness_frequency, app, True)
+        plot_normal(yellow_tradeoff, group_tints["yellow"], effectiveness_label, effectiveness_frequency, app, True)
 
         # Shapiro-Wilk test suggests the data is normal-distributed. We therefore proceed with plot
         # of normal distributions for each series.
-        plot_normal(green_blue_app_tradeoff, "#00ffff", "quality", "frequency", app, False)
-        plot_normal(red_yellow_app_tradeoff, "#ffa500", "quality", "frequency", app, False)
+        plot_normal(green_blue_app_tradeoff, group_tints["turquoise"], effectiveness_label, effectiveness_frequency, app, False)
+        plot_normal(red_yellow_app_tradeoff, group_tints["orange"], effectiveness_label, effectiveness_frequency, app, False)
 
         show("13-GreenBlueQuality-Distribution-" + app)

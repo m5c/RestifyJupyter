@@ -4,7 +4,9 @@ module provides a map form group names to colour spaces."""
 group_tints = {"red": "#FF0000",
                "green": "#00FF00",
                "blue": "#0000FF",
-               "yellow": "#E5CB00"}
+               "yellow": "#E5CB00",
+               "orange": '#ffa500',
+               "turquoise": '#00ffff'}
 
 
 def group_to_tint(group_name: str):
