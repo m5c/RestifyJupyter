@@ -9,7 +9,17 @@ from matplotlib import pyplot as plt
 from scipy import stats
 
 
-def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, app: str, dashed: bool) -> None:
+def set_plot_dimensions() -> None:
+    """
+    :return: 
+    """
+    # Set figure dimensions
+    plt.rcParams["figure.figsize"] = (8, 3)
+    plt.clf()
+
+
+def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, app: str,
+                dashed: bool) -> None:
     """
     Plots the normal distribution curves, based on provided data samples.
     Note: provided data should be tested for approximately normal distributed first, e.g. using
@@ -21,8 +31,6 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, a
     :param app: as label for title to indicate the app the graph depicts.
     :return: None
     """
-    # Set figure dimensions
-    plt.rcParams["figure.figsize"] = (8, 3)
 
     # Compute stdev and mean based on provided samples
     mean: float = sum(samples) / len(samples)
@@ -34,7 +42,8 @@ def plot_normal(samples: list[float], colour: str, x_label: str, y_label: str, a
     plt.xlim(0, 1)
     plt.title("Conversion Effectiveness Distributions, " + app.capitalize())
     if dashed:
-        plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour, linestyle='dashed', linewidth='1')
+        plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour,
+                 linestyle='dashed', linewidth='1')
     else:
         plt.plot(distribution, stats.norm.pdf(distribution, mean, sigma), colour)
 
@@ -53,5 +62,3 @@ def show(filename: str) -> None:
     plt.savefig("generated-plots/" + filename + ".png", dpi=300)
     plt.show()
 
-def clear() -> None:
-    plt.clf()

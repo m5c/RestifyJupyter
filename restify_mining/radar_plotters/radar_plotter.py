@@ -8,6 +8,7 @@ import numpy as np
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.markers import unit_tests_markers
+from restify_mining.markers.group_tint_markers import group_tints
 from restify_mining.unit_test_miners.abstract_miner import AbstractTestMiner
 from restify_mining.utils.group_to_methodology_and_order import group_app_to_methodology, \
     group_app_to_task_number
@@ -88,10 +89,10 @@ class RadarPlotter:
         green_label: str = group_app_to_methodology('green', app)+"/"+group_app_to_task_number('green', app)
         blue_label: str = group_app_to_methodology('blue', app)+"/"+group_app_to_task_number('blue', app)
         yellow_label: str = group_app_to_methodology('yellow', app)+"/"+group_app_to_task_number('yellow', app)
-        plt.plot(label_loc, red_average_samples, label=red_label, color="red")
-        plt.plot(label_loc, green_average_samples, label=green_label, color="green")
-        plt.plot(label_loc, blue_average_samples, label=blue_label, color="blue")
-        plt.plot(label_loc, yellow_average_samples, label=yellow_label, color="yellow")
+        plt.plot(label_loc, red_average_samples, label=red_label, color=group_tints["red"])
+        plt.plot(label_loc, green_average_samples, label=green_label, color=group_tints["green"])
+        plt.plot(label_loc, blue_average_samples, label=blue_label, color=group_tints["blue"])
+        plt.plot(label_loc, yellow_average_samples, label=yellow_label, color=group_tints["yellow"])
 
         plt.title(app_title + ' Average Test Scores per Group', size=20, y=1.05)
         plt.thetagrids(np.degrees(label_loc), labels=test_markers)

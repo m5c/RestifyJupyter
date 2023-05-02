@@ -17,7 +17,8 @@ from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
 from restify_mining.markers.group_tint_markers import group_tints
-from restify_mining.normal_plotters.normal_plotter import plot_normal, show, clear
+from restify_mining.normal_plotters.normal_plotter import plot_normal, show, \
+    set_plot_dimensions
 from restify_mining.scatter_plotters.extractors.application_time_passrate_tradeoff_extractor \
     import \
     ApplicationTimeToPassRateTradeoffExtractor
@@ -100,11 +101,11 @@ def cell_13() -> None:
         print("Wilcoxon for "+app)
         print(wilcoxon)
 
-        # Reset plotter.
-        clear()
 
         effectiveness_label: str = "Normalized Effectiveness"
         effectiveness_frequency: str = "Associated Frequency"
+
+        set_plot_dimensions()
 
         ## Individual control groups. Marked dashed because not shapiro wilk tested.
         plot_normal(green_tradeoff, group_tints["green"], effectiveness_label, effectiveness_frequency, app, True)

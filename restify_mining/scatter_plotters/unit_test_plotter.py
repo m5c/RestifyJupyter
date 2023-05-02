@@ -8,6 +8,7 @@ import numpy as np
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
+from restify_mining.markers.group_tint_markers import group_tints
 from restify_mining.unit_test_miners.all_groups_tests_miner import AllGroupsTestsMiner
 from restify_mining.unit_test_miners.abstract_miner import AbstractTestMiner
 
@@ -30,8 +31,8 @@ def build_linear_colour_map() -> LinearSegmentedColormap:
     :return: The only kind of colormap that is actually useful. Produces gradients based on
     sample points.
     """
-    list_colours: list[str] = ["black", "red", "black", "green", "black", "blue", "black",
-                               "yellow"]
+    list_colours: list[str] = ["black", group_tints["red"], "black", group_tints["green"], "black", group_tints["blue"], "black",
+                               group_tints["yellow"]]
     # Greyscale palette:
     # list_colours: list[str] = ["black", "white", "black", "white", "black", "white", "black",
     #                            "white"]

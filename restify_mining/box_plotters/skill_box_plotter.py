@@ -18,9 +18,6 @@ def skill_plot_box(all_skill_values_by_skill_by_group: list[list[int]], palette:
     :param amount_partitions: as the amount of groups.
     :param filename: as the name to used for persistence on disk.
     """
-
-
-
     # define frame size
     plt.rcParams["figure.figsize"] = (8, 3)
 

@@ -67,5 +67,6 @@ def plot_correlation(correlation: Correlation, file_name_marker: str, dimension:
         label_overlay.annotate(yellow_label,
                                (yellow_bundle.y_axis_values[i], yellow_bundle.x_axis_values[i]))
 
-    plt.savefig("generated-plots/" + file_name_marker + correlation.filename)
+    plt.tight_layout
+    plt.savefig("generated-plots/" + file_name_marker + correlation.filename, dpi=300)
     plt.show()
