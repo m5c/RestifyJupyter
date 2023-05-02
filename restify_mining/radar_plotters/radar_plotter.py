@@ -56,6 +56,20 @@ class RadarPlotter:
         blue_average_samples: list[float] = group_average_test_results[2]
         yellow_average_samples: list[float] = group_average_test_results[3]
 
+        # print the average samples and total per group pass rate:
+        print("Radar numeric values for "+app+":")
+        print("Red test average passrates: "+str(red_average_samples))
+        print("Red overall average: "+str(sum(red_average_samples)/len(red_average_samples)))
+        print("Green test average passrates: "+str(green_average_samples))
+        print("Green overall average: "+str(sum(green_average_samples)/len(green_average_samples)))
+        print("Blue test average passrates: "+str(blue_average_samples))
+        print("Blue overall average: "+str(sum(blue_average_samples)/len(blue_average_samples)))
+        print("Yellow test average passrates: "+str(yellow_average_samples))
+        print("Yellow overall average: "+str(sum(yellow_average_samples)/len(yellow_average_samples)))
+
+
+
+
         # Next we do the same duplication trick with the sample points as with the labels
         # duplicate last element ant place in front) to ensure closed circuits.
         red_average_samples = [*red_average_samples, red_average_samples[0]]

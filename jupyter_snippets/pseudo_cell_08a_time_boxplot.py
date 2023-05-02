@@ -11,6 +11,8 @@ from restify_mining.data_objects.participant_filter_tools import filter_populati
 from restify_mining.markers import group_tint_markers
 from restify_mining.scatter_plotters.extractors.application_time_extractor import ApplicationTimeExtractor
 from restify_mining.scatter_plotters.extractors.extractor import Extractor
+from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
+    MethodologyTimeExtractor
 
 
 def cell_08a() -> None:
@@ -26,31 +28,18 @@ def cell_08a() -> None:
     blue_population: list[AssessedParticipant] = filter_population_by_group(all_population, "blue")
     yellow_population: list[AssessedParticipant] = filter_population_by_group(all_population, "yellow")
 
-    # Step 2: We want two plots, so we iterate over both apps.
+    # Step 2: Extract times for individual apps
     application_task_times = {}
-    max_task_time: int = 0
-    for app in {"bookstore", "xox"}:
+    for methodology in {"tc", "ide"}:
 
-        print("Producing Boxplot for " + app)
-        # Step 3: We need the sample values, used as input values for the boxplots.
-        # We need four lists, for the four groups.
-        # We don't produce the four lists of sampling points ourselves, but use an extractor: ApplicationTimeExtractor
-        extractor: Extractor = ApplicationTimeExtractor(app)
+        extractor: Extractor = MethodologyTimeExtractor(methodology)
         all_task_times: list[list[float]] = []
         all_task_times.append(extractor.extract(red_population))
         all_task_times.append(extractor.extract(green_population))
         all_task_times.append(extractor.extract(blue_population))
         all_task_times.append(extractor.extract(yellow_population))
+        application_task_times[methodology] = all_task_times
 
-        # Store value
-        application_task_times[app] = all_task_times
-
-        # Update hicore
-        for group_task_times in all_task_times:
-            max_task_time = max(max_task_time, max(group_task_times))
 
     # Step 4: produce reference point (so that plots have same axis scaling)
-    for app in {"bookstore", "xox"}:
-
-        # Step 4: Finally actually produce the figures, using the four lists with time samples
-        time_plot_box(application_task_times[app], group_tint_markers.group_tints.values(), max_task_time, "generated-plots/08a-task-time-boxplot-"+app)
+    time_plot_box(application_task_times["tc"], application_task_times["ide"], group_tint_markers.group_tints.values(), "generated-plots/08a-task-time-boxplot")
