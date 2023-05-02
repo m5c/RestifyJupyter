@@ -19,12 +19,13 @@ def skill_plot_box(all_skill_values_by_skill_by_group: list[list[int]], palette:
     :param filename: as the name to used for persistence on disk.
     """
 
-    # reset figure, to have separate drawings
-    plt.clf()
+
 
     # define frame size
-    plt.rcParams["figure.figsize"] = (14, 4)
-    # plt.figure(figsize=(20, 4))
+    plt.rcParams["figure.figsize"] = (8, 3)
+
+    # For reasons only python affictionados know, figsize is only effective if cleared afterwards
+    plt.clf()
 
     # plot the boxes, iterate over all skills.
     for skill_index, skill_values in enumerate(all_skill_values_by_skill_by_group):
@@ -33,7 +34,7 @@ def skill_plot_box(all_skill_values_by_skill_by_group: list[list[int]], palette:
         # boxplot.
         plotter_colour = palette[int(skill_index / amount_partitions)]
         plt.boxplot(skill_values,
-                    positions=[skill_index + 1], notch=False,
+                    positions=[0.5*(skill_index)], notch=False,
                     patch_artist=True,
                     showfliers=True,
                     boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
@@ -46,9 +47,15 @@ def skill_plot_box(all_skill_values_by_skill_by_group: list[list[int]], palette:
 
     # plot the axis ticks on x (indicating skill groups)
     plt.xticks(
-        [0.625 * amount_partitions, 1.625 * amount_partitions, 2.625 * amount_partitions, 3.625 * amount_partitions,
-         4.625 * amount_partitions,
-         5.625 * amount_partitions, 6.625 * amount_partitions, 7.625 * amount_partitions],
-        skills_markers.skill_tags)
-    plt.savefig(filename)
+        generate_tick_pos(8, 4), skills_markers.skill_tags)
+    # plt.xlabel("Skill")
+    plt.ylabel("Declared Proficiency")
+    plt.savefig(filename, dpi=300)
     plt.show()
+
+
+def generate_tick_pos(amount_skills: int, amount_groups: int) -> float:
+    tick_positions: list[int] = []
+    for i in range(amount_skills):
+        tick_positions.append(i*0.5* amount_groups+0.75)
+    return tick_positions
