@@ -1,6 +1,6 @@
 """
-This module produces a figure for boxplots of group task time time distributions, per application.
-It produces two figures, with 4 boxplots each. Every boxplot represents the distribution of a given group.
+This module produces a figure for boxplots of group task time distributions, for both application.
+It produces one figures, with 8 boxplots each. Every boxplot represents the distribution of a given group.
 """
 import numpy as np
 
@@ -9,13 +9,12 @@ from restify_mining.box_plotters.time_box_plotter import time_plot_box
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
 from restify_mining.markers import group_tint_markers
-from restify_mining.scatter_plotters.extractors.application_time_extractor import ApplicationTimeExtractor
 from restify_mining.scatter_plotters.extractors.extractor import Extractor
 from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
     MethodologyTimeExtractor
 
 
-def cell_08a() -> None:
+def cell_09() -> None:
     """
     Jupyter cell 08a. See markdown description.
     :return: None
@@ -39,6 +38,10 @@ def cell_08a() -> None:
         all_task_times.append(extractor.extract(blue_population))
         all_task_times.append(extractor.extract(yellow_population))
         application_task_times[methodology] = all_task_times
+
+        print("Conversion time for "+methodology+" task, red/green/blue/yellow in seconds: ")
+        for item in all_task_times:
+            print(str(np.mean(item)))
 
 
     # Step 4: produce reference point (so that plots have same axis scaling)

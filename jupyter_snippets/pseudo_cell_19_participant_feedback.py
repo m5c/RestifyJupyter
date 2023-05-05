@@ -5,9 +5,9 @@ from csv_tools.file_load_utils import load_participant_feedback
 from restify_mining.bar_plotters.frequency_bars import print_pref_distribution
 
 
-def cell_18() -> None:
+def cell_19() -> None:
     """
-    Jupyter cell 18. See markdown description.
+    Jupyter cell 19. See markdown description.
     :return: None
     """
     # Step 1: Import feedback data (load all lines of CSV file into list of strings)
@@ -43,7 +43,7 @@ def cell_18() -> None:
     # Create colours for options TC, Neutral, Manual (break)
     colour_map: dict[str, str] = {'DSL': '#66a9cd', 'Neutral': '#8f8f8f', 'Manual': '#f0ab4c',
                                   'Separator': '#ffffff'}
-    x_tick_override: list[str] = ["", "More intuitive", "", "", "", "More confident unit tests", "", "",
+    x_tick_override: list[str] = ["", "Easier conversion", "", "", "", "More confident unit tests", "", "",
                                       "", "Preferred for future", ""]
     print_pref_distribution(pseudo_dict, x_tick_override, colour_map)
 

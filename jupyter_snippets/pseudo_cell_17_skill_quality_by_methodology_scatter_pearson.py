@@ -1,6 +1,4 @@
 """
-Pseudo Cell to computes Pearson Coefficient for linear correlation between pre time and
-effectivness of refactoring per methodology.
 Author: Maximilian Schiedermeier
 """
 from scipy.stats import stats
@@ -14,8 +12,6 @@ from restify_mining.scatter_plotters.correlation import Correlation
 from restify_mining.scatter_plotters.correlation_plotter import \
     plot_correlation_with_auto_dimensions
 from restify_mining.scatter_plotters.extractors.animal_label_maker import AnimalLabelMaker
-from restify_mining.scatter_plotters.extractors.methodology_pretime_extractor import \
-    MethodologyPretimeExtractor
 from restify_mining.scatter_plotters.extractors.methodology_time_passrate_tradeoff_extractor \
     import \
     MethodologyTimeToPassRateTradeoffExtractor
@@ -36,24 +32,30 @@ def cell_17() -> None:
         assessed_population)
 
     # PASS 1:
-    # Use app branded application time passrate tradeoff extractor for red/yellow, then for
+    # Use application branded time passrate tradeoff extractor for red/yellow, then for
     # green/blue
     methodology: str = ""
     for methodology in ["tc", "ide"]:
+        skill_to_quality: Correlation = Correlation(norm_population,
+                                                    MethodologyTimeToPassRateTradeoffExtractor(methodology),
+                                                    SummedSkillExtractor(methodology), AnimalLabelMaker(),
+                                                    False)
+        file_name_marker: str = "16-"
+        plot_correlation_with_auto_dimensions(skill_to_quality, file_name_marker)
+
         # Run pearson test for liner correlation of values:
         tradeoffs: list[float] = MethodologyTimeToPassRateTradeoffExtractor(methodology).extract(
             norm_population)
 
-        # Create tests that put normalized population effectiveness in relation to pretime of
-        # population
-        pre_times: list[int] = MethodologyPretimeExtractor(methodology).extract(norm_population)
+        # Get total skills for all participants, so we can compute correlations.
+        total_skills: list[int] = SummedSkillExtractor(methodology).extract(norm_population)
 
         # Computed person correlation between values:
         # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html
         print(
             "Pearson test for linear correlation between submission quality (tradeoff) and "
-            "methodology pre-time, " + methodology + ":")
-        res: PearsonRResult = stats.pearsonr(tradeoffs, pre_times)
+            "participant skills, " + methodology + ":")
+        res: PearsonRResult = stats.pearsonr(tradeoffs, total_skills)
         print(res)
         print(
             "Note: Linear correlation result (\"statistic\") is only significant if \"pvalue\" is "
