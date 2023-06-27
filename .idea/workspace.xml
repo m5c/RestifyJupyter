@@ -7,8 +7,6 @@
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static-figures/salad.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/static-figures/salad.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static-figures/salad.png" beforeDir="false" afterPath="$PROJECT_DIR$/static-figures/salad.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -495,7 +493,13 @@
       <workItem from="1683111948519" duration="172000" />
       <workItem from="1683220024588" duration="782000" />
       <workItem from="1683296841856" duration="803000" />
-      <workItem from="1683314518509" duration="5765000" />
+      <workItem from="1683314518509" duration="6391000" />
+      <workItem from="1684345728971" duration="1102000" />
+      <workItem from="1684355348597" duration="147000" />
+      <workItem from="1684782849257" duration="71000" />
+      <workItem from="1685201451954" duration="200000" />
+      <workItem from="1685201668186" duration="39000" />
+      <workItem from="1687854768855" duration="782000" />
     </task>
     <servers />
   </component>
@@ -553,6 +557,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$JupyterValidator.coverage" NAME="JupyterValidator Coverage Results" MODIFIED="1681225978593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1683317424447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1684355358415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>
