@@ -18,7 +18,7 @@ To replicate our data analysis, you have four options:
 
 * [Inspect the rendered preview on GitHub, using only your browser](Restify.ipynb)  
   => You will see all figures of this paper, pre-rendered. However, you will not be able to modify the notebook
-  execution content.
+  execution content, and some document-internal section links will not work.
 * [Deploy a local Jupyter Notebook as preconfigured Docker container.](#dockerized-notebook)  
   => *The fastest and simples way to inspect our work and findings.*
 * [Manually set up a local Jupyter Notebook.](#manual-notebook)  
