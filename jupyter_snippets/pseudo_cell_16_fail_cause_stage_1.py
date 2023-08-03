@@ -45,7 +45,7 @@ def cell_16() -> None:
     fig = plt.gcf()
     fig.set_size_inches(9, 5)
     fig.gca().add_artist(centre_circle)
-    plt.savefig("generated-plots/14-fail-cause.png")
+    plt.savefig("generated-plots/16-fail-cause.png")
     plt.show()
 
 

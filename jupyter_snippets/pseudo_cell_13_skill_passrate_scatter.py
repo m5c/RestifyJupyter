@@ -17,6 +17,6 @@ def cell_13() -> None:
     # Plot correlations for all individual skills
     scatter_series_all_skills: ScatterSeries = ScatterSeries(
         SkillExtractor, MethodologyPassrateExtractor, FullLabelMaker(),
-        True, "11-")
+        True, "13-")
     scatter_series_all_skills.plot_uncoupled_series(
         {"ide", "tc"}, full_skill_tags)

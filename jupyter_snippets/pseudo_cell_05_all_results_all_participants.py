@@ -15,8 +15,10 @@ def cell_05() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # Here we still show outlier data, as this plot does not show aggregated information,
+    # but per participant information
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(False)
 
     # Create a 2D plot of all individual participant test results. On Y axis (vertical) all
     # participants, on X axis (horizontal) all unit tests. Created image shows a black square for

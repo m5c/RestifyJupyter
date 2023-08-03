@@ -24,8 +24,9 @@ def cell_17() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # Once more this is an aggregated group analysis so we exclude outliers
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
 
     # Before we construct the tradeoff, we need to normalize the task solving times
     norm_population: list[NormalizedParticipant] = participant_normalize_tools.normalize(
@@ -40,7 +41,7 @@ def cell_17() -> None:
                                                     MethodologyTimeToPassRateTradeoffExtractor(methodology),
                                                     SummedSkillExtractor(methodology), AnimalLabelMaker(),
                                                     False)
-        file_name_marker: str = "16-"
+        file_name_marker: str = "17-"
         plot_correlation_with_auto_dimensions(skill_to_quality, file_name_marker)
 
         # Run pearson test for liner correlation of values:

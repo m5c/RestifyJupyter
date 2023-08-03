@@ -1,6 +1,7 @@
 """
 This module produces a figure for boxplots of group task time distributions, for both application.
-It produces one figures, with 8 boxplots each. Every boxplot represents the distribution of a given group.
+It produces one figures, with 8 boxplots each. Every boxplot represents the distribution of a
+given group.
 """
 import numpy as np
 
@@ -19,13 +20,17 @@ def cell_09() -> None:
     Jupyter cell 08a. See markdown description.
     :return: None
     """
-    # Step 1: Get hold of raw participant data, which we need to do whatever analysis. Divide into groups.
+    # Step 1: Get hold of raw participant data, which we need to do whatever analysis. Divide
+    # into groups.
+    # The effective sample set is reduced, so it does not contain outliers (scammers)
     all_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
     red_population: list[AssessedParticipant] = filter_population_by_group(all_population, "red")
-    green_population: list[AssessedParticipant] = filter_population_by_group(all_population, "green")
+    green_population: list[AssessedParticipant] = filter_population_by_group(all_population,
+                                                                             "green")
     blue_population: list[AssessedParticipant] = filter_population_by_group(all_population, "blue")
-    yellow_population: list[AssessedParticipant] = filter_population_by_group(all_population, "yellow")
+    yellow_population: list[AssessedParticipant] = filter_population_by_group(all_population,
+                                                                              "yellow")
 
     # Step 2: Extract times for individual apps
     application_task_times = {}
@@ -39,10 +44,10 @@ def cell_09() -> None:
         all_task_times.append(extractor.extract(yellow_population))
         application_task_times[methodology] = all_task_times
 
-        print("Conversion time for "+methodology+" task, red/green/blue/yellow in seconds: ")
+        print("Conversion time for " + methodology + " task, red/green/blue/yellow in seconds: ")
         for item in all_task_times:
             print(str(np.mean(item)))
 
-
     # Step 4: produce reference point (so that plots have same axis scaling)
-    time_plot_box(application_task_times["tc"], application_task_times["ide"], group_tint_markers.group_tints.values(), "generated-plots/08a-task-time-boxplot")
+    time_plot_box(application_task_times["tc"], application_task_times["ide"],
+                  group_tint_markers.group_tints.values(), "generated-plots/09-task-time-boxplot")

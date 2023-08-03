@@ -28,8 +28,9 @@ def cell_18() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # Aggregated analysis, so we exclude outliers
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
 
     # Before we construct the tradeoff, we need to normalize the task solving times
     norm_population: list[NormalizedParticipant] = participant_normalize_tools.normalize(

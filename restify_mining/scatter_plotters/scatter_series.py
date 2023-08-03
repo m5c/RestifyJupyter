@@ -84,8 +84,9 @@ class ScatterSeries:
         """
 
         # Load all participant objects (specifies skills, codename, control-group) from csv file
+        # This scatter shows individual participant data, so we include outliers, but mark them.
         assessed_population: list[
-            AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+            AssessedParticipant] = file_load_utils.load_all_assessed_participants(False)
 
         # Create several correlation bundles for desired metrics and plot them.
         dimension: Dimension = Dimension(0, 0)

@@ -14,8 +14,9 @@ def cell_06() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # The effective sample set is reduced, so it does not contain outliers (scammers)
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
 
     # Create a radar plot, where the spokes represent individual tests and the distance from the
     # center the average group success rate.

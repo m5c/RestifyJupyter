@@ -74,7 +74,7 @@ def load_all_participants() -> list[Participant]:
     # pylint: disable=too-many-locals
 
 
-def load_all_assessed_participants() -> list[AssessedParticipant]:
+def load_all_assessed_participants(remove_outliers: bool) -> list[AssessedParticipant]:
     """
     Loads all participants but in contrast to previous method also includes all other experiment
     data, that is to say the participant success rate, the task order, the measured times,
@@ -116,7 +116,6 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                 # details, then the skill vector. Next the test results for bookstore, followed
                 # by test results for xox.
                 # The last argument is the skill vector (self-declared by participant)
-
                 assessed_participants.append(
                     AssessedParticipant(codename, control_group,
                                         skills,
@@ -125,6 +124,11 @@ def load_all_assessed_participants() -> list[AssessedParticipant]:
                                         time_bs, time_xox,
                                         pre_time_tc,
                                         pre_time_ide))
+
+                # remove outliers if requested
+                if remove_outliers:
+                    print("Removing outliers...")
+
     return assessed_participants
 
 

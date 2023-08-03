@@ -17,5 +17,5 @@ def cell_14() -> None:
     scatter_series_summed_skills: ScatterSeries = ScatterSeries(SummedSkillExtractor,
                                                                 MethodologyPassrateExtractor,
                                                                 FullLabelMaker(),
-                                                                False, "12-")
+                                                                False, "14-")
     scatter_series_summed_skills.plot_coupled_series({"ide", "tc"})

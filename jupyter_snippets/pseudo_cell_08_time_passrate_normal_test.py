@@ -18,8 +18,9 @@ def cell_08() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # The effective sample set is reduced, so it does not contain outliers (scammers)
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
 
     # retrieve subgroups, so we can easily form groups of interests for value extraction
     # There is always two groups who share a common methodology and application.

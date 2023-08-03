@@ -12,8 +12,9 @@ def cell_07() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # The effective sample set is reduced, so it does not contain outliers (scammers)
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
 
     # Visualize test results in 2D plot and safe to disk
     for app in ["bs", "xox"]:

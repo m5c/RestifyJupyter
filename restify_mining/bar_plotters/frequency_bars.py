@@ -100,5 +100,5 @@ def print_pref_distribution(distribution: dict[int, int], x_tick_override: list[
     plt.legend(handles, labels)
 
     plt.ylabel("Amount Participants")
-    plt.savefig("generated-plots/18-participant-feedback.png", dpi=300)
+    plt.savefig("generated-plots/19-participant-feedback.png", dpi=300)
     plt.show()

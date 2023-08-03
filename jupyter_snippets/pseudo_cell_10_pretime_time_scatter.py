@@ -32,11 +32,13 @@ def cell_10() -> None:
     outliers: bool = False
 
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # This plot shows all participants, so we include scammers. How,ever they are labeled in the
+    # plot.
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(False)
 
     # B: TC / IDE: Time spent on task familiarization VS time spent for refactoring
-    file_name_marker: str = "07-B-"
+    file_name_marker: str = "10-"
     tc_pre_meth_time_to_refactor_time: Correlation = Correlation(assessed_population,
                                                                  MethodologyPretimeExtractor("tc"),
                                                                  MethodologyTimeExtractor("tc"),

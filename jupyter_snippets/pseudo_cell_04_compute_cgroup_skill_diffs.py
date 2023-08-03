@@ -13,8 +13,9 @@ def cell_04() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # Here, we still include outliers, as this is an experiment is a pretest.
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(False)
 
     # Compute and print skill diffs stats to assess comparability of individual control groups.
     compute_cgroup_skill_diffs(assessed_population)

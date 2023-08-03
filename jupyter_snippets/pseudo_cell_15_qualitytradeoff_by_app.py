@@ -31,8 +31,9 @@ def cell_15() -> None:
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
+    # This is a group based comparison, we therefore exclude outliers.
     assessed_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants()
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
 
     # Before we construct the tradeoff, we need to normalize the task solving times
     norm_population: list[NormalizedParticipant] = participant_normalize_tools.normalize(
@@ -91,7 +92,7 @@ def cell_15() -> None:
         print("Green/Blue Standard Deviation "+app+": "+str(green_blue_standard_deviation))
         print("Red/Yellow Standard Deviation "+app+": "+str(red_yellow_standard_deviation))
 
-        # Also run Wilcoxon Rank Sum for additional security (in case Shapiro rejects normal distr)
+        # Also run (unpaired) Wilcoxon Rank Sum for additional security (in case Shapiro rejects normal distr)
         # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ranksums.html
         # This one essentially just tells if the sample lists are likely to be different.
         # Quote from API:
@@ -118,4 +119,4 @@ def cell_15() -> None:
         plot_normal(green_blue_app_tradeoff, group_tints["turquoise"], effectiveness_label, effectiveness_frequency, app, False)
         plot_normal(red_yellow_app_tradeoff, group_tints["orange"], effectiveness_label, effectiveness_frequency, app, False)
 
-        show("13-GreenBlueQuality-Distribution-" + app)
+        show("15-GreenBlueQuality-Distribution-" + app)

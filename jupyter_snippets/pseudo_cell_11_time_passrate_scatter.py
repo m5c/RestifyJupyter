@@ -16,5 +16,5 @@ def cell_11() -> None:
     """
     scatter_series: ScatterSeries = ScatterSeries(MethodologyTimeExtractor,
                                                   MethodologyPassrateExtractor, FullLabelMaker(),
-                                                  True, "09-")
+                                                  True, "11-")
     scatter_series.plot_coupled_series({"ide", "tc"})
