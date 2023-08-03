@@ -74,7 +74,7 @@ def load_all_participants() -> list[Participant]:
     # pylint: disable=too-many-locals
 
 
-def load_all_assessed_participants(remove_outliers: bool) -> list[AssessedParticipant]:
+def load_all_assessed_participants(remove_outliers_flag: bool) -> list[AssessedParticipant]:
     """
     Loads all participants but in contrast to previous method also includes all other experiment
     data, that is to say the participant success rate, the task order, the measured times,
@@ -125,11 +125,42 @@ def load_all_assessed_participants(remove_outliers: bool) -> list[AssessedPartic
                                         pre_time_tc,
                                         pre_time_ide))
 
-                # remove outliers if requested
-                if remove_outliers:
-                    print("Removing outliers...")
+    # remove outliers if requested
+    if remove_outliers_flag:
+        assessed_participants = remove_outliers(assessed_participants)
 
     return assessed_participants
+
+
+def load_outliers() -> list[str]:
+    """
+    Helper function to load column entries of `outliers.csv` into a list of strings.
+    :return: list of outlier strings, where each entry is in format "colour-animal".
+    """
+    # read csv to file, transform lines to comma separated values
+    with open('source-csv-files/outliers.csv', 'r', encoding="utf-8") as file:
+        outlier_csv_content = file.read().replace('\n', ', ')
+    return outlier_csv_content.split(', ')
+
+
+def remove_outliers(all_participants: list[AssessedParticipant]) -> list[AssessedParticipant]:
+    """
+    Strips the received list of assessed participants by all entries that match the outliers
+    specified in outliers.csv
+    """
+    # get list of group-animal pairs to remote
+    outlier_strings: list[str] = load_outliers()
+
+    # iterate over participant list and remember all entries that have a matching outlier string
+    for participant in all_participants:
+        # check if participant string representation is in outlier string list
+        sample_name: str = participant.group_name.lower()+"-"+participant.animal_name.lower()
+        if sample_name in outlier_strings:
+            print("Excluding outlier: "+sample_name)
+            all_participants.remove(participant)
+
+    # return remaining list
+    return all_participants
 
 
 def load_label_overrides() -> list[str]:
@@ -175,4 +206,3 @@ def load_participant_feedback() -> list[str]:
         feedback: list[str] = file.read().split('\n')
 
     return feedback
-

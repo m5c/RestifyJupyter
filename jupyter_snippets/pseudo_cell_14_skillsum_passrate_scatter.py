@@ -14,8 +14,9 @@ def cell_14() -> None:
     :return: None
     """
     # Plot final correlations for the summed skill vectors
+    reduce_labels_to_outliers: bool = True
     scatter_series_summed_skills: ScatterSeries = ScatterSeries(SummedSkillExtractor,
                                                                 MethodologyPassrateExtractor,
                                                                 FullLabelMaker(),
-                                                                False, "14-")
+                                                                reduce_labels_to_outliers, "14-")
     scatter_series_summed_skills.plot_coupled_series({"ide", "tc"})

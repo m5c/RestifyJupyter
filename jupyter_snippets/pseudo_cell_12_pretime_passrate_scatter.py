@@ -15,7 +15,8 @@ def cell_12() -> None:
     Jupyter cell 12. See markdown description.
     :return: None
     """
+    reduce_labels_to_outliers: bool = False
     scatter_series: ScatterSeries = ScatterSeries(
         MethodologyPretimeExtractor, MethodologyPassrateExtractor, FullLabelMaker(),
-        True, "12-")
+        reduce_labels_to_outliers, "12-")
     scatter_series.plot_coupled_series({"ide", "tc"})

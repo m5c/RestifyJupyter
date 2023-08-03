@@ -15,8 +15,9 @@ def cell_13() -> None:
     :return: None
     """
     # Plot correlations for all individual skills
+    reduce_labels_to_outliers: bool = False
     scatter_series_all_skills: ScatterSeries = ScatterSeries(
         SkillExtractor, MethodologyPassrateExtractor, FullLabelMaker(),
-        True, "13-")
+        reduce_labels_to_outliers, "13-")
     scatter_series_all_skills.plot_uncoupled_series(
         {"ide", "tc"}, full_skill_tags)

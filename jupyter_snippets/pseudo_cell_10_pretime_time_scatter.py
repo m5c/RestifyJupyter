@@ -10,6 +10,7 @@ from restify_mining.scatter_plotters.correlation import Correlation
 from restify_mining.scatter_plotters.correlation_plotter import plot_correlation
 from restify_mining.scatter_plotters.dimension import Dimension
 from restify_mining.scatter_plotters.extractors.animal_label_maker import AnimalLabelMaker
+from restify_mining.scatter_plotters.extractors.full_label_maker import FullLabelMaker
 from restify_mining.scatter_plotters.extractors.label_maker import LabelMaker
 from restify_mining.scatter_plotters.extractors.methodology_pretime_extractor import \
     MethodologyPretimeExtractor
@@ -26,7 +27,7 @@ def cell_10() -> None:
     :return: None
     """
     # the kind of labels we want:
-    label_maker: LabelMaker = AnimalLabelMaker()
+    label_maker: LabelMaker = FullLabelMaker()
     # whether we want to override the label list to outliers only
     # outliers: bool = True
     outliers: bool = False
