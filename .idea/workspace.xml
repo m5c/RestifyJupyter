@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/source-csv-files/outliers.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv_tools/file_load_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/csv_tools/file_load_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_04_compute_cgroup_skill_diffs.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_04_compute_cgroup_skill_diffs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_results_all_groups_radar.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_results_all_groups_radar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_tests_all_groups.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_tests_all_groups.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_time_passrate_normal_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_time_passrate_normal_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_boxplot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_pretime_time_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_pretime_time_scatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_time_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_time_passrate_scatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_pretime_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_pretime_passrate_scatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_skill_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_skill_passrate_scatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_skillsum_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_skillsum_passrate_scatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_qualitytradeoff_by_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_qualitytradeoff_by_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_16_fail_cause_stage_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_16_fail_cause_stage_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_skill_quality_by_methodology_scatter_pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_skill_quality_by_methodology_scatter_pearson.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_pretime_quality_by_methodology_scatter_pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_pretime_quality_by_methodology_scatter_pearson.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/bar_plotters/frequency_bars.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/bar_plotters/frequency_bars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/scatter_series.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/scatter_series.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source-csv-files/labeloverride.csv" beforeDir="false" afterPath="$PROJECT_DIR$/source-csv-files/labeloverride.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/correlation_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/correlation_plotter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -523,7 +504,7 @@
       <workItem from="1690386624486" duration="3000" />
       <workItem from="1690394120043" duration="176000" />
       <workItem from="1690900998849" duration="371000" />
-      <workItem from="1691065508030" duration="1941000" />
+      <workItem from="1691065508030" duration="2320000" />
     </task>
     <servers />
   </component>
