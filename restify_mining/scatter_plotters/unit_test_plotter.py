@@ -30,7 +30,8 @@ def build_linear_colour_map() -> LinearSegmentedColormap:
     :return: The only kind of colormap that is actually useful. Produces gradients based on
     sample points.
     """
-    list_colours: list[str] = ["black", group_tints["red"], "black", group_tints["green"], "black", group_tints["blue"],
+    list_colours: list[str] = ["black", group_tints["red"], "black", group_tints["green"], "black",
+                               group_tints["blue"],
                                "black",
                                group_tints["yellow"]]
     # Greyscale palette:

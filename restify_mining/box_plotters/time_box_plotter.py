@@ -67,7 +67,8 @@ def time_plot_box(task_times_by_group_1: list[list[int]], task_times_by_group_2:
     amount_groups: int = len(task_times_by_group_double)
     # TODO: Avoid hard coding of axisticks and labels
     plt.xticks([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-               ["DSL\nBookStore", "Manual\nXox", "DSL\nXox", "Manual\nBookStore", "DSL\nXox", "Manual\nBookStore",
+               ["DSL\nBookStore", "Manual\nXox", "DSL\nXox", "Manual\nBookStore", "DSL\nXox",
+                "Manual\nBookStore",
                 "DSL\nBookStore", "Manual\nXox"])
     plt.savefig(filename, dpi=300)
     plt.show()

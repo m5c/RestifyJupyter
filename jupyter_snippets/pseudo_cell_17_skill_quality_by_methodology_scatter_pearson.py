@@ -38,8 +38,10 @@ def cell_17() -> None:
     methodology: str = ""
     for methodology in ["tc", "ide"]:
         skill_to_quality: Correlation = Correlation(norm_population,
-                                                    MethodologyTimeToPassRateTradeoffExtractor(methodology),
-                                                    SummedSkillExtractor(methodology), AnimalLabelMaker(),
+                                                    MethodologyTimeToPassRateTradeoffExtractor(
+                                                        methodology),
+                                                    SummedSkillExtractor(methodology),
+                                                    AnimalLabelMaker(),
                                                     False)
         file_name_marker: str = "17-"
         plot_correlation_with_auto_dimensions(skill_to_quality, file_name_marker)

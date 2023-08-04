@@ -17,7 +17,7 @@ from restify_mining.scatter_plotters.extractors.methodology_time_extractor impor
 
 def cell_09() -> None:
     """
-    Jupyter cell 08a. See markdown description.
+    Jupyter cell 09. See markdown description.
     :return: None
     """
     # Step 1: Get hold of raw participant data, which we need to do whatever analysis. Divide
@@ -32,16 +32,28 @@ def cell_09() -> None:
     yellow_population: list[AssessedParticipant] = filter_population_by_group(all_population,
                                                                               "yellow")
 
-    # Step 2: Extract times for individual apps
+    # We also create "fused" participant sets, each of which represents the union of groups who
+    # did the exact same
+    # tasks but in inverted order.
+    # I.e. we join red and yellow to an orange group, and we join blue and green to a turquoise
+    # group.
+    orange_population: list[AssessedParticipant] = red_population + yellow_population
+    turquoise_population: list[AssessedParticipant] = green_population + blue_population
+
+    # Step 2: Extract times for individual apps, the dictionary application task times will hold
+    # two entries,
+    # one per methodology
     application_task_times = {}
     for methodology in {"tc", "ide"}:
 
+        # We extract to a list of lists: outer list entries represent the 6 groups (4 original +
+        # 2 fused groups),
+        # inner entries the individual participants.
         extractor: Extractor = MethodologyTimeExtractor(methodology)
-        all_task_times: list[list[float]] = []
-        all_task_times.append(extractor.extract(red_population))
-        all_task_times.append(extractor.extract(green_population))
-        all_task_times.append(extractor.extract(blue_population))
-        all_task_times.append(extractor.extract(yellow_population))
+        all_task_times: list[list[float]] = [extractor.extract(red_population),
+                                             extractor.extract(green_population),
+                                             extractor.extract(blue_population),
+                                             extractor.extract(yellow_population)]
         application_task_times[methodology] = all_task_times
 
         print("Conversion time for " + methodology + " task, red/green/blue/yellow in seconds: ")

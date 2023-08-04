@@ -37,11 +37,11 @@ class RadarPlotter:
         app_title: str = ""
         if app == "bs":
             test_markers: list[str] = self.create_radar_test_label(app,
-                len(unit_tests_markers.bs_unit_tests))
+                                                                   len(unit_tests_markers.bs_unit_tests))
             app_title = "BookStore"
         elif app == "xox":
             test_markers: list[str] = self.create_radar_test_label(app,
-                len(unit_tests_markers.xox_unit_tests))
+                                                                   len(unit_tests_markers.xox_unit_tests))
             app_title = "Xox"
         else:
             raise Exception("Provided app for radar plot is not valid: " + app)
@@ -58,18 +58,17 @@ class RadarPlotter:
         yellow_average_samples: list[float] = group_average_test_results[3]
 
         # print the average samples and total per group pass rate:
-        print("Radar numeric values for "+app+":")
-        print("Red test average passrates: "+str(red_average_samples))
-        print("Red overall average: "+str(sum(red_average_samples)/len(red_average_samples)))
-        print("Green test average passrates: "+str(green_average_samples))
-        print("Green overall average: "+str(sum(green_average_samples)/len(green_average_samples)))
-        print("Blue test average passrates: "+str(blue_average_samples))
-        print("Blue overall average: "+str(sum(blue_average_samples)/len(blue_average_samples)))
-        print("Yellow test average passrates: "+str(yellow_average_samples))
-        print("Yellow overall average: "+str(sum(yellow_average_samples)/len(yellow_average_samples)))
-
-
-
+        print("Radar numeric values for " + app + ":")
+        print("Red test average passrates: " + str(red_average_samples))
+        print("Red overall average: " + str(sum(red_average_samples) / len(red_average_samples)))
+        print("Green test average passrates: " + str(green_average_samples))
+        print("Green overall average: " + str(
+            sum(green_average_samples) / len(green_average_samples)))
+        print("Blue test average passrates: " + str(blue_average_samples))
+        print("Blue overall average: " + str(sum(blue_average_samples) / len(blue_average_samples)))
+        print("Yellow test average passrates: " + str(yellow_average_samples))
+        print("Yellow overall average: " + str(
+            sum(yellow_average_samples) / len(yellow_average_samples)))
 
         # Next we do the same duplication trick with the sample points as with the labels
         # duplicate last element ant place in front) to ensure closed circuits.
@@ -85,10 +84,15 @@ class RadarPlotter:
         # Set plot to a radar (polar coordinate plot and feed the sample points)
         plt.figure(figsize=(8, 8))
         plt.subplot(polar=True)
-        red_label: str = group_app_to_methodology('red', app)+"/"+group_app_to_task_number('red', app)
-        green_label: str = group_app_to_methodology('green', app)+"/"+group_app_to_task_number('green', app)
-        blue_label: str = group_app_to_methodology('blue', app)+"/"+group_app_to_task_number('blue', app)
-        yellow_label: str = group_app_to_methodology('yellow', app)+"/"+group_app_to_task_number('yellow', app)
+        red_label: str = group_app_to_methodology('red', app) + "/" + group_app_to_task_number(
+            'red', app)
+        green_label: str = group_app_to_methodology('green', app) + "/" + group_app_to_task_number(
+            'green', app)
+        blue_label: str = group_app_to_methodology('blue', app) + "/" + group_app_to_task_number(
+            'blue', app)
+        yellow_label: str = group_app_to_methodology('yellow',
+                                                     app) + "/" + group_app_to_task_number('yellow',
+                                                                                           app)
         plt.plot(label_loc, red_average_samples, label=red_label, color=group_tints["red"])
         plt.plot(label_loc, green_average_samples, label=green_label, color=group_tints["green"])
         plt.plot(label_loc, blue_average_samples, label=blue_label, color=group_tints["blue"])
@@ -109,7 +113,7 @@ class RadarPlotter:
         :return: string list with generic test labels
         """
         labels: list[str] = []
-        for i in range(1, amount+1):
+        for i in range(1, amount + 1):
             padded_numer = str(i).zfill(2)
-            labels.append(app.capitalize()+"Test" + padded_numer)
+            labels.append(app.capitalize() + "Test" + padded_numer)
         return labels

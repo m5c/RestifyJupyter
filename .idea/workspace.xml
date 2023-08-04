@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JupyterValidator.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_boxplot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_qualitytradeoff_by_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_qualitytradeoff_by_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_skill_quality_by_methodology_scatter_pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_skill_quality_by_methodology_scatter_pearson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_participant_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_participant_feedback.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/box_plotters/skill_box_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/box_plotters/skill_box_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/box_plotters/time_box_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/box_plotters/time_box_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify_mining/radar_plotters/radar_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/radar_plotters/radar_plotter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/restify_mining/scatter_plotters/unit_test_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/scatter_plotters/unit_test_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/unit_test_miners/abstract_miner.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/unit_test_miners/abstract_miner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/utils/group_to_methodology_and_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/utils/group_to_methodology_and_order.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +66,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Python",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -353,9 +355,9 @@
       <item itemvalue="Python.05-DisplayParticipantTestResultsByMethod" />
       <item itemvalue="Python.06-AllTestsAllGroups" />
       <item itemvalue="Python.07-QualityVectors" />
+      <item itemvalue="Python.jupyter_validator" />
       <item itemvalue="Python.correlation_plotter" />
       <item itemvalue="Python.pseudo_cell_06_all_results_all_groups_radar" />
-      <item itemvalue="Python.jupyter_validator" />
     </list>
     <recent_temporary>
       <list>
@@ -514,7 +516,7 @@
       <workItem from="1691065508030" duration="4106000" />
       <workItem from="1691070641090" duration="1404000" />
       <workItem from="1691074096620" duration="2414000" />
-      <workItem from="1691150125418" duration="2261000" />
+      <workItem from="1691150125418" duration="3481000" />
     </task>
     <servers />
   </component>
@@ -552,7 +554,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_skill_quality_by_methodology_scatter_pearson.py</url>
-          <line>49</line>
+          <line>51</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

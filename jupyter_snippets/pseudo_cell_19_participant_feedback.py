@@ -43,8 +43,8 @@ def cell_19() -> None:
     # Create colours for options TC, Neutral, Manual (break)
     colour_map: dict[str, str] = {'DSL': '#66a9cd', 'Neutral': '#8f8f8f', 'Manual': '#f0ab4c',
                                   'Separator': '#ffffff'}
-    x_tick_override: list[str] = ["", "Easier conversion", "", "", "", "More confident unit tests", "", "",
-                                      "", "Preferred for future", ""]
+    x_tick_override: list[str] = ["", "Easier conversion", "", "", "", "More confident unit tests",
+                                  "", "", "", "Preferred for future", ""]
     print_pref_distribution(pseudo_dict, x_tick_override, colour_map)
 
 
