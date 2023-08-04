@@ -14,9 +14,9 @@ Use the format.py script to fix the auto-corrupted notebook.
 import json
 
 valid_keys = ['cell_type', 'metadata', 'source']
-filename = "Restify.ipynb"
+file_name = "Restify.ipynb"
 
-with open(filename) as f:
+with open(file_name) as f:
     data = json.load(f)
 
 for index, cell in enumerate(data['cells'], 1):

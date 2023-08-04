@@ -15,13 +15,10 @@ def group_app_to_methodology(group: str, app: str) -> str:
     if group in ['red', 'yellow']:
         if app == 'bs':
             return 'DSL'
-        else:
-            return 'Manual'
-    else:
-        if app == 'bs':
-            return 'Manual'
-        else:
-            return 'DSL'
+        return 'Manual'
+    if app == 'bs':
+        return 'Manual'
+    return 'DSL'
 
 
 def group_app_to_task_number(group: str, app: str) -> str:
@@ -34,10 +31,7 @@ def group_app_to_task_number(group: str, app: str) -> str:
     if group in ['red', 'green']:
         if app == 'bs':
             return '1st'
-        else:
-            return '2nd'
-    else:
-        if app == 'bs':
-            return '2nd'
-        else:
-            return '1st'
+        return '2nd'
+    if app == 'bs':
+        return '2nd'
+    return '1st'

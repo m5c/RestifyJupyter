@@ -76,10 +76,10 @@ class Correlation:
                                                           yellow_samples_y, True)
 
         # Figure out the maximum values in sample points
-        self.__x_axis_max: float = max(max(red_samples_x), max(green_samples_x),
-                                       max(blue_samples_x), max(yellow_samples_x))
-        self.__y_axis_max: float = max(max(red_samples_y), max(green_samples_y),
-                                       max(blue_samples_y), max(yellow_samples_y))
+        self.__x_axis_max: float = max(red_samples_x, green_samples_x,
+                                       blue_samples_x, yellow_samples_x)
+        self.__y_axis_max: float = max(red_samples_y, green_samples_y,
+                                       blue_samples_y, yellow_samples_y)
 
         self.__filename: str = "x" + x_extractor.filename_segment() + "-y" + \
                                y_extractor.filename_segment()

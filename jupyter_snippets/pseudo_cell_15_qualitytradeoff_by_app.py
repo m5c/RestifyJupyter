@@ -82,15 +82,15 @@ def cell_15() -> None:
 
         # Print normal distribution values for the green_blue / respective red_yellow combined
         # samples.
-        print("Normal distribution data for "+app)
+        print("Normal distribution data for " + app)
         green_blue_mean = np.mean(green_blue_app_tradeoff)
         green_blue_standard_deviation = np.std(green_blue_app_tradeoff)
         red_yellow_mean = np.mean(red_yellow_app_tradeoff)
         red_yellow_standard_deviation = np.std(red_yellow_app_tradeoff)
-        print("Green/Blue Mean "+app+": "+str(green_blue_mean))
-        print("Red/Yellow Mean "+app+": "+str(red_yellow_mean))
-        print("Green/Blue Standard Deviation "+app+": "+str(green_blue_standard_deviation))
-        print("Red/Yellow Standard Deviation "+app+": "+str(red_yellow_standard_deviation))
+        print("Green/Blue Mean " + app + ": " + str(green_blue_mean))
+        print("Red/Yellow Mean " + app + ": " + str(red_yellow_mean))
+        print("Green/Blue Standard Deviation " + app + ": " + str(green_blue_standard_deviation))
+        print("Red/Yellow Standard Deviation " + app + ": " + str(red_yellow_standard_deviation))
 
         # Also run (unpaired) Wilcoxon Rank Sum for additional security (in case Shapiro rejects normal distr)
         # https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ranksums.html
@@ -99,9 +99,8 @@ def cell_15() -> None:
         # The Wilcoxon rank-sum test tests the null hypothesis that two sets of measurements are drawn from the same distribution.
         # The p-value of less than 0.05 indicates that this test rejects the hypothesis at the 5% significance level.
         wilcoxon = scipy.stats.ranksums(green_blue_app_tradeoff, red_yellow_app_tradeoff)
-        print("Wilcoxon for "+app)
+        print("Wilcoxon for " + app)
         print(wilcoxon)
-
 
         effectiveness_label: str = "Normalized Effectiveness"
         effectiveness_frequency: str = "Associated Frequency"
@@ -116,7 +115,9 @@ def cell_15() -> None:
 
         # Shapiro-Wilk test suggests the data is normal-distributed. We therefore proceed with plot
         # of normal distributions for each series.
-        plot_normal(green_blue_app_tradeoff, group_tints["turquoise"], effectiveness_label, effectiveness_frequency, app, False)
-        plot_normal(red_yellow_app_tradeoff, group_tints["orange"], effectiveness_label, effectiveness_frequency, app, False)
+        plot_normal(green_blue_app_tradeoff, group_tints["turquoise"], effectiveness_label, effectiveness_frequency,
+                    app, False)
+        plot_normal(red_yellow_app_tradeoff, group_tints["orange"], effectiveness_label, effectiveness_frequency, app,
+                    False)
 
         show("15-GreenBlueQuality-Distribution-" + app)

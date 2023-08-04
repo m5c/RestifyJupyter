@@ -70,10 +70,9 @@ class AbstractTestMiner(ABC):
         """
         if self.__scope == "xox":
             return xox_unit_tests
-        elif self.__scope == "bs":
+        if self.__scope == "bs":
             return bs_unit_tests
-        else:
-            return xox_unit_tests + bs_unit_tests
+        return xox_unit_tests + bs_unit_tests
 
     @abstractmethod
     def file_label(self) -> str:

@@ -4,7 +4,6 @@ subsets and for one or two selected applications.
 Inspired by: https://stackoverflow.com/a/7230921
 """
 import matplotlib.pyplot as plt
-import numpy as np
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
@@ -31,7 +30,8 @@ def build_linear_colour_map() -> LinearSegmentedColormap:
     :return: The only kind of colormap that is actually useful. Produces gradients based on
     sample points.
     """
-    list_colours: list[str] = ["black", group_tints["red"], "black", group_tints["green"], "black", group_tints["blue"], "black",
+    list_colours: list[str] = ["black", group_tints["red"], "black", group_tints["green"], "black", group_tints["blue"],
+                               "black",
                                group_tints["yellow"]]
     # Greyscale palette:
     # list_colours: list[str] = ["black", "white", "black", "white", "black", "white", "black",
@@ -95,12 +95,10 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     plt.xticks(range(len(x_tics)), x_tics)
 
     # rotate the tics a bit, so they take less space
-    plt.xticks(fontsize=8, rotation = -55, ha='left', rotation_mode='anchor')
+    plt.xticks(fontsize=8, rotation=-55, ha='left', rotation_mode='anchor')
 
     # make more space toward bottom for xtics
     plt.gcf().subplots_adjust(bottom=0.35)
-
-
 
     # Actually show the figure
     plt.savefig("generated-plots/" + file_label + ".png", dpi=300)

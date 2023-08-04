@@ -45,7 +45,7 @@ def time_plot_box(task_times_by_group_1: list[list[int]], task_times_by_group_2:
 
         # add a single boxplot, based on the time series provided for the corrent group
         plt.boxplot(task_time_values,
-                    positions=[0.5*(group_index + 1)], notch=False,
+                    positions=[0.5 * (group_index + 1)], notch=False,
                     patch_artist=True,
                     showfliers=True,
                     boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
@@ -66,6 +66,8 @@ def time_plot_box(task_times_by_group_1: list[list[int]], task_times_by_group_2:
     # plot the axis ticks on x (indicating skill groups)
     amount_groups: int = len(task_times_by_group_double)
     # TODO: Avoid hard coding of axisticks and labels
-    plt.xticks([0.5,1,1.5,2,2.5,3,3.5,4], ["DSL\nBookStore", "Manual\nXox","DSL\nXox", "Manual\nBookStore","DSL\nXox", "Manual\nBookStore","DSL\nBookStore", "Manual\nXox"])
+    plt.xticks([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
+               ["DSL\nBookStore", "Manual\nXox", "DSL\nXox", "Manual\nBookStore", "DSL\nXox", "Manual\nBookStore",
+                "DSL\nBookStore", "Manual\nXox"])
     plt.savefig(filename, dpi=300)
     plt.show()
