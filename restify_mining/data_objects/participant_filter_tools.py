@@ -2,7 +2,12 @@
 Helper module to gain convenient access on a subset of the entire population (all participants),
 notably access by control group name.
 """
+from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant import Participant
+from typing import TypeVar
+
+# Define a generic that can be either Participant or any subclass (e.g. AssessedParticipant).
+T = TypeVar("T", bound=Participant)
 
 
 def extract_group_names(population: list[Participant]) -> list[str]:
@@ -16,8 +21,7 @@ def extract_group_names(population: list[Participant]) -> list[str]:
     return groups
 
 
-def filter_population_by_group(population: list[Participant], target_group: str) -> list[
-    Participant]:
+def filter_population_by_group(population: list[T], target_group: str) -> list[T]:
     """
     Reduces a given list of participants to those matching the provided group_name in their
     corresponding field.
