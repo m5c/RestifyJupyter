@@ -7,17 +7,93 @@ import itertools
 import matplotlib.pyplot as plt
 
 from restify_mining.markers import skills_markers, group_tint_markers
+from typing import TypeVar
+
+# Define a generic, not bound to any implementation class
+T = TypeVar("T")
 
 
-def time_plot_box(task_times_by_groups_tc: list[list[float]],
+def interleave_human_intuitive(entries_by_groups_dsl: list[T], entries_by_groups_ide: list[T]) -> \
+        list[T]:
+    """
+    Helper function to interleave samples or colour series in a way that is most "logical" for
+    humans. T represented entries and is most likely a list of values or a colour code.
+    Target output lists is a rearranged list interleave of both input lists, structured as follows:
+    -3 entries (sample lists or colours) for BookStore / DSL
+    -3 entries (sample lists or colours) for BookStore / Manual
+    -3 entries (sample lists or colours) for Xox / DSL
+    -3 entries (sample lists or colours) for Xox / Manual
+    each of the above lists contains in order:
+    -entries from group who did that methodology / app combo as first task
+    -combined entries from both group who did that methodology / app, in any order
+    -entries from group who did that methodology / app combo as second task
+    :param entries_by_groups_dsl: as list of sample lists for groups DSL values in order red,
+    green, blue, yellow, orange, turquoise
+    :param entries_by_groups_ide: as list of sample lists for groups manual values in order red,
+    green, blue, yellow, orange, turquoise
+    :return: one fused list, ordered as indicated above.
+    """
+    task_times_ordered: list[list[int]] = []
+    # 3 sample lists for all BookStore / DSL data (red / combined orange / yellow)
+    task_times_ordered.append(entries_by_groups_dsl[0])
+    task_times_ordered.append(entries_by_groups_dsl[4])
+    task_times_ordered.append(entries_by_groups_dsl[3])
+    # 3 sample lists for all BookStore / Manual data (green / combined turquoise / blue)
+    task_times_ordered.append(entries_by_groups_ide[1])
+    task_times_ordered.append(entries_by_groups_ide[5])
+    task_times_ordered.append(entries_by_groups_ide[2])
+    # 3 sample lists for all Xox / DSL data (blue / combined turquoise / green)
+    task_times_ordered.append(entries_by_groups_dsl[2])
+    task_times_ordered.append(entries_by_groups_dsl[5])
+    task_times_ordered.append(entries_by_groups_dsl[1])
+    # 3 sample lists for all Xox / Manual data (yellow / combined orange / red)
+    task_times_ordered.append(entries_by_groups_ide[3])
+    task_times_ordered.append(entries_by_groups_ide[4])
+    task_times_ordered.append(entries_by_groups_ide[0])
+    # return single interleaved list, with 12 list entries.
+    return task_times_ordered
+
+
+def build_bundle_positions():
+    """
+    Helper functions to create spacing instructions for the boxplots in target figure.
+    :return: list of float values, indicating the positioning of all boxplots on x-axis
+    """
+    # total amount of box-plots
+    boxplot_amount: int = 12
+
+    # amount fo box-plots to place close per bundle
+    bundle_size: int = 3
+
+    # additional space to place between box-plots on transitioning to next bundle
+    inter_bundle_additional_spacing: float = 1
+
+    # shrink factor to apply. Higher number places the box-plots closer, while respecting
+    # relative distancing resulting from previous factors. I.e. higher factor makes individual
+    # box-plots wider while preserving spacing.
+    density: float = 4
+
+    undense_positions: list[int] = []
+    for position in range(0, boxplot_amount):
+        undense_positions.append(
+            position + (position // bundle_size) * inter_bundle_additional_spacing)
+
+    # apply density factor
+    dense_positions = [i / density for i in undense_positions]
+
+    return dense_positions
+
+
+def time_plot_box(task_times_by_groups_dsl: list[list[float]],
                   task_times_by_groups_ide: list[list[float]],
                   palette: list[str], filename: str):
     """
     Produces a boxplot for the refactoring time measured per group.
-    :param task_times_by_group_1: list of 4 lists. Every inner lists contains up to 7 values
-    expressing refactoring times for the adherents.
-    :param task_times_by_group_2: list of 4 lists. Every inner lists contains up to 7 values
-    expressing refactoring times for the adherents.
+
+    :param task_times_by_groups_dsl: list of 6 lists. Every inner lists contains values
+    expressing refactoring times for the group adherents. The last two entries are group combos.
+    :param task_times_by_groups_ide: list of 6 lists. Every inner lists contains values
+    expressing refactoring times for the group adherents. The last two entries are group combos.
     :param palette: provides the colour codes (string with hash + hexcode) to use for skills.
     :param filename: as the name to used for persistence on disk.
     """
@@ -29,27 +105,30 @@ def time_plot_box(task_times_by_groups_tc: list[list[float]],
     plt.clf()
 
     # combine task times (interleave the individual lists, to obtain one list with all int entries)
-    # TODO: don't interleave like this. Interleave based on the custom picture we expect:
-    # 3-box-plot bundles, where first two bundles are for bookstore, following two are for xox
-    # So the full sequence is
-    # DSL BS, IDE BS, DSL XOX, IDE XOX. Each of this has 3 entries: group who did that as first
-    # task, union of both groups who did that, group who did that as second task.
+    task_times_ordered: list[list[int]] = interleave_human_intuitive(task_times_by_groups_dsl,
+                                                                     task_times_by_groups_ide)
 
-    task_times_by_group_double: list[list[int]] = \
-        list(itertools.chain(*zip(task_times_by_groups_tc, task_times_by_groups_ide)))
+    # We use the same interleaving algorithm for the colour codes to use in the resulting boxplot
+    # sequence. We have two values per group, so we just interleave the series of predefined
+    # sample colours with itself - this way the colours match the same interleaving strategies as
+    # applied to the sample data.
+    palette_colours: list[str] = interleave_human_intuitive(list(palette), list(palette))
+
+    # create boxplot positions that represent grouping in box-plots of three
+    box_plot_positions: list[float] = build_bundle_positions()
 
     # plot the boxes, iterate over all skills. We still iterate over only
-    for group_index, task_time_values in enumerate(task_times_by_group_double):
+    for index, task_time_values in enumerate(task_times_ordered):
         # skill_values if a series fo seven skill values for a given group and skill,
         # that we want to turn into a boxplot.
 
         # set plot colour to group colour (use integer division to advance only every two
         # iterations)
-        plotter_colour = list(palette)[int(group_index) // 2]
+        plotter_colour = palette_colours[index]
 
         # add a single boxplot, based on the time series provided for the corrent group
         plt.boxplot(task_time_values,
-                    positions=[0.5 * (group_index + 1)], notch=False,
+                    positions=[box_plot_positions[index]], notch=False,
                     patch_artist=True,
                     showfliers=True,
                     boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
@@ -68,11 +147,10 @@ def time_plot_box(task_times_by_groups_tc: list[list[float]],
     plt.tight_layout()
 
     # plot the axis ticks on x (indicating skill groups)
-    amount_groups: int = len(task_times_by_group_double)
+    amount_groups: int = len(task_times_ordered)
     # TODO: Avoid hard coding of axisticks and labels
-    plt.xticks([0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-               ["DSL\nBookStore", "Manual\nXox", "DSL\nXox", "Manual\nBookStore", "DSL\nXox",
-                "Manual\nBookStore",
-                "DSL\nBookStore", "Manual\nXox"])
+    plt.xticks(box_plot_positions,
+               ["\n#1", "BookStore\nDSL", "\n#2", "\n#1", "BookStore\nManual", "\n#2", "\n#1", "Xox\nDLS", "\n#2", "\n#1",
+                "Xox\nManual", "\n#2"])
     plt.savefig(filename, dpi=300)
     plt.show()

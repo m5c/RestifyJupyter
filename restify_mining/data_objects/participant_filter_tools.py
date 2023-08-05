@@ -2,7 +2,6 @@
 Helper module to gain convenient access on a subset of the entire population (all participants),
 notably access by control group name.
 """
-from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant import Participant
 from typing import TypeVar
 
