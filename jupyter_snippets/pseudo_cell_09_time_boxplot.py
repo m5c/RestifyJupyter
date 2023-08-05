@@ -7,11 +7,13 @@ order differed.
 import numpy as np
 
 from csv_tools import file_load_utils
-from restify_mining.box_plotters.time_box_plotter import time_plot_box
+from restify_mining.box_plotters.time_box_plotter import time_box_plot
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
 from restify_mining.markers import group_tint_markers
 from restify_mining.scatter_plotters.extractors.extractor import Extractor
+from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor import \
+    MethodologyPassrateExtractor
 from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
     MethodologyTimeExtractor
 
@@ -33,32 +35,36 @@ def cell_09() -> None:
         filter_population_by_group(all_population, "yellow")]
 
     # We also are interested in "fused" participant sets, each of which represents the union of
-    # groups who
-    # did the exact same tasks but in inverted order.
+    # groups who did the exact same tasks but in inverted order.
     # I.e. we join red and yellow to an orange group, and we join blue and green to a turquoise
     # group.
     partitioned_population.append(partitioned_population[0] + partitioned_population[3])
     partitioned_population.append(partitioned_population[1] + partitioned_population[2])
 
-    # Step 2: Extract times and success rates for individual methodologies.
-    # The produced dictionaries each hold two entries, one per methodology.
-    application_task_times = {}
+    # Step 2: Be begin with a time boxplot
+    # 2a) Extract times for individual methodologies, then produce plots
+    box_plot(MethodologyTimeExtractor, partitioned_population, "Time [sec]",
+             "generated-plots/09a-task-time-boxplot")
+    # 2b) Extract correctness for individual methodologies, then produce plots
+    box_plot(MethodologyPassrateExtractor, partitioned_population, "Test Passrate [%]",
+             "generated-plots/09b-task-correctness-boxplot")
+
+
+def box_plot(extractor_class: Extractor.__class__,
+             partitioned_population: list[list[AssessedParticipant]], label_name: str,
+             filename: str):
+    methodology_times = {}
     for methodology in ["tc", "ide"]:
         # We extract to a list of lists: outer list entries represent the 6 groups (4 original +
         # 2 fused groups), inner entries the individual participants.
-        extractor: Extractor = MethodologyTimeExtractor(methodology)
-        application_task_times[methodology] = extract_methodology_metric(extractor,
-                                                                         partitioned_population)
-
-        print(
-            "Conversion time for " + methodology + " task, red/green/blue/yellow/orange/turquoise "
-                                                   "in seconds: ")
-        for item in application_task_times[methodology]:
-            print(str(np.mean(item)))
+        extractor: Extractor = extractor_class(methodology)
+        methodology_times[methodology] = extract_methodology_metric(
+            extractor,
+            partitioned_population)
 
     # Step 4: produce reference point (so that plots have same axis scaling)
-    time_plot_box(application_task_times["tc"], application_task_times["ide"],
-                  group_tint_markers.group_tints.values(), "generated-plots/09-task-time-boxplot")
+    time_box_plot(methodology_times["tc"], methodology_times["ide"],
+                  group_tint_markers.group_tints.values(), label_name, filename)
 
 
 def extract_methodology_metric(extractor: Extractor,
@@ -69,7 +75,15 @@ def extract_methodology_metric(extractor: Extractor,
     values of interest.
     :return: ..
     """
-    all_task_times: list[list[float]] = []
+    all_extracted: list[list[float]] = []
     for index in range(0, len(subdivided_population)):
-        all_task_times.append(extractor.extract(subdivided_population[index]))
-    return all_task_times
+        all_extracted.append(extractor.extract(subdivided_population[index]))
+
+    # print stats
+    print(extractor.filename_segment() + " for red/green/blue/yellow/orange/turquoise "
+                                         "in " + extractor.axis_label())
+    for item in all_extracted:
+        print(str(np.mean(item)))
+
+    # return extracted values
+    return all_extracted

@@ -84,9 +84,9 @@ def build_bundle_positions():
     return dense_positions
 
 
-def time_plot_box(task_times_by_groups_dsl: list[list[float]],
+def time_box_plot(task_times_by_groups_dsl: list[list[float]],
                   task_times_by_groups_ide: list[list[float]],
-                  palette: list[str], filename: str):
+                  palette: list[str], extraction_metric: str, filename: str):
     """
     Produces a boxplot for the refactoring time measured per group.
 
@@ -95,6 +95,7 @@ def time_plot_box(task_times_by_groups_dsl: list[list[float]],
     :param task_times_by_groups_ide: list of 6 lists. Every inner lists contains values
     expressing refactoring times for the group adherents. The last two entries are group combos.
     :param palette: provides the colour codes (string with hash + hexcode) to use for skills.
+    :param extraction_metric: as string to print on Y axis to describe nature of measured values.
     :param filename: as the name to used for persistence on disk.
     """
 
@@ -141,14 +142,14 @@ def time_plot_box(task_times_by_groups_dsl: list[list[float]],
 
     # Set axis limit, so series of plots use same references
     # plt.ylim([0, reference_ceiling])
-    plt.ylabel("Conversion Time [seconds]")
+    plt.ylabel("Conversion " + extraction_metric)
 
     # update effective figure boarders to include labels
     plt.tight_layout()
 
     # plot the axis ticks on x (indicating skill groups)
     plt.xticks(box_plot_positions,
-               ["#1", "#*\nBookStore: DSL", "#2", "#1", "#*\nBookStore: Manual", "#2", "#1", "#*\nXox: DSL", "#2", "#1",
-                "#*\nXox: Manual", "#2"])
+               ["#1", "#*\nBookStore: DSL", "#2", "#1", "#*\nBookStore: Manual", "#2", "#1",
+                "#*\nXox: DSL", "#2", "#1", "#*\nXox: Manual", "#2"])
     plt.savefig(filename, dpi=300)
     plt.show()
