@@ -1,6 +1,6 @@
 """
-This module produces a figure for boxplots of group task time distributions, for both application.
-It produces one figures, with 8 boxplots each. Every boxplot represents the distribution of a
+This module produces a figure for box plots of group task time distributions, for both application.
+It produces one figures, with 8 box plots each. Every boxplot represents the distribution of a
 given group.
 """
 import numpy as np
@@ -44,7 +44,7 @@ def cell_09() -> None:
     # two entries,
     # one per methodology
     application_task_times = {}
-    for methodology in {"tc", "ide"}:
+    for methodology in ["tc", "ide"]:
 
         # We extract to a list of lists: outer list entries represent the 6 groups (4 original +
         # 2 fused groups),
@@ -53,10 +53,14 @@ def cell_09() -> None:
         all_task_times: list[list[float]] = [extractor.extract(red_population),
                                              extractor.extract(green_population),
                                              extractor.extract(blue_population),
-                                             extractor.extract(yellow_population)]
+                                             extractor.extract(yellow_population),
+                                             extractor.extract(orange_population),
+                                             extractor.extract(turquoise_population)]
         application_task_times[methodology] = all_task_times
 
-        print("Conversion time for " + methodology + " task, red/green/blue/yellow in seconds: ")
+        print(
+            "Conversion time for " + methodology + " task, red/green/blue/yellow/orange/turquoise "
+                                                   "in seconds: ")
         for item in all_task_times:
             print(str(np.mean(item)))
 
