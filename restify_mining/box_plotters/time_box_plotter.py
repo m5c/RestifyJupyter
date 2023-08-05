@@ -141,14 +141,14 @@ def time_plot_box(task_times_by_groups_dsl: list[list[float]],
 
     # Set axis limit, so series of plots use same references
     # plt.ylim([0, reference_ceiling])
-    plt.ylabel("Refactoring time [seconds]")
+    plt.ylabel("Conversion Time [seconds]")
 
     # update effective figure boarders to include labels
     plt.tight_layout()
 
     # plot the axis ticks on x (indicating skill groups)
     plt.xticks(box_plot_positions,
-               ["\n#1", "BookStore\nDSL", "\n#2", "\n#1", "BookStore\nManual", "\n#2", "\n#1", "Xox\nDLS", "\n#2", "\n#1",
-                "Xox\nManual", "\n#2"])
+               ["#1", "#*\nBookStore: DSL", "#2", "#1", "#*\nBookStore: Manual", "#2", "#1", "#*\nXox: DSL", "#2", "#1",
+                "#*\nXox: Manual", "#2"])
     plt.savefig(filename, dpi=300)
     plt.show()
