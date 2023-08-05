@@ -147,8 +147,6 @@ def time_plot_box(task_times_by_groups_dsl: list[list[float]],
     plt.tight_layout()
 
     # plot the axis ticks on x (indicating skill groups)
-    amount_groups: int = len(task_times_ordered)
-    # TODO: Avoid hard coding of axisticks and labels
     plt.xticks(box_plot_positions,
                ["\n#1", "BookStore\nDSL", "\n#2", "\n#1", "BookStore\nManual", "\n#2", "\n#1", "Xox\nDLS", "\n#2", "\n#1",
                 "Xox\nManual", "\n#2"])

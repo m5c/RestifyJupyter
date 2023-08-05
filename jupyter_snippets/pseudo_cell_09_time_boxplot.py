@@ -1,7 +1,8 @@
 """
-This module produces a figure for box plots of group task time distributions, for both application.
-It produces one figures, with 8 box plots each. Every boxplot represents the distribution of a
-given group.
+This module produces two figures for time and correctness distributions of full entire experiment.
+Each figure contains boxplot distributions for every group and every task, as well as
+distibutions for combined groups with same methodology/application combination where only the
+order differed.
 """
 import numpy as np
 
@@ -25,45 +26,50 @@ def cell_09() -> None:
     # The effective sample set is reduced, so it does not contain outliers (scammers)
     all_population: list[
         AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
-    red_population: list[AssessedParticipant] = filter_population_by_group(all_population, "red")
-    green_population: list[AssessedParticipant] = filter_population_by_group(all_population,
-                                                                             "green")
-    blue_population: list[AssessedParticipant] = filter_population_by_group(all_population, "blue")
-    yellow_population: list[AssessedParticipant] = filter_population_by_group(all_population,
-                                                                              "yellow")
+    partitioned_population: list[list[AssessedParticipant]] = [
+        filter_population_by_group(all_population, "red"),
+        filter_population_by_group(all_population, "green"),
+        filter_population_by_group(all_population, "blue"),
+        filter_population_by_group(all_population, "yellow")]
 
-    # We also create "fused" participant sets, each of which represents the union of groups who
-    # did the exact same
-    # tasks but in inverted order.
+    # We also are interested in "fused" participant sets, each of which represents the union of
+    # groups who
+    # did the exact same tasks but in inverted order.
     # I.e. we join red and yellow to an orange group, and we join blue and green to a turquoise
     # group.
-    orange_population: list[AssessedParticipant] = red_population + yellow_population
-    turquoise_population: list[AssessedParticipant] = green_population + blue_population
+    partitioned_population.append(partitioned_population[0] + partitioned_population[3])
+    partitioned_population.append(partitioned_population[1] + partitioned_population[2])
 
-    # Step 2: Extract times for individual apps, the dictionary application task times will hold
-    # two entries,
-    # one per methodology
+    # Step 2: Extract times and success rates for individual methodologies.
+    # The produced dictionaries each hold two entries, one per methodology.
     application_task_times = {}
     for methodology in ["tc", "ide"]:
-
         # We extract to a list of lists: outer list entries represent the 6 groups (4 original +
-        # 2 fused groups),
-        # inner entries the individual participants.
+        # 2 fused groups), inner entries the individual participants.
         extractor: Extractor = MethodologyTimeExtractor(methodology)
-        all_task_times: list[list[float]] = [extractor.extract(red_population),
-                                             extractor.extract(green_population),
-                                             extractor.extract(blue_population),
-                                             extractor.extract(yellow_population),
-                                             extractor.extract(orange_population),
-                                             extractor.extract(turquoise_population)]
-        application_task_times[methodology] = all_task_times
+        application_task_times[methodology] = extract_methodology_metric(extractor,
+                                                                         partitioned_population)
 
         print(
             "Conversion time for " + methodology + " task, red/green/blue/yellow/orange/turquoise "
                                                    "in seconds: ")
-        for item in all_task_times:
+        for item in application_task_times[methodology]:
             print(str(np.mean(item)))
 
     # Step 4: produce reference point (so that plots have same axis scaling)
     time_plot_box(application_task_times["tc"], application_task_times["ide"],
                   group_tint_markers.group_tints.values(), "generated-plots/09-task-time-boxplot")
+
+
+def extract_methodology_metric(extractor: Extractor,
+                               subdivided_population: list[list[AssessedParticipant]]) \
+        -> list[list[float]]:
+    """
+    Consumes subdivisions of the full population and extracts for every subdivision a the sample
+    values of interest.
+    :return: ..
+    """
+    all_task_times: list[list[float]] = []
+    for index in range(0, len(subdivided_population)):
+        all_task_times.append(extractor.extract(subdivided_population[index]))
+    return all_task_times
