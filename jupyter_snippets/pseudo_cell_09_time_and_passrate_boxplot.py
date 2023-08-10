@@ -7,7 +7,7 @@ order differed.
 import numpy as np
 
 from csv_tools import file_load_utils
-from restify_mining.box_plotters.time_box_plotter import time_box_plot
+from restify_mining.box_plotters.time_box_plotter import box_plot
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
 from restify_mining.markers import group_tint_markers
@@ -41,30 +41,32 @@ def cell_09() -> None:
     partitioned_population.append(partitioned_population[0] + partitioned_population[3])
     partitioned_population.append(partitioned_population[1] + partitioned_population[2])
 
-    # Step 2: Be begin with a time boxplot
     # 2a) Extract times for individual methodologies, then produce plots
-    box_plot(MethodologyTimeExtractor, partitioned_population, "Time [sec]",
-             "generated-plots/09a-task-time-boxplot")
+    # box_plot(MethodologyTimeExtractor, partitioned_population, "Time [sec]",
+    #          "generated-plots/09a-task-time-boxplot")
     # 2b) Extract correctness for individual methodologies, then produce plots
     box_plot(MethodologyPassrateExtractor, partitioned_population, "Test Passrate [%]",
-             "generated-plots/09b-task-correctness-boxplot")
+             "generated-plots/09b-task-passrate-boxplot")
 
 
 def box_plot(extractor_class: Extractor.__class__,
              partitioned_population: list[list[AssessedParticipant]], label_name: str,
              filename: str):
     methodology_times = {}
+
+    # Extract the conversion metric information form participant data.
     for methodology in ["tc", "ide"]:
-        # We extract to a list of lists: outer list entries represent the 6 groups (4 original +
-        # 2 fused groups), inner entries the individual participants.
         extractor: Extractor = extractor_class(methodology)
         methodology_times[methodology] = extract_methodology_metric(
             extractor,
             partitioned_population)
 
     # Step 4: produce reference point (so that plots have same axis scaling)
-    time_box_plot(methodology_times["tc"], methodology_times["ide"],
-                  group_tint_markers.group_tints.values(), label_name, filename)
+    # this also prints numeric stats data to console.
+    box_plot(methodology_times["tc"], methodology_times["ide"],
+             group_tint_markers.group_tints.values(), label_name, filename)
+
+
 
 
 def extract_methodology_metric(extractor: Extractor,

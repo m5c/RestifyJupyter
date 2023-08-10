@@ -5,6 +5,7 @@ Deeply inspired by: https://stackoverflow.com/a/10138308
 import itertools
 
 import matplotlib.pyplot as plt
+import numpy as np
 
 from restify_mining.markers import skills_markers, group_tint_markers
 from typing import TypeVar
@@ -80,19 +81,34 @@ def build_bundle_positions():
 
     # apply density factor
     dense_positions = [i / density for i in undense_positions]
-
     return dense_positions
 
 
-def time_box_plot(task_times_by_groups_dsl: list[list[float]],
-                  task_times_by_groups_ide: list[list[float]],
-                  palette: list[str], extraction_metric: str, filename: str):
+def extract_numeric_stats(samples: list[float], plot_data: dict) -> dict:
+    """
+    Pyplot makes it surprisingling inconvenient to just get the numeric statistic data of an
+    already created boxplot. This little helper function adds the missing functionality.
+    :param plot_data: as return dictionary of a previous plot command.
+    :return: dictionary with all numeric values of a given boxplot, as numbers.
+    """
+    min: float = [round(item.get_ydata()[0], 1) for item in plot_data['caps']][::2]
+    max: float = [round(item.get_ydata()[0], 1) for item in plot_data['caps']][1::2]
+    lower: float = np.quantile(samples, 0.25)
+    mean: float = np.quantile(samples, 0.5)
+    average: float = np.average(samples)
+    upper: float = np.quantile(samples, 0.75)
+    return {'min'}
+
+
+def box_plot(task_values_by_groups_dsl: list[list[float]],
+             task_values_by_groups_ide: list[list[float]],
+             palette: list[str], extraction_metric: str, filename: str):
     """
     Produces a boxplot for the refactoring time measured per group.
 
-    :param task_times_by_groups_dsl: list of 6 lists. Every inner lists contains values
+    :param task_values_by_groups_dsl: list of 6 lists. Every inner lists contains values
     expressing refactoring times for the group adherents. The last two entries are group combos.
-    :param task_times_by_groups_ide: list of 6 lists. Every inner lists contains values
+    :param task_values_by_groups_ide: list of 6 lists. Every inner lists contains values
     expressing refactoring times for the group adherents. The last two entries are group combos.
     :param palette: provides the colour codes (string with hash + hexcode) to use for skills.
     :param extraction_metric: as string to print on Y axis to describe nature of measured values.
@@ -106,8 +122,8 @@ def time_box_plot(task_times_by_groups_dsl: list[list[float]],
     plt.clf()
 
     # combine task times (interleave the individual lists, to obtain one list with all int entries)
-    task_times_ordered: list[list[int]] = interleave_human_intuitive(task_times_by_groups_dsl,
-                                                                     task_times_by_groups_ide)
+    task_values_ordered: list[list[int]] = interleave_human_intuitive(task_values_by_groups_dsl,
+                                                                      task_values_by_groups_ide)
 
     # We use the same interleaving algorithm for the colour codes to use in the resulting boxplot
     # sequence. We have two values per group, so we just interleave the series of predefined
@@ -117,9 +133,7 @@ def time_box_plot(task_times_by_groups_dsl: list[list[float]],
 
     # create boxplot positions that represent grouping in box-plots of three
     box_plot_positions: list[float] = build_bundle_positions()
-
-    # plot the boxes, iterate over all skills. We still iterate over only
-    for index, task_time_values in enumerate(task_times_ordered):
+    for index, task_values in enumerate(task_values_ordered):
         # skill_values if a series fo seven skill values for a given group and skill,
         # that we want to turn into a boxplot.
 
@@ -127,18 +141,25 @@ def time_box_plot(task_times_by_groups_dsl: list[list[float]],
         # iterations)
         plotter_colour = palette_colours[index]
 
-        # add a single boxplot, based on the time series provided for the corrent group
-        plt.boxplot(task_time_values,
-                    positions=[box_plot_positions[index]], notch=False,
-                    patch_artist=True,
-                    showfliers=True,
-                    boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
-                    capprops=dict(color=plotter_colour),
-                    whiskerprops=dict(color=plotter_colour),
-                    flierprops=dict(color=plotter_colour, markeredgecolor=plotter_colour),
-                    medianprops=dict(color='#000000'), showmeans=True,
-                    meanprops={"marker": "s", "markerfacecolor": "white",
-                               "markeredgecolor": plotter_colour})
+        # add a single boxplot, based on the time series provided for the current group
+        plot_data: dict = plt.boxplot(task_values,
+                                      positions=[box_plot_positions[index]], notch=False,
+                                      patch_artist=True,
+                                      showfliers=True,
+                                      boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
+                                      capprops=dict(color=plotter_colour),
+                                      whiskerprops=dict(color=plotter_colour),
+                                      flierprops=dict(color=plotter_colour,
+                                                      markeredgecolor=plotter_colour),
+                                      medianprops=dict(color='#000000'), showmeans=True,
+                                      meanprops={"marker": "s", "markerfacecolor": "white",
+                                                 "markeredgecolor": plotter_colour})
+
+        # The numeric values of the printed boxplot are actually in a dictionary in the plot
+        # call return value.
+        # See: https://towardsdatascience.com/how-to-fetch-the-exact-values-from-a-boxplot-python
+        #
+        stats = extract_numeric_stats(plot_data)
 
     # Set axis limit, so series of plots use same references
     # plt.ylim([0, reference_ceiling])
