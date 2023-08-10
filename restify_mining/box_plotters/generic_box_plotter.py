@@ -101,6 +101,22 @@ def extract_numeric_stats(samples: list[float], plot_data: dict) -> dict:
             'upper': upper, 'max': max}
 
 
+def print_numeric_table(stats_data: [dict]) -> None:
+    """
+    Creates a nice MarkDown table with numeric values (rows) of every boxplot (columns)
+    :param stats_data: as the dictionary with all raw numeric boxplot data.
+    :return: None
+    """
+    print("\n| - | Red #1 | Orange | Yellow #2 | Green #1 | Turquoise | Blue #2 | Blue #1 | Turquoise | Green #2 | Yellow #1 | Orange | Red #2 |")
+    print("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    for metric in ['max', 'upper', 'mean', 'average', 'lower', 'min']:
+        print("| "+metric+" | ", end =" ")
+        for entry in stats_data:
+            print(str(round(entry[metric], 1)) + " |", end =" ")
+        print("")
+    print("\n")
+
+
 def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
                        task_values_by_groups_ide: list[list[float]],
                        palette: list[str], extraction_metric: str, filename: str):
@@ -135,7 +151,7 @@ def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
     # create boxplot positions that represent grouping in box-plots of three
     box_plot_positions: list[float] = build_bundle_positions()
     # prepare empty array of dictionaries for statistical data of every boxplot.
-    stats_data: dict[] = []
+    stats_data: [dict] = []
     for index, task_values in enumerate(task_values_ordered):
         # skill_values if a series fo seven skill values for a given group and skill,
         # that we want to turn into a boxplot.
@@ -158,12 +174,12 @@ def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
                                       meanprops={"marker": "s", "markerfacecolor": "white",
                                                  "markeredgecolor": plotter_colour})
 
-        # The numeric values of the printed boxplot are actually in a dictionary in the plot
-        # call return value.
-        # See: https://towardsdatascience.com/how-to-fetch-the-exact-values-from-a-boxplot-python
-        #
-        stats = extract_numeric_stats(task_values, plot_data)
-        print(stats)
+        # register numeric data of the single boxplot we just added. We need it later to create a
+        # table.
+        stats_data.append(extract_numeric_stats(task_values, plot_data))
+
+    # print textual version of numeric boxplot data
+    print_numeric_table(stats_data)
 
     # Set axis limit, so series of plots use same references
     # plt.ylim([0, reference_ceiling])

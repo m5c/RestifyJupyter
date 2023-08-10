@@ -42,8 +42,8 @@ def cell_09() -> None:
     partitioned_population.append(partitioned_population[1] + partitioned_population[2])
 
     # 2a) Extract times for individual methodologies, then produce plots
-    # box_plot(MethodologyTimeExtractor, partitioned_population, "Time [sec]",
-    #          "generated-plots/09a-task-time-boxplot")
+    box_plot(MethodologyTimeExtractor, partitioned_population, "Time [sec]",
+             "generated-plots/09a-task-time-boxplot")
     # 2b) Extract correctness for individual methodologies, then produce plots
     box_plot(MethodologyPassrateExtractor, partitioned_population, "Test Passrate [%]",
              "generated-plots/09b-task-passrate-boxplot")
