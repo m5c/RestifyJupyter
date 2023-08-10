@@ -91,18 +91,19 @@ def extract_numeric_stats(samples: list[float], plot_data: dict) -> dict:
     :param plot_data: as return dictionary of a previous plot command.
     :return: dictionary with all numeric values of a given boxplot, as numbers.
     """
-    min: float = [round(item.get_ydata()[0], 1) for item in plot_data['caps']][::2]
-    max: float = [round(item.get_ydata()[0], 1) for item in plot_data['caps']][1::2]
+    min: float = [round(item.get_ydata()[0], 1) for item in plot_data['caps']][::2][0]
+    max: float = [round(item.get_ydata()[0], 1) for item in plot_data['caps']][1::2][0]
     lower: float = np.quantile(samples, 0.25)
     mean: float = np.quantile(samples, 0.5)
     average: float = np.average(samples)
     upper: float = np.quantile(samples, 0.75)
-    return {'min'}
+    return {'min': min, 'lower': lower, 'average': average, 'mean': mean,
+            'upper': upper, 'max': max}
 
 
-def box_plot(task_values_by_groups_dsl: list[list[float]],
-             task_values_by_groups_ide: list[list[float]],
-             palette: list[str], extraction_metric: str, filename: str):
+def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
+                       task_values_by_groups_ide: list[list[float]],
+                       palette: list[str], extraction_metric: str, filename: str):
     """
     Produces a boxplot for the refactoring time measured per group.
 
@@ -133,6 +134,8 @@ def box_plot(task_values_by_groups_dsl: list[list[float]],
 
     # create boxplot positions that represent grouping in box-plots of three
     box_plot_positions: list[float] = build_bundle_positions()
+    # prepare empty array of dictionaries for statistical data of every boxplot.
+    stats_data: dict[] = []
     for index, task_values in enumerate(task_values_ordered):
         # skill_values if a series fo seven skill values for a given group and skill,
         # that we want to turn into a boxplot.
@@ -159,7 +162,8 @@ def box_plot(task_values_by_groups_dsl: list[list[float]],
         # call return value.
         # See: https://towardsdatascience.com/how-to-fetch-the-exact-values-from-a-boxplot-python
         #
-        stats = extract_numeric_stats(plot_data)
+        stats = extract_numeric_stats(task_values, plot_data)
+        print(stats)
 
     # Set axis limit, so series of plots use same references
     # plt.ylim([0, reference_ceiling])

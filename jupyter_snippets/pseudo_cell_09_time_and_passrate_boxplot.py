@@ -7,10 +7,10 @@ order differed.
 import numpy as np
 
 from csv_tools import file_load_utils
-from restify_mining.box_plotters.time_box_plotter import box_plot
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.participant_filter_tools import filter_population_by_group
 from restify_mining.markers import group_tint_markers
+from restify_mining.box_plotters.generic_box_plotter import graphical_box_plot
 from restify_mining.scatter_plotters.extractors.extractor import Extractor
 from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor import \
     MethodologyPassrateExtractor
@@ -63,7 +63,7 @@ def box_plot(extractor_class: Extractor.__class__,
 
     # Step 4: produce reference point (so that plots have same axis scaling)
     # this also prints numeric stats data to console.
-    box_plot(methodology_times["tc"], methodology_times["ide"],
+    graphical_box_plot(methodology_times["tc"], methodology_times["ide"],
              group_tint_markers.group_tints.values(), label_name, filename)
 
 

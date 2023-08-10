@@ -13,7 +13,7 @@ from jupyter_snippets.pseudo_cell_05_all_results_all_participants import cell_05
 from jupyter_snippets.pseudo_cell_06_all_results_all_groups_radar import cell_06
 from jupyter_snippets.pseudo_cell_07_all_tests_all_groups import cell_07
 from jupyter_snippets.pseudo_cell_08_time_passrate_normal_test import cell_08
-from jupyter_snippets.pseudo_cell_09_time_and_passrate_boxplot import cell_09
+# from jupyter_snippets.pseudo_cell_09_time_and_passrate_boxplot import cell_09
 from jupyter_snippets.pseudo_cell_10_pretime_time_scatter import cell_10
 from jupyter_snippets.pseudo_cell_11_time_passrate_scatter import cell_11
 from jupyter_snippets.pseudo_cell_12_pretime_passrate_scatter import cell_12
@@ -43,30 +43,30 @@ print("Clear cache complete.")
 print("Imitating Jupyter Pseudo Cell 03...")
 cell_03()
 print("Cell 03 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 04...")
-# cell_04()
-# print("Cell 04 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 05...")
-# cell_05()
-# print("Cell 05 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 06...")
-# cell_06()
-# print("Cell 06 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 07...")
-# cell_07()
-# print("Cell 07 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 08...")
-# cell_08()
-# print("Cell 08 complete.\n")
 
-print("Imitating Jupyter Pseudo Cell 09...")
-cell_09()
-print("Cell 09 complete.\n")
+print("Imitating Jupyter Pseudo Cell 04...")
+cell_04()
+print("Cell 04 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 05...")
+cell_05()
+print("Cell 05 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 06...")
+cell_06()
+print("Cell 06 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 07...")
+cell_07()
+print("Cell 07 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 08...")
+cell_08()
+print("Cell 08 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 09...")
+# cell_09()
+# print("Cell 09 complete.\n")
 
 # print("Imitating Jupyter Pseudo Cell 10...")
 # cell_10()
