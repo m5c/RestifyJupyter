@@ -25,9 +25,9 @@ from restify_mining.scatter_plotters.extractors.application_time_passrate_tradeo
 from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpretation
 
 
-def cell_15() -> None:
+def cell_16() -> None:
     """
-    Jupyter cell 15. See markdown description.
+    Jupyter cell 16. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

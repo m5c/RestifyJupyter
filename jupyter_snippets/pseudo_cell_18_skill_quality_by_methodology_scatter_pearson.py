@@ -18,9 +18,9 @@ from restify_mining.scatter_plotters.extractors.methodology_time_passrate_tradeo
 from restify_mining.scatter_plotters.extractors.summed_skill_extractor import SummedSkillExtractor
 
 
-def cell_17() -> None:
+def cell_18() -> None:
     """
-    Jupyter cell 17. See markdown description.
+    Jupyter cell 18. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

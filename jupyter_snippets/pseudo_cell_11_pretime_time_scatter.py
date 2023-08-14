@@ -18,7 +18,7 @@ from restify_mining.scatter_plotters.extractors.methodology_time_extractor impor
     MethodologyTimeExtractor
 
 
-def cell_10() -> None:
+def cell_11() -> None:
     """
     This plot crates x/y correlations between the time participants spent for task preparation (
     familiarization by

@@ -14,16 +14,16 @@ from jupyter_snippets.pseudo_cell_06_all_results_all_groups_radar import cell_06
 from jupyter_snippets.pseudo_cell_07_all_tests_all_groups import cell_07
 from jupyter_snippets.pseudo_cell_08_time_passrate_normal_test import cell_08
 from jupyter_snippets.pseudo_cell_09_time_and_passrate_boxplot import cell_09
-from jupyter_snippets.pseudo_cell_10_pretime_time_scatter import cell_10
-from jupyter_snippets.pseudo_cell_11_time_passrate_scatter import cell_11
-from jupyter_snippets.pseudo_cell_12_pretime_passrate_scatter import cell_12
-from jupyter_snippets.pseudo_cell_13_skill_passrate_scatter import cell_13
-from jupyter_snippets.pseudo_cell_14_skillsum_passrate_scatter import cell_14
-from jupyter_snippets.pseudo_cell_15_qualitytradeoff_by_app import cell_15
-from jupyter_snippets.pseudo_cell_16_fail_cause_stage_1 import cell_16
-from jupyter_snippets.pseudo_cell_17_skill_quality_by_methodology_scatter_pearson import cell_17
-from jupyter_snippets.pseudo_cell_18_pretime_quality_by_methodology_scatter_pearson import cell_18
-from jupyter_snippets.pseudo_cell_19_participant_feedback import cell_19
+from jupyter_snippets.pseudo_cell_11_pretime_time_scatter import cell_10
+from jupyter_snippets.pseudo_cell_12_time_passrate_scatter import cell_11
+from jupyter_snippets.pseudo_cell_13_pretime_passrate_scatter import cell_12
+from jupyter_snippets.pseudo_cell_14_skill_passrate_scatter import cell_13
+from jupyter_snippets.pseudo_cell_15_skillsum_passrate_scatter import cell_14
+from jupyter_snippets.pseudo_cell_16_qualitytradeoff_by_app import cell_15
+from jupyter_snippets.pseudo_cell_17_fail_cause_stage_1 import cell_16
+from jupyter_snippets.pseudo_cell_18_skill_quality_by_methodology_scatter_pearson import cell_17
+from jupyter_snippets.pseudo_cell_19_pretime_quality_by_methodology_scatter_pearson import cell_18
+from jupyter_snippets.pseudo_cell_20_participant_feedback import cell_20
 from restify_mining.utils.cache_clearer import clear_cache
 
 print("Clearing cached output files...")
@@ -105,7 +105,7 @@ cell_18()
 print("Cell 18 complete.\n")
 
 print("Imitating Jupyter Pseudo Cell 19...")
-cell_19()
+cell_20()
 print("Cell 19 complete.\n")
 
 print("Success!")

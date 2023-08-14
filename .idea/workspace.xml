@@ -6,9 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_and_passrate_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_and_passrate_boxplot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_pretime_time_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_pretime_time_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_time_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_time_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_pretime_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_pretime_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_skill_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_skill_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_skillsum_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_skillsum_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_qualitytradeoff_by_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_16_qualitytradeoff_by_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_16_fail_cause_stage_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_fail_cause_stage_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_skill_quality_by_methodology_scatter_pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_skill_quality_by_methodology_scatter_pearson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_pretime_quality_by_methodology_scatter_pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_pretime_quality_by_methodology_scatter_pearson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_participant_feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_20_participant_feedback.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restify_mining/box_plotters/generic_box_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/restify_mining/box_plotters/generic_box_plotter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +273,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_time_passrate_scatter.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_time_passrate_scatter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -522,7 +532,8 @@
       <workItem from="1691610485149" duration="598000" />
       <workItem from="1691662767047" duration="4072000" />
       <workItem from="1691686281612" duration="2309000" />
-      <workItem from="1691696112791" duration="1410000" />
+      <workItem from="1691696112791" duration="1485000" />
+      <workItem from="1692019808228" duration="1120000" />
     </task>
     <servers />
   </component>
@@ -559,7 +570,7 @@
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_skill_quality_by_methodology_scatter_pearson.py</url>
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_skill_quality_by_methodology_scatter_pearson.py</url>
           <line>51</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
@@ -620,6 +631,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$JupyterValidator.coverage" NAME="JupyterValidator Coverage Results" MODIFIED="1687855962191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1691697351156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1691697526336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>

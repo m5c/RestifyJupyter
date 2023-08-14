@@ -54,7 +54,7 @@ def box_plot(extractor_class: Extractor.__class__,
              filename: str):
     methodology_times = {}
 
-    # Extract the conversion metric information form participant data.
+    # Extract the conversion metric information from participant data.
     for methodology in ["tc", "ide"]:
         extractor: Extractor = extractor_class(methodology)
         methodology_times[methodology] = extract_methodology_metric(
