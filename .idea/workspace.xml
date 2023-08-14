@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_and_passrate_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_and_passrate_boxplot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_fused_group_statistic_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_fused_group_statistic_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -522,7 +523,8 @@
       <workItem from="1691662767047" duration="4072000" />
       <workItem from="1691686281612" duration="2309000" />
       <workItem from="1691696112791" duration="1485000" />
-      <workItem from="1692019808228" duration="2215000" />
+      <workItem from="1692019808228" duration="2243000" />
+      <workItem from="1692032591796" duration="3033000" />
     </task>
     <servers />
   </component>
@@ -608,6 +610,11 @@
           <line>187</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_fused_group_statistic_tests.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -620,6 +627,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RestifyJupyter$JupyterValidator.coverage" NAME="JupyterValidator Coverage Results" MODIFIED="1687855962191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1692022620270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1692035501197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
   </component>
 </project>

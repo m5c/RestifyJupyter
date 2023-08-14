@@ -65,18 +65,18 @@ def partition_population() -> list[list[AssessedParticipant]]:
 def box_plot(extractor_class: Extractor.__class__,
              partitioned_population: list[list[AssessedParticipant]], label_name: str,
              filename: str):
-    methodology_times = {}
+    methodology_metric = {}
 
     # Extract the conversion metric information from participant data.
     for methodology in ["tc", "ide"]:
         extractor: Extractor = extractor_class(methodology)
-        methodology_times[methodology] = extract_methodology_metric(
+        methodology_metric[methodology] = extract_methodology_metric(
             extractor,
             partitioned_population)
 
     # Step 4: produce reference point (so that plots have same axis scaling)
     # this also prints numeric stats data to console.
-    graphical_box_plot(methodology_times["tc"], methodology_times["ide"],
+    graphical_box_plot(methodology_metric["tc"], methodology_metric["ide"],
                        group_tint_markers.group_tints.values(), label_name, filename)
 
 
@@ -84,7 +84,7 @@ def extract_methodology_metric(extractor: Extractor,
                                subdivided_population: list[list[AssessedParticipant]]) \
         -> list[list[float]]:
     """
-    Consumes subdivisions of the full population and extracts for every subdivision a the sample
+    Consumes subdivisions of the full population and extracts for every subdivision the sample
     values of interest.
     :return: ..
     """
