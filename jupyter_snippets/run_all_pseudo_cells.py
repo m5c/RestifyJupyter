@@ -14,6 +14,7 @@ from jupyter_snippets.pseudo_cell_06_all_results_all_groups_radar import cell_06
 from jupyter_snippets.pseudo_cell_07_all_tests_all_groups import cell_07
 from jupyter_snippets.pseudo_cell_08_time_passrate_normal_test import cell_08
 from jupyter_snippets.pseudo_cell_09_time_and_passrate_boxplot import cell_09
+from jupyter_snippets.pseudo_cell_10_fused_group_statistic_tests import cell_10
 from jupyter_snippets.pseudo_cell_11_pretime_time_scatter import cell_11
 from jupyter_snippets.pseudo_cell_12_time_passrate_scatter import cell_12
 from jupyter_snippets.pseudo_cell_13_pretime_passrate_scatter import cell_13
@@ -69,9 +70,9 @@ print("Imitating Jupyter Pseudo Cell 09...")
 cell_09()
 print("Cell 09 complete.\n")
 
-# print("Imitating Jupyter Pseudo Cell 10...")
-# cell_10()
-# print("Cell 10 complete.\n")
+print("Imitating Jupyter Pseudo Cell 10...")
+cell_10()
+print("Cell 10 complete.\n")
 
 print("Imitating Jupyter Pseudo Cell 11...")
 cell_11()
