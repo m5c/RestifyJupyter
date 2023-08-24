@@ -16,7 +16,7 @@ from restify_mining.data_objects.assessed_participant import AssessedParticipant
 def cell_21() -> None:
     """
     The multilinear model uses two sample points per participant. To obtain these input data,
-    we first re-export assessed participant data to an extra CSV, then re-import it with pandas.
+    we first load the restify csv and split the info of every participant into two sampling points.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file
@@ -28,14 +28,7 @@ def cell_21() -> None:
     # time AND pass-rate per row, but every experiment run is a row instead of restify.csv every
     # participant representing a row.)
     multi_linear_samples: DataFrame = extract_multi_linear_samples(assessed_population)
-
     print(multi_linear_samples)
-    # con: DataFrame = pd.read_csv('generated-csv-files/restify.csv')
-    # con.rename(columns={'Fly ash': 'FlyAsh', 'Coarse Aggr.': "CoarseAgg",
-    #                     'Fine Aggr.': 'FineAgg', 'Air Entrainment': 'AirEntrain',
-    #                     'Compressive Strength (28-day)(Mpa)': 'Strength'}, inplace=True)
-    # con['AirEntrain'] = con['AirEntrain'].astype('category')
-    # con.head(3)
 
 
 def categorical_to_numerical(participant: AssessedParticipant, first: bool) -> dict:
@@ -47,8 +40,22 @@ def categorical_to_numerical(participant: AssessedParticipant, first: bool) -> d
     :return: dictionary with dependent variables (time, pass-rate) and dummy-converted
     categorical values (methodology, period, app)
     """
-    period: int = 0 if first else 1
-    return {'period': period}
+    if first:
+        period: int = 0
+        pass_rate: float = participant.test_percentage_first
+        time: float = participant.time_first
+        app_bookstore: int = 1 if participant.app_first == "bs" else 0
+        meth_dsl: int = 1 if participant.meth_first == "tc" else 0
+    else:
+        period: int = 1
+        pass_rate: float = participant.test_percentage_first if first else \
+            participant.test_percentage_second
+        time: float = participant.time_first if first else participant.time_second
+        app_bookstore: int = 1 if participant.app_second == "bs" else 0
+        meth_dsl: int = 1 if participant.meth_second == "tc" else 0
+
+    return {'time': time, 'pass_rate': pass_rate, 'period': period, 'app_bookstore': app_bookstore,
+            'meth_dsl': meth_dsl}
 
 
 def extract_multi_linear_samples(assessed_population: list[AssessedParticipant]) -> DataFrame:

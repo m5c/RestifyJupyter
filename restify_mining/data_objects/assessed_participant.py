@@ -85,6 +85,34 @@ class AssessedParticipant(Participant):
         raise Exception("Participant group is detached.")
 
     @property
+    def app_first(self) -> str:
+        if self.group_name in {"red", "green"}:
+            return "bs"
+        if self.group_name in {"blue", "yellow"}:
+            return "xox"
+
+    @property
+    def app_second(self) -> str:
+        if self.group_name in {"red", "green"}:
+            return "xox"
+        if self.group_name in {"blue", "yellow"}:
+            return "bs"
+
+    @property
+    def meth_first(self) -> str:
+        if self.group_name in {"red", "blue"}:
+            return "tc"
+        if self.group_name in {"green", "yellow"}:
+            return "ide"
+
+    @property
+    def meth_second(self) -> str:
+        if self.group_name in {"red", "blue"}:
+            return "ide"
+        if self.group_name in {"green", "yellow"}:
+            return "tc"
+
+    @property
     def time_second(self) -> int:
         """
         Getter to retrieve the time it took for the second refactoring task, whatever the
