@@ -25,6 +25,7 @@ from jupyter_snippets.pseudo_cell_17_fail_cause_stage_1 import cell_17
 from jupyter_snippets.pseudo_cell_18_skill_quality_by_methodology_scatter_pearson import cell_18
 from jupyter_snippets.pseudo_cell_19_pretime_quality_by_methodology_scatter_pearson import cell_19
 from jupyter_snippets.pseudo_cell_20_participant_feedback import cell_20
+from jupyter_snippets.pseudo_cell_21_multi_linear_model import cell_21
 
 from restify_mining.utils.cache_clearer import clear_cache
 
@@ -70,9 +71,9 @@ print("Cell 03 complete.\n")
 # cell_09()
 # print("Cell 09 complete.\n")
 
-print("Imitating Jupyter Pseudo Cell 10...")
-cell_10()
-print("Cell 10 complete.\n")
+# print("Imitating Jupyter Pseudo Cell 10...")
+# cell_10()
+# print("Cell 10 complete.\n")
 
 # print("Imitating Jupyter Pseudo Cell 11...")
 # cell_11()
@@ -113,6 +114,10 @@ print("Cell 10 complete.\n")
 # print("Imitating Jupyter Pseudo Cell 20...")
 # cell_20()
 # print("Cell 20 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 21...")
+cell_21()
+print("Cell 21 complete.\n")
 
 print("Success!")
 print("All Jupyter Cells imitated.")
