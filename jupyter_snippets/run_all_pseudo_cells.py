@@ -66,10 +66,10 @@ print("Cell 03 complete.\n")
 # print("Imitating Jupyter Pseudo Cell 08...")
 # cell_08()
 # print("Cell 08 complete.\n")
-#
-# print("Imitating Jupyter Pseudo Cell 09...")
-# cell_09()
-# print("Cell 09 complete.\n")
+
+print("Imitating Jupyter Pseudo Cell 09...")
+cell_09()
+print("Cell 09 complete.\n")
 
 # print("Imitating Jupyter Pseudo Cell 10...")
 # cell_10()
@@ -114,10 +114,10 @@ print("Cell 03 complete.\n")
 # print("Imitating Jupyter Pseudo Cell 20...")
 # cell_20()
 # print("Cell 20 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 21...")
-cell_21()
-print("Cell 21 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 21...")
+# cell_21()
+# print("Cell 21 complete.\n")
 
 print("Success!")
 print("All Jupyter Cells imitated.")

@@ -55,7 +55,7 @@ def interleave_human_intuitive(entries_by_groups_dsl: list[T], entries_by_groups
     return task_times_ordered
 
 
-def build_bundle_positions():
+def build_bundle_positions(with_fused: bool):
     """
     Helper functions to create spacing instructions for the boxplots in target figure.
     :return: list of float values, indicating the positioning of all boxplots on x-axis
@@ -81,6 +81,18 @@ def build_bundle_positions():
 
     # apply density factor
     dense_positions = [i / density for i in undense_positions]
+
+    # override intermediate positions, if no intermediate groups
+    if not with_fused:
+        dense_positions[2] = dense_positions[1]
+        dense_positions[1] = (dense_positions[0]+dense_positions[2])/2
+        dense_positions[5] = dense_positions[4]
+        dense_positions[4] = (dense_positions[3]+dense_positions[5])/2
+        dense_positions[8] = dense_positions[7]
+        dense_positions[7] = (dense_positions[6]+dense_positions[8])/2
+        dense_positions[11] = dense_positions[10]
+        dense_positions[10] = (dense_positions[9]+dense_positions[11])/2
+
     return dense_positions
 
 
@@ -101,14 +113,20 @@ def extract_numeric_stats(samples: list[float], plot_data: dict) -> dict:
             'upper': upper, 'max': max}
 
 
-def print_numeric_table(stats_data: [dict]) -> None:
+def print_numeric_table(stats_data: [dict], with_fused: bool) -> None:
     """
     Creates a nice MarkDown table with numeric values (rows) of every boxplot (columns)
     :param stats_data: as the dictionary with all raw numeric boxplot data.
     :return: None
     """
-    print("\n| - | Red #1 | Orange | Yellow #2 | Green #1 | Turquoise | Blue #2 | Blue #1 | Turquoise | Green #2 | Yellow #1 | Orange | Red #2 |")
-    print("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+
+    if with_fused:
+        print("\n| - | Red #1 | Orange | Yellow #2 | Green #1 | Turquoise | Blue #2 | Blue #1 | Turquoise | Green #2 | Yellow #1 | Orange | Red #2 |")
+        print("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    else:
+        print(
+            "\n| - | Red #1 | Yellow #2 | Green #1 | Blue #2 | Blue #1 | Green #2 | Yellow #1 | Red #2 |")
+        print("|---|---|---|---|---|---|---|---|---|")
     for metric in ['max', 'upper', 'mean', 'average', 'lower', 'min']:
         print("| "+metric+" | ", end =" ")
         for entry in stats_data:
@@ -119,6 +137,7 @@ def print_numeric_table(stats_data: [dict]) -> None:
 
 def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
                        task_values_by_groups_ide: list[list[float]],
+                       include_fused: bool,
                        palette: list[str], extraction_metric: str, filename: str):
     """
     Produces a boxplot for the refactoring time measured per group.
@@ -127,6 +146,7 @@ def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
     expressing refactoring times for the group adherents. The last two entries are group combos.
     :param task_values_by_groups_ide: list of 6 lists. Every inner lists contains values
     expressing refactoring times for the group adherents. The last two entries are group combos.
+    :param include_fused set to true of the boxplot should contain arange and turquoise groups.
     :param palette: provides the colour codes (string with hash + hexcode) to use for skills.
     :param extraction_metric: as string to print on Y axis to describe nature of measured values.
     :param filename: as the name to used for persistence on disk.
@@ -149,37 +169,43 @@ def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
     palette_colours: list[str] = interleave_human_intuitive(list(palette), list(palette))
 
     # create boxplot positions that represent grouping in box-plots of three
-    box_plot_positions: list[float] = build_bundle_positions()
+    box_plot_positions: list[float] = build_bundle_positions(include_fused)
     # prepare empty array of dictionaries for statistical data of every boxplot.
     stats_data: [dict] = []
     for index, task_values in enumerate(task_values_ordered):
         # skill_values if a series fo seven skill values for a given group and skill,
         # that we want to turn into a boxplot.
 
-        # set plot colour to group colour (use integer division to advance only every two
-        # iterations)
-        plotter_colour = palette_colours[index]
+        # Add condition for intermediate groups: skip if
+        is_fused: bool = index % 3 == 1
+        if not include_fused and is_fused:
+            None
+        else:
 
-        # add a single boxplot, based on the time series provided for the current group
-        plot_data: dict = plt.boxplot(task_values,
-                                      positions=[box_plot_positions[index]], notch=False,
-                                      patch_artist=True,
-                                      showfliers=True,
-                                      boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
-                                      capprops=dict(color=plotter_colour),
-                                      whiskerprops=dict(color=plotter_colour),
-                                      flierprops=dict(color=plotter_colour,
-                                                      markeredgecolor=plotter_colour),
-                                      medianprops=dict(color='#000000'), showmeans=True,
-                                      meanprops={"marker": "s", "markerfacecolor": "white",
-                                                 "markeredgecolor": plotter_colour})
+            # set plot colour to group colour (use integer division to advance only every two
+            # iterations)
+            plotter_colour = palette_colours[index]
 
-        # register numeric data of the single boxplot we just added. We need it later to create a
-        # table.
-        stats_data.append(extract_numeric_stats(task_values, plot_data))
+            # add a single boxplot, based on the time series provided for the current group
+            plot_data: dict = plt.boxplot(task_values,
+                                          positions=[box_plot_positions[index]], notch=False,
+                                          patch_artist=True,
+                                          showfliers=True,
+                                          boxprops=dict(facecolor=plotter_colour, color="#FFFFFF"),
+                                          capprops=dict(color=plotter_colour),
+                                          whiskerprops=dict(color=plotter_colour),
+                                          flierprops=dict(color=plotter_colour,
+                                                          markeredgecolor=plotter_colour),
+                                          medianprops=dict(color='#000000'), showmeans=True,
+                                          meanprops={"marker": "s", "markerfacecolor": "white",
+                                                     "markeredgecolor": plotter_colour})
+
+            # register numeric data of the single boxplot we just added. We need it later to create a
+            # table.
+            stats_data.append(extract_numeric_stats(task_values, plot_data))
 
     # print textual version of numeric boxplot data
-    print_numeric_table(stats_data)
+    print_numeric_table(stats_data, include_fused)
 
     # Set axis limit, so series of plots use same references
     # plt.ylim([0, reference_ceiling])
@@ -189,8 +215,12 @@ def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
     plt.tight_layout()
 
     # plot the axis ticks on x (indicating skill groups)
-    plt.xticks(box_plot_positions,
-               ["#1", "#*\nBookStore: DSL", "#2", "#1", "#*\nBookStore: Manual", "#2", "#1",
-                "#*\nXox: DSL", "#2", "#1", "#*\nXox: Manual", "#2"])
+    if include_fused:
+        labels = ["#1", "#*\nBookStore: DSL", "#2", "#1", "#*\nBookStore: Manual", "#2", "#1",
+                "#*\nXox: DSL", "#2", "#1", "#*\nXox: Manual", "#2"]
+    else:
+        labels = ["#1", "\nBookStore: DSL", "#2", "#1", "\nBookStore: Manual", "#2", "#1",
+                "\nXox: DSL", "#2", "#1", "\nXox: Manual", "#2"]
+    plt.xticks(box_plot_positions, labels)
     plt.savefig(filename, dpi=300)
     plt.show()

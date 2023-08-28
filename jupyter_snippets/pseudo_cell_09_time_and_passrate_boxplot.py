@@ -17,12 +17,15 @@ from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor i
 from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
     MethodologyTimeExtractor
 
+include_fused: bool = False
+
 
 def cell_09() -> None:
     """
     Jupyter cell 09. See markdown description.
     :return: None
     """
+
     # Step 1: Get hold of raw participant data, which we need to do whatever analysis. Divide
     # into groups.
     # The effective sample set is reduced, so it does not contain outliers (scammers)
@@ -76,7 +79,7 @@ def box_plot(extractor_class: Extractor.__class__,
 
     # Step 4: produce reference point (so that plots have same axis scaling)
     # this also prints numeric stats data to console.
-    graphical_box_plot(methodology_metric["tc"], methodology_metric["ide"],
+    graphical_box_plot(methodology_metric["tc"], methodology_metric["ide"], include_fused,
                        group_tint_markers.group_tints.values(), label_name, filename)
 
 

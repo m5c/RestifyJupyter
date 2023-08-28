@@ -30,7 +30,7 @@ def cell_21() -> None:
     # time AND pass-rate per row, but every experiment run is a row instead of restify.csv every
     # participant representing a row.)
     multi_linear_samples: DataFrame = extract_multi_linear_samples(assessed_population)
-    print(multi_linear_samples)
+    # print(multi_linear_samples)
 
     # Run linear regression analysis for both: time and pass_rate impact.
     for response_name in ['time', 'pass_rate']:
