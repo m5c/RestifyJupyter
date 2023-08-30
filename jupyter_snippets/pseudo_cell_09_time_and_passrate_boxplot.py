@@ -47,7 +47,7 @@ def partition_population() -> list[list[AssessedParticipant]]:
     participant objects. The partitioned population has the scammer(s) already filtered.
     """
     all_population: list[
-        AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
+        AssessedParticipant] = file_load_utils.load_all_assessed_participants(False)
 
     partitioned_population: list[list[AssessedParticipant]] = [
         filter_population_by_group(all_population, "red"),
