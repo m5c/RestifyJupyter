@@ -71,9 +71,9 @@ print("Imitating Jupyter Pseudo Cell 09...")
 cell_09()
 print("Cell 09 complete.\n")
 
-# print("Imitating Jupyter Pseudo Cell 10...")
-# cell_10()
-# print("Cell 10 complete.\n")
+print("Imitating Jupyter Pseudo Cell 10...")
+cell_10()
+print("Cell 10 complete.\n")
 
 # print("Imitating Jupyter Pseudo Cell 11...")
 # cell_11()

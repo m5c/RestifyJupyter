@@ -17,7 +17,7 @@ from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor i
 from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
     MethodologyTimeExtractor
 
-include_fused: bool = False
+include_fused: bool = True
 
 
 def cell_09() -> None:
@@ -41,10 +41,10 @@ def cell_09() -> None:
 
 def partition_population() -> list[list[AssessedParticipant]]:
     """
-    Creates a list of list where every outer list represetns participants of a group. The outcoma
-    has 6 entries, the last two ones each represeting the fused participants of previous groups
+    Creates a list of list where every outer list represents participants of a group. The outcome
+    has 6 entries, the last two ones each representing the fused participants of previous groups
     with matching tasks (only order different). The inner list entries are the assessed
-    participant objects.
+    participant objects. The partitioned population has the scammer(s) already filtered.
     """
     all_population: list[
         AssessedParticipant] = file_load_utils.load_all_assessed_participants(True)
