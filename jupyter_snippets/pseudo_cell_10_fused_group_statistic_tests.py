@@ -106,7 +106,40 @@ def cell_10() -> None:
     test_normal_distr("Orange Xox Manual Time", orange_xox_manual_time_samples)
     test_normal_distr("Turquoise Xox Assisted Time", turquoise_xox_assisted_time_samples)
     test_normal_distr("Orange Xox Manual PassRate", orange_xox_manual_passrate_samples)
-    test_normal_distr("Turquoise Xox Assisted Passrate", turquoise_xox_assisted_passrate_samples)
+    test_normal_distr("Turquoise Xox Assisted PassRate", turquoise_xox_assisted_passrate_samples)
+
+    # Compute CohensD for time distributions of fused groups:
+    print("\nCohen's D for BookStore (Time):")
+    print(compute_cohensd(orange_bookstore_assisted_time_samples,
+                          turquoise_bookstore_manual_time_samples))
+
+    print("\nCohen's D for Xox (Time):")
+    print(compute_cohensd(orange_xox_manual_time_samples,
+                          turquoise_xox_assisted_time_samples))
+    print("\n")
+
+
+def compute_cohensd(sample_set_1: list[float], sample_set_2: list[float]) -> float:
+    """
+    Implementation of Cohen's D effect size for sample sets of non-equal size. This is relevant,
+    because the fused groups are of different size (we filtered the scammer).
+    This implementation uses the pooled standard deviation to compute the weighted sum of individual
+    sample set standard deviations.
+    Implementation based on: https://stackoverflow.com/a/33002123/13805480
+    """
+    sample_size_1: int = len(sample_set_1)
+    sample_size_2: int = len(sample_set_2)
+
+    cohens_d_nominator: float = (numpy.mean(sample_set_1) - numpy.mean(sample_set_2))
+    pooled_std_denominator: float = sample_size_1 + sample_size_2 - 2
+    pooled_std: float = numpy.sqrt(
+        ((sample_size_1 - 1) * numpy.std(sample_set_1, ddof=1) ** 2 + (
+                sample_size_2 - 1) * numpy.std(sample_set_2, ddof=1) ** 2) / pooled_std_denominator)
+
+    return cohens_d_nominator / pooled_std
+
+
+# return (mean(x) - mean(y)) / sqrt(((nx-1)*std(x, ddof=1) ** 2 + (ny-1)*std(y, ddof=1) ** 2) / dof)
 
 
 def wilcoxon_fused_group_analysis(title: str, sample_fused_group_1: list[float],
@@ -169,5 +202,5 @@ def test_normal_distr(title: str, samples: list[float]) -> None:
     print(shapiro_result)
     print(shapiro_result.pvalue > 0.05)
     print(
-        "False: Null Hypothesis rejected. The probablility to obtain these samples from a normal "
-        "distribution (Null Hypothesis) is extremely low.")
+        "False: Null Hypothesis rejected. The probability to obtain these samples from a normal "
+        "distribution is below 0.05")
