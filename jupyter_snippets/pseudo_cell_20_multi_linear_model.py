@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 from csv_tools import file_load_utils
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 
-def cell_21() -> None:
+def cell_42() -> None:
     """
     The multilinear model uses two sample points per participant. To obtain these input data,
     we first load the restify csv and split the info of every participant into two sampling points.
