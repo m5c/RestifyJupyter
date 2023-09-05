@@ -12,7 +12,7 @@ from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpret
 # pylint: disable=too-many-locals
 
 
-def cell_08() -> None:
+def cell_09() -> None:
     """
     Jupyter cell 08. See markdown description.
     :return: None

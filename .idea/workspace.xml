@@ -6,8 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_and_passrate_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_and_passrate_boxplot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_fused_group_statistic_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_fused_group_statistic_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_results_all_participants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_results_all_groups_radar.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_results_all_groups_radar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_tests_all_groups.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_all_tests_all_groups.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_time_passrate_normal_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_passrate_normal_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_09_time_and_passrate_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_time_and_passrate_boxplot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_fused_group_statistic_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_fused_group_statistic_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_pretime_time_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_pretime_time_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_time_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_time_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_pretime_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_pretime_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_14_skill_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_skill_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_15_skillsum_passrate_scatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_16_skillsum_passrate_scatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_16_qualitytradeoff_by_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_qualitytradeoff_by_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_17_fail_cause_stage_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_fail_cause_stage_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_skill_quality_by_methodology_scatter_pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_skill_quality_by_methodology_scatter_pearson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_pretime_quality_by_methodology_scatter_pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_20_pretime_quality_by_methodology_scatter_pearson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_20_multi_linear_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_multi_linear_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +234,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_all_results_all_participants.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_results_all_participants.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,7 +256,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_tests_all_groups.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_all_tests_all_groups.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -262,7 +278,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_12_time_passrate_scatter.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_time_passrate_scatter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -315,7 +331,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pseudo_cell_06_all_results_all_groups_radar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pseudo_cell_07_all_results_all_groups_radar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RestifyJupyter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -328,7 +344,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_results_all_groups_radar.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_results_all_groups_radar.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -347,14 +363,14 @@
       <item itemvalue="Python.05-DisplayParticipantTestResultsByMethod" />
       <item itemvalue="Python.06-AllTestsAllGroups" />
       <item itemvalue="Python.07-QualityVectors" />
+      <item itemvalue="Python.pseudo_cell_07_all_results_all_groups_radar" />
       <item itemvalue="Python.jupyter_validator" />
       <item itemvalue="Python.correlation_plotter" />
-      <item itemvalue="Python.pseudo_cell_06_all_results_all_groups_radar" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.jupyter_validator" />
-        <item itemvalue="Python.pseudo_cell_06_all_results_all_groups_radar" />
+        <item itemvalue="Python.pseudo_cell_07_all_results_all_groups_radar" />
       </list>
     </recent_temporary>
   </component>
@@ -537,6 +553,9 @@
       <workItem from="1693328339299" duration="8000" />
       <workItem from="1693333362980" duration="1703000" />
       <workItem from="1693405291490" duration="9072000" />
+      <workItem from="1693668574352" duration="9000" />
+      <workItem from="1693941366553" duration="303000" />
+      <workItem from="1693941725768" duration="407000" />
     </task>
     <servers />
   </component>
@@ -573,7 +592,7 @@
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_18_skill_quality_by_methodology_scatter_pearson.py</url>
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_skill_quality_by_methodology_scatter_pearson.py</url>
           <line>51</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
@@ -618,7 +637,7 @@
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_fused_group_statistic_tests.py</url>
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_fused_group_statistic_tests.py</url>
           <line>138</line>
           <option name="timeStamp" value="88" />
         </line-breakpoint>

@@ -8,7 +8,7 @@ import numpy as np
 from csv_tools.file_load_utils import load_stage_one_error_occurrences
 
 
-def cell_17() -> None:
+def cell_18() -> None:
     """
     Jupyter cell 17. See markdown description.
     :return: None
