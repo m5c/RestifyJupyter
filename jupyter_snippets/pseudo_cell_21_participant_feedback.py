@@ -5,7 +5,7 @@ from csv_tools.file_load_utils import load_participant_feedback
 from restify_mining.bar_plotters.frequency_bars import print_pref_distribution
 
 
-def cell_20() -> None:
+def cell_21() -> None:
     """
     Jupyter cell 20. See markdown description.
     :return: None
@@ -25,7 +25,6 @@ def cell_20() -> None:
 
     # Step 2: Prepare data to plot
     # Barchart spacing with python is an utter nightmare, se we just create blank entries in a dict
-    # TODO: don't hard code this...
     pseudo_dict: dict[int, int] = dict()
     pseudo_dict[0] = easier_methodology_stats[0]
     pseudo_dict[1] = easier_methodology_stats[1]

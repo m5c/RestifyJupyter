@@ -10,19 +10,14 @@ from csv_tools import file_load_utils
 from restify_mining.data_objects import participant_normalize_tools
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.data_objects.normalized_participant import NormalizedParticipant
-from restify_mining.scatter_plotters.correlation import Correlation
-from restify_mining.scatter_plotters.correlation_plotter import \
-    plot_correlation_with_auto_dimensions
-from restify_mining.scatter_plotters.extractors.animal_label_maker import AnimalLabelMaker
 from restify_mining.scatter_plotters.extractors.methodology_pretime_extractor import \
     MethodologyPretimeExtractor
 from restify_mining.scatter_plotters.extractors.methodology_time_passrate_tradeoff_extractor \
     import \
     MethodologyTimeToPassRateTradeoffExtractor
-from restify_mining.scatter_plotters.extractors.summed_skill_extractor import SummedSkillExtractor
 
 
-def cell_19() -> None:
+def cell_20() -> None:
     """
     Jupyter cell 19. See markdown description.
     :return: None
@@ -37,7 +32,7 @@ def cell_19() -> None:
         assessed_population)
 
     # PASS 1:
-    # Use app branded application time passrate tradeoff extractor for red/yellow, then for
+    # Use app branded application time PassRate tradeoff extractor for red/yellow, then for
     # green/blue
     methodology: str = ""
     for methodology in ["tc", "ide"]:

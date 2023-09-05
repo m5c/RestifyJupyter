@@ -20,7 +20,7 @@ from restify_mining.scatter_plotters.extractors.methodology_time_extractor impor
 include_fused: bool = True
 
 
-def cell_09() -> None:
+def cell_10() -> None:
     """
     Jupyter cell 09. See markdown description.
     :return: None

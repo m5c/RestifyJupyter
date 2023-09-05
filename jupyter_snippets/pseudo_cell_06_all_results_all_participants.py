@@ -9,7 +9,7 @@ from restify_mining.unit_test_miners.all_participants_all_tests_miner import \
 from restify_mining.scatter_plotters.unit_test_plotter import mine_and_plot
 
 
-def cell_05() -> None:
+def cell_06() -> None:
     """
     Jupyter cell 05. See markdown description.
     :return: None

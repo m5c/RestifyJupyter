@@ -3,7 +3,7 @@ import scipy
 from scipy.stats._morestats import ShapiroResult
 from scipy.stats._stats_py import RanksumsResult
 
-from jupyter_snippets.pseudo_cell_09_time_and_passrate_boxplot import partition_population
+from jupyter_snippets.pseudo_cell_10_time_and_passrate_boxplot import partition_population
 from restify_mining.data_objects.assessed_participant import AssessedParticipant
 from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor import \
     MethodologyPassrateExtractor
@@ -11,7 +11,7 @@ from restify_mining.scatter_plotters.extractors.methodology_time_extractor impor
     MethodologyTimeExtractor
 
 
-def cell_10() -> None:
+def cell_11() -> None:
     """
     Jupyter cell 10. See markdown description.
     This cell runs a wilcoxon rank sum comparison for the performances of fused groups (same app
