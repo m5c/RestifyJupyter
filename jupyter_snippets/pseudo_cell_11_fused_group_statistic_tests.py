@@ -118,6 +118,16 @@ def cell_11() -> None:
                           turquoise_xox_assisted_time_samples))
     print("\n")
 
+    # Compute CohensD for passrate distributions of fused groups:
+    print("\nCohen's D for BookStore (PassRate):")
+    print(compute_cohensd(orange_bookstore_assisted_passrate_samples,
+                          turquoise_bookstore_manual_passrate_samples))
+
+    print("\nCohen's D for Xox (PassRate):")
+    print(compute_cohensd(orange_xox_manual_passrate_samples,
+                          turquoise_xox_assisted_passrate_samples))
+    print("\n")
+
 
 def compute_cohensd(sample_set_1: list[float], sample_set_2: list[float]) -> float:
     """
