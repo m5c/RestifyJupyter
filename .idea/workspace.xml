@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_multi_linear_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_multi_linear_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_time_and_passrate_boxplot.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_10_time_and_passrate_boxplot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ERjdwMm0gSJxto6tzS63URBwPx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/schieder/Code/RestifyJupyter&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Python&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/restify_mining/box_plotters" />
+      <recent name="$PROJECT_DIR$/restify_mining/skill_extractors" />
+      <recent name="$PROJECT_DIR$/restify_mining/plotters" />
+      <recent name="$PROJECT_DIR$/restify_mining/plotters/correlators" />
+      <recent name="$PROJECT_DIR$/markdown" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.00-RunAllPseudoCells">
+    <configuration name="00-ClearAllCaches" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/manual_clear_cache.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="00-RunAllPseudoCells" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/run_all_pseudo_cells.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="01-DisplayPopulationGaussian" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="02-DisplayControlGroupSkillBoxPlot" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_02_display_cgroups_skill_boxplot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="03-MergeCsvs" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_03_merge_csvs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="04-ComputeGroupSkillDiffs" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_04_compute_cgroup_skill_diffs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="05-DisplayParticipantTestResultsByMethod" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_06_all_results_all_participants.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="06-AllTestsAllGroups" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_08_all_tests_all_groups.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="07-QualityVectors" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_13_time_passrate_scatter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="correlation_plotter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/restify_mining/plotters" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/restify_mining/plotters/correlation_plotter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="jupyter_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_validator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pseudo_cell_07_all_results_all_groups_radar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_snippets/pseudo_cell_07_all_results_all_groups_radar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.00-ClearAllCaches" />
+      <item itemvalue="Python.00-RunAllPseudoCells" />
+      <item itemvalue="Python.01-DisplayPopulationGaussian" />
+      <item itemvalue="Python.02-DisplayControlGroupSkillBoxPlot" />
+      <item itemvalue="Python.03-MergeCsvs" />
+      <item itemvalue="Python.04-ComputeGroupSkillDiffs" />
+      <item itemvalue="Python.05-DisplayParticipantTestResultsByMethod" />
+      <item itemvalue="Python.06-AllTestsAllGroups" />
+      <item itemvalue="Python.07-QualityVectors" />
+      <item itemvalue="Python.pseudo_cell_07_all_results_all_groups_radar" />
+      <item itemvalue="Python.jupyter_validator" />
+      <item itemvalue="Python.correlation_plotter" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.jupyter_validator" />
+        <item itemvalue="Python.pseudo_cell_07_all_results_all_groups_radar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="" />
+      <created>1662565383036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662565383036</updated>
+      <workItem from="1662565386687" duration="160000" />
+      <workItem from="1662565763244" duration="3095000" />
+      <workItem from="1662573378047" duration="1492000" />
+      <workItem from="1662651075107" duration="6535000" />
+      <workItem from="1662736978074" duration="2544000" />
+      <workItem from="1663086499297" duration="7461000" />
+      <workItem from="1663161328045" duration="6892000" />
+      <workItem from="1663263864208" duration="372000" />
+      <workItem from="1663333825248" duration="5135000" />
+      <workItem from="1663345297080" duration="2990000" />
+      <workItem from="1663363052425" duration="85000" />
+      <workItem from="1663592926675" duration="3940000" />
+      <workItem from="1663696567064" duration="3508000" />
+      <workItem from="1663768292281" duration="3211000" />
+      <workItem from="1663786591937" duration="62000" />
+      <workItem from="1663803884438" duration="1131000" />
+      <workItem from="1664203266395" duration="3728000" />
+      <workItem from="1664366715549" duration="5000" />
+      <workItem from="1664371108055" duration="2843000" />
+      <workItem from="1664464613920" duration="2297000" />
+      <workItem from="1664546366495" duration="1990000" />
+      <workItem from="1664552536919" duration="3320000" />
+      <workItem from="1664801851473" duration="5502000" />
+      <workItem from="1664901154769" duration="2208000" />
+      <workItem from="1664920824063" duration="2254000" />
+      <workItem from="1664986241262" duration="1774000" />
+      <workItem from="1665070053088" duration="3060000" />
+      <workItem from="1665151662143" duration="4140000" />
+      <workItem from="1665164460421" duration="3977000" />
+      <workItem from="1665312244449" duration="4076000" />
+      <workItem from="1665680884769" duration="380000" />
+      <workItem from="1665684085519" duration="1829000" />
+      <workItem from="1666205581526" duration="254000" />
+      <workItem from="1666205961875" duration="34000" />
+      <workItem from="1667838191926" duration="1928000" />
+      <workItem from="1668102325424" duration="823000" />
+      <workItem from="1668107554117" duration="1530000" />
+      <workItem from="1668175797994" duration="7609000" />
+      <workItem from="1668439849120" duration="1920000" />
+      <workItem from="1668450551806" duration="43000" />
+      <workItem from="1668539126530" duration="2088000" />
+      <workItem from="1668707125230" duration="1091000" />
+      <workItem from="1668781833423" duration="1411000" />
+      <workItem from="1668785825816" duration="3004000" />
+      <workItem from="1669041090740" duration="3450000" />
+      <workItem from="1669134695361" duration="3262000" />
+      <workItem from="1669213955412" duration="4367000" />
+      <workItem from="1669309860270" duration="1112000" />
+      <workItem from="1669824723536" duration="4033000" />
+      <workItem from="1669835912198" duration="5110000" />
+      <workItem from="1669909943745" duration="5132000" />
+      <workItem from="1669993311569" duration="735000" />
+      <workItem from="1670514314157" duration="404000" />
+      <workItem from="1670527312362" duration="273000" />
+      <workItem from="1673548359065" duration="505000" />
+      <workItem from="1673551734313" duration="584000" />
+      <workItem from="1674032778909" duration="4901000" />
+      <workItem from="1674569227240" duration="437000" />
+      <workItem from="1674922812648" duration="284000" />
+      <workItem from="1674923147130" duration="4320000" />
+      <workItem from="1675267189049" duration="1952000" />
+      <workItem from="1675347997425" duration="2160000" />
+      <workItem from="1675354982438" duration="9742000" />
+      <workItem from="1675691045405" duration="4760000" />
+      <workItem from="1675698873168" duration="260000" />
+      <workItem from="1675951037085" duration="6370000" />
+      <workItem from="1675960133002" duration="2646000" />
+      <workItem from="1675963225284" duration="2491000" />
+      <workItem from="1676036983942" duration="11037000" />
+      <workItem from="1676128701079" duration="4033000" />
+      <workItem from="1676210619405" duration="1476000" />
+      <workItem from="1676212767097" duration="532000" />
+      <workItem from="1676221766336" duration="507000" />
+      <workItem from="1676557474655" duration="7972000" />
+      <workItem from="1676569785240" duration="1071000" />
+      <workItem from="1677428871132" duration="2741000" />
+      <workItem from="1677524874122" duration="248000" />
+      <workItem from="1677525325346" duration="2216000" />
+      <workItem from="1677789247719" duration="138000" />
+      <workItem from="1678484659748" duration="15000" />
+      <workItem from="1678728818966" duration="3929000" />
+      <workItem from="1678799051353" duration="3864000" />
+      <workItem from="1678895354103" duration="3867000" />
+      <workItem from="1678918098672" duration="4000" />
+      <workItem from="1678973169875" duration="4320000" />
+      <workItem from="1678985657387" duration="1990000" />
+      <workItem from="1679233325826" duration="3436000" />
+      <workItem from="1679323405452" duration="599000" />
+      <workItem from="1679328018327" duration="1198000" />
+      <workItem from="1679405017561" duration="4724000" />
+      <workItem from="1679418210401" duration="2975000" />
+      <workItem from="1680173800606" duration="2834000" />
+      <workItem from="1680185706136" duration="6611000" />
+      <workItem from="1680269522823" duration="4811000" />
+      <workItem from="1680353367102" duration="4416000" />
+      <workItem from="1680395255600" duration="100000" />
+      <workItem from="1680446566487" duration="2536000" />
+      <workItem from="1680550365044" duration="465000" />
+      <workItem from="1680620170593" duration="2479000" />
+      <workItem from="1680631159393" duration="4137000" />
+      <workItem from="1680698818762" duration="3123000" />
+      <workItem from="1680788151561" duration="7381000" />
+      <workItem from="1680803089500" duration="580000" />
+      <workItem from="1680803681647" duration="2050000" />
+      <workItem from="1680881524027" duration="51000" />
+      <workItem from="1681221889064" duration="10576000" />
+      <workItem from="1681337972006" duration="611000" />
+      <workItem from="1681392857640" duration="4087000" />
+      <workItem from="1681397230658" duration="7008000" />
+      <workItem from="1681474321180" duration="3786000" />
+      <workItem from="1681483860802" duration="1839000" />
+      <workItem from="1681835124255" duration="1704000" />
+      <workItem from="1681919936007" duration="27000" />
+      <workItem from="1681992973635" duration="171000" />
+      <workItem from="1681993372636" duration="696000" />
+      <workItem from="1682013257657" duration="7000" />
+      <workItem from="1682189195430" duration="368000" />
+      <workItem from="1682595751562" duration="5723000" />
+      <workItem from="1682958853034" duration="5189000" />
+      <workItem from="1682982672336" duration="351000" />
+      <workItem from="1682983964111" duration="436000" />
+      <workItem from="1683029196835" duration="2023000" />
+      <workItem from="1683031755193" duration="918000" />
+      <workItem from="1683032853970" duration="1490000" />
+      <workItem from="1683040858015" duration="627000" />
+      <workItem from="1683111948519" duration="172000" />
+      <workItem from="1683220024588" duration="782000" />
+      <workItem from="1683296841856" duration="803000" />
+      <workItem from="1683314518509" duration="6391000" />
+      <workItem from="1684345728971" duration="1102000" />
+      <workItem from="1684355348597" duration="147000" />
+      <workItem from="1684782849257" duration="71000" />
+      <workItem from="1685201451954" duration="200000" />
+      <workItem from="1685201668186" duration="39000" />
+      <workItem from="1687854768855" duration="5582000" />
+      <workItem from="1690287204717" duration="1105000" />
+      <workItem from="1690386624486" duration="3000" />
+      <workItem from="1690394120043" duration="176000" />
+      <workItem from="1690900998849" duration="371000" />
+      <workItem from="1691065508030" duration="4106000" />
+      <workItem from="1691070641090" duration="1404000" />
+      <workItem from="1691074096620" duration="2414000" />
+      <workItem from="1691150125418" duration="5187000" />
+      <workItem from="1691163628801" duration="2971000" />
+      <workItem from="1691178597193" duration="836000" />
+      <workItem from="1691229310020" duration="5705000" />
+      <workItem from="1691240871416" duration="5847000" />
+      <workItem from="1691268314556" duration="1195000" />
+      <workItem from="1691409089565" duration="2421000" />
+      <workItem from="1691507658961" duration="499000" />
+      <workItem from="1691508170012" duration="12000" />
+      <workItem from="1691589489305" duration="3978000" />
+      <workItem from="1691610485149" duration="598000" />
+      <workItem from="1691662767047" duration="4072000" />
+      <workItem from="1691686281612" duration="2309000" />
+      <workItem from="1691696112791" duration="1485000" />
+      <workItem from="1692019808228" duration="2243000" />
+      <workItem from="1692032591796" duration="3440000" />
+      <workItem from="1692038927917" duration="598000" />
+      <workItem from="1692099389709" duration="599000" />
+      <workItem from="1692562637739" duration="152000" />
+      <workItem from="1692886830516" duration="4017000" />
+      <workItem from="1692903892572" duration="2230000" />
+      <workItem from="1692966639659" duration="1941000" />
+      <workItem from="1693166291092" duration="6000" />
+      <workItem from="1693224609873" duration="3225000" />
+      <workItem from="1693234539926" duration="4000" />
+      <workItem from="1693246105866" duration="3767000" />
+      <workItem from="1693328339299" duration="8000" />
+      <workItem from="1693333362980" duration="1703000" />
+      <workItem from="1693405291490" duration="9072000" />
+      <workItem from="1693668574352" duration="9000" />
+      <workItem from="1693941366553" duration="303000" />
+      <workItem from="1693941725768" duration="441000" />
+      <workItem from="1693943489161" duration="17000" />
+      <workItem from="1694002586782" duration="7000" />
+      <workItem from="1694022283814" duration="391000" />
+      <workItem from="1694024695112" duration="2967000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/scatter_series.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/scatter_series.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_01_display_population_skill_stats.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_19_skill_quality_by_methodology_scatter_pearson.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation_plotter.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py</url>
+          <line>93</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py</url>
+          <line>52</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/restify_mining/scatter_plotters/correlation.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_11_fused_group_statistic_tests.py</url>
+          <line>138</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/jupyter_snippets/pseudo_cell_05_multi_linear_model.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RestifyJupyter$JupyterValidator.coverage" NAME="JupyterValidator Coverage Results" MODIFIED="1687855962191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RestifyJupyter$00_RunAllPseudoCells.coverage" NAME="00-RunAllPseudoCells Coverage Results" MODIFIED="1694027175355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+  </component>
+</project>

@@ -17,7 +17,7 @@ from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor i
 from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
     MethodologyTimeExtractor
 
-include_fused: bool = True
+include_fused: bool = False
 
 
 def cell_10() -> None:
