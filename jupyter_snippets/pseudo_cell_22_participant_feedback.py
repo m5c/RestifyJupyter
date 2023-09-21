@@ -5,7 +5,7 @@ from csv_tools.file_load_utils import load_participant_feedback
 from restify_mining.bar_plotters.frequency_bars import print_pref_distribution
 
 
-def cell_21() -> None:
+def cell_22() -> None:
     """
     Jupyter cell 20. See markdown description.
     :return: None
