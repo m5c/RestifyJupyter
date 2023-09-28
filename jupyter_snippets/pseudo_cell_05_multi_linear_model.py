@@ -57,7 +57,7 @@ def run_ols_linear_regression(response_name: str, multi_linear_samples: DataFram
 
     # Prepare variables and complete matrix
     response_variable = multi_linear_samples[response_name]
-    explanatory_variables = multi_linear_samples[['period', 'meth_dsl']]
+    explanatory_variables = multi_linear_samples[['period', 'technique']]
     explanatory_variables = sm.add_constant(explanatory_variables)
 
     # Run the linear regression
@@ -90,7 +90,7 @@ def categorical_to_numerical(participant: AssessedParticipant, first: bool) -> d
         meth_dsl: int = 1 if participant.meth_second == "tc" else 0
 
     return {'time': time, 'pass_rate': pass_rate, 'period': period, 'app_bookstore': app_bookstore,
-            'meth_dsl': meth_dsl}
+            'technique': meth_dsl}
 
 
 def filter_to_xox(item):
