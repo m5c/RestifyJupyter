@@ -29,7 +29,7 @@ To replicate our data analysis, you have four options:
 
 ## Produced Analyses
 
-The notebook runs 19 execution cells, which each correspond to one python file. You can replicate individual results or
+The notebook runs 22 execution cells, which each correspond to one python file. You can replicate individual results or
 use the ```run_all_pseudo_cells.py``` script, to replicate the entire statistical analysis in a single run.
 
 | Cell | Filename                                                                                                                                                    | Description                                                                                                                                                                                                              |
