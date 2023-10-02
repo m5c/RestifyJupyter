@@ -16,6 +16,7 @@ COPY restify_mining /home/jovyan/restify_mining
 COPY source-csv-files /home/jovyan/source-csv-files
 RUN mkdir -p /home/jovyan/generated-csv-files
 RUN mkdir -p /home/jovyan/generated-plots
+RUN mkdir -p /home/jovyan/generated-text-files
 RUN ls -al /home/jovyan
 
 # Install co-dependencies
@@ -26,5 +27,5 @@ USER $NB_UID
 
 ## Override default lab startup command of minimal-notebook image
 EXPOSE 8888
-CMD ["sh", "-c", "echo \"Your RESTify Notebook is up and running: http://127.0.0.1:8888/notebooks/Restify.ipynb\"; jupyter notebook --port=8888 /home/jovyan/Restify.ipynb --no-browser --allow-root --ip=* >/dev/null 2>&1"]
+CMD ["sh", "-c", "echo \"Your RESTify Notebook is up and running: http://127.0.0.1:8888/notebooks/Restify.ipynb\"; jupyter notebook --port=8888 /home/jovyan/Restify.ipynb --no-browser --allow-root --ip=* --NotebookApp.token=\"\" --NotebookApp.password=\"\" >/dev/null 2>&1"]
 # notebook is reachable here: http://127.0.0.1:8888/notebooks/Restify.ipynb
