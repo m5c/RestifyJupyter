@@ -80,7 +80,7 @@ be first installed manually.
 1. Install ```Python 3.9``` or newer. Make sure the installed python interpreter is selected in the PyCharm run
    configurations.
 2. Install all required python libraries, e.g. using the ```pip3``` package manager:  
-   ```pip3 install pandas numpy matplotlib plotly scipy jupyter```  
+   ```pip3 install pandas numpy matplotlib plotly scipy statsmodels seaborn jupyter```  
    You can also use the provided [```requirements.txt```](requirements.txt) for this.
 3. Start up the Notebook:
     * Go to the project base directory: ```cd RestifyJupyter```
