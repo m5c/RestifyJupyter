@@ -4,7 +4,8 @@ FROM jupyter/minimal-notebook
 LABEL author="Maximilian Schiedermeier"
 
 # Switch off that anoying token thingy
-RUN cd ~/.jupyter; jupyter notebook --generate-config; sed -i "s/.*c.NotebookApp.token.*/c.NotebookApp.token = \'\'/g" jupyter_notebook_config.py
+RUN cd ~/.jupyter; jupyter notebook --generate-config; sed -i "s/.*c.ServerApp.token.*/c.ServerApp.token = \'\'/g" jupyter_notebook_config.py
+RUN cd ~/.jupyter; jupyter notebook --generate-config; sed -i "s/.*c.ServerApp.token.*/c.ServerApp.token = \'\'/g" jupyter_server_config.py
 
 ## Copy notebook and all data in the container
 COPY Restify.ipynb /home/jovyan/Restify.ipynb
@@ -18,7 +19,7 @@ RUN mkdir -p /home/jovyan/generated-plots
 RUN ls -al /home/jovyan
 
 # Install co-dependencies
-RUN pip install pandas numpy matplotlib plotly scipy
+RUN pip install pandas numpy matplotlib plotly scipy statsmodels seaborn
 
 ## Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID
