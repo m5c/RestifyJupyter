@@ -10,7 +10,7 @@ from restify_mining.unit_test_miners.all_groups_tests_miner import AllGroupsTest
 
 def cell_07() -> None:
     """
-    Jupyter cell 05b. See markdown description.
+    Jupyter cell 07. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

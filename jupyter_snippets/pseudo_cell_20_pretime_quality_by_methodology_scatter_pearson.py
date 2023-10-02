@@ -19,7 +19,7 @@ from restify_mining.scatter_plotters.extractors.methodology_time_passrate_tradeo
 
 def cell_20() -> None:
     """
-    Jupyter cell 19. See markdown description.
+    Jupyter cell 20. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

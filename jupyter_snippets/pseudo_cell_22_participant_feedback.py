@@ -7,7 +7,7 @@ from restify_mining.bar_plotters.frequency_bars import print_pref_distribution
 
 def cell_22() -> None:
     """
-    Jupyter cell 20. See markdown description.
+    Jupyter cell 22. See markdown description.
     :return: None
     """
     # Step 1: Import feedback data (load all lines of CSV file into list of strings)

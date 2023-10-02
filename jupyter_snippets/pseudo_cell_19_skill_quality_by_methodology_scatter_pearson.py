@@ -20,7 +20,7 @@ from restify_mining.scatter_plotters.extractors.summed_skill_extractor import Su
 
 def cell_19() -> None:
     """
-    Jupyter cell 18. See markdown description.
+    Jupyter cell 19. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

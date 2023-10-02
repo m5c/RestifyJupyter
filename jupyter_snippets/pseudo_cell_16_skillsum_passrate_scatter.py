@@ -10,7 +10,7 @@ from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 def cell_16() -> None:
     """
-    Jupyter cell 15. See markdown description.
+    Jupyter cell 16. See markdown description.
     :return: None
     """
     # Plot final correlations for the summed skill vectors

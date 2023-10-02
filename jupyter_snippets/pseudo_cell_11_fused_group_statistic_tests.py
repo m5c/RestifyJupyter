@@ -13,7 +13,7 @@ from restify_mining.scatter_plotters.extractors.methodology_time_extractor impor
 
 def cell_11() -> None:
     """
-    Jupyter cell 10. See markdown description.
+    Jupyter cell 11. See markdown description.
     This cell runs a wilcoxon rank sum comparison for the performances of fused groups (same app
     / methodology but different order). It also quantifies effect size of the respective
     distributions. In total this produces 4 comparisons: 2 for bookstore (time & passrate) and

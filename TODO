@@ -1,4 +1,0 @@
-split up bs/xox heatmaps.
-verify if plotly is really used / delete from deps if not.
-ntermediate time extractor for time and methodology, setting attribute
-create requiremenets.txt reather than manual install instructions.

@@ -85,7 +85,7 @@ def print_pref_distribution(distribution: dict[int, int], x_tick_override: list[
     :return: None
     """
 
-    plt.rcParams["figure.figsize"] = (10, 4)
+    plt.rcParams["figure.figsize"] = (7.0, 2.4)
 
     plt.bar(distribution.keys(), distribution.values(), color=colour_map.values())
     plt.title("Participant Feedback")

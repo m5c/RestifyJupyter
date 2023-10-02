@@ -21,7 +21,9 @@ def skill_plot_box(all_skill_values_by_skill_by_group: list[list[int]], palette:
     :param filename: as the name to used for persistence on disk.
     """
     # define frame size
-    plt.rcParams["figure.figsize"] = (8, 3)
+    plt.rcParams["figure.figsize"] = (7.5, 2.2)
+    #
+    # plt.rcParams["figure.figsize"] = (8, 3)
 
     # For reasons only python affictionados know, figsize is only effective if cleared afterwards
     plt.clf()

@@ -17,12 +17,12 @@ from restify_mining.scatter_plotters.extractors.methodology_passrate_extractor i
 from restify_mining.scatter_plotters.extractors.methodology_time_extractor import \
     MethodologyTimeExtractor
 
-include_fused: bool = False
+include_fused: bool = True
 
 
 def cell_10() -> None:
     """
-    Jupyter cell 09. See markdown description.
+    Jupyter cell 10. See markdown description.
     :return: None
     """
 

@@ -12,7 +12,7 @@ from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 def cell_14() -> None:
     """
-    Jupyter cell 13. See markdown description.
+    Jupyter cell 14. See markdown description.
     :return: None
     """
     reduce_labels_to_outliers: bool = False

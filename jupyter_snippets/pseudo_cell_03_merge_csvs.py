@@ -6,7 +6,7 @@ from csv_tools import csv_merger
 
 def cell_03() -> None:
     """
-    Jupyter cell 05. See markdown description.
+    Jupyter cell 03. See markdown description.
     This module updates the fused csv based on the current partial csv files found in
     "source-csv-files", persists the outcome to disk and displays the content.
     :return: None

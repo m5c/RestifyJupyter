@@ -10,7 +10,7 @@ from csv_tools.file_load_utils import load_stage_one_error_occurrences
 
 def cell_18() -> None:
     """
-    Jupyter cell 17. See markdown description.
+    Jupyter cell 18. See markdown description.
     :return: None
     """
 

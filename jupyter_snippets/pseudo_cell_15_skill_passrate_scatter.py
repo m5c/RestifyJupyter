@@ -11,7 +11,7 @@ from restify_mining.markers.skills_markers import full_skill_tags
 
 def cell_15() -> None:
     """
-    Jupyter cell 14. See markdown description.
+    Jupyter cell 15. See markdown description.
     :return: None
     """
     # Plot correlations for all individual skills

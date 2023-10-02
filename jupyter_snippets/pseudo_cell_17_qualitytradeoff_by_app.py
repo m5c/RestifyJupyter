@@ -27,7 +27,7 @@ from restify_mining.utils.shapiro_interpreter import print_normal_dist_interpret
 
 def cell_17() -> None:
     """
-    Jupyter cell 16. See markdown description.
+    Jupyter cell 17. See markdown description.
     :return: None
     """
     # Load all participant objects (specifies skills, codename, control-group) from csv file

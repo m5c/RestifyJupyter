@@ -63,16 +63,16 @@ def build_bundle_positions(with_fused: bool):
     # total amount of box-plots
     boxplot_amount: int = 12
 
-    # amount fo box-plots to place close per bundle
+    # amount of box-plots to place close per bundle
     bundle_size: int = 3
 
     # additional space to place between box-plots on transitioning to next bundle
-    inter_bundle_additional_spacing: float = 1
+    inter_bundle_additional_spacing: float = 0.7
 
     # shrink factor to apply. Higher number places the box-plots closer, while respecting
     # relative distancing resulting from previous factors. I.e. higher factor makes individual
     # box-plots wider while preserving spacing.
-    density: float = 4
+    density: float = 5
 
     undense_positions: list[int] = []
     for position in range(0, boxplot_amount):
@@ -153,7 +153,7 @@ def graphical_box_plot(task_values_by_groups_dsl: list[list[float]],
     """
 
     # define frame size (not intuitive, but this must happen BEFORE clf)
-    plt.rcParams["figure.figsize"] = (9, 3)
+    plt.rcParams["figure.figsize"] = (7.5, 2.5)
 
     # reset figure, to have separate drawings
     plt.clf()
