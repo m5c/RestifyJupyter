@@ -18,6 +18,6 @@ def cell_15() -> None:
     reduce_labels_to_outliers: bool = False
     scatter_series_all_skills: ScatterSeries = ScatterSeries(
         SkillExtractor, MethodologyPassrateExtractor, FullLabelMaker(),
-        reduce_labels_to_outliers, "13-")
+        reduce_labels_to_outliers, "15-")
     scatter_series_all_skills.plot_uncoupled_series(
         {"ide", "tc"}, full_skill_tags)

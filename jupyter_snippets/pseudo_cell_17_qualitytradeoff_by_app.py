@@ -129,4 +129,4 @@ def cell_17() -> None:
                     effectiveness_frequency, app,
                     False)
 
-        show("15-GreenBlueQuality-Distribution-" + app)
+        show("17-GreenBlueQuality-Distribution-" + app)

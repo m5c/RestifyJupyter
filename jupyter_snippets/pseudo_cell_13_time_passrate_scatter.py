@@ -17,5 +17,5 @@ def cell_13() -> None:
     reduce_labels_to_outliers: bool = True
     scatter_series: ScatterSeries = ScatterSeries(MethodologyTimeExtractor,
                                                   MethodologyPassrateExtractor, FullLabelMaker(),
-                                                  reduce_labels_to_outliers, "11-")
+                                                  reduce_labels_to_outliers, "12-")
     scatter_series.plot_coupled_series({"ide", "tc"})

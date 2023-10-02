@@ -39,7 +39,7 @@ def cell_12() -> None:
         AssessedParticipant] = file_load_utils.load_all_assessed_participants(False)
 
     # B: TC / IDE: Time spent on task familiarization VS time spent for refactoring
-    file_name_marker: str = "10-"
+    file_name_marker: str = "12-"
     tc_pre_meth_time_to_refactor_time: Correlation = Correlation(assessed_population,
                                                                  MethodologyPretimeExtractor("tc"),
                                                                  MethodologyTimeExtractor("tc"),

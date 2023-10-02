@@ -54,4 +54,4 @@ class AllParticipantsAllTestsMiner(AbstractTestMiner):
         return "Unit Tests "+self.scope
 
     def file_label(self) -> str:
-        return "05-test-individual-"+self.scope
+        return "06-test-individual-"+self.scope

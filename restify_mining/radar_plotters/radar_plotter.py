@@ -101,7 +101,7 @@ class RadarPlotter:
         plt.title(app_title + ' Average Test Scores per Group', size=20, y=1.05)
         plt.thetagrids(np.degrees(label_loc), labels=test_markers)
         plt.legend(loc='upper right')
-        plt.savefig("generated-plots/" + "06-" + app + "-all-tests-radar.png", dpi=300)
+        plt.savefig("generated-plots/" + "07-" + app + "-all-tests-radar.png", dpi=300)
         plt.show()
 
     @staticmethod
