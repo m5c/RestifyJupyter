@@ -3,8 +3,8 @@ Extended participant class (inherits form participant.py), representing a partic
 all additional quantifiable data extracted from fused csv file.
 """
 from restify_mining.data_objects.control_group import ControlGroup
-from restify_mining.markers import unit_tests_markers
 from restify_mining.data_objects.participant import Participant
+from restify_mining.markers import unit_tests_markers
 
 
 class AssessedParticipant(Participant):
@@ -17,7 +17,7 @@ class AssessedParticipant(Participant):
 
     def __init__(self, codename: str, control_group: ControlGroup, skills: list[int],
                  test_results_bs: list[bool], test_results_xox: list[bool], time_bs: int,
-                 time_xox: int, pre_time_tc: int, pre_time_ide: int):
+                 time_xox: int, pre_time_tc: int, pre_time_ide: int, tc_crashes:int, crash_recovery_time: int):
         """
         :type self: object
         """
@@ -40,6 +40,14 @@ class AssessedParticipant(Participant):
 
         self.__pre_time_tc: int = int(pre_time_tc)
         self.__pre_time_ide: int = int(pre_time_ide)
+
+        # Amount of crashes observed for participant.
+        self.__tc_crashes: int = int(tc_crashes)
+
+        # Time extracted in case the participant lost work due to a TouchCORE crash which
+        # required restoring previously accomplished work. This time is NOT counted in the
+        # regular time markers for the corresponding application.
+        self.__crash_recovery_time: int = int(crash_recovery_time)
 
     @property
     def time_bs(self) -> int:

@@ -23,8 +23,6 @@ from jupyter_snippets.pseudo_cell_15_skill_passrate_scatter import cell_15
 from jupyter_snippets.pseudo_cell_16_skillsum_passrate_scatter import cell_16
 from jupyter_snippets.pseudo_cell_17_qualitytradeoff_by_app import cell_17
 from jupyter_snippets.pseudo_cell_18_fail_cause_stage_1 import cell_18
-from jupyter_snippets.pseudo_cell_19_skill_quality_by_methodology_scatter_pearson import cell_19
-from jupyter_snippets.pseudo_cell_20_pretime_quality_by_methodology_scatter_pearson import cell_20
 from jupyter_snippets.pseudo_cell_21_pearson_pretime_skillsum import cell_21
 from jupyter_snippets.pseudo_cell_22_participant_feedback import cell_22
 
@@ -100,22 +98,14 @@ print("Imitating Jupyter Pseudo Cell 16...")
 cell_16()
 print("Cell 16 complete.\n")
 
-print("Imitating Jupyter Pseudo Cell 17...")
-cell_17()
-print("Cell 17 complete.\n")
-
+# Cell 17 is deprecated and has been excluded from the paper. See module description of cell.
+#
 print("Imitating Jupyter Pseudo Cell 18...")
 cell_18()
 print("Cell 18 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 19...")
-cell_19()
-print("Cell 19 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 20...")
-cell_20()
-print("Cell 20 complete.\n")
-
+# Cell 19 is deprecated and has been excluded from the paper. See module description of cell.
+# Cell 20 is deprecated and has been excluded from the paper. See module description of cell.
+#
 print("Imitating Jupyter Pseudo Cell 21...")
 cell_21()
 print("Cell 21 complete.\n")

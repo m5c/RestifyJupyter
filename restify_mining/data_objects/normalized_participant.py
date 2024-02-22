@@ -1,4 +1,6 @@
 """
+Note: This class is deprecated and has been excluded from the paper. There is no need to
+normalize participant metrics for any of the statistical tests reported in the paper.
 This class extends assessed participants by all fields that require normalization, that is to say
 knowledge about the entire population. An example is task solve time for a given methodology or
 application. Upper and lower bound are defined by the min and max value of the population. This
@@ -21,6 +23,8 @@ class NormalizedParticipant(AssessedParticipant):
         :type self: object
         """
         # invoke super with base attributes
+        # NOTE: we exclude crash times for this analysis. It is deprecated for the metric was
+        # considered contrived (confounding of dependent variables)
         super().__init__(participant.group_name + "-" + participant.animal_name,
                          participant.control_group, participant.skills,
                          participant.test_results_bs, participant.test_results_xox,

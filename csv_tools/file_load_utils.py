@@ -101,8 +101,8 @@ def load_all_assessed_participants(remove_outliers_flag: bool) -> list[AssessedP
                 control_group_name = row[1]
                 control_group: ControlGroup = control_groups[control_group_name]
                 skills: list[int] = [int(x) for x in row[3:11]]
-                test_results_bs: list[bool] = [str2bool(x) for x in row[36:48]]
-                test_results_xox: list[bool] = [str2bool(x) for x in row[28:36]]
+                test_results_bs: list[bool] = [str2bool(x) for x in row[38:50]]
+                test_results_xox: list[bool] = [str2bool(x) for x in row[30:38]]
                 # [19] = C20
                 time_bs: int = row[19]
                 # [18] = C19
@@ -111,6 +111,11 @@ def load_all_assessed_participants(remove_outliers_flag: bool) -> list[AssessedP
                 pre_time_tc: int = row[16]
                 # [17] = C 18z
                 pre_time_ide: int = row[17]
+
+                # Amount of touchcore crashes observed in task solving.
+                tc_crashes: int = row[20]
+                # Total time a participant needed to recover from all touchcore crashes.
+                crash_recovery_time: int = row[20]
 
                 # first argument is name (likewise first column in csv), then the control group
                 # details, then the skill vector. Next the test results for bookstore, followed
@@ -123,7 +128,9 @@ def load_all_assessed_participants(remove_outliers_flag: bool) -> list[AssessedP
                                         test_results_xox,
                                         time_bs, time_xox,
                                         pre_time_tc,
-                                        pre_time_ide))
+                                        pre_time_ide,
+                                        tc_crashes,
+                                        crash_recovery_time))
 
     # remove outliers if requested
     if remove_outliers_flag:
