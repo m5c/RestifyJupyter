@@ -2,6 +2,7 @@
 Extended participant class (inherits form participant.py), representing a participant along with
 all additional quantifiable data extracted from fused csv file.
 """
+from jupyter_snippets import config
 from restify_mining.data_objects.control_group import ControlGroup
 from restify_mining.data_objects.participant import Participant
 from restify_mining.markers import unit_tests_markers
@@ -17,7 +18,8 @@ class AssessedParticipant(Participant):
 
     def __init__(self, codename: str, control_group: ControlGroup, skills: list[int],
                  test_results_bs: list[bool], test_results_xox: list[bool], time_bs: int,
-                 time_xox: int, pre_time_tc: int, pre_time_ide: int, tc_crashes:int, crash_recovery_time: int):
+                 time_xox: int, pre_time_tc: int, pre_time_ide: int, tc_crashes: int,
+                 crash_recovery_time: int):
         """
         :type self: object
         """
@@ -55,7 +57,10 @@ class AssessedParticipant(Participant):
         Property / Getter for time in seconds required for bookstore refactoring.
         :return: amount of seconds this participant needed for the bookstore task.
         """
-        return self.__time_bs
+        if config.INCLUDE_CRASH_TIMES and self.group_name in {"red", "yellow"}:
+            return self.__time_bs + self.__crash_recovery_time
+        else:
+            return self.__time_bs
 
     @property
     def time_xox(self) -> int:
@@ -63,7 +68,10 @@ class AssessedParticipant(Participant):
         Property / Getter for time in seconds required for bookstore refactoring.
         :return: amount of seconds this participant needed for the bookstore task.
         """
-        return self.__time_xox
+        if config.INCLUDE_CRASH_TIMES and self.group_name in {"green", "blue"}:
+            return self.__time_xox + self.__crash_recovery_time
+        else:
+            return self.__time_xox
 
     @property
     def pre_time_tc(self) -> int:
@@ -86,10 +94,14 @@ class AssessedParticipant(Participant):
         methodology or application concerned.
         :return: integer value expressing the time in seconds for the first refactoring task
         """
+        additional_time: int = 0
+        if config.INCLUDE_CRASH_TIMES and self.group_name in {"red", "blue"}:
+            additional_time = self.__crash_recovery_time
+
         if self.group_name in {"red", "green"}:
-            return self.__time_bs
+            return self.__time_bs + additional_time
         if self.group_name in {"blue", "yellow"}:
-            return self.__time_xox
+            return self.__time_xox + additional_time
         raise Exception("Participant group is detached.")
 
     @property
@@ -127,10 +139,14 @@ class AssessedParticipant(Participant):
         methodology or application concerned.
         :return: integer value expressing the time in seconds for the second refactoring task
         """
+        additional_time: int = 0
+        if config.INCLUDE_CRASH_TIMES and self.group_name in {"yellow", "green"}:
+            additional_time = self.__crash_recovery_time
+
         if self.group_name in {"blue", "yellow"}:
-            return self.__time_bs
+            return self.__time_bs + additional_time
         if self.group_name in {"red", "green"}:
-            return self.__time_xox
+            return self.__time_xox + additional_time
         raise Exception("Participant group is detached.")
 
     @property
@@ -165,10 +181,14 @@ class AssessedParticipant(Participant):
         Property / Getter for time in seconds required for touchcore based refactoring, whatever
         the application.
         """
+        additional_time: int = 0
+        if config.INCLUDE_CRASH_TIMES:
+            additional_time = self.__crash_recovery_time
+
         if self.group_name in {"green", "blue"}:
-            return self.__time_xox
+            return self.__time_xox + additional_time
         if self.group_name in {"red", "yellow"}:
-            return self.__time_bs
+            return self.__time_bs + additional_time
         raise Exception("Participant group is detached.")
 
     @property

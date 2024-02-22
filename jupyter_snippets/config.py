@@ -3,9 +3,5 @@ Global configurations for the analyzer are listed here. By-default all settings 
 replicate the statistics as printed in the paper publication.
 """
 
+INCLUDE_CRASH_TIMES: bool = True
 
-class Config:
-    """
-    Individual configuration variables.
-    """
-    INCLUDE_CRASH_TIMES = False

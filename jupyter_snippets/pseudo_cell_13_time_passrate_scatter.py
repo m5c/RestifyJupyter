@@ -11,11 +11,11 @@ from restify_mining.scatter_plotters.scatter_series import ScatterSeries
 
 def cell_13() -> None:
     """
-    Jupyter cell 12. See markdown description.
+    Jupyter cell 13. See markdown description.
     :return: None
     """
     reduce_labels_to_outliers: bool = True
     scatter_series: ScatterSeries = ScatterSeries(MethodologyTimeExtractor,
                                                   MethodologyPassrateExtractor, FullLabelMaker(),
-                                                  reduce_labels_to_outliers, "12-")
+                                                  reduce_labels_to_outliers, "13-")
     scatter_series.plot_coupled_series({"ide", "tc"})

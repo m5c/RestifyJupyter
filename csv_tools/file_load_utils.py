@@ -115,7 +115,7 @@ def load_all_assessed_participants(remove_outliers_flag: bool) -> list[AssessedP
                 # Amount of touchcore crashes observed in task solving.
                 tc_crashes: int = row[20]
                 # Total time a participant needed to recover from all touchcore crashes.
-                crash_recovery_time: int = row[20]
+                crash_recovery_time: int = row[21]
 
                 # first argument is name (likewise first column in csv), then the control group
                 # details, then the skill vector. Next the test results for bookstore, followed
