@@ -17,15 +17,14 @@ collaborators with a preconfigured PyCharm project.
 To replicate our data analysis, you have four options:
 
 * [Inspect the rendered preview on GitHub, using only your browser](Restify.ipynb)  
-  => You will see all figures of this paper, pre-rendered. However, you will not be able to modify the notebook
-  execution content, and some document-internal section links will not work.
+  => You will **see** all figures of this paper, pre-rendered. However, you will not be able to modify or execute the notebook. Some internal links may not work.
 * [Deploy a local Jupyter Notebook as preconfigured Docker container.](#dockerized-notebook)  
-  => *The fastest and simples way to inspect our work and findings.*
+  => *The fastest and simplest way to **replicate** our work and findings.*
 * [Manually set up a local Jupyter Notebook.](#manual-notebook)  
-  => *Similar to the previous option. The manual setup requires proficiency with python installations.*
+  => *Similar to the previous option, you can **replicate** the work and findings. The manual setup requires proficiency with python installations.*
 * [Manually run individual parts of the data analysis with the PyCharm IDE](#pycharm-ide):  
-  => *Full access to all implementation details. The preferred option for software developers and data scientists who
-  want to deeply investigate our work, or take things further.*
+  => *Full access to all implementation details. The preferred option for peer-reviewers, software developers and data scientists who
+  want to investigate and understand our work. You can **replicate** our findings, and on top inspect the implementation. You can debug the code, verify correctness of our implementation, and if desired build on top.*
 
 ## Dockerized Notebook
 
