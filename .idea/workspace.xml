@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ecbd6fe7-26c0-42c2-a3b3-aec58798e0f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restify.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Restify.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-deploy-instructions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/github-deploy-instructions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-autostart.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker-autostart.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -568,7 +569,8 @@
       <workItem from="1711658640988" duration="920000" />
       <workItem from="1711660040463" duration="680000" />
       <workItem from="1711668698990" duration="585000" />
-      <workItem from="1711805119904" duration="5068000" />
+      <workItem from="1711805119904" duration="6796000" />
+      <workItem from="1711812474420" duration="398000" />
     </task>
     <servers />
   </component>
