@@ -1,4 +1,4 @@
-Github does not actually run the notebook, but it can pretty format the outcome of the last full execution.
+GitHub does not actually run the notebook, but it can pretty format the outcome of the last full execution.
 Do do so...
 
  * Run the validator. Ensure Jupyter has no corrupted cells.
