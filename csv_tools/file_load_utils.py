@@ -1,5 +1,5 @@
 """
-Helper module for loading of CSV file content into lists of objectes defined in the
+Helper module for loading of CSV file content into lists of objects defined in the
 restify_mining package.
 Author: Maximilian Schiedermeier
 """

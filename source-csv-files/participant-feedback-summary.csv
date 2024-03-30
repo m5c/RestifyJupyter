@@ -10,9 +10,9 @@ Question, Description, Stats
 5, Main time loss perceived, Video-instructions:5 Using-TouchCORE:3 Pom-File:3
 6, Understood the tasks, Yes:27 No:1
 7, More intuitive methodology, TC:23 Neutral:1 IDE:3
-8, Task methodology more confident unit tests pass, TC:14 Neutral:1 IDE:13
+8, Task methodology more confident unit tests pass, TC:13 Neutral:1 IDE:13
 8, Task app more confident unit tests pass, BS:14 Neutral:1 XOX:12
 8, Task number more confident unit tests pass, First:13 Neutral:1 Second:13
-9, Preference own future projects, TC:6 Neutral:5 IDE:16
+9, Preference own future projects, TC:6 Neutral:6 IDE:15
 10, Main reasons in favour IDE, Perceived-more-control-or-trace:6 Perceived-more-trust-in-code-than-tool:5 Tool-quality:9 Tool-scaling-doubted:3
 10, Main reason in favour TC, Intuitive-DSL-Process:6
