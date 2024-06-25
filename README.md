@@ -48,8 +48,7 @@ If you see a notebook with all paper figures and stats, you have succeeded.
 
 This section explains how to run the Jupyter Notebook instance natively. For this to work, you must install all runtime dependencies.
 
-1. Install ```Python 3.9``` or newer. Make sure the installed python interpreter is selected in the PyCharm run
-   configurations.
+1. Install ```Python 3.9``` or newer. Make sure the newly installed python version is set as default. Verify with: `python --version`
 2. Install all required python libraries, e.g. using the ```pip3``` package manager:  
    ```pip3 install pandas numpy matplotlib plotly scipy statsmodels seaborn jupyter```  
    You can also install all at once, with [`pip3 install -r requirements.txt`](requirements.txt)
