@@ -89,7 +89,7 @@ the IDE is configured to use the correct interpreter.
 ### Inputs and Outputs
 
 * Inputs:  
-  The Notebook works on the CSV data, stored in [```source-csv-files``](source-csv-files). It is the same data as
+  The Notebook works on the CSV data, stored in [```source-csv-files```](source-csv-files). It is the same data as
   provided in [our replication bundle](https://anonymous4doubleblinded.github.io/ExperimentReplicationPackage).
 * Outputs:
     * Figures are generated to ```generated-plots```
