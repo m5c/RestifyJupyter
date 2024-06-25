@@ -71,7 +71,7 @@
       <recent name="$PROJECT_DIR$/markdown" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.00-RunAllPseudoCells">
+  <component name="RunManager" selected="Python.python --version">
     <configuration name="00-ClearAllCaches" type="PythonConfigurationType" factoryName="Python">
       <module name="RestifyJupyter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -336,7 +336,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="python --version" type="PythonConfigurationType" factoryName="Python">
+      <module name="RestifyJupyter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="SDK_NAME" value="Python 3.9 (RestifyJupyter)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="--version" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python.python --version" />
       <item itemvalue="Python.00-ClearAllCaches" />
       <item itemvalue="Python.00-RunAllPseudoCells" />
       <item itemvalue="Python.01-DisplayPopulationGaussian" />
@@ -573,7 +597,7 @@
       <workItem from="1711892557999" duration="359000" />
       <workItem from="1712235259522" duration="8000" />
       <workItem from="1719343638053" duration="1085000" />
-      <workItem from="1719344848656" duration="141000" />
+      <workItem from="1719344848656" duration="326000" />
     </task>
     <servers />
   </component>
