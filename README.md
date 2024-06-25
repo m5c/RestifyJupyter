@@ -34,23 +34,25 @@ The notebook allows you to locally replicate our methodology and all findings, t
 
 Instructions for Docker (MacOS / Linux host):
 
-1. [Install Docker](https://docs.docker.com/get-docker/)
-2. Clone this repository:  
+1. [Install Docker](https://docs.docker.com/get-docker/)  
+   (After install, test your setup with: `docker run hello-world`)
+2. Clone this repository:   
    ```git clone https://github.com/m5c/RestifyJupyter.git```
 3. Build and Run the Jupyter Notebook Container:  
    ```cd RestifyJupyter; ./docker-autostart.sh```
 4. Access the Notebook: [http://127.0.0.1:8889/notebooks/Restify.ipynb](http://127.0.0.1:8889/notebooks/Restify.ipynb)
 
+If you see a notebook with all paper figures and stats, you have succeeded.
+
 ## Manual Notebook
 
-This section explains how to run the Jupyter Notebook instance natively. For this to work, all runtime dependencies must
-be first installed manually.
+This section explains how to run the Jupyter Notebook instance natively. For this to work, you must install all runtime dependencies.
 
 1. Install ```Python 3.9``` or newer. Make sure the installed python interpreter is selected in the PyCharm run
    configurations.
 2. Install all required python libraries, e.g. using the ```pip3``` package manager:  
    ```pip3 install pandas numpy matplotlib plotly scipy statsmodels seaborn jupyter```  
-   You can also use the provided [```requirements.txt```](requirements.txt) for this.
+   You can also install all at once, with [`pip3 install -r requirements.txt`](requirements.txt)
 3. Start up the Notebook:
     * Go to the project base directory: ```cd RestifyJupyter```
     * Start the Notebook: ```jupyter notebook```
@@ -74,7 +76,7 @@ the IDE is configured to use the correct interpreter.
    ![interpreter](markdown/interpreter.png)
 3. Install all required libraries. Open the ```PyCharm -> Settings -> Project -> Interpreter``` menu:
    ![libraries](markdown/libraries.png)
-    * Click the ```+``` sign, then install all the following: ```pandas numpy matplot plotly scipy```
+    * Click the ```+``` sign, then install everything listed in [`requirements.txt`](requirements.txt)
 4. Install PyLint. Open the plugins menu: ```PyCharm -> Settings -> Plugins```:  
    ![pylint](markdown/pylint.png)
     * Configure PyLint to use the root ```.pylintrc``` config file, so
@@ -95,7 +97,7 @@ the IDE is configured to use the correct interpreter.
 
 ## Implementation Details
 
-This section is only relevant for data analysts who want to tweak the notebook output / visualization.
+This section is only relevant for data analysts who want to tweak the notebook output / visualization, or reuse part of the codebase for similar project layouts.
 
 ### Label Makers
 
@@ -110,7 +112,7 @@ If you with to annotated only selected dots, edit the `labeloverride.csv` and us
 
 ## Author / References
 
-* Principal Investigator: [Maximilian Schiedermeier](https://www.cs.mcgill.ca/~mschie3/)
+* Principal Investigator: [Maximilian Schiedermeier](https://m5c.github.io/)
 * Academic Supervisors: [Bettina Kemme](https://www.cs.mcgill.ca/~kemme/)
   , [Jorg Kienzle](https://www.cs.mcgill.ca/~joerg/Home/Jorgs_Home.html)
 * Implementation: [Maximilian Schiedermeier](https://github.com/m5c)
