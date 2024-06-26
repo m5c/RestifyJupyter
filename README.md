@@ -42,7 +42,8 @@ Instructions for Docker (MacOS / Linux host):
 2. Clone this repository:   
    ```git clone https://github.com/m5c/RestifyJupyter.git```
 3. Build and Run the Jupyter Notebook Container:  
-   ```cd RestifyJupyter; ./docker-autostart.sh```
+   ```cd RestifyJupyter; ./docker-autostart.sh```  
+   (On linux, you may need to prefix the `docker` command with `sudo`)
 4. Access the Notebook: [http://127.0.0.1:8889/notebooks/Restify.ipynb](http://127.0.0.1:8889/notebooks/Restify.ipynb)
 
 If you see a notebook with all paper figures and stats, you have succeeded.
