@@ -113,6 +113,10 @@ If you with to annotated only selected dots, edit the `labeloverride.csv` and us
 * To annotate full codenames (colour + animal) use the `FullLabelMaker`.
 * To annotate group internal codenames (only animal), use `AnimalLabelMaker`.
 
+## License
+
+This software is under open source [MIT License](LICENSE.txt).
+
 ## Author / References
 
 * Principal Investigator: [Maximilian Schiedermeier](https://m5c.github.io/)
