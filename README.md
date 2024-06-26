@@ -7,9 +7,6 @@ Data, Data-Mining and Visualization for the RESTify experiment.
 ![jupyter](https://img.shields.io/badge/Jupyter%20Notebook-6.4.12-blue)
 ![docker](https://img.shields.io/badge/Docker%20Docker-20.10.17-blue)
 
- > **THIS VERSION IS A STATIC SNAPSHOT, CREATED FOR THE MODELS ARTIFACT EVALUATION. UNLESS YOU ARE A REVIEWER, PLEASE [ACCESS THE ORIGINAL ARTIFACT](https://github.com/m5c/RestifyJupyter)**
-
-
 ## About
 
 This repository hosts sources and raw input data that allows replication of empiric findings around the RESTify
