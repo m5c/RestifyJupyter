@@ -7,6 +7,9 @@ Data, Data-Mining and Visualization for the RESTify experiment.
 ![jupyter](https://img.shields.io/badge/Jupyter%20Notebook-6.4.12-blue)
 ![docker](https://img.shields.io/badge/Docker%20Docker-20.10.17-blue)
 
+ > **THIS VERSION IS A STATIC SNAPSHOT, CREATED FOR THE MODELS ARTIFACT EVALUATION. UNLESS YOU ARE A REVIEWER, PLEASE [ACCESS THE ORIGINAL ARTIFACT](https://github.com/m5c/RestifyJupyter)**
+
+
 ## About
 
 This repository hosts sources and raw input data that allows replication of empiric findings around the RESTify
@@ -39,7 +42,8 @@ Instructions for Docker (MacOS / Linux host):
 2. Clone this repository:   
    ```git clone https://github.com/m5c/RestifyJupyter.git```
 3. Build and Run the Jupyter Notebook Container:  
-   ```cd RestifyJupyter; ./docker-autostart.sh```
+   ```cd RestifyJupyter; ./docker-autostart.sh```  
+   (On linux, you may need to prefix the `docker` command with `sudo`)
 4. Access the Notebook: [http://127.0.0.1:8889/notebooks/Restify.ipynb](http://127.0.0.1:8889/notebooks/Restify.ipynb)
 
 If you see a notebook with all paper figures and stats, you have succeeded.
