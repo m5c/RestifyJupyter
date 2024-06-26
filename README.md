@@ -50,14 +50,14 @@ If you see a notebook with all paper figures and stats, you have succeeded.
 This section explains how to run the Jupyter Notebook instance natively. For this to work, you must install all runtime dependencies. The below steps will install the dependencies in a *virtual environment*, so your system-wide python installation stays clutter-free.
 
 1. Install ```Python 3.9``` or newer. Make sure the newly installed python version is set as default. Verify with: `python --version`
-2. Create a new virtual environment (local python folder with all dependencies):  
+2. Go into the project and create a new virtual environment (local python folder with all dependencies):  
+    `cd RestifyJupyter`  
     `python3 -m venv .env`  
     `source .env/bin/activate`  
 3. Install all required python libraries, using the ```pip3``` package manager:  
    ```pip3 install pandas numpy matplotlib plotly scipy statsmodels seaborn jupyter```  
    You can also install all at once, with [`pip3 install -r requirements.txt`](requirements.txt)
 4. Start up the Notebook:
-    * Go to the project base directory: ```cd RestifyJupyter```
     * Start the Notebook: ```jupyter notebook```
     * Access the
       Notebook: [http://localhost:8888/notebooks/Restify.ipynb](http://localhost:8888/notebooks/Restify.ipynb)
