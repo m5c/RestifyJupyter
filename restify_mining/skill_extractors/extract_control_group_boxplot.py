@@ -41,4 +41,4 @@ def extract_control_groups_boxplot(population: list[Participant]) -> None:
 
     # Finally feed the long list of all skill values in the order, required by the box plotter
     skill_plot_box(plotter_skill_values, palette, len(control_groups),
-             "generated-plots/02-cgroups_skills_boxplot.png")
+             "generated-plots/02-cgroups_skills_boxplot.pdf")

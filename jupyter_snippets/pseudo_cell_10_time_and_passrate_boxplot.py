@@ -33,10 +33,10 @@ def cell_10() -> None:
 
     # 2a) Extract times for individual methodologies, then produce plots
     box_plot(MethodologyTimeExtractor, partitioned_population, "Time [sec]",
-             "generated-plots/10a-task-time-boxplot")
+             "generated-plots/10a-task-time-boxplot.pdf")
     # 2b) Extract correctness for individual methodologies, then produce plots
     box_plot(MethodologyPassrateExtractor, partitioned_population, "Test Passrate [%]",
-             "generated-plots/10b-task-passrate-boxplot")
+             "generated-plots/10b-task-passrate-boxplot.pdf")
 
 
 def partition_population() -> list[list[AssessedParticipant]]:

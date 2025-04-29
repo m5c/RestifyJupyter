@@ -1,7 +1,7 @@
 """
 This module consumes the "stageonefailcause.csv" file and visualizes its content as a pie chart.
 """
-
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -47,7 +47,8 @@ def cell_18() -> None:
     fig = plt.gcf()
     fig.set_size_inches(9, 5)
     fig.gca().add_artist(centre_circle)
-    plt.savefig("generated-plots/18-fail-cause.png")
+    # plt.axis([0, dimension.y_size * 1.05, 0, dimension.x_size * 1.05])
+    plt.savefig("generated-plots/18-fail-cause.pdf")
     plt.show()
 
 

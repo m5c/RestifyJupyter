@@ -42,7 +42,7 @@ def cell_05() -> None:
 
         # Create visual codependency matrix for explanatory variables
         sns.pairplot(multi_linear_samples)
-        plt.savefig("generated-plots/05-explanatory-correlation.png", dpi=300)
+        plt.savefig("generated-plots/05-explanatory-correlation.pdf", dpi=300)
         plt.show()
         print("done")
 

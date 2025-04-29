@@ -68,5 +68,5 @@ def plot_correlation(correlation: Correlation, file_name_marker: str, dimension:
                                (yellow_bundle.y_axis_values[i], yellow_bundle.x_axis_values[i]))
 
     plt.tight_layout()
-    plt.savefig("generated-plots/" + file_name_marker + correlation.filename, dpi=300)
+    plt.savefig("generated-plots/" + file_name_marker + correlation.filename + ".pdf", dpi=300)
     plt.show()

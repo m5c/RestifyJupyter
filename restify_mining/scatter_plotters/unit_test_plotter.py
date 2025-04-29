@@ -102,7 +102,7 @@ def plot_unit_test_heatmap(grid_values: list[list[float]], colour_map: ListedCol
     plt.gcf().subplots_adjust(bottom=0.35)
 
     # Actually show the figure
-    plt.savefig("generated-plots/" + file_label + ".png", dpi=300)
+    plt.savefig("generated-plots/" + file_label + ".pdf", dpi=300)
     plt.show()
 
 
