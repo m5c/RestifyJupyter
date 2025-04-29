@@ -33,68 +33,68 @@ clear_cache("generated-plots")
 clear_cache("generated-text-files")
 print("Clear cache complete.")
 
-print("Imitating Jupyter Pseudo Cell 01...")
-cell_01()
-print("Cell 01 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 02...")
-cell_02()
-print("Cell 02 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 03...")
-cell_03()
-print("Cell 03 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 04...")
-cell_04()
-print("Cell 04 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 05...")
-cell_05()
-print("Cell 05 complete.\n")
+# print("Imitating Jupyter Pseudo Cell 01...")
+# cell_01()
+# print("Cell 01 complete.\n")
 #
-print("Imitating Jupyter Pseudo Cell 06...")
-cell_06()
-print("Cell 06 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 07...")
-cell_07()
-print("Cell 07 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 08...")
-cell_08()
-print("Cell 08 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 09...")
-cell_09()
-print("Cell 09 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 10...")
-cell_10()
-print("Cell 10 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 11...")
-cell_11()
-print("Cell 11 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 12...")
-cell_12()
-print("Cell 12 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 13...")
-cell_13()
-print("Cell 13 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 14...")
-cell_14()
-print("Cell 14 complete.\n")
+# print("Imitating Jupyter Pseudo Cell 02...")
+# cell_02()
+# print("Cell 02 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 03...")
+# cell_03()
+# print("Cell 03 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 04...")
+# cell_04()
+# print("Cell 04 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 05...")
+# cell_05()
+# print("Cell 05 complete.\n")
+# #
+# print("Imitating Jupyter Pseudo Cell 06...")
+# cell_06()
+# print("Cell 06 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 07...")
+# cell_07()
+# print("Cell 07 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 08...")
+# cell_08()
+# print("Cell 08 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 09...")
+# cell_09()
+# print("Cell 09 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 10...")
+# cell_10()
+# print("Cell 10 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 11...")
+# cell_11()
+# print("Cell 11 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 12...")
+# cell_12()
+# print("Cell 12 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 13...")
+# cell_13()
+# print("Cell 13 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 14...")
+# cell_14()
+# print("Cell 14 complete.\n")
 
 print("Imitating Jupyter Pseudo Cell 15...")
-cell_15()
+# cell_15()
 print("Cell 15 complete.\n")
 
 print("Imitating Jupyter Pseudo Cell 16...")
-cell_16()
+# cell_16()
 print("Cell 16 complete.\n")
 
 # Cell 17 is deprecated and has been excluded from the paper. See module description of cell.
@@ -105,13 +105,13 @@ print("Cell 18 complete.\n")
 # Cell 19 is deprecated and has been excluded from the paper. See module description of cell.
 # Cell 20 is deprecated and has been excluded from the paper. See module description of cell.
 #
-print("Imitating Jupyter Pseudo Cell 21...")
-cell_21()
-print("Cell 21 complete.\n")
-
-print("Imitating Jupyter Pseudo Cell 22...")
-cell_22()
-print("Cell 22 complete.\n")
+# print("Imitating Jupyter Pseudo Cell 21...")
+# cell_21()
+# print("Cell 21 complete.\n")
+#
+# print("Imitating Jupyter Pseudo Cell 22...")
+# cell_22()
+# print("Cell 22 complete.\n")
 
 print("Success!")
 print("All Jupyter Cells imitated.")

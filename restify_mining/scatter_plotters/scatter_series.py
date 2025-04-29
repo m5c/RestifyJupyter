@@ -74,6 +74,7 @@ class ScatterSeries:
         # extractors)
         self.__plot_tuple_series(tuples)
 
+
     def __plot_tuple_series(self, tuples: list[(str, str)]) -> None:
         """
         This method plots the actual tuple series where each tuple in lsit results from a
@@ -100,6 +101,8 @@ class ScatterSeries:
             dimension.fuse(item_correlation.dimension)
             correlation_series.append(item_correlation)
 
+
         # Plot all items, using the resulting optimal dimension
         for correlation in correlation_series:
             plot_correlation(correlation, self.__prefix, dimension)
+

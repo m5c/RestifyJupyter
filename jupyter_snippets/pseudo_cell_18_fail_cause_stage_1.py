@@ -28,6 +28,8 @@ def cell_18() -> None:
             colours.append("#82F282")
         elif label.startswith("repairable"):
             colours.append("#FCFC99")
+        elif label == "abnormal_scammer":
+            colours.append("#CC0000")
         else:
             colours.append("#FB6962")
 
@@ -51,7 +53,7 @@ def cell_18() -> None:
 
 def absolute_value(percentage):
     """
-    helper funciton because python does not offer a built-in way to show actual numbers.
+    helper function because python does not offer a built-in way to show actual numbers.
     :param percentage: as the auto compouted pie percentage
     :return:
     """
